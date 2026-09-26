@@ -9,6 +9,7 @@ concluded: false
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on&filter-term-Autumn=on
+    file: ../references/explorecourses-cs-grad-autumn-2026.md
     title: ExploreCourses, Autumn 2026
   - id: calendar
     resource: https://studentservices.stanford.edu/calendar-events/academic-calendars/future-academic-calendars

@@ -111,77 +111,89 @@ The lists are below, split between courses with a page (Courses) and those witho
 | Course | Title | Breadth | Depth | Term | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- | --- |
 | [CS 173A](../courses/CS%20173A.md) | Foundations of Computational Human Genomics | B | c | [Autumn 2026](../terms/Autumn%202026.md) | |
+| [CS 205L](../courses/CS%20205L.md) | Continuous Mathematical Methods with an Emphasis on Machine Learning | AB | c | [Winter 2026](../terms/Winter%202026.md) | 🟡 |
 | [CS 221](../courses/CS%20221.md) | Artificial Intelligence: Principles and Techniques | B | a | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 221M](../courses/CS%20221M.md) | Mechanistic Interpretability | | c | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 223A](../courses/CS%20223A.md) | Introduction to Robotics | B | b | [Winter 2026](../terms/Winter%202026.md) | 🟡 |
+| [CS 224C](../courses/CS%20224C.md) | NLP for Computational Social Science | | c | [Spring 2024](../terms/Spring%202024.md) | 🟡 |
+| [CS 224N](../courses/CS%20224N.md) | Natural Language Processing with Deep Learning | B | SI b | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 224R](../courses/CS%20224R.md) | Deep Reinforcement Learning | B | SI bc | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 224S](../courses/CS%20224S.md) | Spoken Language Processing | B | b | [Spring 2025](../terms/Spring%202025.md) | 🟢 |
 | [CS 224V](../courses/CS%20224V.md) | Agentic AI | B | b | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
 | [CS 224W](../courses/CS%20224W.md) | Machine Learning with Graphs | B | b | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 225A](../courses/CS%20225A.md) | Experimental Robotics | | c | [Spring 2026](../terms/Spring%202026.md) | 🟡 |
 | [CS 227A](../courses/CS%20227A.md) | Robot Perception | B | c | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 227B](../courses/CS%20227B.md) | General Game Playing | B | SI c | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 228](../courses/CS%20228.md) | Probabilistic Graphical Models: Principles and Techniques | B | b | [Winter 2024](../terms/Winter%202024.md) | 🟢 |
 | [CS 229](../courses/CS%20229.md) | Machine Learning | B | b | [Summer 2026](../terms/Summer%202026.md) | 🟡 |
+| [CS 229B](../courses/CS%20229B.md) | Machine Learning for Sequence Modeling | B | c | [Autumn 2023](../terms/Autumn%202023.md) | 🟡 |
+| [CS 229M](../courses/CS%20229M.md) | Machine Learning Theory | AB | c | [Autumn 2024](../terms/Autumn%202024.md) | 🟢 |
+| [CS 229S](../courses/CS%20229S.md) | Systems for Machine Learning | C | c | [Autumn 2024](../terms/Autumn%202024.md) | 🟡 |
 | [CS 230](../courses/CS%20230.md) | Deep Learning | B | c | [Autumn 2026](../terms/Autumn%202026.md) | 🟡 |
+| [CS 231A](../courses/CS%20231A.md) | Computer Vision: From 3D Perception to 3D Reconstruction and Beyond | B | b | [Spring 2025](../terms/Spring%202025.md) | 🟢 |
+| [CS 231N](../courses/CS%20231N.md) | Deep Learning for Computer Vision | B | SI b | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 233](../courses/CS%20233.md) | Geometric and Topological Data Analysis | B | c | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 234](../courses/CS%20234.md) | Reinforcement Learning | B | b | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 235](../courses/CS%20235.md) | Computational Methods for Biomedical Image Analysis and Interpretation | | c | [Spring 2026](../terms/Spring%202026.md) | 🔴 |
+| [CS 236](../courses/CS%20236.md) | Deep Generative Models | B | c | [Autumn 2023](../terms/Autumn%202023.md) | 🟢 |
 | [CS 237A](../courses/CS%20237A.md) | Principles of Robot Autonomy I | B | b | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 237B](../courses/CS%20237B.md) | Principles of Robot Autonomy II | B | b | [Winter 2025](../terms/Winter%202025.md) | 🟢 |
 | [CS 238](../courses/CS%20238.md) | Decision Making under Uncertainty | B | b | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 238V](../courses/CS%20238V.md) | Validation of Safety Critical Systems | | c | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 239](../courses/CS%20239.md) | Advanced Topics in Sequential Decision Making | B | SI c | [Winter 2024](../terms/Winter%202024.md) | 🟡 |
+| [CS 246](../courses/CS%20246.md) | Mining Massive Data Sets | C | c | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 257](../courses/CS%20257.md) | Introduction to Automated Reasoning | AC | c | [Winter 2026](../terms/Winter%202026.md) | 🟡 |
+| [CS 270](../courses/CS%20270.md) | Modeling Biomedical Systems | | c | [Spring 2026](../terms/Spring%202026.md) | 🔴 |
+| [CS 271](../courses/CS%20271.md) | Artificial Intelligence in Healthcare | B | c | [Autumn 2022](../terms/Autumn%202022.md) | 🟢 |
+| [CS 273B](../courses/CS%20273B.md) | Deep Learning in Genomics and Biomedicine | B | c | [Spring 2026](../terms/Spring%202026.md) | 🔴 |
 | [CS 274](../courses/CS%20274.md) | Representations and Algorithms for Computational Molecular Biology | B | c | [Autumn 2026](../terms/Autumn%202026.md) | |
+| [CS 275](../courses/CS%20275.md) | Translational Bioinformatics | | c | [Spring 2025](../terms/Spring%202025.md) | |
 | [CS 279](../courses/CS%20279.md) | Computational Biology: Structure and Organization of Biomolecules and Cells | B | c | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 281](../courses/CS%20281.md) | Ethics of Artificial Intelligence | BD | c | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 293](../courses/CS%20293.md) | Empowering Educators via Language Technology | D | c | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 321M](../courses/CS%20321M.md) | AI Measurement Science | B | b | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 324H](../courses/CS%20324H.md) | History of Natural Language Processing | D | c | [Winter 2024](../terms/Winter%202024.md) | 🟢 |
+| [CS 325B](../courses/CS%20325B.md) | Data for Sustainable Development | | c | [Autumn 2023](../terms/Autumn%202023.md) | 🟢 |
+| [CS 326](../courses/CS%20326.md) | Topics in Advanced Robotic Manipulation | B | c | [Autumn 2024](../terms/Autumn%202024.md) | 🟢 |
+| [CS 328](../courses/CS%20328.md) | Foundations of Causal Machine Learning | A | c | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 329A](../courses/CS%20329A.md) | Self Improving AI Agents | B | c | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
+| [CS 329D](../courses/CS%20329D.md) | Machine Learning Under Distributional Shifts | B | c | [Spring 2023](../terms/Spring%202023.md) | |
+| [CS 329E](../courses/CS%20329E.md) | Machine Learning on Embedded Systems | | c | [Spring 2025](../terms/Spring%202025.md) | 🟢 |
 | [CS 329H](../courses/CS%20329H.md) | Machine Learning from Human Preferences | B | c | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
 | [CS 329M](../courses/CS%20329M.md) | Machine Programming | | c | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 329P](../courses/CS%20329P.md) | Practical Machine Learning | | c | [Autumn 2021](../terms/Autumn%202021.md) | |
+| [CS 329R](../courses/CS%20329R.md) | Race and Natural Language Processing | D | c | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
+| [CS 329S](../courses/CS%20329S.md) | Machine Learning Systems Design | | c | [Winter 2022](../terms/Winter%202022.md) | 🟡 |
+| [CS 329T](../courses/CS%20329T.md) | Trustworthy Machine Learning: Building and evaluating agentic systems | BD | c | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
 | [CS 329X](../courses/CS%20329X.md) | Human Centered NLP | BD | c | [Autumn 2026](../terms/Autumn%202026.md) | 🟡 |
 | [CS 329Z](../courses/CS%20329Z.md) | Engineering AI Agents | | c | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 330](../courses/CS%20330.md) | Deep Multi-task and Meta Learning | B | SI c | [Autumn 2023](../terms/Autumn%202023.md) | 🟢 |
+| [CS 334A](../courses/CS%20334A.md) | Convex Optimization I | A | c | [Summer 2020](../terms/Summer%202020.md) | 🟢 |
+| [CS 336](../courses/CS%20336.md) | Language Modeling from Scratch | B | SI bc | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 348I](../courses/CS%20348I.md) | Computer Graphics in the Era of AI | B | c | [Winter 2024](../terms/Winter%202024.md) | 🟡 |
+| [CS 353](../courses/CS%20353.md) | Seminar on Logic & Formal Philosophy | | c | [Winter 2024](../terms/Winter%202024.md) | |
+| [CS 361](../courses/CS%20361.md) | Engineering Design Optimization | | c | [Spring 2026](../terms/Spring%202026.md) | 🟡 |
+| [CS 371](../courses/CS%20371.md) | Computational Biology in Four Dimensions | B | c | [Winter 2023](../terms/Winter%202023.md) | 🟡 |
+| [CS 375](../courses/CS%20375.md) | Large-Scale Neural Network Modeling for Neuroscience | B | c | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 377E](../courses/CS%20377E.md) | Designing Solutions to Global Grand Challenges | D | c† | [Spring 2023](../terms/Spring%202023.md) | 🟢 |
 | [CS 377G](../courses/CS%20377G.md) | Designing Serious Games | D | c† | [Autumn 2026](../terms/Autumn%202026.md) | |
+| [CS 377N](../courses/CS%20377N.md) | Introduction to the Design of Smart Products | D | c† | [Spring 2020](../terms/Spring%202020.md) | |
+| [CS 377P](../courses/CS%20377P.md) | Read, Write, Play | D | c† | [Spring 2026](../terms/Spring%202026.md) | |
+| [CS 377Q](../courses/CS%20377Q.md) | Designing for Accessibility | D | c† | [Winter 2026](../terms/Winter%202026.md) | |
+| [CS 377U](../courses/CS%20377U.md) | Understanding Users | D | c† | [Spring 2026](../terms/Spring%202026.md) | |
 | [CS 399](../courses/CS%20399.md) | Independent Project | | c† | | |
+| [CS 432](../courses/CS%20432.md) | Computer Vision for Education and Social Science Research | | c | [Spring 2026](../terms/Spring%202026.md) | |
 
 <!-- Generated by build.ts (course-table). Don't edit, run `make build` -->
 
 ## TODO
 
-- **Covered**: 14 of 70 list entries have a page (17 course pages)
-- **In the default scope** (CS 200+): 43
-  - CS 205L · c
-  - CS 221M · c
-  - CS 223A · b
-  - CS 224C · c
-  - CS 224N · b
-  - CS 224R · bc
-  - CS 224S · b
-  - CS 225A · c
-  - CS 227B · c
-  - CS 228 · b
-  - CS 229B · c
-  - CS 229M · c
-  - CS 229S · c
-  - CS 231A · b
-  - CS 231N · b
-  - CS 233 · c
-  - CS 234 · b
-  - CS 235 · c
-  - CS 236 · c
-  - CS 237B · b
-  - CS 238V · c
-  - CS 239 · c
-  - CS 246 · c
-  - CS 257 · c
-  - CS 270 · c
-  - CS 271 · c
-  - CS 273B · c
-  - CS 275 · c
-  - CS 281 · c
-  - CS 293 · c
-  - CS 321M · b
-  - CS 324H · c
-  - CS 325B · c
-  - CS 326 · c
-  - CS 328 · c
-  - CS 330 · c
-  - CS 336 · bc
-  - CS 348I · c
-  - CS 353 · c
-  - CS 361 · c
-  - CS 371 · c
-  - CS 375 · c
-  - CS 432 · c
-- **Outside the default scope** (other departments, CS under 200; write only on request): 13
+- **Covered**: 58 of 70 list entries have a page (73 course pages)
+- **In the default scope** (CS 200+): 0
+- **Outside the default scope** (other departments, CS under 200; write only on request): 12
   - EE 263 · c
   - EE 276 · c
   - EE 278 · c
-  - EE 364A · c
   - EE 364B · c
   - EE 377 · c
   - ENGR 205 · c

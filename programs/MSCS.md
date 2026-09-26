@@ -248,10 +248,10 @@ The 2026-27 program sheets of all nine specializations are identical except for 
 
 - **45 units**, all in courses numbered 101 or higher. At least 36 units letter-graded, including every breadth and depth course. Average grade at least B (3.0).
 - **Foundations**: CS 103, CS 109, CS 161, CS 107 or 107E, CS 111. Courses taken elsewhere need a waiver, and at most 10 foundations units count toward the 45. Probability can also be waived with one of CME 106, EE 178, MS&E 220, STATS 117 plus [CS 221](../courses/CS%20221.md) or [CS 229](../courses/CS%20229.md).
-- **Significant implementation** (SI): one course from the list, letter-graded, with at least 3 units taken at Stanford. It also counts toward depth or electives. CS 112 or CS 140 can stand in for CS 212. Coterms who took two of these as undergraduates may waive it.
+- **Significant implementation** (SI): one course from the list, letter-graded, with at least 3 units taken at Stanford. It also counts toward depth or electives. CS 112 or CS 140 can stand in for [CS 212](../courses/CS%20212.md). Coterms who took two of these as undergraduates may waive it.
 - **Breadth** (A–D): three courses from three different areas: A formal foundations, B learning and modeling, C systems, D people and society. Letter-graded, at least 3 units each, no waivers. They also count toward depth or electives. CS 112 counts for C only with CS 111 as its prerequisite; PUBLPOL 103F only when taken for 3 units.
 - **Depth**: at least 21 units, defined by each specialization.
-- **Electives** make up the rest. CS courses above 111 count, except CS 161A, 196, 198 and 390A/B/C (shown as `-`). Non-CS courses must be technical, numbered 101 or higher (some sheets say "above 101"), and approved by the advisor. At most 3 units of 1–2-unit seminars. Elective credit is capped at 5 units per course per quarter, except [CS 399](../courses/CS%20399.md). CS 129 doesn't count if [CS 229](../courses/CS%20229.md) counts toward any BS or MS requirement.
+- **Electives** make up the rest. CS courses above 111 count, except CS 161A, 196, 198 and 390A/B/C (shown as `-`). Non-CS courses must be technical, numbered 101 or higher (some sheets say "above 101"), and approved by the advisor. At most 3 units of 1–2-unit seminars. Elective credit is capped at 5 units per course per quarter, except [CS 399](../courses/CS%20399.md). [CS 129](../courses/CS%20129.md) doesn't count if [CS 229](../courses/CS%20229.md) counts toward any BS or MS requirement.
 - Units already counted toward a BS can't count toward the MSCS.
 
 ## Specializations
@@ -264,129 +264,141 @@ The 2026-27 program sheets of all nine specializations are identical except for 
 | Course | Title | Breadth | Term | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
 | [CS 173A](../courses/CS%20173A.md) | Foundations of Computational Human Genomics | B | [Autumn 2026](../terms/Autumn%202026.md) | |
+| [CS 205L](../courses/CS%20205L.md) | Continuous Mathematical Methods with an Emphasis on Machine Learning | AB | [Winter 2026](../terms/Winter%202026.md) | 🟡 |
+| [CS 206](../courses/CS%20206.md) | Exploring Computational Journalism | D | [Winter 2026](../terms/Winter%202026.md) | |
+| [CS 210B](../courses/CS%20210B.md) | Industry Innovation Lab | | [Spring 2026](../terms/Spring%202026.md) | 🟡 |
+| [CS 212](../courses/CS%20212.md) | Operating Systems and Systems Programming | C | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 217](../courses/CS%20217.md) | Hardware Accelerators for Machine Learning | C | [Winter 2026](../terms/Winter%202026.md) | 🟡 |
 | [CS 221](../courses/CS%20221.md) | Artificial Intelligence: Principles and Techniques | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 223A](../courses/CS%20223A.md) | Introduction to Robotics | B | [Winter 2026](../terms/Winter%202026.md) | 🟡 |
+| [CS 224N](../courses/CS%20224N.md) | Natural Language Processing with Deep Learning | B | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 224R](../courses/CS%20224R.md) | Deep Reinforcement Learning | B | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 224S](../courses/CS%20224S.md) | Spoken Language Processing | B | [Spring 2025](../terms/Spring%202025.md) | 🟢 |
+| [CS 224U](../courses/CS%20224U.md) | Natural Language Understanding | B | [Spring 2023](../terms/Spring%202023.md) | 🟢 |
 | [CS 224V](../courses/CS%20224V.md) | Agentic AI | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
 | [CS 224W](../courses/CS%20224W.md) | Machine Learning with Graphs | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 225](../courses/CS%20225.md) | Machine Learning for Discrete Optimization | A | [Spring 2024](../terms/Spring%202024.md) | 🟢 |
 | [CS 227A](../courses/CS%20227A.md) | Robot Perception | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 227B](../courses/CS%20227B.md) | General Game Playing | B | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 228](../courses/CS%20228.md) | Probabilistic Graphical Models: Principles and Techniques | B | [Winter 2024](../terms/Winter%202024.md) | 🟢 |
 | [CS 229](../courses/CS%20229.md) | Machine Learning | B | [Summer 2026](../terms/Summer%202026.md) | 🟡 |
+| [CS 229B](../courses/CS%20229B.md) | Machine Learning for Sequence Modeling | B | [Autumn 2023](../terms/Autumn%202023.md) | 🟡 |
+| [CS 229M](../courses/CS%20229M.md) | Machine Learning Theory | AB | [Autumn 2024](../terms/Autumn%202024.md) | 🟢 |
+| [CS 229S](../courses/CS%20229S.md) | Systems for Machine Learning | C | [Autumn 2024](../terms/Autumn%202024.md) | 🟡 |
 | [CS 230](../courses/CS%20230.md) | Deep Learning | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟡 |
+| [CS 231A](../courses/CS%20231A.md) | Computer Vision: From 3D Perception to 3D Reconstruction and Beyond | B | [Spring 2025](../terms/Spring%202025.md) | 🟢 |
+| [CS 231N](../courses/CS%20231N.md) | Deep Learning for Computer Vision | B | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 233](../courses/CS%20233.md) | Geometric and Topological Data Analysis | B | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 234](../courses/CS%20234.md) | Reinforcement Learning | B | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 236](../courses/CS%20236.md) | Deep Generative Models | B | [Autumn 2023](../terms/Autumn%202023.md) | 🟢 |
 | [CS 237A](../courses/CS%20237A.md) | Principles of Robot Autonomy I | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 237B](../courses/CS%20237B.md) | Principles of Robot Autonomy II | B | [Winter 2025](../terms/Winter%202025.md) | 🟢 |
 | [CS 238](../courses/CS%20238.md) | Decision Making under Uncertainty | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 239](../courses/CS%20239.md) | Advanced Topics in Sequential Decision Making | B | [Winter 2024](../terms/Winter%202024.md) | 🟡 |
 | [CS 240](../courses/CS%20240.md) | Advanced Topics in Operating Systems | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 240LX](../courses/CS%20240LX.md) | Advanced Systems Laboratory, Accelerated | C | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
 | [CS 242](../courses/CS%20242.md) | Programming Languages | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 243](../courses/CS%20243.md) | Program Analysis and Optimizations | C | [Winter 2026](../terms/Winter%202026.md) | |
+| [CS 244](../courses/CS%20244.md) | Advanced Topics in Networking | C | [Spring 2025](../terms/Spring%202025.md) | 🟢 |
+| [CS 244B](../courses/CS%20244B.md) | Distributed Systems | C | [Spring 2024](../terms/Spring%202024.md) | 🟢 |
+| [CS 244C](../courses/CS%20244C.md) | Advanced Networking and Distributed Systems | C | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 245](../courses/CS%20245.md) | Principles of Data-Intensive Systems | C | [Winter 2022](../terms/Winter%202022.md) | 🟡 |
+| [CS 246](../courses/CS%20246.md) | Mining Massive Data Sets | C | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 247A](../courses/CS%20247A.md) | Design for Artificial Intelligence | D | [Spring 2026](../terms/Spring%202026.md) | 🔴 |
+| [CS 247B](../courses/CS%20247B.md) | Design for Behavior Change | D | [Winter 2026](../terms/Winter%202026.md) | 🟡 |
 | [CS 247G](../courses/CS%20247G.md) | Design for Play | D | [Summer 2026](../terms/Summer%202026.md) | 🟡 |
+| [CS 247I](../courses/CS%20247I.md) | Design for Understanding | D | [Autumn 2021](../terms/Autumn%202021.md) | |
 | [CS 247S](../courses/CS%20247S.md) | Service Design with AI | D | [Autumn 2026](../terms/Autumn%202026.md) | |
+| [CS 248A](../courses/CS%20248A.md) | Computer Graphics: Rendering, Geometry, and Image Manipulation | B | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
 | [CS 248B](../courses/CS%20248B.md) | Fundamentals of Computer Graphics: Animation and Simulation | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟡 |
+| [CS 249I](../courses/CS%20249I.md) | The Modern Internet | C | [Winter 2025](../terms/Winter%202025.md) | 🟢 |
+| [CS 250](../courses/CS%20250.md) | Algebraic Error Correcting Codes | A | [Winter 2025](../terms/Winter%202025.md) | 🟢 |
 | [CS 251](../courses/CS%20251.md) | Cryptocurrencies and blockchain technologies | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 254](../courses/CS%20254.md) | Computational Complexity | A | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 254B](../courses/CS%20254B.md) | Computational Complexity II | A | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 255](../courses/CS%20255.md) | Introduction to Cryptography | A | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 256](../courses/CS%20256.md) | Algorithmic Fairness | AD | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
+| [CS 257](../courses/CS%20257.md) | Introduction to Automated Reasoning | AC | [Winter 2026](../terms/Winter%202026.md) | 🟡 |
 | [CS 258](../courses/CS%20258.md) | Quantum Cryptography | A | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
 | [CS 259Q](../courses/CS%20259Q.md) | Quantum Computing | A | [Autumn 2026](../terms/Autumn%202026.md) | 🔴 |
+| [CS 261](../courses/CS%20261.md) | Combinatorial Optimization | A | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 263](../courses/CS%20263.md) | Counting and Sampling | A | [Autumn 2023](../terms/Autumn%202023.md) | |
+| [CS 264](../courses/CS%20264.md) | Beyond Worst-Case Analysis | A | [Spring 2025](../terms/Spring%202025.md) | 🟢 |
 | [CS 265](../courses/CS%20265.md) | Randomized Algorithms and Probabilistic Analysis | A | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | AD | [Winter 2026](../terms/Winter%202026.md) | |
+| [CS 271](../courses/CS%20271.md) | Artificial Intelligence in Healthcare | B | [Autumn 2022](../terms/Autumn%202022.md) | 🟢 |
+| [CS 272](../courses/CS%20272.md) | Introduction to Biomedical Informatics Research Methodology | B | [Spring 2026](../terms/Spring%202026.md) | 🔴 |
+| [CS 273B](../courses/CS%20273B.md) | Deep Learning in Genomics and Biomedicine | B | [Spring 2026](../terms/Spring%202026.md) | 🔴 |
+| [CS 273D](../courses/CS%20273D.md) | Generalization and Causality in Biohealth | D | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
 | [CS 274](../courses/CS%20274.md) | Representations and Algorithms for Computational Molecular Biology | B | [Autumn 2026](../terms/Autumn%202026.md) | |
+| [CS 277](../courses/CS%20277.md) | Foundation Models for Healthcare | B | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 278](../courses/CS%20278.md) | Social Computing | D | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
 | [CS 279](../courses/CS%20279.md) | Computational Biology: Structure and Organization of Biomolecules and Cells | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 281](../courses/CS%20281.md) | Ethics of Artificial Intelligence | BD | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 282](../courses/CS%20282.md) | Computer Systems Architecture | C | [Spring 2026](../terms/Spring%202026.md) | 🟡 |
 | [CS 283](../courses/CS%20283.md) | Governing Artificial Intelligence: Law, Policy, and Institutions | D | [Autumn 2026](../terms/Autumn%202026.md) | 🟡 |
+| [CS 293](../courses/CS%20293.md) | Empowering Educators via Language Technology | D | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 295](../courses/CS%20295.md) | Software Engineering | C | [Winter 2026](../terms/Winter%202026.md) | |
+| [CS 321M](../courses/CS%20321M.md) | AI Measurement Science | B | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 323](../courses/CS%20323.md) | The AI Awakening: Implications for the Economy and Society | D | [Spring 2026](../terms/Spring%202026.md) | 🟡 |
+| [CS 324H](../courses/CS%20324H.md) | History of Natural Language Processing | D | [Winter 2024](../terms/Winter%202024.md) | 🟢 |
+| [CS 326](../courses/CS%20326.md) | Topics in Advanced Robotic Manipulation | B | [Autumn 2024](../terms/Autumn%202024.md) | 🟢 |
+| [CS 328](../courses/CS%20328.md) | Foundations of Causal Machine Learning | A | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 329A](../courses/CS%20329A.md) | Self Improving AI Agents | B | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
+| [CS 329D](../courses/CS%20329D.md) | Machine Learning Under Distributional Shifts | B | [Spring 2023](../terms/Spring%202023.md) | |
 | [CS 329H](../courses/CS%20329H.md) | Machine Learning from Human Preferences | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 329R](../courses/CS%20329R.md) | Race and Natural Language Processing | D | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
+| [CS 329T](../courses/CS%20329T.md) | Trustworthy Machine Learning: Building and evaluating agentic systems | BD | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
 | [CS 329X](../courses/CS%20329X.md) | Human Centered NLP | BD | [Autumn 2026](../terms/Autumn%202026.md) | 🟡 |
+| [CS 330](../courses/CS%20330.md) | Deep Multi-task and Meta Learning | B | [Autumn 2023](../terms/Autumn%202023.md) | 🟢 |
+| [CS 332](../courses/CS%20332.md) | Advanced Survey of Reinforcement Learning | B | [Autumn 2022](../terms/Autumn%202022.md) | 🟢 |
+| [CS 333](../courses/CS%20333.md) | Algorithms for Interactive Robotics | B | [Winter 2022](../terms/Winter%202022.md) | |
+| [CS 334A](../courses/CS%20334A.md) | Convex Optimization I | A | [Summer 2020](../terms/Summer%202020.md) | 🟢 |
+| [CS 336](../courses/CS%20336.md) | Language Modeling from Scratch | B | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 337](../courses/CS%20337.md) | AI-Assisted Care | D | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
 | [CS 347](../courses/CS%20347.md) | Human-Computer Interaction: Foundations and Frontiers | D | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 348A](../courses/CS%20348A.md) | Computer Graphics: Geometric Modeling & Processing | B | [Winter 2021](../terms/Winter%202021.md) | 🟢 |
+| [CS 348B](../courses/CS%20348B.md) | Computer Graphics: Image Synthesis Techniques | B | [Spring 2022](../terms/Spring%202022.md) | 🟢 |
+| [CS 348C](../courses/CS%20348C.md) | Computer Graphics: Animation and Simulation | B | [Winter 2026](../terms/Winter%202026.md) | 🟡 |
+| [CS 348E](../courses/CS%20348E.md) | Character Animation: Modeling, Simulation, and Control of Human Motion | B | [Spring 2023](../terms/Spring%202023.md) | |
+| [CS 348I](../courses/CS%20348I.md) | Computer Graphics in the Era of AI | B | [Winter 2024](../terms/Winter%202024.md) | 🟡 |
+| [CS 348K](../courses/CS%20348K.md) | Visual Computing Systems | C | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 348N](../courses/CS%20348N.md) | Neural Models for 3D Geometry | B | [Spring 2023](../terms/Spring%202023.md) | 🟡 |
+| [CS 349D](../courses/CS%20349D.md) | AI Inference Infrastructure | C | [Spring 2026](../terms/Spring%202026.md) | 🟡 |
 | [CS 349F](../courses/CS%20349F.md) | Fabric Architectures For AI Systems | C | [Autumn 2026](../terms/Autumn%202026.md) | 🔴 |
 | [CS 349H](../courses/CS%20349H.md) | Software Techniques for Emerging Hardware Platforms | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
 | [CS 350S](../courses/CS%20350S.md) | Privacy-Preserving Systems | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 354](../courses/CS%20354.md) | Topics in Intractability: Unfulfilled Algorithmic Fantasies | A | [Winter 2022](../terms/Winter%202022.md) | 🟢 |
+| [CS 355](../courses/CS%20355.md) | Advanced Topics in Cryptography | A | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
 | [CS 356](../courses/CS%20356.md) | Topics in Computer and Network Security | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 357S](../courses/CS%20357S.md) | Formal Methods for Computer Systems | AC | [Winter 2026](../terms/Winter%202026.md) | 🟡 |
+| [CS 359D](../courses/CS%20359D.md) | Quantum Complexity Theory | A | [Winter 2025](../terms/Winter%202025.md) | |
+| [CS 369O](../courses/CS%20369O.md) | Optimization Algorithms | A | [Autumn 2024](../terms/Autumn%202024.md) | 🟢 |
+| [CS 371](../courses/CS%20371.md) | Computational Biology in Four Dimensions | B | [Winter 2023](../terms/Winter%202023.md) | 🟡 |
+| [CS 373](../courses/CS%20373.md) | Statistical and Machine Learning Methods for Genomics | B | [Winter 2020](../terms/Winter%202020.md) | |
+| [CS 375](../courses/CS%20375.md) | Large-Scale Neural Network Modeling for Neuroscience | B | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 377E](../courses/CS%20377E.md) | Designing Solutions to Global Grand Challenges | D | [Spring 2023](../terms/Spring%202023.md) | 🟢 |
 | [CS 377G](../courses/CS%20377G.md) | Designing Serious Games | D | [Autumn 2026](../terms/Autumn%202026.md) | |
+| [CS 377N](../courses/CS%20377N.md) | Introduction to the Design of Smart Products | D | [Spring 2020](../terms/Spring%202020.md) | |
+| [CS 377P](../courses/CS%20377P.md) | Read, Write, Play | D | [Spring 2026](../terms/Spring%202026.md) | |
+| [CS 377Q](../courses/CS%20377Q.md) | Designing for Accessibility | D | [Winter 2026](../terms/Winter%202026.md) | |
+| [CS 377U](../courses/CS%20377U.md) | Understanding Users | D | [Spring 2026](../terms/Spring%202026.md) | |
+| [CS 384](../courses/CS%20384.md) | Seminar on Ethical and Social Issues in Natural Language Processing | D | [Spring 2023](../terms/Spring%202023.md) | 🟢 |
 | [CS 390A](../courses/CS%20390A.md) | Curricular Practical Training | - | | |
 | [CS 390B](../courses/CS%20390B.md) | Curricular Practical Training | - | | |
 | [CS 390C](../courses/CS%20390C.md) | Curricular Practical Training | - | | |
 | [CS 448B](../courses/CS%20448B.md) | Data Visualization | D | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 470](../courses/CS%20470.md) | Music and AI | D | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 498C](../courses/CS%20498C.md) | Introduction to CSCL: Computer-Supported Collaborative Learning | D | [Winter 2026](../terms/Winter%202026.md) | |
 
 <!-- Generated by build.ts (course-table). Don't edit, run `make build` -->
 
 ## TODO
 
-- **Covered**: 32 of 190 list entries have a page (33 course pages)
-- **In the default scope** (CS 200+): 83
-  - CS 205L · AB
-  - CS 206 · D
-  - CS 210B · S
-  - CS 212 · SC
-  - CS 217 · C
-  - CS 223A · B
-  - CS 224N · SB
-  - CS 224R · SB
-  - CS 224S · B
-  - CS 224U · B
-  - CS 225 · A
-  - CS 227B · SB
-  - CS 228 · B
-  - CS 229B · B
-  - CS 229M · AB
-  - CS 229S · C
-  - CS 231A · B
-  - CS 231N · SB
-  - CS 233 · B
-  - CS 234 · B
-  - CS 236 · B
-  - CS 237B · B
-  - CS 239 · SB
-  - CS 240LX · C
-  - CS 243 · SC
-  - CS 244 · C
-  - CS 244B · C
-  - CS 244C · C
-  - CS 245 · C
-  - CS 246 · C
-  - CS 248A · SB
-  - CS 249I · C
-  - CS 250 · A
-  - CS 254 · A
-  - CS 254B · A
-  - CS 255 · A
-  - CS 256 · AD
-  - CS 257 · AC
-  - CS 261 · A
-  - CS 263 · A
-  - CS 264 · A
-  - CS 269I · AD
-  - CS 271 · B
-  - CS 272 · B
-  - CS 273B · B
-  - CS 277 · B
-  - CS 278 · D
-  - CS 281 · BD
-  - CS 293 · D
-  - CS 295 · C
+- **Covered**: 118 of 190 list entries have a page (127 course pages)
+- **In the default scope** (CS 200+): 1
   - CS 316 · C
-  - CS 321M · B
-  - CS 323 · D
-  - CS 324H · D
-  - CS 326 · B
-  - CS 328 · A
-  - CS 329A · B
-  - CS 329D · B
-  - CS 329R · D
-  - CS 329T · BD
-  - CS 330 · SB
-  - CS 332 · B
-  - CS 333 · B
-  - CS 336 · SB
-  - CS 337 · D
-  - CS 348A · B
-  - CS 348B · B
-  - CS 348C · B
-  - CS 348E · B
-  - CS 348I · B
-  - CS 348K · C
-  - CS 348N · B
-  - CS 349D · C
-  - CS 354 · A
-  - CS 355 · A
-  - CS 357S · AC
-  - CS 359D · A
-  - CS 369O · A
-  - CS 371 · B
-  - CS 373 · B
-  - CS 375 · B
-  - CS 384 · D
-  - CS 470 · D
-- **Outside the default scope** (other departments, CS under 200; write only on request): 75
+- **Outside the default scope** (other departments, CS under 200; write only on request): 71
   - AMSTUD 145 · D
   - APPPHYS 229 · A
   - BIOS 244 · D
@@ -431,12 +443,9 @@ The 2026-27 program sheets of all nine specializations are identical except for 
   - CS 198 · -
   - DESIGN 255 · D
   - EARTHSYS 213 · D
-  - EDUC 315A · D
   - EDUC 484 · D
   - EE 180 · C
   - EE 276 · A
-  - EE 282 · C
-  - EE 364A · A
   - EE 364B · A
   - EE 377 · A
   - EE 382C · C
@@ -461,6 +470,5 @@ The 2026-27 program sheets of all nine specializations are identical except for 
   - PUBLPOL 353A · D
   - PUBLPOL 353B · D
   - STATS 311 · A
-  - STATS 354 · D
 
 <!-- Generated by build.ts (missing-pages). Don't edit, run `make build` -->

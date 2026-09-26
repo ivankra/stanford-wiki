@@ -6,6 +6,9 @@ description: Bare-metal Raspberry Pi systems labs continuing CS 240LX, on fancie
 level: graduate
 term: Autumn 2026
 terms_offered:
+  - Autumn 2020
+  - Autumn 2022
+  - Spring 2025
   - Autumn 2025
   - Autumn 2026
 instructors:
@@ -68,7 +71,7 @@ generated:
 ---
 # CS 340LX: Advanced Operating System Lab: Accelerated (II)
 
-The last class in the CS 140E → CS 240LX bare-metal Raspberry Pi pipeline. Two labs a week, each ending in a working example of "a cool trick or deep method"; about half are student-written. It runs only every few years; Autumn 2026 is the fourth offering.
+The last class in the CS 140E → [CS 240LX](CS%20240LX.md) bare-metal Raspberry Pi pipeline. Two labs a week, each ending in a working example of "a cool trick or deep method"; about half are student-written. It runs only every few years; Autumn 2026 is the fourth offering.
 
 ## Materials
 
@@ -87,7 +90,7 @@ Autumn 2025's labs: setup, fast device interrupts, PCB design in KiCad, HDMI fra
 
 ## Prerequisites
 
-Instructor permission. The course assumes CS 140E and CS 240LX: "you have already suffered through 30+ labs."
+Instructor permission. The course assumes CS 140E and [CS 240LX](CS%20240LX.md): "you have already suffered through 30+ labs."
 
 ## Related
 

@@ -8,9 +8,9 @@ end_date: "2026-08-15"
 concluded: true
 sources:
   - id: catalog
-    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on&filter-term-Summer=on
-    file: ../references/explorecourses-cs-grad-summer-2026.md
-    title: ExploreCourses, Summer 2026
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-grad-2025-2026.md
+    title: ExploreCourses, 2025-2026
   - id: calendar
     resource: https://studentservices.stanford.edu/calendar-events/academic-calendars/stanford-academic-calendar-2025-2026
     file: ../references/stanford-academic-calendar-summer-2026.md
