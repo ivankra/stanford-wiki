@@ -247,11 +247,11 @@ The 2026-27 program sheets of all nine specializations are identical except for 
 ## Requirements
 
 - **45 units**, all in courses numbered 101 or higher. At least 36 units letter-graded, including every breadth and depth course. Average grade at least B (3.0).
-- **Foundations**: CS 103, CS 109, CS 161, CS 107 or 107E, CS 111. Courses taken elsewhere need a waiver, and at most 10 foundations units count toward the 45. Probability can also be waived with one of CME 106, EE 178, MS&E 220, STATS 117 plus CS 221 or [CS 229](../courses/CS%20229.md).
+- **Foundations**: CS 103, CS 109, CS 161, CS 107 or 107E, CS 111. Courses taken elsewhere need a waiver, and at most 10 foundations units count toward the 45. Probability can also be waived with one of CME 106, EE 178, MS&E 220, STATS 117 plus [CS 221](../courses/CS%20221.md) or [CS 229](../courses/CS%20229.md).
 - **Significant implementation** (SI): one course from the list, letter-graded, with at least 3 units taken at Stanford. It also counts toward depth or electives. CS 112 or CS 140 can stand in for CS 212. Coterms who took two of these as undergraduates may waive it.
 - **Breadth** (A–D): three courses from three different areas: A formal foundations, B learning and modeling, C systems, D people and society. Letter-graded, at least 3 units each, no waivers. They also count toward depth or electives. CS 112 counts for C only with CS 111 as its prerequisite; PUBLPOL 103F only when taken for 3 units.
 - **Depth**: at least 21 units, defined by each specialization.
-- **Electives** make up the rest. CS courses above 111 count, except CS 161A, 196, 198 and 390A/B/C (shown as `-`). Non-CS courses must be technical, numbered 101 or higher (some sheets say "above 101"), and approved by the advisor. At most 3 units of 1–2-unit seminars. Elective credit is capped at 5 units per course per quarter, except CS 399. CS 129 doesn't count if [CS 229](../courses/CS%20229.md) counts toward any BS or MS requirement.
+- **Electives** make up the rest. CS courses above 111 count, except CS 161A, 196, 198 and 390A/B/C (shown as `-`). Non-CS courses must be technical, numbered 101 or higher (some sheets say "above 101"), and approved by the advisor. At most 3 units of 1–2-unit seminars. Elective credit is capped at 5 units per course per quarter, except [CS 399](../courses/CS%20399.md). CS 129 doesn't count if [CS 229](../courses/CS%20229.md) counts toward any BS or MS requirement.
 - Units already counted toward a BS can't count toward the MSCS.
 
 ## Specializations
@@ -263,48 +263,70 @@ The 2026-27 program sheets of all nine specializations are identical except for 
 
 | Course | Title | Breadth | Term | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
+| [CS 173A](../courses/CS%20173A.md) | Foundations of Computational Human Genomics | B | [Autumn 2026](../terms/Autumn%202026.md) | |
+| [CS 221](../courses/CS%20221.md) | Artificial Intelligence: Principles and Techniques | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 224V](../courses/CS%20224V.md) | Agentic AI | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 224W](../courses/CS%20224W.md) | Machine Learning with Graphs | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 227A](../courses/CS%20227A.md) | Robot Perception | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
 | [CS 229](../courses/CS%20229.md) | Machine Learning | B | [Summer 2026](../terms/Summer%202026.md) | 🟡 |
+| [CS 230](../courses/CS%20230.md) | Deep Learning | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟡 |
+| [CS 237A](../courses/CS%20237A.md) | Principles of Robot Autonomy I | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 238](../courses/CS%20238.md) | Decision Making under Uncertainty | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 240](../courses/CS%20240.md) | Advanced Topics in Operating Systems | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 242](../courses/CS%20242.md) | Programming Languages | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
 | [CS 247G](../courses/CS%20247G.md) | Design for Play | D | [Summer 2026](../terms/Summer%202026.md) | 🟡 |
+| [CS 247S](../courses/CS%20247S.md) | Service Design with AI | D | [Autumn 2026](../terms/Autumn%202026.md) | |
+| [CS 248B](../courses/CS%20248B.md) | Fundamentals of Computer Graphics: Animation and Simulation | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟡 |
+| [CS 251](../courses/CS%20251.md) | Cryptocurrencies and blockchain technologies | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 258](../courses/CS%20258.md) | Quantum Cryptography | A | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 259Q](../courses/CS%20259Q.md) | Quantum Computing | A | [Autumn 2026](../terms/Autumn%202026.md) | 🔴 |
+| [CS 265](../courses/CS%20265.md) | Randomized Algorithms and Probabilistic Analysis | A | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 274](../courses/CS%20274.md) | Representations and Algorithms for Computational Molecular Biology | B | [Autumn 2026](../terms/Autumn%202026.md) | |
+| [CS 279](../courses/CS%20279.md) | Computational Biology: Structure and Organization of Biomolecules and Cells | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 283](../courses/CS%20283.md) | Governing Artificial Intelligence: Law, Policy, and Institutions | D | [Autumn 2026](../terms/Autumn%202026.md) | 🟡 |
+| [CS 329H](../courses/CS%20329H.md) | Machine Learning from Human Preferences | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 329X](../courses/CS%20329X.md) | Human Centered NLP | BD | [Autumn 2026](../terms/Autumn%202026.md) | 🟡 |
+| [CS 347](../courses/CS%20347.md) | Human-Computer Interaction: Foundations and Frontiers | D | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 349F](../courses/CS%20349F.md) | Fabric Architectures For AI Systems | C | [Autumn 2026](../terms/Autumn%202026.md) | 🔴 |
+| [CS 349H](../courses/CS%20349H.md) | Software Techniques for Emerging Hardware Platforms | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 350S](../courses/CS%20350S.md) | Privacy-Preserving Systems | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 356](../courses/CS%20356.md) | Topics in Computer and Network Security | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 377G](../courses/CS%20377G.md) | Designing Serious Games | D | [Autumn 2026](../terms/Autumn%202026.md) | |
+| [CS 390A](../courses/CS%20390A.md) | Curricular Practical Training | - | | |
+| [CS 390B](../courses/CS%20390B.md) | Curricular Practical Training | - | | |
+| [CS 390C](../courses/CS%20390C.md) | Curricular Practical Training | - | | |
+| [CS 448B](../courses/CS%20448B.md) | Data Visualization | D | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
 
 <!-- Generated by build.ts (course-table). Don't edit, run `make build` -->
 
 ## TODO
 
-- **Covered**: 2 of 190 list entries have a page (2 course pages)
-- **In the default scope** (CS 200+): 111
+- **Covered**: 32 of 190 list entries have a page (33 course pages)
+- **In the default scope** (CS 200+): 83
   - CS 205L · AB
   - CS 206 · D
   - CS 210B · S
   - CS 212 · SC
   - CS 217 · C
-  - CS 221 · B
   - CS 223A · B
   - CS 224N · SB
   - CS 224R · SB
   - CS 224S · B
   - CS 224U · B
-  - CS 224V · B
-  - CS 224W · B
   - CS 225 · A
-  - CS 227A · B
   - CS 227B · SB
   - CS 228 · B
   - CS 229B · B
   - CS 229M · AB
   - CS 229S · C
-  - CS 230 · B
   - CS 231A · B
   - CS 231N · SB
   - CS 233 · B
   - CS 234 · B
   - CS 236 · B
-  - CS 237A · B
   - CS 237B · B
-  - CS 238 · B
   - CS 239 · SB
-  - CS 240 · C
   - CS 240LX · C
-  - CS 242 · C
   - CS 243 · SC
   - CS 244 · C
   - CS 244B · C
@@ -312,29 +334,22 @@ The 2026-27 program sheets of all nine specializations are identical except for 
   - CS 245 · C
   - CS 246 · C
   - CS 248A · SB
-  - CS 248B · SB
   - CS 249I · C
   - CS 250 · A
-  - CS 251 · SC
   - CS 254 · A
   - CS 254B · A
   - CS 255 · A
   - CS 256 · AD
   - CS 257 · AC
-  - CS 258 · A
-  - CS 259Q · A
   - CS 261 · A
   - CS 263 · A
   - CS 264 · A
-  - CS 265 · A
   - CS 269I · AD
   - CS 271 · B
   - CS 272 · B
   - CS 273B · B
-  - CS 274 · B
   - CS 277 · B
   - CS 278 · D
-  - CS 279 · B
   - CS 281 · BD
   - CS 293 · D
   - CS 295 · C
@@ -346,16 +361,13 @@ The 2026-27 program sheets of all nine specializations are identical except for 
   - CS 328 · A
   - CS 329A · B
   - CS 329D · B
-  - CS 329H · B
   - CS 329R · D
   - CS 329T · BD
-  - CS 329X · BD
   - CS 330 · SB
   - CS 332 · B
   - CS 333 · B
   - CS 336 · SB
   - CS 337 · D
-  - CS 347 · D
   - CS 348A · B
   - CS 348B · B
   - CS 348C · B
@@ -364,26 +376,17 @@ The 2026-27 program sheets of all nine specializations are identical except for 
   - CS 348K · C
   - CS 348N · B
   - CS 349D · C
-  - CS 349F · C
-  - CS 349H · C
-  - CS 350S · C
   - CS 354 · A
   - CS 355 · A
-  - CS 356 · C
   - CS 357S · AC
   - CS 359D · A
   - CS 369O · A
   - CS 371 · B
   - CS 373 · B
   - CS 375 · B
-  - CS 377 (any suffix) · D
   - CS 384 · D
-  - CS 390A · -
-  - CS 390B · -
-  - CS 390C · -
-  - CS 448B · D
   - CS 470 · D
-- **Outside the default scope** (other departments, CS under 200; write only on request): 77
+- **Outside the default scope** (other departments, CS under 200; write only on request): 75
   - AMSTUD 145 · D
   - APPPHYS 229 · A
   - BIOS 244 · D
@@ -418,7 +421,6 @@ The 2026-27 program sheets of all nine specializations are identical except for 
   - CS 161A · -
   - CS 166 · A
   - CS 168 · A
-  - CS 173A · B
   - CS 181 · D
   - CS 181W · D
   - CS 182 · D
@@ -441,7 +443,6 @@ The 2026-27 program sheets of all nine specializations are identical except for 
   - ENGLISH 184D · D
   - EPI 220 · D
   - HISTORY 244F · D
-  - INTLPOL 245B · D
   - LAW 807Z · D
   - LAW 4039 · D
   - LAW 4046 · D
