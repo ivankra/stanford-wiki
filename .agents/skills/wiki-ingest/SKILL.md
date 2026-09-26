@@ -1,0 +1,40 @@
+---
+name: wiki-ingest
+description: "Save a web page, PDF or catalog query into references/ as a source. Use for \"ingest this URL/PDF\", and before writing any fact that no existing reference backs."
+---
+# Ingest a source
+
+1. **Check it isn't already there.** Look for the file in `references/`, and grep the directory for the URL. Re-fetch only if the term changed or the content visibly moved.
+2. **Fetch it** (curl, a browser tool or WebFetch). Record what actually happened: the status code, a redirect, or a login wall.
+   - Login, SSO, paywall or anti-bot page → don't work around it. That response is the finding: note it on the course page as `closed`, and don't ingest anything.
+   - **Embedded documents don't survive text extraction.** Before concluding a page has no schedule, grep the *raw HTML* for `<iframe`, `<embed`, `<object` and for `docs.google.com`, `drive.google.com`, `airtable`, `notion.` and `calendar.google`. A "Schedule" heading with nothing under it is usually an embed your extractor dropped — see [Embedded documents](#embedded-documents).
+3. **Name it** (see `AGENTS.md` → Files and links):
+   - flat, lowercase kebab-case: `references/<prefix>-<what>-<term>.md`
+   - prefix: the course code (`cs-312-syllabus-autumn-2026.md`) or the publisher: `explorecourses-cs-grad-autumn-2026.md` per term for the current academic year, `explorecourses-cs-grad-2025-2026.md` per year for past ones
+   - never overwrite an older term's file; successive terms sit side by side
+4. **Write the wrapper** (keys in `AGENTS.md` → References):
+   - `resource` is the original URL, and `generated.at` is the fetch time.
+   - Then point each page that cites it at the copy: its `sources` entry keeps `resource` (the URL) and gains `file: ../references/<name>.md`.
+   - HTML: extract the text, drop navigation and boilerplate, keep the course's own wording. Summarize long code blocks and say so in `note`.
+   - PDF or other binary: save the file next to the wrapper, add `bytes` and `sha256`, embed it, and add a short text summary. Over 10 MB: don't save the file; keep `bytes`, `sha256` and the summary, say so in `note`, and leave out the embed.
+   - Record the source's own term wording ("Fall 2026") in the body. The wiki's voice uses Autumn.
+   - **Only what a reader sees.** Never transcribe HTML comments, `display:none` blocks, draft or hidden content, or anything else the rendered page withholds. It isn't published material and can't be rated or cited. If it explains something a maintainer would trip over — a stale schedule left in a comment — say that it exists in `note`, not what it says.
+
+Save what's needed to cite the claim, not whole course archives. Syllabi and schedules are the exception: always ingest them. They're one of the wiki's two focuses, and the first thing to disappear when a term ends.
+
+## Embedded documents
+
+Courses routinely keep the schedule, syllabus or reading list in a Google Sheet, Doc or Slides deck embedded in an `<iframe>` — the page renders it, a text extractor drops it, and the course looks like it publishes nothing. Ingest the document itself, and cite its own URL in `sources[].resource`.
+
+Given a file id, fetch the export rather than the viewer:
+
+| Kind | Export URL |
+| --- | --- |
+| Sheets | `https://docs.google.com/spreadsheets/d/<id>/export?format=csv&gid=<gid>` (one sheet) or `…&format=xlsx` (all) |
+| Docs | `https://docs.google.com/document/d/<id>/export?format=txt` |
+| Slides | `https://docs.google.com/presentation/d/<id>/export/pdf` |
+
+- **Cell hyperlinks are lost in the CSV.** A schedule's links to slides, labs and papers live in the xlsx: fetch `export?format=xlsx` and read the `Target=` attributes in `xl/worksheets/_rels/sheet1.xml.rels`. Do this whenever the CSV shows reading or assignment titles with no URL beside them.
+- A `/preview` or `/htmlview` page renders through JavaScript, so its HTML holds no content and no links. Don't read the rating off it.
+- An export that returns HTML with a Google sign-in, or a 401/403, means the document is private: that is `closed`, and nothing gets ingested.
+- Rate and file the document by what it holds, not by where it sits: an embedded schedule is `syllabus`, an embedded deck index is `slides`. Put the document's own URL under `materials.sites` when a rating depends on it.

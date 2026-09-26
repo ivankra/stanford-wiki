@@ -1,0 +1,6 @@
+/old/
+.ok/*
+!.ok/config.yml
+.obsidian/
+.DS_Store
+.claude/scheduled_tasks.lock
