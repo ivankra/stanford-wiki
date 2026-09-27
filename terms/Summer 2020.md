@@ -18,10 +18,16 @@ sources:
 ---
 # Summer 2020
 
-Last term of academic year 2019-20, taught remotely. The catalog lists two graduate CS courses, excluding registrations: [CS 229](../courses/CS%20229.md) and the summer run of [CS 334A](../courses/CS%20334A.md), Convex Optimization I.
+Taught remotely. 8 CS courses: 6 undergraduate and 2 graduate, excluding registrations.
 
 | Course | Title | Professor | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
+| [CS 103](../courses/CS%20103.md) | Mathematical Foundations of Computing | Szumlanski | | 🟢 |
+| [CS 106A](../courses/CS%20106A.md) | Programming Methodology | Parlante | | 🟢 |
+| [CS 106B](../courses/CS%20106B.md) | Programming Abstractions | Bailey | | 🟢 |
+| [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | Gregg | | 🟢 |
+| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🔴 |
+| [CS 193C](../courses/CS%20193C.md) | Client-Side Internet Technologies | Young | | 🔴 |
 | [CS 229](../courses/CS%20229.md) | Machine Learning | Amjad | b | 🟡 |
 | [CS 334A](../courses/CS%20334A.md) | Convex Optimization I | Fu | c | 🟢 |
 

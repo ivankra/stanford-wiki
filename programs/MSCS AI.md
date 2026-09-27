@@ -157,7 +157,7 @@ The lists are below, split between courses with a page (Courses) and those witho
 | [CS 326](../courses/CS%20326.md) | Topics in Advanced Robotic Manipulation | B | c | [Autumn 2024](../terms/Autumn%202024.md) | 🟢 |
 | [CS 328](../courses/CS%20328.md) | Foundations of Causal Machine Learning | A | c | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
 | [CS 329A](../courses/CS%20329A.md) | Self Improving AI Agents | B | c | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
-| [CS 329D](../courses/CS%20329D.md) | Machine Learning Under Distributional Shifts | B | c | [Spring 2023](../terms/Spring%202023.md) | |
+| [CS 329D](../courses/CS%20329D.md) | Machine Learning Under Distributional Shifts | B | c | [Spring 2023](../terms/Spring%202023.md) | 🟢 |
 | [CS 329E](../courses/CS%20329E.md) | Machine Learning on Embedded Systems | | c | [Spring 2025](../terms/Spring%202025.md) | 🟢 |
 | [CS 329H](../courses/CS%20329H.md) | Machine Learning from Human Preferences | B | c | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
 | [CS 329M](../courses/CS%20329M.md) | Machine Programming | | c | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |

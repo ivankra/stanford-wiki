@@ -1,5 +1,5 @@
 ---
-type: Guide
+type: Scaffolding
 title: Stanford CS course wiki
 description: What this wiki is, how it's laid out, and every rule for its pages. The single source for every rule; read it before editing.
 current_term: Autumn 2026
@@ -27,24 +27,24 @@ Everything else (terms, instructors, units) supports those two. Plain markdown; 
 - `scripts/`: `build.ts` regenerates tables and MSCS tags, `lint.ts` checks the bundle; `Makefile` runs both
 - `old/` (if present, gitignored, skipped by the scripts): the previous wiki, as reference material only. Never cite it; re-ingest instead.
 
-Every `.md` file here except `index.md` and `log.md` is an OKF concept and needs frontmatter with at least `type`, including `TODO.md`.
+Every `.md` file here except `index.md` and `log.md` is an OKF concept and needs frontmatter with at least `type`. The wiki's own content types are `Course`, `Registration`, `Term`, `Program`, `Specialization` and `Source`; the files that describe the wiki rather than the courses — `AGENTS.md` and `TODO.md` — are **`type: Scaffolding`**, which exists only to satisfy that rule and which no script reads.
 
 ## Rules
 
-1. **No fact from memory.** Every fact comes from a source listed in the page's `sources`, by original URL. Ingest it into `references/` when practical (`wiki-ingest`); a URL-only source goes on the ingest backlog in `TODO.md`. No inline citations.
+1. **No fact from memory.** Every fact comes from a source listed in the page's `sources`, by original URL. Ingest it into `references/` when practical (`wiki-ingest`); a URL-only source goes on the ingest backlog in `TODO.md`. No inline citations. **A web search is a lead, not a source**: its summary is generated text, and codes and titles repeat across universities and across Stanford's own reused numbers. Verify a found site names this course before citing it, and record the attribution in Source notes when it is circumstantial.
 2. **`unknown` beats a guess.** Leave a field or rating unknown rather than inferring it.
 3. **Never get around a login, paywall or anti-bot wall.** Record what you saw and move on. Ask the user for a paste if the content is needed.
 4. **Tables are generated.** After changing any course or program page, run `make build`. Never edit table rows or a course's `mscs-` tags by hand.
 5. **Add one line to `log.md`** for each change session, newest first.
 6. **Be brief**, in pages and in your replies — brief in wording, not in substance (see [Voice](#voice)). Frontmatter holds the data; the body adds only what frontmatter can't.
-7. **Scope:** CS graduate courses by default (see [Scope](#scope)). The user widens it case by case; suggest a widening, never do it unasked.
+7. **Scope:** all CS courses by default (see [Scope](#scope)). The user widens it case by case; suggest a widening, never do it unasked.
 8. **Stop and ask** when scope is ambiguous or a change would contradict an existing page.
 9. **Suggest improvements.** You see the wiki up close; when you notice something that would make it better, say so. That could be a rule that doesn't fit the data, a recurring manual step worth scripting, an inconsistency across pages, or a gap in the sources. Skip trivial and minor ones: wording nits, cosmetic tweaks, small one-off fixes, and anything that doesn't noticeably change how the wiki works or reads. Put suggestions at the end of your reply, and don't act on them unasked.
 
 ## Scope
 
-- **Default:** Stanford CS graduate courses, meaning ExploreCourses `academicCareer` is GR **or** the number is ≥ 200.
-- **Wider on request:** other departments, undergraduate courses or single courses, when the user asks for them (Rule 7).
+- **Default:** every Stanford CS course, undergraduate and graduate — every course ExploreCourses lists under subject `CS`, whatever its `academicCareer` or number. `level` still records which it is.
+- **Wider on request:** other departments, or single courses outside CS, when the user asks for them (Rule 7).
 - Offerings after `current_term` are always out.
 
 ## Skills
@@ -77,9 +77,13 @@ Build canonicalizes all frontmatter as block YAML with two-space indentation, ex
 
 Terse and factual — a rule about **wording, not about how much you say**. Cut filler, hedging, and restatements of frontmatter (Materials and Prerequisites excepted, below). Never cut the specifics a reader came for. Say it once, in the place it belongs, and make it concrete.
 
-**The test is whether a sentence could be about a different course.** If it could, it isn't finished. "Materials are public" is not a Materials section; "the schedule links a PDF for lectures 3, 4, 5, 8, 9, 11, 15 and 16 and an executable trace for the rest" is. Name what's actually there and where it runs out: which weeks have decks, what the assignment asks you to build, which link is dead, why the site's term disagrees with the catalog. The summary paragraph says what sets this course apart from its neighbours — not what the title already says, and not a paraphrase of `description`.
+**The test is whether a sentence could be about a different course.** If it could, it isn't finished. "Materials are public" is not a Materials section; "the schedule links a PDF for lectures 3, 4, 5, 8, 9, 11, 15 and 16 and an executable trace for the rest" is. Name what's actually there and where it runs out: which weeks have decks, what the assignment asks you to build, which link is dead, why the site's term disagrees with the catalog. The summary paragraph says what sets this course apart from its neighbors — not what the title already says, and not a paraphrase of `description`.
 
 Quote sources only where the exact wording matters: a policy a reader would otherwise not believe, or a phrase the course is known by.
+
+**American spelling**, in our own voice: center, color, behavior, modeling, labeled, organization, analyze, neighbor, `program` (never `programme`), catalog, defense, license. Quoted source text keeps whatever the source wrote, British spellings included.
+
+**A list item that leads with a label separates it with a colon, never a dash.** `- **Slides**: twelve decks…`, not `- **Slides** — twelve decks…`. This is the shape the Materials and Prerequisites sections already use; keep it everywhere, references included.
 
 [CS 312](courses/CS%20312.md), [CS 229](courses/CS%20229.md) and [CS 247G](courses/CS%20247G.md) fix the **level of detail**, not just the shape. A section of yours that is markedly thinner than theirs means you under-reported, not that you were concise. Under-reporting is the more common failure: it is easy to write four bullets that say nothing and land inside the word budget.
 
@@ -97,7 +101,7 @@ Pages are written for external students first.
 - Course page: `courses/<code>.md`, code verbatim (`CS 224N.md`, `MS&E 226.md`). A cross-listed course gets one page, under its **CS code whenever it has one** (`CS 229`, not `STATS 229`), otherwise the catalog's primary code.
 - Term page: `terms/<Season YYYY>.md` (`Autumn 2026.md`).
 - Program page: `programs/<name>.md` (`MSCS.md`, `MSCS AI.md`).
-- Reference: `references/<prefix>-<what>-<term>.md`, flat, lowercase letters, digits and hyphens only. The prefix is the course code (`cs-312-syllabus-autumn-2026.md`, `mse-226-…`) or the publisher (`explorecourses-cs-grad-autumn-2026.md`). A binary shares the wrapper's name (`….pdf`). The catalog is ingested **one file per term for the current academic year**, whose listing still changes (`explorecourses-cs-grad-autumn-2026.md`), and **one file per past academic year**, covering all four terms (`explorecourses-cs-grad-2025-2026.md`).
+- Reference: `references/<prefix>-<what>-<term>.md`, flat, lowercase letters, digits and hyphens only. The prefix is the course code (`cs-312-syllabus-autumn-2026.md`, `mse-226-…`) or the publisher (`explorecourses-cs-autumn-2026.md`). A binary shares the wrapper's name (`….pdf`). The catalog is ingested **one file per term for the current academic year**, whose listing still changes (`explorecourses-cs-autumn-2026.md`), and **one file per past academic year**, covering all four terms (`explorecourses-cs-2025-2026.md`).
 - Links are relative markdown links, percent-encoded: `[CS 224N](../courses/CS%20224N.md)`, with `(` `)` as `%28` `%29`. Repo paths in frontmatter (`sources[].resource`, `sources[].file`) are plain, not encoded.
 - Link course codes in hand-written prose when the course has a page. Lint warns about unlinked `CS` codes with existing pages; codes without pages stay plain text.
 - `index.md` and `log.md` are reserved ([OKF](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)): an `index.md` is a plain link list without frontmatter, except the root one (`okf_version`). `log.md` is newest-first.
@@ -139,7 +143,7 @@ Keys go in this order; all are required unless marked *optional*. In the Type co
 |                    | `prerequisites` | string[]                                                                                | One entry per requirement, all of them needed. Alternatives go in one entry joined by "or": `["CS 106A or CS 106B", "CS 109 or STATS 116", MATH 51]`. Codes where the catalog names courses, otherwise a few words. Empty = none stated.                                                                                                                            |
 | **Content**        | `homepage`      | URL, *optional*                                                                         | The course's own site; a shared family site (e.g. one site for CS 247A/G/S) if there's nothing more specific, noted in Source notes.                                                                                                                                                                                                                                |
 |                    | `materials`     | `{ checked?, access, term?, <type>: rating \| { access, url?, term?, note? }, sites? }` | Public availability; see [Materials](#materials).                                                                                                                                                                                                                                                                                                                   |
-|                    | `topics`        | string[]                                                                                | A representative selection of 4–10 noun phrases: what a student would say the course covers. Paraphrase freely, but ground every topic in the Syllabus section or its sources. Name content, not format ("transformer ablations", not "experiment design"); prefer the specific; don't repeat the title. The list should tell the course apart from its neighbours. |
+|                    | `topics`        | string[]                                                                                | A representative selection of 4–10 noun phrases: what a student would say the course covers. Paraphrase freely, but ground every topic in the Syllabus section or its sources. Name content, not format ("transformer ablations", not "experiment design"); prefer the specific; don't repeat the title. The list should tell the course apart from its neighbors. |
 | **Classification** | `tags`          | string[]                                                                                | Lowercase, hyphenated subject tags first, then generated `mscs-` tags from [program pages](#programs), e.g. `[deep-learning, mscs-breadth-B, mscs-ai-b]`. Level and term have their own keys.                                                                                                                                                                       |
 | **Provenance**     | `sources`       | `{ id, resource, file?, title }[]`                                                      | Every source the page relies on (OKF's shape). `id` is a short word. `resource` is required: **the original URL whenever there is one**, else a repo path. `file` is the ingested copy, `../references/….md`, once it exists; URL-only sources are waiting to be ingested (`TODO.md`).                                                                              |
 |                    | `status`        | `draft` \| `stable` \| `deprecated`                                                     | OKF lifecycle. `stable` = every claim is sourced and materials were checked this term, whatever the ratings came out as: a page with `access: unknown` can be stable.                                                                                                                                                                                               |
@@ -205,7 +209,8 @@ materials:
 - **`url`** is the single best entry point for a type. When material is scattered (three videos, slides spread across a schedule), link the rest from the Materials section.
 - **Quote `note` values**: a comma inside `{ … }` would split the entry.
 - **Never checked:** write just `materials: { access: unknown }`, with no `checked`. Lint lists these pages as backlog.
-- A 200 response for an empty file or a bare directory listing is not material. A login wall *is* evidence of `closed`.
+- A 200 response for an empty file or a bare directory listing is not material. A login wall *is* evidence of `closed`; failing to find something is not — that is `unknown` (see the rating table).
+- **A page that renders its content with JavaScript extracts to nothing**, so a site holding a full schedule can look empty. Check for that before rating any type, and never read `closed` off it; a headless browser settles it (`wiki-ingest` → Client-rendered pages).
 - **A course page that only restates the catalog is not material either.** A public page carrying the description, the staff, the meeting times and the prerequisites gives a reader nothing the catalog didn't. `syllabus` is rated on the schedule, reading list or grading policy; where those are gated, the type is `closed`, not `partial`, however open the announcement page around them is. `partial` needs a real part of the material itself to be public — the first weeks' decks, half the problem sets — not a page about it.
 - Ratings older than one term count as `unknown` until rechecked; lint warns once `checked` is over 120 days old.
 
@@ -234,16 +239,24 @@ Generated tags: `mscs-breadth-A` through `mscs-breadth-D`, `mscs-foundation`, `m
 ```markdown
 # Winter 2027
 
-One line of context.
+One line of context, then the count: `NNN CS courses: NNN undergraduate and NNN graduate, excluding registrations.`
 
 <!-- Generated by build.ts (course-table). Don't edit, run `make build` -->
 
 ## TODO
 
 - CS 000 Title
+
+## Notes
+
+- Anything term-specific worth recording that isn't the count.
 ```
 
 Build puts the course table above the marker (see [Tables](#tables)); a new page needs only the marker line. "TODO" is hand-written: catalog courses in scope that have no page yet.
+
+The opening line is the count, in the fixed form above, preceded only by something term-wide worth saying — a remote quarter, a changed calendar, an unusual size. Don't restate what the heading and frontmatter already give: no "Second term of academic year 2021-22". **Derive the counts from course frontmatter** (`terms_offered` and `level`), never from the generated table, which is rendered output for readers.
+
+`## Notes`, last and optional, takes the per-course observations: which courses a thin term actually ran, a course appearing under non-CS codes only, an unusual meeting pattern, titles that have changed since. Keep them out of the opening line.
 
 ## References
 

@@ -16,10 +16,10 @@ The response is large (~15-19 MB), so save it to a temp file and filter locally.
 
 Two shapes, because the current year's listing still changes and a past year's doesn't:
 
-- **Current academic year**: one reference per term, `references/explorecourses-<dept>-grad-<season>-<yyyy>.md`, fetched fresh for the term you're sweeping.
-- **A past academic year**: one reference for the whole year, `references/explorecourses-<dept>-grad-<yyyy>-<yyyy>.md`, with a section block per term. If that file already exists, the term you're sweeping is in it — reuse it instead of fetching again.
+- **Current academic year**: one reference per term, `references/explorecourses-<dept>-<season>-<yyyy>.md`, fetched fresh for the term you're sweeping.
+- **A past academic year**: one reference for the whole year, `references/explorecourses-<dept>-<yyyy>-<yyyy>.md`, with a section block per term. If that file already exists, the term you're sweeping is in it — reuse it instead of fetching again.
 
-**Default filter: graduate CS courses**, meaning `academicCareer` GR **or** number ≥ 200. If the user asks for more (another department, undergraduate courses), change the query or filter and say so in the reference's `note`.
+**Default filter: every CS course the query returns**, undergraduate and graduate alike. If the user asks for another department, change the query and say so in the reference's `note`.
 
 For each kept course, record (`wiki-ingest` skill): the code and title with cross-listings, units, grading, career, then one section block per term of that year (days, times, room, instructors), and the description verbatim. Terms after `current_term` are out of scope — leave them out and say so in `note`. A course's blocks are its offering history for that year, so `terms_offered` falls out of the file without extra queries.
 

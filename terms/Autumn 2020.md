@@ -18,11 +18,47 @@ sources:
 ---
 # Autumn 2020
 
-First term of academic year 2020-21, taught entirely remotely. The catalog lists 37 graduate CS courses, excluding registrations. The quarter started a week early and ended before Thanksgiving, and the Academic Senate cancelled final examinations for the whole year.
+Taught remotely. 72 CS courses: 38 undergraduate and 34 graduate, excluding registrations.
 
 | Course | Title | Professor | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
+| [CS 1U](../courses/CS%201U.md) | Practical Unix | Zelenski | | 🟢 |
+| [CS 7](../courses/CS%207.md) | Personal Finance for Engineers | Nash | | 🟢 |
+| [CS 24](../courses/CS%2024.md) | Minds and Machines | Frank | | 🟡 |
+| [CS 44N](../courses/CS%2044N.md) | Great Ideas in Graphics | James | | |
+| [CS 56N](../courses/CS%2056N.md) | Great Discoveries and Inventions in Computing | Hennessy | | |
+| [CS 80Q](../courses/CS%2080Q.md) | Race and Gender in Silicon Valley | Bailey | | |
+| [CS 100ACE](../courses/CS%20100ACE.md) | Problem-solving Lab for CS106A | | | 🟡 |
+| [CS 100BACE](../courses/CS%20100BACE.md) | Problem-solving Lab for CS106B | | | 🔴 |
+| [CS 103](../courses/CS%20103.md) | Mathematical Foundations of Computing | Szumlanski | | 🟢 |
+| [CS 105](../courses/CS%20105.md) | Introduction to Computers | Young | | 🟡 |
+| [CS 106A](../courses/CS%20106A.md) | Programming Methodology | Parlante | | 🟢 |
+| [CS 106B](../courses/CS%20106B.md) | Programming Abstractions | Bailey | | 🟢 |
+| [CS 106L](../courses/CS%20106L.md) | Standard C++ Programming Laboratory | Bailey | | 🟢 |
+| [CS 106M](../courses/CS%20106M.md) | Enrichment Adventures in Programming Abstractions | Zelenski | | 🔴 |
+| [CS 106S](../courses/CS%20106S.md) | Coding for Social Good | Cain | | 🟢 |
+| [CS 107](../courses/CS%20107.md) | Computer Organization and Systems | Cain | | 🟢 |
+| [CS 107ACE](../courses/CS%20107ACE.md) | Problem-solving Lab for CS107 | Berny | | 🟡 |
+| [CS 107E](../courses/CS%20107E.md) | Computer Systems from the Ground Up | Zelenski | | 🟢 |
+| [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | Gregg | | 🟢 |
+| [CS 109ACE](../courses/CS%20109ACE.md) | Problem-solving Lab for CS109 | Hersch | | 🟢 |
+| [CS 110](../courses/CS%20110.md) | Principles of Computer Systems | Cain | | 🟢 |
+| [CS 110A](../courses/CS%20110A.md) | Problem Solving Lab for CS110 | Cain | | 🔴 |
 | [CS 129](../courses/CS%20129.md) | Applied Machine Learning | Ng | | 🟢 |
+| [CS 131](../courses/CS%20131.md) | Computer Vision: Foundations and Applications | Niebles Duque | | 🟢 |
+| [CS 144](../courses/CS%20144.md) | Introduction to Computer Networking | Winstein | SI | 🟢 |
+| [CS 145](../courses/CS%20145.md) | Intro to Modern Data Systems | Shivakumar | SI | 🟢 |
+| [CS 148](../courses/CS%20148.md) | Introduction to Computer Graphics and Imaging | Fedkiw | | 🟢 |
+| [CS 149](../courses/CS%20149.md) | Parallel Computing | Fatahalian | SI | 🟢 |
+| [CS 154](../courses/CS%20154.md) | Introduction to the Theory of Computation | Tan | | 🟢 |
+| [CS 157](../courses/CS%20157.md) | Computational Logic | Genesereth | | 🟢 |
+| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🔴 |
+| [CS 161ACE](../courses/CS%20161ACE.md) | Problem-Solving Lab for CS161 | Nag | | 🔴 |
+| [CS 183E](../courses/CS%20183E.md) | Effective Leadership in High-Tech | Finley | | |
+| [CS 193U](../courses/CS%20193U.md) | Video Game Development in C++ and Unreal Engine | Proulx | | 🟢 |
+| [CS 194A](../courses/CS%20194A.md) | Android Programming Workshop | Borenstein | | 🟡 |
+| [CS 198](../courses/CS%20198.md) | Teaching Computer Science | Roberts-Baca | - | 🔴 |
+| [CS 198B](../courses/CS%20198B.md) | Additional Topics in Teaching Computer Science | Roberts-Baca | | 🟢 |
 | [CS 202](../courses/CS%20202.md) | Law for Computer Science Professionals | Hansen | | |
 | [CS 221](../courses/CS%20221.md) | Artificial Intelligence: Principles and Techniques | Liang | a | 🟢 |
 | [CS 225A](../courses/CS%20225A.md) | Experimental Robotics | Khatib | c | 🟡 |
@@ -66,10 +102,11 @@ First term of academic year 2020-21, taught entirely remotely. The catalog lists
 
 ## Notes
 
-- [CS 129](../courses/CS%20129.md) is in the table but not in the count above: ExploreCourses moved it from graduate to undergraduate career for 2020-21, so the graduate catalog query this page is built from no longer returns it, while the page still records the term.
+- ExploreCourses moved [CS 129](../courses/CS%20129.md) from graduate to undergraduate career for 2020-21; it is counted as undergraduate here.
 - Titles in the table are each page's current one. Four differ from what the 2020-21 catalog printed this term:
   - [CS 247G](../courses/CS%20247G.md): "Introduction to Game Design"
   - [CS 340LX](../courses/CS%20340LX.md): "Advanced Operating System Lab: Accelerated (II)"
   - [CS 349F](../courses/CS%20349F.md): "Technology for Financial Systems"
   - [CS 468](../courses/CS%20468.md): "Topics in Geometric Algorithms: Non-Euclidean Methods in Machine Learning" — the topic changes every offering
 - Every section in the catalog is listed at "Remote".
+- The quarter started a week early and ended before Thanksgiving, and the Academic Senate canceled final examinations for the whole year.

@@ -18,11 +18,55 @@ sources:
 ---
 # Spring 2020
 
-Third term of academic year 2019-20, moved online mid-March in response to COVID-19. The catalog lists 60 graduate CS courses, excluding registrations — the largest term the wiki covers — including two written for the pandemic itself, [CS 448P](../courses/CS%20448P.md) "Hacking the Pandemic" and [CS 472](../courses/CS%20472.md) on data science for COVID-19.
+Moved online mid-March in response to COVID-19. 98 CS courses: 41 undergraduate and 57 graduate, excluding registrations.
 
 | Course | Title | Professor | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
+| [CS 1U](../courses/CS%201U.md) | Practical Unix | Zelenski | | 🟢 |
+| [CS 11SI](../courses/CS%2011SI.md) | How to Make VR: Introduction to Virtual Reality Design and Development | Borenstein | | 🟡 |
+| [CS 21SI](../courses/CS%2021SI.md) | AI for Social Good | Piech | | 🟡 |
+| [CS 49N](../courses/CS%2049N.md) | Using Bits to Control Atoms | Engler | | |
+| [CS 52](../courses/CS%2052.md) | CS + Social Good Studio: Implementing Social Good Projects | Cain | | |
+| [CS 81SI](../courses/CS%2081SI.md) | AI Interpretability and Fairness | Zou | | |
+| [CS 82SI](../courses/CS%2082SI.md) | Wellness in Tech: Designing an Intentional Lifestyle in a Tech-Driven World | Piech | | 🔴 |
+| [CS 84](../courses/CS%2084.md) | Emotional Intelligence | | | |
+| [CS 91SI](../courses/CS%2091SI.md) | Digital Canvas: An Introduction to UI/UX Design | Landay | | |
+| [CS 100ACE](../courses/CS%20100ACE.md) | Problem-solving Lab for CS106A | | | 🟡 |
+| [CS 100BACE](../courses/CS%20100BACE.md) | Problem-solving Lab for CS106B | | | 🔴 |
+| [CS 102](../courses/CS%20102.md) | Working with Data - Tools and Techniques | Widom | | 🟡 |
+| [CS 103](../courses/CS%20103.md) | Mathematical Foundations of Computing | Szumlanski | | 🟢 |
+| [CS 105](../courses/CS%20105.md) | Introduction to Computers | Young | | 🟡 |
+| [CS 106A](../courses/CS%20106A.md) | Programming Methodology | Parlante | | 🟢 |
+| [CS 106AX](../courses/CS%20106AX.md) | Programming Methodologies in JavaScript and Python (Accelerated) | Cain | | 🟢 |
+| [CS 106B](../courses/CS%20106B.md) | Programming Abstractions | Bailey | | 🟢 |
+| [CS 106E](../courses/CS%20106E.md) | Exploring Computing | Young | | 🟢 |
+| [CS 106L](../courses/CS%20106L.md) | Standard C++ Programming Laboratory | Bailey | | 🟢 |
+| [CS 106S](../courses/CS%20106S.md) | Coding for Social Good | Cain | | 🟢 |
+| [CS 107](../courses/CS%20107.md) | Computer Organization and Systems | Cain | | 🟢 |
+| [CS 107ACE](../courses/CS%20107ACE.md) | Problem-solving Lab for CS107 | Berny | | 🟡 |
+| [CS 107E](../courses/CS%20107E.md) | Computer Systems from the Ground Up | Zelenski | | 🟢 |
+| [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | Gregg | | 🟢 |
+| [CS 110](../courses/CS%20110.md) | Principles of Computer Systems | Cain | | 🟢 |
+| [CS 110L](../courses/CS%20110L.md) | Safety in Systems Programming | Rossman | | 🟢 |
 | [CS 129](../courses/CS%20129.md) | Applied Machine Learning | Ng | | 🟢 |
+| [CS 140](../courses/CS%20140.md) | Operating Systems and Systems Programming | Mazieres | SI | 🟢 |
+| [CS 142](../courses/CS%20142.md) | Web Applications | Rosenblum | | 🟢 |
+| [CS 143](../courses/CS%20143.md) | Compilers | Kjoelstad | SI | 🟢 |
+| [CS 151](../courses/CS%20151.md) | Logic Programming | Genesereth | SI | 🟡 |
+| [CS 155](../courses/CS%20155.md) | Computer and Network Security | Dauterman | | 🟢 |
+| [CS 166](../courses/CS%20166.md) | Advanced Data Structures | Schwarz | | 🟢 |
+| [CS 168](../courses/CS%20168.md) | The Modern Algorithmic Toolbox | Valiant | | 🟢 |
+| [CS 170](../courses/CS%20170.md) | Stanford Laptop Orchestra: Composition, Coding, and Performance | Wright | | 🔴 |
+| [CS 181](../courses/CS%20181.md) | Computers, Ethics, and Public Policy | Winstein | | 🟡 |
+| [CS 181W](../courses/CS%20181W.md) | Computers, Ethics, and Public Policy (WIM) | Winstein | | 🟡 |
+| [CS 184](../courses/CS%20184.md) | Bridging Policy and Tech Through Design | Goel | | |
+| [CS 193P](../courses/CS%20193P.md) | iOS Application Development | Hegarty | | 🟢 |
+| [CS 193X](../courses/CS%20193X.md) | Web Programming Fundamentals | Chang | | 🟡 |
+| [CS 194](../courses/CS%20194.md) | Software Project | Borenstein | | 🔴 |
+| [CS 194A](../courses/CS%20194A.md) | Android Programming Workshop | Borenstein | | 🟡 |
+| [CS 194W](../courses/CS%20194W.md) | Software Project (WIM) | Borenstein | | 🔴 |
+| [CS 198](../courses/CS%20198.md) | Teaching Computer Science | Roberts-Baca | - | 🔴 |
+| [CS 198B](../courses/CS%20198B.md) | Additional Topics in Teaching Computer Science | Roberts-Baca | | 🟢 |
 | [CS 202](../courses/CS%20202.md) | Law for Computer Science Professionals | Hansen | | |
 | [CS 204](../courses/CS%20204.md) | Computational Law | Vogl | | 🟢 |
 | [CS 209](../courses/CS%20209.md) | Law, Order, & Algorithms | Goel | | |
@@ -48,7 +92,7 @@ Third term of academic year 2019-20, moved online mid-March in response to COVID
 | [CS 254B](../courses/CS%20254B.md) | Computational Complexity II | Tan | | 🟢 |
 | [CS 272](../courses/CS%20272.md) | Introduction to Biomedical Informatics Research Methodology | Altman | | 🔴 |
 | [CS 273C](../courses/CS%20273C.md) | Cloud Computing for Biology and Healthcare | Snyder | | 🔴 |
-| [CS 275B](../courses/CS%20275B.md) | Computational Music Analysis | Sapp | | |
+| [CS 275B](../courses/CS%20275B.md) | Computational Music Analysis | Sapp | | 🟢 |
 | [CS 278](../courses/CS%20278.md) | Social Computing | Popowski | | 🟢 |
 | [CS 294S](../courses/CS%20294S.md) | Research Project in Software Systems and Security | Lam | | 🟡 |
 | [CS 294W](../courses/CS%20294W.md) | Writing Intensive Research Project in Computer Science | Lam | | 🟡 |
@@ -98,3 +142,4 @@ Third term of academic year 2019-20, moved online mid-March in response to COVID
   - [CS 372](../courses/CS%20372.md): "Artificial Intelligence for Disease Diagnosis and Information Recommendations"
   - [CS 468](../courses/CS%20468.md): "Topics in Geometric Algorithms: Riemannian Methods in Computer Vision and Biomedical Imaging" — the topic changes every offering
 - The rooms and meeting times in the catalog are the ones published before instruction moved online; the archived academic calendar predates the move and does not record it.
+- Two courses were written for the pandemic itself: [CS 448P](../courses/CS%20448P.md) "Hacking the Pandemic" and [CS 472](../courses/CS%20472.md) on data science for COVID-19.

@@ -9,7 +9,7 @@ concluded: true
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-grad-2024-2025.md
+    file: ../references/explorecourses-cs-2024-2025.md
     title: ExploreCourses, 2024-2025
   - id: calendar
     resource: https://studentservices.stanford.edu/calendar-events/academic-calendars/stanford-academic-calendar-2024-2025
@@ -18,11 +18,53 @@ sources:
 ---
 # Autumn 2024
 
-First term of academic year 2024-25. The catalog lists 42 graduate CS courses, excluding registrations — the largest of the year, and the term where the CS 329 seminar family runs four of its variants at once.
+84 CS courses: 45 undergraduate and 39 graduate, excluding registrations.
 
 | Course | Title | Professor | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
+| [CS 7](../courses/CS%207.md) | Personal Finance for Engineers | Nash | | 🟢 |
+| [CS 40](../courses/CS%2040.md) | Cloud Infrastructure and Scalable Application Deployment | | | 🟢 |
+| [CS 44N](../courses/CS%2044N.md) | Great Ideas in Graphics | James | | |
+| [CS 83N](../courses/CS%2083N.md) | Playback Theater | Reingold | | |
+| [CS 100ACE](../courses/CS%20100ACE.md) | Problem-solving Lab for CS106A | | | 🟡 |
+| [CS 100BACE](../courses/CS%20100BACE.md) | Problem-solving Lab for CS106B | | | 🔴 |
+| [CS 103](../courses/CS%20103.md) | Mathematical Foundations of Computing | Szumlanski | | 🟢 |
+| [CS 103ACE](../courses/CS%20103ACE.md) | Mathematical Problem-solving Strategies | | | 🟢 |
+| [CS 105](../courses/CS%20105.md) | Introduction to Computers | Young | | 🟡 |
+| [CS 106A](../courses/CS%20106A.md) | Programming Methodology | Parlante | | 🟢 |
+| [CS 106AX](../courses/CS%20106AX.md) | Programming Methodologies in JavaScript and Python (Accelerated) | Cain | | 🟢 |
+| [CS 106B](../courses/CS%20106B.md) | Programming Abstractions | Bailey | | 🟢 |
+| [CS 106L](../courses/CS%20106L.md) | Standard C++ Programming Laboratory | Bailey | | 🟢 |
+| [CS 106M](../courses/CS%20106M.md) | Enrichment Adventures in Programming Abstractions | Zelenski | | 🔴 |
+| [CS 106S](../courses/CS%20106S.md) | Coding for Social Good | Cain | | 🟢 |
+| [CS 107](../courses/CS%20107.md) | Computer Organization and Systems | Cain | | 🟢 |
+| [CS 107ACE](../courses/CS%20107ACE.md) | Problem-solving Lab for CS107 | Berny | | 🟡 |
+| [CS 107E](../courses/CS%20107E.md) | Computer Systems from the Ground Up | Zelenski | | 🟢 |
+| [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | Gregg | | 🟢 |
+| [CS 109ACE](../courses/CS%20109ACE.md) | Problem-solving Lab for CS109 | Hersch | | 🟢 |
+| [CS 111](../courses/CS%20111.md) | Operating Systems Principles | Troccoli | | 🟢 |
+| [CS 111ACE](../courses/CS%20111ACE.md) | Problem Solving Lab for CS111 | Mattei | | 🟢 |
+| [CS 120](../courses/CS%20120.md) | Introduction to AI Safety | Robertson | | 🟢 |
+| [CS 123](../courses/CS%20123.md) | A Hands-On Introduction to Building AI-Enabled Robots | Tan | | 🟢 |
+| [CS 137A](../courses/CS%20137A.md) | Principles of Robot Autonomy I | Bansal | | 🟢 |
+| [CS 139](../courses/CS%20139.md) | Human-Centered AI | Norvig | | 🟡 |
+| [CS 145](../courses/CS%20145.md) | Intro to Modern Data Systems | Shivakumar | SI | 🟢 |
+| [CS 147](../courses/CS%20147.md) | Introduction to Human-Computer Interaction Design | Landay | | 🟢 |
+| [CS 147L](../courses/CS%20147L.md) | Cross-platform Mobile App Development | Landay | | 🟡 |
+| [CS 148](../courses/CS%20148.md) | Introduction to Computer Graphics and Imaging | Fedkiw | | 🟢 |
+| [CS 149](../courses/CS%20149.md) | Parallel Computing | Fatahalian | SI | 🟢 |
+| [CS 154](../courses/CS%20154.md) | Introduction to the Theory of Computation | Tan | | 🟢 |
+| [CS 157](../courses/CS%20157.md) | Computational Logic | Genesereth | | 🟢 |
+| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🔴 |
+| [CS 161ACE](../courses/CS%20161ACE.md) | Problem-Solving Lab for CS161 | Nag | | 🔴 |
+| [CS 171](../courses/CS%20171.md) | Causality, Decision Making and Data Science | Imbens | | 🟢 |
 | [CS 173A](../courses/CS%20173A.md) | Foundations of Computational Human Genomics | Bejerano | c | |
+| [CS 177](../courses/CS%20177.md) | Introduction to Product Management with AI | Wodtke | | 🟡 |
+| [CS 183E](../courses/CS%20183E.md) | Effective Leadership in High-Tech | Finley | | |
+| [CS 193Q](../courses/CS%20193Q.md) | Introduction to Python Programming | Parlante | | 🟢 |
+| [CS 197](../courses/CS%20197.md) | Computer Science Research | Liu | | 🟢 |
+| [CS 198](../courses/CS%20198.md) | Teaching Computer Science | Roberts-Baca | - | 🔴 |
+| [CS 198B](../courses/CS%20198B.md) | Additional Topics in Teaching Computer Science | Roberts-Baca | | 🟢 |
 | [CS 221](../courses/CS%20221.md) | Artificial Intelligence: Principles and Techniques | Liang | a | 🟢 |
 | [CS 222](../courses/CS%20222.md) | AI Agents and Simulations | Park | | 🟢 |
 | [CS 224V](../courses/CS%20224V.md) | Agentic AI | Lam | b | 🟢 |
@@ -66,3 +108,7 @@ First term of academic year 2024-25. The catalog lists 42 graduate CS courses, e
 | [CS 547](../courses/CS%20547.md) | Human-Computer Interaction Seminar | Bernstein | | 🟢 |
 
 <!-- Generated by build.ts (course-table). Don't edit, run `make build` -->
+
+## Notes
+
+- The CS 329 seminar family runs four of its variants at once this term.

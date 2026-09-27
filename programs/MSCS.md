@@ -247,9 +247,9 @@ The 2026-27 program sheets of all nine specializations are identical except for 
 ## Requirements
 
 - **45 units**, all in courses numbered 101 or higher. At least 36 units letter-graded, including every breadth and depth course. Average grade at least B (3.0).
-- **Foundations**: CS 103, CS 109, CS 161, CS 107 or 107E, CS 111. Courses taken elsewhere need a waiver, and at most 10 foundations units count toward the 45. Probability can also be waived with one of CME 106, EE 178, MS&E 220, STATS 117 plus [CS 221](../courses/CS%20221.md) or [CS 229](../courses/CS%20229.md).
-- **Significant implementation** (SI): one course from the list, letter-graded, with at least 3 units taken at Stanford. It also counts toward depth or electives. CS 112 or CS 140 can stand in for [CS 212](../courses/CS%20212.md). Coterms who took two of these as undergraduates may waive it.
-- **Breadth** (A–D): three courses from three different areas: A formal foundations, B learning and modeling, C systems, D people and society. Letter-graded, at least 3 units each, no waivers. They also count toward depth or electives. CS 112 counts for C only with CS 111 as its prerequisite; PUBLPOL 103F only when taken for 3 units.
+- **Foundations**: [CS 103](../courses/CS%20103.md), [CS 109](../courses/CS%20109.md), [CS 161](../courses/CS%20161.md), [CS 107](../courses/CS%20107.md) or 107E, [CS 111](../courses/CS%20111.md). Courses taken elsewhere need a waiver, and at most 10 foundations units count toward the 45. Probability can also be waived with one of CME 106, EE 178, MS&E 220, STATS 117 plus [CS 221](../courses/CS%20221.md) or [CS 229](../courses/CS%20229.md).
+- **Significant implementation** (SI): one course from the list, letter-graded, with at least 3 units taken at Stanford. It also counts toward depth or electives. [CS 112](../courses/CS%20112.md) or [CS 140](../courses/CS%20140.md) can stand in for [CS 212](../courses/CS%20212.md). Coterms who took two of these as undergraduates may waive it.
+- **Breadth** (A–D): three courses from three different areas: A formal foundations, B learning and modeling, C systems, D people and society. Letter-graded, at least 3 units each, no waivers. They also count toward depth or electives. [CS 112](../courses/CS%20112.md) counts for C only with [CS 111](../courses/CS%20111.md) as its prerequisite; PUBLPOL 103F only when taken for 3 units.
 - **Depth**: at least 21 units, defined by each specialization.
 - **Electives** make up the rest. CS courses above 111 count, except CS 161A, 196, 198 and 390A/B/C (shown as `-`). Non-CS courses must be technical, numbered 101 or higher (some sheets say "above 101"), and approved by the advisor. At most 3 units of 1–2-unit seminars. Elective credit is capped at 5 units per course per quarter, except [CS 399](../courses/CS%20399.md). [CS 129](../courses/CS%20129.md) doesn't count if [CS 229](../courses/CS%20229.md) counts toward any BS or MS requirement.
 - Units already counted toward a BS can't count toward the MSCS.
@@ -263,7 +263,39 @@ The 2026-27 program sheets of all nine specializations are identical except for 
 
 | Course | Title | Breadth | Term | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
+| [CS 103](../courses/CS%20103.md) | Mathematical Foundations of Computing | F | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 107](../courses/CS%20107.md) | Computer Organization and Systems | F | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 107E](../courses/CS%20107E.md) | Computer Systems from the Ground Up | F | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | F | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 111](../courses/CS%20111.md) | Operating Systems Principles | F | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 112](../courses/CS%20112.md) | Operating systems kernel implementation project | C | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 121](../courses/CS%20121.md) | Equity and Governance for Artificial Intelligence | D | [Autumn 2025](../terms/Autumn%202025.md) | 🟡 |
+| [CS 140](../courses/CS%20140.md) | Operating Systems and Systems Programming | | [Winter 2022](../terms/Winter%202022.md) | 🟢 |
+| [CS 140E](../courses/CS%20140E.md) | Operating systems design and implementation | C | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 143](../courses/CS%20143.md) | Compilers | C | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 144](../courses/CS%20144.md) | Introduction to Computer Networking | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 145](../courses/CS%20145.md) | Intro to Modern Data Systems | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 147](../courses/CS%20147.md) | Introduction to Human-Computer Interaction Design | D | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 148](../courses/CS%20148.md) | Introduction to Computer Graphics and Imaging | D | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 149](../courses/CS%20149.md) | Parallel Computing | C | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
+| [CS 151](../courses/CS%20151.md) | Logic Programming | | [Spring 2026](../terms/Spring%202026.md) | 🟡 |
+| [CS 152](../courses/CS%20152.md) | Trust and Safety | D | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 154](../courses/CS%20154.md) | Introduction to the Theory of Computation | A | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 155](../courses/CS%20155.md) | Computer and Network Security | C | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 157](../courses/CS%20157.md) | Computational Logic | A | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
+| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | F | [Summer 2026](../terms/Summer%202026.md) | 🔴 |
+| [CS 166](../courses/CS%20166.md) | Advanced Data Structures | A | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
+| [CS 168](../courses/CS%20168.md) | The Modern Algorithmic Toolbox | A | [Spring 2024](../terms/Spring%202024.md) | 🟢 |
 | [CS 173A](../courses/CS%20173A.md) | Foundations of Computational Human Genomics | B | [Autumn 2026](../terms/Autumn%202026.md) | |
+| [CS 180](../courses/CS%20180.md) | Digital Systems Architecture | C | [Winter 2026](../terms/Winter%202026.md) | 🟡 |
+| [CS 181](../courses/CS%20181.md) | Computers, Ethics, and Public Policy | D | [Spring 2024](../terms/Spring%202024.md) | 🟡 |
+| [CS 181W](../courses/CS%20181W.md) | Computers, Ethics, and Public Policy (WIM) | D | [Spring 2024](../terms/Spring%202024.md) | 🟡 |
+| [CS 182](../courses/CS%20182.md) | Ethics, Public Policy, and Technological Change | D | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 182W](../courses/CS%20182W.md) | Ethics, Public Policy, and Technological Change (WIM) | D | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
+| [CS 190](../courses/CS%20190.md) | Software Design Studio | | [Winter 2024](../terms/Winter%202024.md) | 🟢 |
+| [CS 194H](../courses/CS%20194H.md) | User Interface Design Project | D | [Winter 2024](../terms/Winter%202024.md) | 🟡 |
+| [CS 196](../courses/CS%20196.md) | Computer Consulting | - | [Winter 2020](../terms/Winter%202020.md) | |
+| [CS 198](../courses/CS%20198.md) | Teaching Computer Science | - | [Autumn 2026](../terms/Autumn%202026.md) | 🔴 |
 | [CS 205L](../courses/CS%20205L.md) | Continuous Mathematical Methods with an Emphasis on Machine Learning | AB | [Winter 2026](../terms/Winter%202026.md) | 🟡 |
 | [CS 206](../courses/CS%20206.md) | Exploring Computational Journalism | D | [Winter 2026](../terms/Winter%202026.md) | |
 | [CS 210B](../courses/CS%20210B.md) | Industry Innovation Lab | | [Spring 2026](../terms/Spring%202026.md) | 🟡 |
@@ -298,7 +330,7 @@ The 2026-27 program sheets of all nine specializations are identical except for 
 | [CS 240](../courses/CS%20240.md) | Advanced Topics in Operating Systems | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
 | [CS 240LX](../courses/CS%20240LX.md) | Advanced Systems Laboratory, Accelerated | C | [Spring 2026](../terms/Spring%202026.md) | 🟢 |
 | [CS 242](../courses/CS%20242.md) | Programming Languages | C | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
-| [CS 243](../courses/CS%20243.md) | Program Analysis and Optimizations | C | [Winter 2026](../terms/Winter%202026.md) | |
+| [CS 243](../courses/CS%20243.md) | Program Analysis and Optimizations | C | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
 | [CS 244](../courses/CS%20244.md) | Advanced Topics in Networking | C | [Spring 2025](../terms/Spring%202025.md) | 🟢 |
 | [CS 244B](../courses/CS%20244B.md) | Distributed Systems | C | [Spring 2024](../terms/Spring%202024.md) | 🟢 |
 | [CS 244C](../courses/CS%20244C.md) | Advanced Networking and Distributed Systems | C | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
@@ -345,7 +377,7 @@ The 2026-27 program sheets of all nine specializations are identical except for 
 | [CS 326](../courses/CS%20326.md) | Topics in Advanced Robotic Manipulation | B | [Autumn 2024](../terms/Autumn%202024.md) | 🟢 |
 | [CS 328](../courses/CS%20328.md) | Foundations of Causal Machine Learning | A | [Winter 2026](../terms/Winter%202026.md) | 🟢 |
 | [CS 329A](../courses/CS%20329A.md) | Self Improving AI Agents | B | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
-| [CS 329D](../courses/CS%20329D.md) | Machine Learning Under Distributional Shifts | B | [Spring 2023](../terms/Spring%202023.md) | |
+| [CS 329D](../courses/CS%20329D.md) | Machine Learning Under Distributional Shifts | B | [Spring 2023](../terms/Spring%202023.md) | 🟢 |
 | [CS 329H](../courses/CS%20329H.md) | Machine Learning from Human Preferences | B | [Autumn 2026](../terms/Autumn%202026.md) | 🟢 |
 | [CS 329R](../courses/CS%20329R.md) | Race and Natural Language Processing | D | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
 | [CS 329T](../courses/CS%20329T.md) | Trustworthy Machine Learning: Building and evaluating agentic systems | BD | [Autumn 2025](../terms/Autumn%202025.md) | 🟢 |
@@ -395,10 +427,10 @@ The 2026-27 program sheets of all nine specializations are identical except for 
 
 ## TODO
 
-- **Covered**: 118 of 190 list entries have a page (127 course pages)
+- **Covered**: 150 of 190 list entries have a page (159 course pages)
 - **In the default scope** (CS 200+): 1
   - CS 316 · C
-- **Outside the default scope** (other departments, CS under 200; write only on request): 71
+- **Outside the default scope** (other departments, CS under 200; write only on request): 39
   - AMSTUD 145 · D
   - APPPHYS 229 · A
   - BIOS 244 · D
@@ -408,43 +440,11 @@ The 2026-27 program sheets of all nine specializations are identical except for 
   - COMM 266 · D
   - COMM 286 · D
   - COMM 324 · D
-  - CS 103 · F
-  - CS 107 · F
-  - CS 107E · F
-  - CS 109 · F
-  - CS 111 · F
-  - CS 112 · SC
-  - CS 121 · D
   - CS 125 · D
-  - CS 140 · S
-  - CS 140E · SC
-  - CS 143 · SC
-  - CS 144 · SC
-  - CS 145 · SC
-  - CS 147 · D
-  - CS 148 · D
-  - CS 149 · SC
-  - CS 151 · S
-  - CS 152 · D
-  - CS 154 · A
-  - CS 155 · C
-  - CS 157 · A
-  - CS 161 · F
   - CS 161A · -
-  - CS 166 · A
-  - CS 168 · A
-  - CS 181 · D
-  - CS 181W · D
-  - CS 182 · D
-  - CS 182W · D
-  - CS 190 · S
-  - CS 194H · D
-  - CS 196 · -
-  - CS 198 · -
   - DESIGN 255 · D
   - EARTHSYS 213 · D
   - EDUC 484 · D
-  - EE 180 · C
   - EE 276 · A
   - EE 364B · A
   - EE 377 · A

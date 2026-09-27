@@ -54,7 +54,7 @@ tags:
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on&filter-term-Autumn=on
-    file: ../references/explorecourses-cs-grad-autumn-2026.md
+    file: ../references/explorecourses-cs-autumn-2026.md
     title: ExploreCourses, Autumn 2026
   - id: site
     resource: https://github.com/dddrrreee/cs340lx-26aut
@@ -71,7 +71,7 @@ generated:
 ---
 # CS 340LX: Advanced Operating System Lab: Accelerated (II)
 
-The last class in the CS 140E → [CS 240LX](CS%20240LX.md) bare-metal Raspberry Pi pipeline. Two labs a week, each ending in a working example of "a cool trick or deep method"; about half are student-written. It runs only every few years; Autumn 2026 is the fourth offering.
+The last class in the [CS 140E](CS%20140E.md) → [CS 240LX](CS%20240LX.md) bare-metal Raspberry Pi pipeline. Two labs a week, each ending in a working example of "a cool trick or deep method"; about half are student-written. It runs only every few years; Autumn 2026 is the fourth offering.
 
 ## Materials
 
@@ -90,7 +90,7 @@ Autumn 2025's labs: setup, fast device interrupts, PCB design in KiCad, HDMI fra
 
 ## Prerequisites
 
-Instructor permission. The course assumes CS 140E and [CS 240LX](CS%20240LX.md): "you have already suffered through 30+ labs."
+Instructor permission. The course assumes [CS 140E](CS%20140E.md) and [CS 240LX](CS%20240LX.md): "you have already suffered through 30+ labs."
 
 ## Related
 

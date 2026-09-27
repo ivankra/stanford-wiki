@@ -1,15 +1,15 @@
 ---
 type: Term
 title: Summer 2026
-description: CS courses offered in Summer 2026.
 academic_year: "2025-2026"
+description: CS courses offered in Summer 2026.
 start_date: "2026-06-22"
 end_date: "2026-08-15"
 concluded: true
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-grad-2025-2026.md
+    file: ../references/explorecourses-cs-2025-2026.md
     title: ExploreCourses, 2025-2026
   - id: calendar
     resource: https://studentservices.stanford.edu/calendar-events/academic-calendars/stanford-academic-calendar-2025-2026
@@ -18,10 +18,18 @@ sources:
 ---
 # Summer 2026
 
-Last term of academic year 2025-26 and light on courses: only 2 actual graduate CS courses are taught, rest are registrations.
+10 CS courses: 8 undergraduate and 2 graduate, excluding registrations.
 
 | Course | Title | Professor | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
+| [CS 103](../courses/CS%20103.md) | Mathematical Foundations of Computing | Szumlanski | | 🟢 |
+| [CS 106A](../courses/CS%20106A.md) | Programming Methodology | Parlante | | 🟢 |
+| [CS 106B](../courses/CS%20106B.md) | Programming Abstractions | Bailey | | 🟢 |
+| [CS 106EA](../courses/CS%20106EA.md) | Exploring Artificial Intelligence | Young | | 🟡 |
+| [CS 107](../courses/CS%20107.md) | Computer Organization and Systems | Cain | | 🟢 |
+| [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | Gregg | | 🟢 |
+| [CS 148](../courses/CS%20148.md) | Introduction to Computer Graphics and Imaging | Fedkiw | | 🟢 |
+| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🔴 |
 | [CS 229](../courses/CS%20229.md) | Machine Learning | Amjad | b | 🟡 |
 | [CS 247G](../courses/CS%20247G.md) | Design for Play | Wodtke | | 🟡 |
 

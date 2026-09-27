@@ -59,7 +59,7 @@ tags:
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-grad-2025-2026.md
+    file: ../references/explorecourses-cs-2025-2026.md
     title: ExploreCourses, 2025-2026
   - id: site
     resource: https://github.com/dddrrreee/cs240lx-26spr
@@ -80,7 +80,7 @@ generated:
 ---
 # CS 240LX: Advanced Systems Laboratory, Accelerated
 
-[CS 240](CS%20240.md)'s subject matter written instead of read: two labs a week, bare-metal on an ARM Raspberry Pi, "without constantly fighting with a lumbering OS." The middle class of the CS 140E → CS 240LX → [CS 340LX](CS%20340LX.md) sequence. Two house rules: no late labs, no LLM use.
+[CS 240](CS%20240.md)'s subject matter written instead of read: two labs a week, bare-metal on an ARM Raspberry Pi, "without constantly fighting with a lumbering OS." The middle class of the [CS 140E](CS%20140E.md) → CS 240LX → [CS 340LX](CS%20340LX.md) sequence. Two house rules: no late labs, no LLM use.
 
 ## Materials
 
@@ -106,7 +106,7 @@ No dated schedule; the [lab list](https://github.com/dddrrreee/cs240lx-26spr/tre
 
 ## Prerequisites
 
-- Bare-metal systems programming: CS 140E, assumed for threads, interrupts, virtual memory and file systems. Encouraged, not enforced — "a sufficiently talented and motivated implementor can make up for its lack", and two or three a year do.
+- Bare-metal systems programming: [CS 140E](CS%20140E.md), assumed for threads, interrupts, virtual memory and file systems. Encouraged, not enforced — "a sufficiently talented and motivated implementor can make up for its lack", and two or three a year do.
 - Otherwise instructor permission.
 
 ## Related

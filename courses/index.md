@@ -1,7 +1,140 @@
 | Course | Title | Term | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
+| [CS 1U](CS%201U.md) | Practical Unix | [Winter 2022](../terms/Winter%202022.md) | | 🟢 |
+| [CS 7](CS%207.md) | Personal Finance for Engineers | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 9](CS%209.md) | Problem-Solving for the CS Technical Interview | [Spring 2022](../terms/Spring%202022.md) | | 🟢 |
+| [CS 10N](CS%2010N.md) | Computer Play: An Unconventional Introduction to CS and EE | [Spring 2026](../terms/Spring%202026.md) | | |
+| [CS 11SI](CS%2011SI.md) | How to Make VR: Introduction to Virtual Reality Design and Development | [Winter 2026](../terms/Winter%202026.md) | | 🟡 |
+| [CS 12SI](CS%2012SI.md) | Spatial Computing Workshop | [Spring 2024](../terms/Spring%202024.md) | | 🟡 |
+| [CS 21SI](CS%2021SI.md) | AI for Social Good | [Spring 2026](../terms/Spring%202026.md) | | 🟡 |
+| [CS 22A](CS%2022A.md) | The Social & Economic Impact of Artificial Intelligence | [Winter 2026](../terms/Winter%202026.md) | | |
+| [CS 24](CS%2024.md) | Minds and Machines | [Autumn 2026](../terms/Autumn%202026.md) | | 🟡 |
+| [CS 25](CS%2025.md) | Transformers United V6 | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
+| [CS 25N](CS%2025N.md) | Big Ideas in Cryptography | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
+| [CS 26SI](CS%2026SI.md) | Beyond NLP: CS & Language through Text Input & Design | [Autumn 2022](../terms/Autumn%202022.md) | | |
+| [CS 29N](CS%2029N.md) | Computational Decision Making | [Winter 2024](../terms/Winter%202024.md) | | 🟡 |
+| [CS 31N](CS%2031N.md) | Counterfactuals: The Science of What Ifs? | [Spring 2026](../terms/Spring%202026.md) | | |
+| [CS 40](CS%2040.md) | Cloud Infrastructure and Scalable Application Deployment | [Autumn 2024](../terms/Autumn%202024.md) | | 🟢 |
+| [CS 41](CS%2041.md) | Hap.py Code: The Python Programming Language | [Spring 2023](../terms/Spring%202023.md) | | 🟢 |
+| [CS 42SI](CS%2042SI.md) | From Player to Maker: 2D Engine-Based Game Development | [Autumn 2026](../terms/Autumn%202026.md) | | 🟡 |
+| [CS 43](CS%2043.md) | Functional Programming Abstractions | [Winter 2020](../terms/Winter%202020.md) | | 🟢 |
+| [CS 44N](CS%2044N.md) | Great Ideas in Graphics | [Autumn 2026](../terms/Autumn%202026.md) | | |
+| [CS 45](CS%2045.md) | Software Tools Every Programmer Should Know | [Spring 2023](../terms/Spring%202023.md) | | 🟢 |
+| [CS 46N](CS%2046N.md) | Working with Data: Delights and Doubts | [Spring 2023](../terms/Spring%202023.md) | | 🟡 |
+| [CS 47](CS%2047.md) | Cross-Platform Mobile Development | [Winter 2023](../terms/Winter%202023.md) | | 🟡 |
+| [CS 47N](CS%2047N.md) | Datathletics: Diving into Data Analytics and Stanford Sports | [Spring 2026](../terms/Spring%202026.md) | | |
+| [CS 49N](CS%2049N.md) | Using Bits to Control Atoms | [Autumn 2021](../terms/Autumn%202021.md) | | |
+| [CS 51](CS%2051.md) | CS + Social Good Studio: Designing Social Impact Projects | [Winter 2026](../terms/Winter%202026.md) | | 🔴 |
+| [CS 52](CS%2052.md) | CS + Social Good Studio: Implementing Social Good Projects | [Spring 2026](../terms/Spring%202026.md) | | |
+| [CS 53N](CS%2053N.md) | How Can Generative AI Help Us Learn? | [Spring 2026](../terms/Spring%202026.md) | | |
+| [CS 56N](CS%2056N.md) | Great Discoveries and Inventions in Computing | [Winter 2022](../terms/Winter%202022.md) | | |
+| [CS 57N](CS%2057N.md) | Randomness: Computational and Philosophical Approaches | [Winter 2022](../terms/Winter%202022.md) | | |
+| [CS 58N](CS%2058N.md) | The Blockchain Revolution Will Not Be Televised | [Winter 2020](../terms/Winter%202020.md) | | |
+| [CS 59SI](CS%2059SI.md) | Quantum Computing: Open-Source Project Experience | [Spring 2022](../terms/Spring%202022.md) | | |
+| [CS 64](CS%2064.md) | Computation for Puzzles and Games | [Autumn 2022](../terms/Autumn%202022.md) | | 🟢 |
+| [CS 80E](CS%2080E.md) | Dissecting The Modern Computer | [Autumn 2025](../terms/Autumn%202025.md) | | 🟡 |
+| [CS 80Q](CS%2080Q.md) | Race and Gender in Silicon Valley | [Autumn 2022](../terms/Autumn%202022.md) | | |
+| [CS 81SI](CS%2081SI.md) | AI Interpretability and Fairness | [Spring 2020](../terms/Spring%202020.md) | | |
+| [CS 82SI](CS%2082SI.md) | Wellness in Tech: Designing an Intentional Lifestyle in a Tech-Driven World | [Spring 2020](../terms/Spring%202020.md) | | 🔴 |
+| [CS 83N](CS%2083N.md) | Playback Theater | [Autumn 2025](../terms/Autumn%202025.md) | | |
+| [CS 84](CS%2084.md) | Emotional Intelligence | [Spring 2020](../terms/Spring%202020.md) | | |
+| [CS 91SI](CS%2091SI.md) | Digital Canvas: An Introduction to UI/UX Design | [Winter 2025](../terms/Winter%202025.md) | | |
+| [CS 99](CS%2099.md) | Functional Programming and Theorem Proving in Lean 4 | [Spring 2025](../terms/Spring%202025.md) | | 🟢 |
+| [CS 100ACE](CS%20100ACE.md) | Problem-solving Lab for CS106A | [Autumn 2026](../terms/Autumn%202026.md) | | 🟡 |
+| [CS 100BACE](CS%20100BACE.md) | Problem-solving Lab for CS106B | [Autumn 2026](../terms/Autumn%202026.md) | | 🔴 |
+| [CS 102](CS%20102.md) | Working with Data - Tools and Techniques | [Spring 2020](../terms/Spring%202020.md) | | 🟡 |
+| [CS 103](CS%20103.md) | Mathematical Foundations of Computing | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 103ACE](CS%20103ACE.md) | Mathematical Problem-solving Strategies | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 104](CS%20104.md) | Introduction to Essential Software Systems and Tools | [Spring 2026](../terms/Spring%202026.md) | | 🟡 |
+| [CS 105](CS%20105.md) | Introduction to Computers | [Autumn 2026](../terms/Autumn%202026.md) | | 🟡 |
+| [CS 106A](CS%20106A.md) | Programming Methodology | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 106AX](CS%20106AX.md) | Programming Methodologies in JavaScript and Python (Accelerated) | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 106B](CS%20106B.md) | Programming Abstractions | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 106E](CS%20106E.md) | Exploring Computing | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
+| [CS 106EA](CS%20106EA.md) | Exploring Artificial Intelligence | [Autumn 2026](../terms/Autumn%202026.md) | | 🟡 |
+| [CS 106L](CS%20106L.md) | Standard C++ Programming Laboratory | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 106M](CS%20106M.md) | Enrichment Adventures in Programming Abstractions | [Autumn 2026](../terms/Autumn%202026.md) | | 🔴 |
+| [CS 106S](CS%20106S.md) | Coding for Social Good | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 107](CS%20107.md) | Computer Organization and Systems | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 107ACE](CS%20107ACE.md) | Problem-solving Lab for CS107 | [Autumn 2026](../terms/Autumn%202026.md) | | 🟡 |
+| [CS 107E](CS%20107E.md) | Computer Systems from the Ground Up | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
+| [CS 108](CS%20108.md) | Object-Oriented Systems Design | [Winter 2024](../terms/Winter%202024.md) | | 🟡 |
+| [CS 109](CS%20109.md) | Introduction to Probability for Computer Scientists | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 109ACE](CS%20109ACE.md) | Problem-solving Lab for CS109 | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 110](CS%20110.md) | Principles of Computer Systems | [Winter 2022](../terms/Winter%202022.md) | | 🟢 |
+| [CS 110A](CS%20110A.md) | Problem Solving Lab for CS110 | [Winter 2022](../terms/Winter%202022.md) | | 🔴 |
+| [CS 110L](CS%20110L.md) | Safety in Systems Programming | [Winter 2022](../terms/Winter%202022.md) | | 🟢 |
+| [CS 111](CS%20111.md) | Operating Systems Principles | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 111ACE](CS%20111ACE.md) | Problem Solving Lab for CS111 | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 112](CS%20112.md) | Operating systems kernel implementation project | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
+| [CS 114](CS%20114.md) | Selected Reading of Computer Science Research | [Spring 2022](../terms/Spring%202022.md) | | 🟢 |
+| [CS 120](CS%20120.md) | Introduction to AI Safety | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 121](CS%20121.md) | Equity and Governance for Artificial Intelligence | [Autumn 2025](../terms/Autumn%202025.md) | | 🟡 |
+| [CS 123](CS%20123.md) | A Hands-On Introduction to Building AI-Enabled Robots | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 124](CS%20124.md) | From Languages to Information | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
 | [CS 129](CS%20129.md) | Applied Machine Learning | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
+| [CS 131](CS%20131.md) | Computer Vision: Foundations and Applications | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
+| [CS 132](CS%20132.md) | AI as Technology Accelerator | [Spring 2026](../terms/Spring%202026.md) | | |
+| [CS 134](CS%20134.md) | Introduction to AI Governance | [Winter 2025](../terms/Winter%202025.md) | | 🟢 |
+| [CS 137A](CS%20137A.md) | Principles of Robot Autonomy I | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 139](CS%20139.md) | Human-Centered AI | [Autumn 2025](../terms/Autumn%202025.md) | | 🟡 |
+| [CS 140](CS%20140.md) | Operating Systems and Systems Programming | [Winter 2022](../terms/Winter%202022.md) | | 🟢 |
+| [CS 140E](CS%20140E.md) | Operating systems design and implementation | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
+| [CS 140M](CS%20140M.md) | Introduction to Embedded Systems | [Autumn 2026](../terms/Autumn%202026.md) | | 🔴 |
+| [CS 141](CS%20141.md) | Sports and Data | [Autumn 2026](../terms/Autumn%202026.md) | | 🔴 |
+| [CS 142](CS%20142.md) | Web Applications | [Spring 2023](../terms/Spring%202023.md) | | 🟢 |
+| [CS 143](CS%20143.md) | Compilers | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
+| [CS 144](CS%20144.md) | Introduction to Computer Networking | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 145](CS%20145.md) | Intro to Modern Data Systems | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 146](CS%20146.md) | Game Development | [Winter 2026](../terms/Winter%202026.md) | | |
+| [CS 146J](CS%20146J.md) | Full-Stack Web Programming | [Spring 2026](../terms/Spring%202026.md) | | |
+| [CS 146S](CS%20146S.md) | The Modern Software Developer | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 147](CS%20147.md) | Introduction to Human-Computer Interaction Design | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 147L](CS%20147L.md) | Cross-platform Mobile App Development | [Autumn 2026](../terms/Autumn%202026.md) | | 🟡 |
+| [CS 148](CS%20148.md) | Introduction to Computer Graphics and Imaging | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 149](CS%20149.md) | Parallel Computing | [Autumn 2025](../terms/Autumn%202025.md) | | 🟢 |
+| [CS 151](CS%20151.md) | Logic Programming | [Spring 2026](../terms/Spring%202026.md) | | 🟡 |
+| [CS 152](CS%20152.md) | Trust and Safety | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
+| [CS 153](CS%20153.md) | Frontier Systems | [Spring 2026](../terms/Spring%202026.md) | | 🟡 |
+| [CS 154](CS%20154.md) | Introduction to the Theory of Computation | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 155](CS%20155.md) | Computer and Network Security | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
+| [CS 157](CS%20157.md) | Computational Logic | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 161](CS%20161.md) | Design and Analysis of Algorithms | [Summer 2026](../terms/Summer%202026.md) | | 🔴 |
+| [CS 161ACE](CS%20161ACE.md) | Problem-Solving Lab for CS161 | [Spring 2026](../terms/Spring%202026.md) | | 🔴 |
+| [CS 163](CS%20163.md) | The Practice of Theory Research | [Winter 2022](../terms/Winter%202022.md) | | |
+| [CS 166](CS%20166.md) | Advanced Data Structures | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
+| [CS 168](CS%20168.md) | The Modern Algorithmic Toolbox | [Spring 2024](../terms/Spring%202024.md) | | 🟢 |
+| [CS 170](CS%20170.md) | Stanford Laptop Orchestra: Composition, Coding, and Performance | [Spring 2026](../terms/Spring%202026.md) | | 🔴 |
+| [CS 171](CS%20171.md) | Causality, Decision Making and Data Science | [Autumn 2025](../terms/Autumn%202025.md) | | 🟢 |
 | [CS 173A](CS%20173A.md) | Foundations of Computational Human Genomics | [Autumn 2026](../terms/Autumn%202026.md) | c | |
+| [CS 177](CS%20177.md) | Introduction to Product Management with AI | [Autumn 2026](../terms/Autumn%202026.md) | | 🟡 |
+| [CS 180](CS%20180.md) | Digital Systems Architecture | [Winter 2026](../terms/Winter%202026.md) | | 🟡 |
+| [CS 181](CS%20181.md) | Computers, Ethics, and Public Policy | [Spring 2024](../terms/Spring%202024.md) | | 🟡 |
+| [CS 181W](CS%20181W.md) | Computers, Ethics, and Public Policy (WIM) | [Spring 2024](../terms/Spring%202024.md) | | 🟡 |
+| [CS 182](CS%20182.md) | Ethics, Public Policy, and Technological Change | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
+| [CS 182W](CS%20182W.md) | Ethics, Public Policy, and Technological Change (WIM) | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
+| [CS 183E](CS%20183E.md) | Effective Leadership in High-Tech | [Autumn 2026](../terms/Autumn%202026.md) | | |
+| [CS 184](CS%20184.md) | Bridging Policy and Tech Through Design | [Spring 2022](../terms/Spring%202022.md) | | |
+| [CS 185](CS%20185.md) | Coding with LLM Assistants | [Autumn 2023](../terms/Autumn%202023.md) | | |
+| [CS 186](CS%20186.md) | How to Make a Moral Agent | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
+| [CS 187](CS%20187.md) | Design for Impact in Social Systems | [Winter 2021](../terms/Winter%202021.md) | | |
+| [CS 190](CS%20190.md) | Software Design Studio | [Winter 2024](../terms/Winter%202024.md) | | 🟢 |
+| [CS 193C](CS%20193C.md) | Client-Side Internet Technologies | [Summer 2025](../terms/Summer%202025.md) | | 🔴 |
+| [CS 193P](CS%20193P.md) | iOS Application Development | [Spring 2025](../terms/Spring%202025.md) | | 🟢 |
+| [CS 193Q](CS%20193Q.md) | Introduction to Python Programming | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 193T](CS%20193T.md) | Thinking with AI: Strategies for Effective and Ethical Human-AI Collaboration | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 193U](CS%20193U.md) | Video Game Development in C++ and Unreal Engine | [Autumn 2020](../terms/Autumn%202020.md) | | 🟢 |
+| [CS 193V](CS%20193V.md) | Effective Vibecoding | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 193X](CS%20193X.md) | Web Programming Fundamentals | [Spring 2023](../terms/Spring%202023.md) | | 🟡 |
+| [CS 194](CS%20194.md) | Software Project | [Spring 2026](../terms/Spring%202026.md) | | 🔴 |
+| [CS 194A](CS%20194A.md) | Android Programming Workshop | [Autumn 2021](../terms/Autumn%202021.md) | | 🟡 |
+| [CS 194H](CS%20194H.md) | User Interface Design Project | [Winter 2024](../terms/Winter%202024.md) | | 🟡 |
+| [CS 194W](CS%20194W.md) | Software Project (WIM) | [Spring 2026](../terms/Spring%202026.md) | | 🔴 |
+| [CS 196](CS%20196.md) | Computer Consulting | [Winter 2020](../terms/Winter%202020.md) | | |
+| [CS 197](CS%20197.md) | Computer Science Research | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
+| [CS 197C](CS%20197C.md) | Computer Science Research: CURIS Internship Onramp | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
+| [CS 198](CS%20198.md) | Teaching Computer Science | [Autumn 2026](../terms/Autumn%202026.md) | | 🔴 |
+| [CS 198B](CS%20198B.md) | Additional Topics in Teaching Computer Science | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
 | [CS 202](CS%20202.md) | Law for Computer Science Professionals | [Autumn 2026](../terms/Autumn%202026.md) | | |
 | [CS 204](CS%20204.md) | Computational Law | [Spring 2025](../terms/Spring%202025.md) | | 🟢 |
 | [CS 205L](CS%20205L.md) | Continuous Mathematical Methods with an Emphasis on Machine Learning | [Winter 2026](../terms/Winter%202026.md) | c | 🟡 |
@@ -57,7 +190,7 @@
 | [CS 240LX](CS%20240LX.md) | Advanced Systems Laboratory, Accelerated | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
 | [CS 241](CS%20241.md) | Embedded Systems Workshop | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
 | [CS 242](CS%20242.md) | Programming Languages | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
-| [CS 243](CS%20243.md) | Program Analysis and Optimizations | [Winter 2026](../terms/Winter%202026.md) | | |
+| [CS 243](CS%20243.md) | Program Analysis and Optimizations | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
 | [CS 244](CS%20244.md) | Advanced Topics in Networking | [Spring 2025](../terms/Spring%202025.md) | | 🟢 |
 | [CS 244B](CS%20244B.md) | Distributed Systems | [Spring 2024](../terms/Spring%202024.md) | | 🟢 |
 | [CS 244C](CS%20244C.md) | Advanced Networking and Distributed Systems | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
@@ -100,8 +233,8 @@
 | [CS 273D](CS%20273D.md) | Generalization and Causality in Biohealth | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
 | [CS 274](CS%20274.md) | Representations and Algorithms for Computational Molecular Biology | [Autumn 2026](../terms/Autumn%202026.md) | c | |
 | [CS 275](CS%20275.md) | Translational Bioinformatics | [Spring 2025](../terms/Spring%202025.md) | c | |
-| [CS 275A](CS%20275A.md) | Symbolic Musical Information | [Winter 2026](../terms/Winter%202026.md) | | |
-| [CS 275B](CS%20275B.md) | Computational Music Analysis | [Spring 2024](../terms/Spring%202024.md) | | |
+| [CS 275A](CS%20275A.md) | Symbolic Musical Information | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
+| [CS 275B](CS%20275B.md) | Computational Music Analysis | [Spring 2024](../terms/Spring%202024.md) | | 🟢 |
 | [CS 277](CS%20277.md) | Foundation Models for Healthcare | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
 | [CS 278](CS%20278.md) | Social Computing | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
 | [CS 279](CS%20279.md) | Computational Biology: Structure and Organization of Biomolecules and Cells | [Autumn 2026](../terms/Autumn%202026.md) | c | 🟢 |
@@ -132,7 +265,7 @@
 | [CS 327A](CS%20327A.md) | Advanced Robotic Manipulation | [Spring 2023](../terms/Spring%202023.md) | | 🟡 |
 | [CS 328](CS%20328.md) | Foundations of Causal Machine Learning | [Winter 2026](../terms/Winter%202026.md) | c | 🟢 |
 | [CS 329A](CS%20329A.md) | Self Improving AI Agents | [Autumn 2025](../terms/Autumn%202025.md) | c | 🟢 |
-| [CS 329D](CS%20329D.md) | Machine Learning Under Distributional Shifts | [Spring 2023](../terms/Spring%202023.md) | c | |
+| [CS 329D](CS%20329D.md) | Machine Learning Under Distributional Shifts | [Spring 2023](../terms/Spring%202023.md) | c | 🟢 |
 | [CS 329E](CS%20329E.md) | Machine Learning on Embedded Systems | [Spring 2025](../terms/Spring%202025.md) | c | 🟢 |
 | [CS 329H](CS%20329H.md) | Machine Learning from Human Preferences | [Autumn 2026](../terms/Autumn%202026.md) | c | 🟢 |
 | [CS 329M](CS%20329M.md) | Machine Programming | [Autumn 2026](../terms/Autumn%202026.md) | c | 🟢 |
@@ -156,11 +289,11 @@
 | [CS 338](CS%20338.md) | Aligning Superintelligence | [Spring 2026](../terms/Spring%202026.md) | | 🔴 |
 | [CS 339H](CS%20339H.md) | Human-Computer Interaction and AI/ML | [Autumn 2022](../terms/Autumn%202022.md) | | 🟢 |
 | [CS 339N](CS%20339N.md) | Machine Learning Methods for Neural Data Analysis | [Spring 2025](../terms/Spring%202025.md) | | 🟢 |
-| [CS 339R](CS%20339R.md) | Collaborative Robotics | [Winter 2026](../terms/Winter%202026.md) | | |
+| [CS 339R](CS%20339R.md) | Collaborative Robotics | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
 | [CS 340LX](CS%20340LX.md) | Advanced Operating System Lab: Accelerated (II) | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
 | [CS 340R](CS%20340R.md) | Rusty Systems | [Spring 2024](../terms/Spring%202024.md) | | 🟢 |
 | [CS 341](CS%20341.md) | Project in Mining Massive Data Sets | [Spring 2020](../terms/Spring%202020.md) | | 🟡 |
-| [CS 342](CS%20342.md) | Building for Digital Health | [Winter 2026](../terms/Winter%202026.md) | | |
+| [CS 342](CS%20342.md) | Building for Digital Health | [Winter 2026](../terms/Winter%202026.md) | | 🟡 |
 | [CS 343D](CS%20343D.md) | Domain-Specific Programming Models and Compilers | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
 | [CS 343S](CS%20343S.md) | Domain-Specific Language Design Studio | [Spring 2025](../terms/Spring%202025.md) | | 🟢 |
 | [CS 344](CS%20344.md) | Topics in Computer Networks | [Spring 2021](../terms/Spring%202021.md) | | 🔴 |
@@ -184,7 +317,6 @@
 | [CS 351](CS%20351.md) | Open Problems in Coding Theory | [Spring 2021](../terms/Spring%202021.md) | | |
 | [CS 352B](CS%20352B.md) | Blockchain Governance | [Spring 2024](../terms/Spring%202024.md) | | 🟡 |
 | [CS 353](CS%20353.md) | Seminar on Logic & Formal Philosophy | [Winter 2024](../terms/Winter%202024.md) | c | |
-| [CS 353 (Winter 2020)](CS%20353%20%28Winter%202020%29.md) | The Practice of Theory Research | [Winter 2020](../terms/Winter%202020.md) | | |
 | [CS 354](CS%20354.md) | Topics in Intractability: Unfulfilled Algorithmic Fantasies | [Winter 2022](../terms/Winter%202022.md) | | 🟢 |
 | [CS 355](CS%20355.md) | Advanced Topics in Cryptography | [Spring 2026](../terms/Spring%202026.md) | | 🟢 |
 | [CS 356](CS%20356.md) | Topics in Computer and Network Security | [Autumn 2026](../terms/Autumn%202026.md) | | 🟢 |
@@ -218,7 +350,7 @@
 | [CS 402L](CS%20402L.md) | Beyond Bits and Atoms - Lab | [Winter 2020](../terms/Winter%202020.md) | | |
 | [CS 407](CS%20407.md) | Lytics Seminar | [Spring 2026](../terms/Spring%202026.md) | | |
 | [CS 421](CS%20421.md) | Designing AI to Cultivate Human Well-Being | [Winter 2021](../terms/Winter%202021.md) | | |
-| [CS 422](CS%20422.md) | Interactive and Embodied Learning | [Winter 2026](../terms/Winter%202026.md) | | |
+| [CS 422](CS%20422.md) | Interactive and Embodied Learning | [Winter 2026](../terms/Winter%202026.md) | | 🟢 |
 | [CS 428](CS%20428.md) | Computation and Cognition: The Probabilistic Approach | [Spring 2021](../terms/Spring%202021.md) | | |
 | [CS 428A](CS%20428A.md) | Probabilistic models of cognition: Reasoning and Learning | [Spring 2023](../terms/Spring%202023.md) | | |
 | [CS 428B](CS%20428B.md) | Probabilistic Models of Cognition: Language | [Autumn 2021](../terms/Autumn%202021.md) | | |
@@ -251,6 +383,12 @@
 
 ## Registrations
 
+* [CS 191](CS%20191.md) - Senior Project
+* [CS 191W](CS%20191W.md) - Writing Intensive Senior Research Project
+* [CS 192](CS%20192.md) - Programming Service Project
+* [CS 195](CS%20195.md) - Supervised Undergraduate Research
+* [CS 199](CS%20199.md) - Independent Work
+* [CS 199P](CS%20199P.md) - Independent Work
 * [CS 390A](CS%20390A.md) - Curricular Practical Training
 * [CS 390B](CS%20390B.md) - Curricular Practical Training
 * [CS 390C](CS%20390C.md) - Curricular Practical Training
