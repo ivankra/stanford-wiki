@@ -51,6 +51,8 @@ tags:
   - operating-systems
   - embedded-systems
   - systems-lab
+  - mscs-sec-b
+  - mscs-systems-c
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on&filter-term-Autumn=on
@@ -94,8 +96,8 @@ Instructor permission. The course assumes [CS 140E](CS%20140E.md) and [CS 240LX]
 
 ## Related
 
-- [CS 240LX](CS%20240LX.md): the prerequisite lab course; this one is more specialized and partly student-built.
 - [CS 240](CS%20240.md): the paper-reading OS course, not a lab.
+- [CS 240LX](CS%20240LX.md): the prerequisite lab course; this one is more specialized and partly student-built.
 
 ## Source notes
 

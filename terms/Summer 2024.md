@@ -1,11 +1,12 @@
 ---
 type: Term
 title: Summer 2024
-academic_year: "2023-2024"
 description: CS courses offered in Summer 2024.
+academic_year: "2023-2024"
 start_date: "2024-06-24"
 end_date: "2024-08-17"
-concluded: true
+num_undergraduate: 8
+num_graduate: 2
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
@@ -18,7 +19,7 @@ sources:
 ---
 # Summer 2024
 
-10 CS courses: 8 undergraduate and 2 graduate, excluding registrations.
+[← Spring 2024](Spring%202024.md) · [Autumn 2024 →](Autumn%202024.md)
 
 | Course | Title | Professor | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
@@ -28,8 +29,8 @@ sources:
 | [CS 106B](../courses/CS%20106B.md) | Programming Abstractions | Bailey | | 🟢 |
 | [CS 107](../courses/CS%20107.md) | Computer Organization and Systems | Cain | | 🟢 |
 | [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | Gregg | | 🟢 |
-| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🔴 |
-| [CS 193C](../courses/CS%20193C.md) | Client-Side Internet Technologies | Young | | 🔴 |
+| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🟢 |
+| [CS 193C](../courses/CS%20193C.md) | Client-Side Internet Technologies | Young | | 🟡 |
 | [CS 229](../courses/CS%20229.md) | Machine Learning | Amjad | b | 🟡 |
 | [CS 247G](../courses/CS%20247G.md) | Design for Play | Wodtke | | 🟡 |
 

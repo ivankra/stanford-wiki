@@ -18,11 +18,11 @@ units: "3"
 grading: Letter or Credit/No Credit
 prerequisites: []
 materials:
-  checked: "2026-09-27"
-  access: unknown
+  checked: "2026-09-29"
+  access: closed
   syllabus:
-    access: unknown
-    note: no site found under the course code
+    access: closed
+    note: no site found under the course code; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
   videos: unknown
   assignments: unknown
   exams: unknown
@@ -46,6 +46,10 @@ sources:
     resource: https://web.stanford.edu/class/cs80q/
     file: ../references/course-site-probe-ug-2020-2023-2026-09-27.md
     title: Course site probe, 2026-09-27
+  - id: syllabusrepo
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F22/CS/
+    file: ../references/cs-80q-syllabus-repository-winter-2020-autumn-2022.md
+    title: Stanford Syllabus repository, CS 80Q, Winter 2020 to Autumn 2022
 status: stable
 generated:
   by: claude-code/claude-opus-5[1m]
@@ -59,7 +63,8 @@ Starts from "the big headlines about trouble in Silicon Valley" and works backwa
 
 Nothing is public. No site exists under the course code, and a web search found only catalog listings.
 
-- **Syllabus**, **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: closed. Four offerings between Winter 2020 and Autumn 2022 uploaded a syllabus to Canvas, every one of them marked Stanford-only.
+- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
 
 ## Syllabus
 

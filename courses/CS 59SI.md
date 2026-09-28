@@ -17,11 +17,11 @@ prerequisites:
   - Some undergraduate physics
   - Basic understanding of quantum computing
 materials:
-  checked: "2026-09-27"
-  access: unknown
+  checked: "2026-09-29"
+  access: closed
   syllabus:
-    access: unknown
-    note: no site found under the course code
+    access: closed
+    note: no site found under the course code; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
   videos: unknown
   assignments: unknown
   exams: unknown
@@ -44,6 +44,10 @@ sources:
     resource: https://web.stanford.edu/class/cs59si/
     file: ../references/course-site-probe-ug-2020-2023-2026-09-27.md
     title: Course site probe, 2026-09-27
+  - id: syllabusrepo
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/Sp22/CS/
+    file: ../references/cs-59si-syllabus-repository-spring-2021-spring-2022.md
+    title: Stanford Syllabus repository, CS 59SI, Spring 2021 to Spring 2022
 status: stable
 generated:
   by: claude-code/claude-opus-5[1m]
@@ -57,7 +61,8 @@ Not a lecture course: "Quantum computing and quantum information industry sponso
 
 Nothing is public. No site exists under the course code, and a web search found only catalog listings.
 
-- **Syllabus**, **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: closed. Spring 2021 and Spring 2022 uploaded a syllabus to Canvas, marked Stanford-only.
+- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
 
 ## Syllabus
 

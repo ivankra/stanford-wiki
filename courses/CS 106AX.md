@@ -21,7 +21,7 @@ prerequisites:
   - Prior programming experience in some language
 homepage: https://cs106ax.stanford.edu/
 materials:
-  checked: "2026-09-27"
+  checked: "2026-09-29"
   access: open
   syllabus:
     access: open
@@ -39,8 +39,9 @@ materials:
     access: unknown
     note: no recordings linked from the site
   assignments:
-    access: unknown
-    note: none posted yet on 2026-09-27; they carry 50% of the grade
+    access: open
+    url: https://web.stanford.edu/class/cs106ax/assignments/
+    note: this offering's assignment 1 went up on 27 September, and an older/ directory beside it holds assignments 2 to 8 from the previous offering, with the milestone and demo bundles for the larger ones; they carry 50% of the grade
   exams:
     access: unknown
     note: a midterm and a final; no public papers found
@@ -97,7 +98,7 @@ Slides, code and TA notes go up lecture by lecture and are public; nothing that 
 - **Slides**: each lecture on the [lectures page](https://web.stanford.edu/class/cs106ax/lectures.html) carries a PDF and a PPTX.
 - **Notes**: separate [TA-written notes](https://web.stanford.edu/class/cs106ax/res/ben-notes/cs106ax-lecture01-notes.pdf) per lecture, plus a [JavaScript reader](https://web.stanford.edu/class/cs106ax/res/extras/CS106AX-JavaScript.pdf).
 - **Videos**: none linked.
-- **Assignments**: none posted on 2026-09-27; they carry half the grade.
+- **Assignments**: the [assignments directory](https://web.stanford.edu/class/cs106ax/assignments/) is unlinked but open. This offering's `assign-1.zip` went up on 27 September, and an `older/` subdirectory carries the previous offering's full set, `assign-2` through `assign-8`, with separate milestone and demo bundles for assignments 4, 6 and 7 — files dated October 2024 to November 2025. They carry half the grade.
 - **Exams**: a midterm (15%) and a final (25%); no public papers.
 - **Projects**: none.
 - **Code**: a zip of the day's examples with every lecture.
@@ -119,5 +120,7 @@ Grading: 50% programming assignments, 15% midterm, 25% final, 10% attendance and
 - [CS 193Q](CS%20193Q.md): a 1-unit Python sprint for experienced programmers who want the language only.
 
 ## Source notes
+
+- `assignments/` and its `older/` subdirectory are browsable but linked from no page; an earlier check of the site alone concluded no assignments were posted (checked 2026-09-29).
 
 - The style guide and JSGraphics documentation are hosted on staff personal sites (`reberhardt.com`, `jdkula.github.io`), not on the course host.

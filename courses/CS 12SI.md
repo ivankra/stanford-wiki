@@ -96,4 +96,5 @@ None stated. Enrollment was by application, closing 15 March, with accepted stud
 
 ## Source notes
 
+- Neither archive adds anything: `cs12si.1222` (Autumn 2021) is a bare index holding only `restricted/`, and `cs12si.1246` (Spring 2024) duplicates the live site.
 - **The course was renamed.** It ran as "Introduction to Mobile Augmented Reality Design and Development" in Autumn 2021 and Spring 2023, and as "Spatial Computing Workshop" from Spring 2024 — the shift from phone-based AR to headset spatial computing. Jay Borenstein is the instructor of record throughout, so this is one course under two titles; term tables show the current title for every term.

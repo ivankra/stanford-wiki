@@ -19,7 +19,7 @@ grading: Letter or Credit/No Credit
 prerequisites:
   - CS 106A or basic programming experience
 materials:
-  checked: "2026-09-27"
+  checked: "2026-09-29"
   access: partial
   term: Winter 2026
   syllabus:
@@ -32,15 +32,18 @@ materials:
   videos:
     access: unknown
   assignments:
-    access: closed
-    note: weekly homework released Thursdays and submitted through Gradescope
+    access: partial
+    term: Winter 2025
+    url: https://github.com/cs106ea-stanford
+    note: the course organization publishes a repo per homework, hw1 to hw8, but each holds only the Colab helper scripts and figures; the handouts themselves go out through Canvas and Gradescope
   exams:
     access: closed
     note: a midterm and a final, each 25%; no papers published
   projects: none
   code:
-    access: unknown
-    note: hands-on work runs in Google Colab notebooks, not published
+    access: partial
+    url: https://github.com/cs106ea-stanford
+    note: the helper Python the Colab notebooks import - `basic_nlp_with_imdb_helper.py`, `word_math_helper.py`, `alpaca_exploration_helper.py` and the rest - is public per homework; the notebooks themselves are not
 topics:
   - machine-learning pipeline
   - neural networks and training failures
@@ -78,11 +81,12 @@ An AI course built on a clear division of labour: "You will be running AI progra
 
 ## Materials
 
-The syllabus handout is public — unusually detailed, with a lecture-count breakdown — and everything else is on Canvas.
+The syllabus handout is public — unusually detailed, with a lecture-count breakdown — and the course keeps a GitHub organization the syllabus never mentions.
 
 - **Syllabus**: the [handout](https://summer.stanford.edu/files/summer/media/file/cs_106ea_syllabus_summer_2026.pdf): goals, prerequisites, grading, late policy and the topic breakdown.
-- **Slides**, **Assignments**, **Exams**: Canvas and Gradescope; the course has no public site.
-- **Code**: Colab notebooks used in class, not published.
+- **Assignments**: partial. The handouts go out on Canvas, but [`cs106ea-stanford`](https://github.com/cs106ea-stanford) publishes a repo per homework, `hw1` through `hw8`, all dated Winter 2025 except `hw5`. Each holds what the Colab notebook imports rather than the brief itself — `hw1` the screenshots and a Colab-basics helper, `hw5` the IMDb sentiment and word-arithmetic helpers, `hw8` the Alpaca and OpenMathInstruct-2 exploration helpers.
+- **Code**: partial, and the same repos are it: the helper Python is public, the notebooks that drive it are not.
+- **Slides**, **Exams**: Canvas and Gradescope; the course has no public site.
 - **Projects**: none.
 
 ## Syllabus
@@ -109,6 +113,8 @@ Grading is half homework, half exams: a weekly assignment out Thursday and due W
 - [CS 221](CS%20221.md): the technical AI course, which assumes the programming and mathematics this one does without.
 
 ## Source notes
+
+- `github.com/cs106ea-stanford` is not linked from the syllabus handout or anywhere else found; its `cs106eHW` repo describes itself as a "trial run" of the course. The homework repos give the scaffolding without the questions (checked 2026-09-29).
 
 - The only public document is the syllabus PDF, hosted in Stanford Summer Session's file store as the Summer 2026 syllabus; the document itself is headed "Winter 2026" and carries Winter deadlines, so it is rated as that offering (checked 2026-09-27).
 - The course has no site of its own: `cs106ea.stanford.edu` does not resolve and `web.stanford.edu/class/cs106ea/` 404s. The instructor's other course, [CS 106E](CS%20106E.md), does have one.

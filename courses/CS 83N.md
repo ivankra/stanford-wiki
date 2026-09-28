@@ -3,6 +3,8 @@ type: Course
 code: CS 83N
 title: "CS 83N: Playback Theater"
 description: A first-year seminar in playback theatre - improvised performance of audience members' personal stories - taught by a theoretical computer scientist as training in listening.
+formerly:
+  - CS 83
 level: undergraduate
 term: Autumn 2025
 terms_offered:
@@ -19,11 +21,11 @@ grading: Letter or Credit/No Credit
 prerequisites:
   - Application required
 materials:
-  checked: "2026-09-27"
-  access: unknown
+  checked: "2026-09-29"
+  access: closed
   syllabus:
-    access: unknown
-    note: no course site found under the code; the IntroSem listing restates the catalog
+    access: closed
+    note: no course site found under the code; the IntroSem listing restates the catalog; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
   videos: unknown
   assignments: unknown
   exams: unknown
@@ -47,6 +49,10 @@ sources:
     resource: https://exploreintrosems.stanford.edu/opportunities/playback-theater
     file: ../references/course-site-probe-ug-autumn-2025-2026-09-27.md
     title: Course site probe, 2026-09-27
+  - id: syllabusrepo
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F25/CS/
+    file: ../references/cs-83n-syllabus-repository-winter-2023-autumn-2025.md
+    title: Stanford Syllabus repository, CS 83N, Winter 2023 to Autumn 2025
 status: stable
 generated:
   by: claude-code/claude-opus-5[1m]
@@ -60,7 +66,8 @@ A theatre course in the CS department, and the catalog argues the connection rat
 
 Nothing is public. No site exists under the code; the IntroSem program page restates the catalog and adds the instructor's own background note.
 
-- **Syllabus**, **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: closed. Autumn 2024 uploaded a syllabus to Canvas, marked Stanford-only.
+- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
 
 ## Syllabus
 

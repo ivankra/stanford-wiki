@@ -13,11 +13,11 @@ units: "1"
 grading: Satisfactory/No Credit
 prerequisites: []
 materials:
-  checked: "2026-09-27"
-  access: unknown
+  checked: "2026-09-29"
+  access: closed
   syllabus:
-    access: unknown
-    note: no site found under the course code
+    access: closed
+    note: no site found under the course code; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
   videos: unknown
   assignments: unknown
   exams: unknown
@@ -41,6 +41,10 @@ sources:
     resource: https://web.stanford.edu/class/cs26si/
     file: ../references/course-site-probe-ug-2020-2023-2026-09-27.md
     title: Course site probe, 2026-09-27
+  - id: syllabusrepo
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/Sp23/CS/
+    file: ../references/cs-26si-syllabus-repository-autumn-2022-spring-2023.md
+    title: Stanford Syllabus repository, CS 26SI, Autumn 2022 to Spring 2023
 status: stable
 generated:
   by: claude-code/claude-opus-5[1m]
@@ -54,7 +58,8 @@ One unit, one quarter, and a question the catalog poses directly: "Where do Comp
 
 Nothing is public. No site exists under the course code, and a web search found only catalog listings.
 
-- **Syllabus**, **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: closed. Autumn 2022 uploaded a syllabus to Canvas, marked Stanford-only.
+- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
 
 ## Syllabus
 

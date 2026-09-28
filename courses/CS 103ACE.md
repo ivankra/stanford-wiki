@@ -3,6 +3,8 @@ type: Course
 code: CS 103ACE
 title: "CS 103ACE: Mathematical Problem-solving Strategies"
 description: The 1-unit ACE section for CS 103, drilling proof technique and the automata material in a small group.
+formerly:
+  - CS 103A
 level: undergraduate
 term: Autumn 2026
 terms_offered:
@@ -111,8 +113,8 @@ The published sections track [CS 103](CS%20103.md) a week behind its lectures: s
 
 ## Related
 
-- [CS 103](CS%20103.md): the course this supports.
 - [CS 100ACE](CS%20100ACE.md), [CS 107ACE](CS%20107ACE.md), [CS 109ACE](CS%20109ACE.md), [CS 111ACE](CS%20111ACE.md), [CS 161ACE](CS%20161ACE.md): the other ACE sections.
+- [CS 103](CS%20103.md): the course this supports.
 
 ## Source notes
 

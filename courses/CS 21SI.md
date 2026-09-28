@@ -22,7 +22,7 @@ prerequisites:
   - Application required
 homepage: https://web.stanford.edu/class/cs21si/
 materials:
-  checked: "2026-09-27"
+  checked: "2026-09-28"
   access: partial
   term: Spring 2025
   syllabus:
@@ -40,11 +40,18 @@ materials:
     note: the syllabus describes all four deliverables and their due dates; the handouts themselves are on Canvas
   exams: none
   projects: unknown
-  code: unknown
+  code:
+    access: open
+    term: Spring 2023
+    url: https://web.stanford.edu/class/cs21si/resources/
+    note: "an unlinked Apache listing of per-unit zips: the homework datasets and the unit 5 text-generation script with its pretrained model"
   sites:
     - url: https://docs.google.com/document/d/1a4yAZKKgacrZa1cmvr5sPH5XSNbU7YL-GdXBvtrufsE/edit
       term: Spring 2025
       note: the public syllabus document
+    - url: https://web.stanford.edu/class/cs21si/resources/
+      term: Spring 2023
+      note: a directory listing of the units' data and code, reachable only by guessing the path
 topics:
   - machine learning fundamentals and AI ethics
   - deep learning and HCI
@@ -85,6 +92,8 @@ The syllabus document is public and detailed; everything else — homework hando
 - **Assignments**: described in the syllabus with due dates and scope; the handouts are on Canvas. "Homeworks will be very short (<< 2 hrs)."
 - **Exams**: none — the course is S/NC.
 - **Projects**: students present, but the work is not posted.
+- **Code**: an unlinked [directory listing](https://web.stanford.edu/class/cs21si/resources/) under the class path holds one zip per unit from Spring 2023 — the COMPAS recidivism scores and the German credit dataset for the fairness units, a 151 MB unit-4 bundle, and unit 5's `lstm_text_generation.py` with a pretrained `.h5` model. `hw4_cs21si.zip` is zero bytes.
+- **Extra**: the [Spring 2019 site](https://web.stanford.edu/class/cs21si/2019/schedule.html) survives at the same host and is far more open — every week links handouts, lecture slides, class exercises with solutions and homework with solutions, and the Jupyter notebooks sit in a [public repo](https://github.com/karan1149/cs21si). That offering was a coding course (regression, SVMs, CNNs, RNNs) rather than the current talk series, and at seven years old it doesn't carry the ratings above.
 
 ## Syllabus
 
@@ -100,14 +109,18 @@ The four deliverables run in parallel: scope three potential social-good applica
 ## Prerequisites
 
 - Programming at the level of [CS 106A](CS%20106A.md).
-- Enrolment is by application, as the catalog notes: "We encourage students from all disciplines and backgrounds to apply!"
+- Enrollment is by application, as the catalog notes: "We encourage students from all disciplines and backgrounds to apply!"
 
 ## Related
 
-- [CS 221](CS%20221.md): the AI techniques this seminar surveys, at full depth.
 - [CS 52](CS%2052.md): the other CS + Social Good course, a build-and-ship studio rather than a lecture seminar.
+- [CS 221](CS%20221.md): the AI techniques this seminar surveys, at full depth.
 
 ## Source notes
 
 - The site is headed "Spring 2025" and names that year's coordinators; the Spring 2026 offering had not updated it when checked on 2026-09-27, so the ratings describe the Spring 2025 posting.
 - `cs21si.stanford.edu` redirects to `web.stanford.edu/class/cs21si/`.
+- **`resources/` is not linked from anywhere.** The Spring 2023 unit data and code sit in an Apache listing at `/class/cs21si/resources/`, found only because the Internet Archive captured the listing itself in May 2023. Nothing on the current site points at it, and the Spring 2025 syllabus doesn't mention it.
+- Spring 2022's archive (`cs21si.1226`) links a deck, exercises and a homework per week, plus four talk recordings — none open. Slides and Drive files 401, the Colab notebooks want a sign-in, the Box dataset 404s, the Zoom links land on zoom.us. Only the week titles survive (checked 2026-09-29).
+- `cs21si.1236`, the Spring 2023 archive slot, serves the Spring 2025 site.
+- The Spring 2019 offering's complete site is still served from a `2019/` subdirectory of the same class path, unlinked from the current landing page; a web search finds it, URL guessing does not. Its Piazza link points at `winter2018/cs230`, so that one is a copy-paste error, not a CS 21SI board.

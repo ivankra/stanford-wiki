@@ -15,11 +15,11 @@ grading: Letter (ABCD/NP)
 prerequisites:
   - Basic programming, at the level of high school computer science or CS 106A
 materials:
-  checked: "2026-09-27"
-  access: unknown
+  checked: "2026-09-29"
+  access: closed
   syllabus:
-    access: unknown
-    note: no site for this course; the URL its own code redirects to serves a different CS 47N from 2012
+    access: closed
+    note: no site for this course; the URL its own code redirects to serves a different CS 47N from 2012; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
   videos: unknown
   assignments: unknown
   exams: unknown
@@ -45,6 +45,10 @@ sources:
     resource: https://hci.stanford.edu/courses/cs047n/
     file: ../references/course-site-probe-ug-spring-2026-2026-09-27.md
     title: Course site probe, 2026-09-27
+  - id: syllabusrepo
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/Sp26/CS/
+    file: ../references/cs-47n-syllabus-repository-spring-2025-spring-2026.md
+    title: Stanford Syllabus repository, CS 47N, Spring 2025 to Spring 2026
 status: stable
 generated:
   by: claude-code/claude-opus-5[1m]
@@ -58,7 +62,8 @@ Class meetings alternate between tool instruction and a Stanford coach explainin
 
 Nothing is public for this course. The one site that answers under the number belongs to a different CS 47N.
 
-- **Syllabus**, **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: closed. Spring 2025 and Spring 2026 uploaded a syllabus to Canvas, marked Stanford-only.
+- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
 
 ## Syllabus
 

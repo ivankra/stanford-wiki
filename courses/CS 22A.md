@@ -21,11 +21,13 @@ units: "1"
 grading: Satisfactory/No Credit
 prerequisites: []
 materials:
-  checked: "2026-09-27"
-  access: unknown
+  checked: "2026-09-29"
+  access: partial
   syllabus:
-    access: unknown
-    note: the only site under the code is the Winter 2019 offering's, seven years old; it does carry that quarter's nine-week schedule and set textbook, but too old to rate
+    access: partial
+    term: Winter 2023
+    url: https://canvas.stanford.edu/courses/168776/assignments/syllabus
+    note: three offerings left their Canvas course public, each giving the description and the attendance and grading policy but no schedule; the only schedule anywhere is the Winter 2019 site's, seven years old
   videos: unknown
   assignments: unknown
   exams: unknown
@@ -51,6 +53,10 @@ sources:
     resource: https://web.stanford.edu/class/cs22a/
     file: ../references/course-site-probe-ug-winter-2026-2026-09-27.md
     title: Course site probe, 2026-09-27
+  - id: canvas
+    resource: https://canvas.stanford.edu/courses/168776/assignments/syllabus
+    file: ../references/cs-22a-canvas-syllabi-2020-2023.md
+    title: Canvas syllabi, Winter 2020, 2022 and 2023
 status: stable
 generated:
   by: claude-code/claude-opus-5[1m]
@@ -62,10 +68,10 @@ One unit, one hour a week, no programming, and pre-approved for credit at the La
 
 ## Materials
 
-Nothing current is public. The site at [`web.stanford.edu/class/cs22a/`](https://web.stanford.edu/class/cs22a/) is the Winter 2019 offering's, under the same instructor and the same title — seven years old, so it carries no rating, but it is not empty.
+No course site has been maintained since 2019, but three offerings left their Canvas course open.
 
-- **Syllabus**: the 2019 site gives that quarter's nine-week schedule, one topic a week, and names the set textbook, Kaplan's own *Artificial Intelligence: What Everyone Needs to Know* (Oxford, 2016). Homework then was "occasional reading". Nothing has been published for any offering since.
-- **Assignments**, **Exams**, **Projects**, **Videos**: not found for any offering.
+- **Syllabus**: partial. [Winter 2023's Canvas page](https://canvas.stanford.edu/courses/168776/assignments/syllabus), like Winter 2020's and Winter 2022's, is public and states the course's aim and its whole policy — "There is no required homework other than weekly readings. Class attendance is mandatory - attendance will be taken! This one-credit course is offered only on a pass/no pass basis." None of the three carries a schedule; their Canvas Course Summary tables are empty. The [2019 site](https://web.stanford.edu/class/cs22a/) is the only place a week-by-week schedule exists, one topic a week, naming Kaplan's own *Artificial Intelligence: What Everyone Needs to Know* (Oxford, 2016) as the set text — seven years old, so it carries no rating.
+- **Assignments**, **Exams**, **Projects**, **Videos**: not found for any offering; the course sets no homework beyond the readings.
 
 ## Syllabus
 

@@ -1,11 +1,12 @@
 ---
 type: Term
 title: Summer 2020
-academic_year: "2019-2020"
 description: CS courses offered in Summer 2020.
+academic_year: "2019-2020"
 start_date: "2020-06-22"
 end_date: "2020-08-15"
-concluded: true
+num_undergraduate: 6
+num_graduate: 2
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20192020&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
@@ -18,7 +19,9 @@ sources:
 ---
 # Summer 2020
 
-Taught remotely. 8 CS courses: 6 undergraduate and 2 graduate, excluding registrations.
+Taught remotely.
+
+[← Spring 2020](Spring%202020.md) · [Autumn 2020 →](Autumn%202020.md)
 
 | Course | Title | Professor | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
@@ -26,8 +29,8 @@ Taught remotely. 8 CS courses: 6 undergraduate and 2 graduate, excluding registr
 | [CS 106A](../courses/CS%20106A.md) | Programming Methodology | Parlante | | 🟢 |
 | [CS 106B](../courses/CS%20106B.md) | Programming Abstractions | Bailey | | 🟢 |
 | [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | Gregg | | 🟢 |
-| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🔴 |
-| [CS 193C](../courses/CS%20193C.md) | Client-Side Internet Technologies | Young | | 🔴 |
+| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🟢 |
+| [CS 193C](../courses/CS%20193C.md) | Client-Side Internet Technologies | Young | | 🟡 |
 | [CS 229](../courses/CS%20229.md) | Machine Learning | Amjad | b | 🟡 |
 | [CS 334A](../courses/CS%20334A.md) | Convex Optimization I | Fu | c | 🟢 |
 

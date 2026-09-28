@@ -3,6 +3,8 @@ type: Course
 code: CS 161ACE
 title: "CS 161ACE: Problem-Solving Lab for CS161"
 description: The 1-unit ACE section for CS 161 - a weekly small-group problem-solving lab taken alongside the algorithms course.
+formerly:
+  - CS 161A
 level: undergraduate
 term: Spring 2026
 terms_offered:
@@ -28,17 +30,18 @@ prerequisites:
   - Concurrent enrollment in CS 161
   - Consent of instructor, and an application
 materials:
-  checked: "2026-09-27"
-  access: closed
+  checked: "2026-09-29"
+  access: partial
   syllabus:
-    access: closed
-    note: cs161ace.stanford.edu redirects to a Google Drive folder that requires a sign-in
+    access: partial
+    url: https://stanford-cs161.github.io/winter2026/cs161a/
+    note: the parent course's Winter 2026 site carries a page for the section - what ACE is, the meeting time, the focus on algorithm design and problem solving, and that attendance is mandatory - but no schedule or grading scheme; cs161ace.stanford.edu redirects to a Google Drive folder that requires a sign-in
   videos: unknown
-  assignments:
-    access: closed
-    note: in the same private Drive folder
   exams: none
   projects: none
+  sites:
+    - url: https://stanford-cs161.github.io/winter2026/cs161a/
+      note: the section's page on the parent course's Winter 2026 site
 topics:
   - CS 161 problem-solving practice
   - algorithm analysis practice
@@ -47,6 +50,7 @@ topics:
 tags:
   - ace-lab
   - algorithms
+  - mscs-excluded
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
@@ -59,7 +63,7 @@ sources:
 status: stable
 generated:
   by: claude-code/claude-opus-5[1m]
-  at: "2026-09-27T17:05:00Z"
+  at: "2026-09-29T00:00:00Z"
 ---
 # CS 161ACE: Problem-Solving Lab for CS161
 
@@ -67,10 +71,10 @@ The ACE section for [CS 161](CS%20161.md): one unit, a weekly two-hour lab in a 
 
 ## Materials
 
-Nothing is public. The course's own address resolves to a Google Drive folder that asks for a sign-in, so everything it holds is gated.
+The course's own address resolves to a Google Drive folder that asks for a sign-in, so whatever it hands out is gated — and because the folder will not list, there is no telling which materials those are. What is public is a page on the parent course's site describing the section.
 
-- **Syllabus**, **Assignments**: in the private Drive folder behind `cs161ace.stanford.edu`.
-- **Videos**: none found.
+- **Syllabus**: the [section page](https://stanford-cs161.github.io/winter2026/cs161a/) on [CS 161](CS%20161.md)'s Winter 2026 site — what ACE is and who it is for, the meeting time, the focus "on algorithm design and problem solving", and its insistence that the section "does not replace any components" of the parent course. No schedule, no grading scheme.
+- **Videos**, **Slides**, **Notes**, **Assignments**, **Solutions**: nothing public and nothing identifiable behind the gate.
 - **Exams**, **Projects**: none.
 
 ## Syllabus
@@ -87,6 +91,8 @@ No topic list is published. The section follows [CS 161](CS%20161.md) week by we
 
 ## Source notes
 
-- `cs161ace.stanford.edu` redirects to `accounts.google.com`, a Drive sign-in for folder `1VzDm6sS9Ljtq2YLo08YaBWY69MjJqB20`; `web.stanford.edu/class/cs161ace/` 404s (checked 2026-09-27). Nothing was ingested.
+- `cs161ace.stanford.edu` redirects to `accounts.google.com`, a Drive sign-in for folder `1VzDm6sS9Ljtq2YLo08YaBWY69MjJqB20`; `web.stanford.edu/class/cs161ace/` 404s (checked 2026-09-28).
+- **The folder is genuinely private**, not merely unreadable to a fetch: `drive.google.com/embeddedfolderview?id=1VzDm6sS9Ljtq2YLo08YaBWY69MjJqB20`, which lists a public folder as plain HTML, answers 401, and a headless browser gets the Google sign-in page (checked 2026-09-29). So the gate is a positive finding, but it says nothing about which types sit behind it: an earlier pass recorded `assignments: closed` on it, and the sibling [CS 107ACE](CS%20107ACE.md)'s equivalent folder turns out to hold decks, a syllabus and practice exams but no assignments. The type is back to unknown.
+- **The section does have a public page**, but on the parent course's site rather than its own: `stanford-cs161.github.io/winter2026/cs161a/`, under the old course number. It describes the ACE program and the section's format and names the course assistant. It was found by searching the former number — nothing under `cs161ace` reaches it.
 - Unlike the other ACE sections, this one is not offered every quarter: the 2025-2026 catalog shows Autumn, Winter and Spring but not Summer.
 - **Renumbered.** The same course ran as **CS 161A** from Autumn 2020 to Spring 2023, under the identical catalog title, and as CS 161ACE from Autumn 2023. It is one course on one page, so `terms_offered` and the term tables carry the current code for every term.

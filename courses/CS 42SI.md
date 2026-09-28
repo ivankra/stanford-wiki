@@ -91,8 +91,9 @@ Class time is activities, discussion and group work, so attendance and weekly de
 
 ## Related
 
-- [CS 247G](CS%20247G.md): the design studio for games, which works on paper as much as in an engine.
+- [CS 146](CS%20146.md): the technical game course: mechanics, NPC AI and procedural content in Unity or Unreal, ending in a team game.
 - [CS 148](CS%20148.md): the graphics course behind what a game engine does.
+- [CS 247G](CS%20247G.md): the design studio for games, which works on paper as much as in an engine.
 
 ## Source notes
 

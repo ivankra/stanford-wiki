@@ -29,13 +29,25 @@ Never sweep a term after `current_term`.
 
 1. Create `terms/<Term>.md` (shape in `AGENTS.md` → Term pages), or refresh the existing one.
 2. Courses with a page: add the term to their `terms_offered`. Re-anchor a page (`wiki-course` skill) only if this term is newer than its current `term`. Registrations carry no term keys at all — leave them alone.
-3. Under `## TODO`, list every catalog course without a page: `- CS 000 Title`, one line each.
+3. Under `## TODO`, list every catalog course without a page: `- CS 000 Title`, one line each. A code some page lists under `formerly` has a page; see below.
 4. Run `node scripts/build.ts` to fill the table. Point the current-term link in `index.md` at the new page, and add a line to `log.md`.
+
+## Renumbered and split courses
+
+A code listed under some page's `formerly` never gets its own page. Renumbered: its terms go into the successor's `terms_offered`. Split: into no page's, but a line in the term page's `## Notes`.
+
+Known cases (add new ones here):
+
+- CS 47 → CS 147L
+- CS 83 → CS 83N
+- CS 100A, 100B, 103A, 107A, 109A, 111A, 161A → the same number + ACE (from Autumn 2023)
+- CS 428 → CS 428A + CS 428B (split)
+- CS 353 (Winter 2020) → CS 163; not in `formerly`, since CS 353 is now a different course
 
 ## Rollover (`current_term` moves)
 
 1. Update `current_term` in `AGENTS.md`.
 2. Sweep the new term as above.
-3. On the previous term's page, set `concluded: true`. Build then drops its days.
+3. Run build: it moves `is_current_term` to the new term's page and drops the previous term's days.
 4. Re-anchor pages whose newer offering the old ceiling had blocked.
 5. At an Autumn rollover (a new academic year), check the [program sheets page](https://www.cs.stanford.edu/masters-specializations/ms-program-sheets) for new editions, and update the lists and `edition` on `programs/` pages. Lint warns while an edition is stale.

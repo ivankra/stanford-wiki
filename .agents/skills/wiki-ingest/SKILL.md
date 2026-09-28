@@ -52,6 +52,7 @@ Given a file id, fetch the export rather than the viewer:
 | Sheets | `https://docs.google.com/spreadsheets/d/<id>/export?format=csv&gid=<gid>` (one sheet) or `…&format=xlsx` (all) |
 | Docs | `https://docs.google.com/document/d/<id>/export?format=txt` |
 | Slides | `https://docs.google.com/presentation/d/<id>/export/pdf` |
+| Drive folder | `https://drive.google.com/embeddedfolderview?id=<id>` lists every child with its id as plain HTML; export each child as above |
 
 - **Cell hyperlinks are lost in the CSV.** A schedule's links to slides, labs and papers live in the xlsx: fetch `export?format=xlsx` and read the `Target=` attributes in `xl/worksheets/_rels/sheet1.xml.rels`. Do this whenever the CSV shows reading or assignment titles with no URL beside them.
 - A `/preview` or `/htmlview` page renders through JavaScript, so its HTML holds no content and no links. Don't read the rating off it — **and don't read access off it either**: fetching a `/preview` URL looks much the same whether the document is public or private. Hit `export?format=…` and check the status code. CS 194H was rated `open` on a page of `/preview` links whose documents all return 401.

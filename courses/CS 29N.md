@@ -88,8 +88,8 @@ None stated.
 
 ## Related
 
-- [CS 109](CS%20109.md): the full probability course, where this seminar reads the first two chapters.
 - [CS 31N](CS%2031N.md): the other first-year seminar on reasoning under uncertainty, framed around counterfactuals.
+- [CS 109](CS%20109.md): the full probability course, where this seminar reads the first two chapters.
 
 ## Source notes
 

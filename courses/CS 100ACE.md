@@ -3,6 +3,8 @@ type: Course
 code: CS 100ACE
 title: "CS 100ACE: Problem-solving Lab for CS106A"
 description: The 1-unit ACE section for CS 106A - a weekly small-group problem-solving lab with extra office hours and tutoring.
+formerly:
+  - CS 100A
 level: undergraduate
 term: Autumn 2026
 terms_offered:
@@ -36,17 +38,17 @@ prerequisites:
   - Consent of instructor
 homepage: https://cs100ace.stanford.edu/
 materials:
-  checked: "2026-09-27"
+  checked: "2026-09-28"
   access: partial
   syllabus:
     access: open
     url: https://docs.google.com/document/d/1RDqpRY1H9zVwzMdWNqqT0t0qZxU2VI7wc0jSR58N-e8/edit
-    note: a Google Doc covering the ACE program, enrolment and grading; it is headed Spring 2026
+    note: a Google Doc covering the ACE program, enrollment and grading; it is headed Spring 2026
   videos:
     access: unknown
   assignments:
     access: unknown
-    note: no section worksheets or handouts are published
+    note: one week's section page is published and holds only an entry-ticket form; the worksheets themselves are not posted
   exams: none
   projects: none
 topics:
@@ -83,7 +85,7 @@ One extra unit beside [CS 106A](CS%20106A.md), run by a course assistant rather 
 
 The syllabus is public; the section's own worksheets and slides are not published anywhere.
 
-- **Syllabus**: a [Google Doc](https://docs.google.com/document/d/1RDqpRY1H9zVwzMdWNqqT0t0qZxU2VI7wc0jSR58N-e8/edit) describing the ACE components, enrolment and grading.
+- **Syllabus**: a [Google Doc](https://docs.google.com/document/d/1RDqpRY1H9zVwzMdWNqqT0t0qZxU2VI7wc0jSR58N-e8/edit) describing the ACE components, enrollment and grading.
 - **Assignments**: no section handouts published.
 - **Videos**, **Exams**, **Projects**: none.
 
@@ -101,6 +103,7 @@ There is no topic list of its own: the section follows [CS 106A](CS%20106A.md) w
 
 ## Source notes
 
+- A `sections/` directory sits under the class path, unlinked except from one line on the landing page. It holds a single file, `week2.html` (Karel), and that page's only live link is a Google Form entry ticket — its "Lecture slides" link is `href="#"`. So section worksheets exist as pages but not as published material (checked 2026-09-28).
 - The linked syllabus document is headed "Spring 2026" though the page carrying it is this quarter's.
 - The site gives the section room as 160-332; the catalog says Lathrop 294.
 - The catalog lists no instructor for Autumn 2026; the section's TA is named on the site.

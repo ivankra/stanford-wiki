@@ -3,6 +3,8 @@ type: Course
 code: CS 100BACE
 title: "CS 100BACE: Problem-solving Lab for CS106B"
 description: The 1-unit ACE section for CS 106B - a weekly small-group problem-solving lab with extra office hours and tutoring.
+formerly:
+  - CS 100B
 level: undergraduate
 term: Autumn 2026
 terms_offered:

@@ -16,11 +16,11 @@ units: "3"
 grading: Letter or Credit/No Credit
 prerequisites: []
 materials:
-  checked: "2026-09-27"
-  access: unknown
+  checked: "2026-09-29"
+  access: closed
   syllabus:
-    access: unknown
-    note: no site found under the course code
+    access: closed
+    note: no site found under the course code; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
   videos: unknown
   assignments: unknown
   exams: unknown
@@ -44,6 +44,10 @@ sources:
     resource: https://web.stanford.edu/class/cs57n/
     file: ../references/course-site-probe-ug-2020-2023-2026-09-27.md
     title: Course site probe, 2026-09-27
+  - id: syllabusrepo
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/W22/CS/
+    file: ../references/cs-57n-syllabus-repository-winter-2022.md
+    title: Stanford Syllabus repository, CS 57N, Winter 2022
 status: stable
 generated:
   by: claude-code/claude-opus-5[1m]
@@ -57,7 +61,8 @@ Co-taught by a philosopher and a coding theorist, and the questions are genuinel
 
 Nothing is public. No site exists under the course code, and a web search found only catalog listings.
 
-- **Syllabus**, **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: closed. Winter 2022 uploaded a syllabus to Canvas, marked Stanford-only.
+- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
 
 ## Syllabus
 

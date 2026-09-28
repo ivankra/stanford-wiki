@@ -3,6 +3,8 @@ type: Course
 code: CS 111ACE
 title: "CS 111ACE: Problem Solving Lab for CS111"
 description: The 1-unit ACE section for CS 111, working extra design and implementation problems on the week's operating-systems topic.
+formerly:
+  - CS 111A
 level: undergraduate
 term: Autumn 2026
 terms_offered:
@@ -108,8 +110,8 @@ Eight Tuesday sessions, shadowing [CS 111](CS%20111.md) but in its own order: pr
 
 ## Related
 
-- [CS 111](CS%20111.md): the course this supports.
 - [CS 100ACE](CS%20100ACE.md), [CS 103ACE](CS%20103ACE.md), [CS 107ACE](CS%20107ACE.md), [CS 109ACE](CS%20109ACE.md), [CS 161ACE](CS%20161ACE.md): the other ACE sections.
+- [CS 111](CS%20111.md): the course this supports.
 
 ## Source notes
 

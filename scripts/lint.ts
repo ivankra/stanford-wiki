@@ -3,7 +3,7 @@
 // Usage: node scripts/lint.ts [bundle-dir]   (Node >= 23, no dependencies)
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative, basename, dirname } from "node:path";
-import { load, render, programs, termOrd, pageTerm, str, arr, obj, ICON, MAT_TYPES, stripCode, resolveLink as resolveIn, type Y, type Doc } from "./wiki.ts";
+import { load, render, programs, termOrd, pageTerm, str, arr, obj, aliases, ICON, MAT_TYPES, stripCode, relatedProblems, resolveLink as resolveIn, type Y, type Doc } from "./wiki.ts";
 
 const ROOT = process.argv[2] ?? join(import.meta.dirname, "..");
 const problems: { level: "error" | "warn"; file: string; msg: string }[] = [];
@@ -21,7 +21,13 @@ for (const d of docs) {
     else if (/^>>>>>>>(?: |$)/.test(line)) { err(d, `merge conflict marker at line ${i + 1}: >>>>>>>`); inConflict = false; }
   }
 }
-const CURRENT = str(docs.find((d) => d.rel === "AGENTS.md")?.fm?.current_term);
+const agents = docs.find((d) => d.rel === "AGENTS.md");
+const CURRENT = str(agents?.fm?.current_term);
+// The earliest term terms_offered may hold. termOrd orders by calendar year, then season
+// (Winter < Spring < Summer < Autumn), so Autumn 2019 precedes Winter 2020 across the academic year.
+const CUTOFF = str(agents?.fm?.cutoff_term);
+if (agents && CUTOFF && (isNaN(termOrd(CUTOFF)) || termOrd(CUTOFF) > termOrd(CURRENT)))
+  err(agents, `cutoff_term "${CUTOFF}" must be a term name no later than current_term ${CURRENT}`);
 
 const isDate = (s: Y) => typeof s === "string" && /^\d{4}-\d{2}-\d{2}$/.test(s);
 const isStamp = (s: Y) => typeof s === "string" && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/.test(s);
@@ -91,6 +97,8 @@ for (const d of docs.filter((d) => d.rel.startsWith("courses/") && ["Course", "R
   const code = str(d.fm?.code);
   if (!coursePages.has(code) || basename(d.rel) === `${code}.md`) coursePages.set(code, d);
 }
+const hrefTo = (from: Doc, target: Doc) =>
+  encodeURI(relative(dirname(from.path), target.path)).replace(/\(/g, "%28").replace(/\)/g, "%29");
 for (const d of docs.filter((d) => /^(courses|programs|terms)\//.test(d.rel))) {
   let prose = d.body;
   if (d.rel.startsWith("programs/")) prose = prose.split(/^## Courses$/m)[0];
@@ -105,8 +113,7 @@ for (const d of docs.filter((d) => /^(courses|programs|terms)\//.test(d.rel))) {
     const target = coursePages.get(code);
     if (!target || code === str(d.fm?.code) || seen.has(code)) continue;
     seen.add(code);
-    const href = encodeURI(relative(dirname(d.path), target.path)).replace(/\(/g, "%28").replace(/\)/g, "%29");
-    warn(d, `unlinked course reference: ${code}; link as [${code}](${href})`);
+    warn(d, `unlinked course reference: ${code}; link as [${code}](${hrefTo(d, target)})`);
   }
 }
 
@@ -118,10 +125,10 @@ if (referencesPresent)
 
 // ---------- course pages ----------
 
-const KEY_ORDER = ["type", "code", "title", "description", "cross_listed", "level", "term", "terms_offered", "instructors",
-  "schedule", "units", "grading", "prerequisites", "homepage", "materials", "topics", "tags", "sources", "status",
+const KEY_ORDER = ["type", "code", "title", "description", "cross_listed", "formerly", "level", "term", "terms_offered",
+  "instructors", "schedule", "units", "grading", "prerequisites", "homepage", "materials", "topics", "tags", "sources", "status",
   "generated", "verified"];
-const OPTIONAL = ["cross_listed", "schedule", "homepage", "verified"];
+const OPTIONAL = ["cross_listed", "formerly", "schedule", "homepage", "verified"];
 // Registrations (CPT, independent study, TGR…) carry no teaching content, so they skip these keys.
 // `term`/`terms_offered` are in the list because they run every term: tracking which would churn
 // every page on every sweep, and build never reads them for a registration.
@@ -135,7 +142,7 @@ for (const d of pages) {
     if (!isCourse && COURSE_ONLY.includes(k)) { if (k in f) err(d, `${k} is not used on a Registration`); continue; }
     if (!(k in f) && !OPTIONAL.includes(k) && !(!isCourse && k === "prerequisites")) err(d, `missing ${k}`);
   }
-  if ("cross_listed" in f && !arr(f.cross_listed).length) warn(d, "cross_listed is empty; omit the key");
+  for (const k of ["cross_listed", "formerly"]) if (k in f && !arr(f[k]).length) warn(d, `${k} is empty; omit the key`);
   for (const k of Object.keys(f)) if (!KEY_ORDER.includes(k)) warn(d, `unknown key ${k} (see AGENTS.md → Course pages)`);
   const known = Object.keys(f).filter((k) => KEY_ORDER.includes(k));
   if (known.join() !== [...known].sort((a, b) => KEY_ORDER.indexOf(a) - KEY_ORDER.indexOf(b)).join())
@@ -157,6 +164,7 @@ for (const d of pages) {
   for (const t of offered) {
     if (isNaN(termOrd(t))) err(d, `bad term name: ${t}`);
     else if (CURRENT && termOrd(t) > termOrd(CURRENT)) err(d, `${t} is after current_term ${CURRENT}`);
+    else if (CUTOFF && termOrd(t) < termOrd(CUTOFF)) err(d, `${t} is before cutoff_term ${CUTOFF}; drop it (older history goes in Source notes)`);
   }
   const ords = offered.map(termOrd);
   if (ords.some((o, i) => i > 0 && o <= ords[i - 1])) err(d, "terms_offered must be chronological and unique");
@@ -196,6 +204,36 @@ for (const d of pages) {
   }
 }
 
+// ---------- Related sections ----------
+
+for (const d of pages) for (const msg of relatedProblems(d.text)) err(d, msg);
+
+// ---------- Prerequisites sections ----------
+
+// Every course in `prerequisites` that has a page must be linked from ## Prerequisites, so graph views
+// (Obsidian's among them) connect the two pages. A cross-listed or former code resolves to the page that
+// carries it, and the suggested fix names both codes: [CS 180](CS%20180.md) (EE 180).
+const pageFor = new Map(coursePages);
+for (const d of pages)
+  if (basename(d.rel) === `${str(d.fm!.code)}.md`)
+    for (const c of aliases(d)) if (!pageFor.has(c)) pageFor.set(c, d);
+for (const d of courses) {
+  const lines = d.body.split("\n"), head = lines.indexOf("## Prerequisites");
+  const end = lines.findIndex((l, i) => i > head && /^## /.test(l));
+  const section = head < 0 ? "" : stripCode(lines.slice(head + 1, end < 0 ? undefined : end).join("\n"));
+  const linked = new Set<string>();
+  for (const m of section.matchAll(/\]\(([^)\s]+)\)/g)) try { linked.add(resolveLink(d.path, m[1])); } catch { /* reported above */ }
+  const seen = new Set<Doc>();
+  for (const req of arr(d.fm!.prerequisites).map(String))
+    for (const m of req.matchAll(/(?<![A-Za-z0-9&])([A-Z][A-Z&]*) (\d+[A-Z]*)(?![A-Za-z0-9])/g)) {
+      const code = `${m[1]} ${m[2]}`, target = pageFor.get(code), own = str(target?.fm?.code);
+      if (!target || target === d || seen.has(target) || linked.has(target.path)) continue;
+      seen.add(target);
+      const want = `[${own}](${hrefTo(d, target)})${code === own ? "" : ` (${code})`}`;
+      err(d, `prerequisites names ${code}, but ${head < 0 ? "there is no ## Prerequisites section to link it from" : "## Prerequisites doesn't link it"}: ${want}`);
+    }
+}
+
 // ---------- program pages ----------
 
 // Academic year of a term: Autumn 2026 → 2026-27, Winter–Summer 2027 → 2026-27.
@@ -206,34 +244,36 @@ const academicYear = (t: string) => {
   return `${start}-${String(start + 1).slice(2)}`;
 };
 const progs = programs(docs);
-const conv = docs.find((d) => d.rel === "AGENTS.md");
-if (conv && str(conv.fm?.primary_specialization) && !progs.primary)
-  err(conv, `primary_specialization "${str(conv.fm!.primary_specialization)}" matches no Specialization page`);
+if (agents && str(agents.fm?.primary_specialization) && !progs.primary)
+  err(agents, `primary_specialization "${str(agents.fm!.primary_specialization)}" matches no Specialization page`);
 const keys = new Set<string>();
 for (const p of [progs.program, ...progs.specs].filter((d): d is Doc => !!d)) {
   const f = p.fm!;
   if (!p.rel.startsWith("programs/")) err(p, "program pages live in programs/");
   if (str(f.edition) !== academicYear(CURRENT)) warn(p, `edition ${str(f.edition)} is not the current academic year ${academicYear(CURRENT)}; check for a newer sheet`);
   if (!arr(f.sources).length) err(p, "missing sources (the program sheet)");
+  // Build ignores the pre-`mscs_` names, so a page still using one would silently lose its tags.
+  for (const k of ["foundations", "si", "breadth", "excluded", "depth", "approval"])
+    if (k in f) err(p, `${k} is now mscs_${k}`);
   const lists: [string, Y | undefined][] = f.type === "Program"
-    ? [["foundations", f.foundations], ["si", f.si], ["excluded", f.excluded], ...Object.entries(obj(f.breadth) ?? {}).map(([k, v]) => [`breadth.${k}`, v] as [string, Y])]
-    : [["approval", f.approval], ...Object.entries(obj(f.depth) ?? {}).map(([k, v]) => [`depth.${k}`, v] as [string, Y])];
+    ? [["mscs_foundations", f.mscs_foundations], ["mscs_si", f.mscs_si], ["mscs_excluded", f.mscs_excluded], ...Object.entries(obj(f.mscs_breadth) ?? {}).map(([k, v]) => [`mscs_breadth.${k}`, v] as [string, Y])]
+    : [["mscs_approval", f.mscs_approval], ...Object.entries(obj(f.mscs_depth) ?? {}).map(([k, v]) => [`mscs_depth.${k}`, v] as [string, Y])];
   for (const [name, list] of lists)
     for (const e of arr(list)) if (!/^[A-Z&]+ \d+[A-Z]*\*?$/.test(String(e))) err(p, `${name}: bad entry "${String(e)}"`);
-  if (f.type === "Program" && !obj(f.breadth)) err(p, "missing breadth");
+  if (f.type === "Program" && !obj(f.mscs_breadth)) err(p, "missing mscs_breadth");
   if (f.type === "Specialization") {
     if (!str(f.key) || keys.has(str(f.key))) err(p, `missing or duplicate key "${str(f.key)}"`);
     keys.add(str(f.key));
-    if (!obj(f.depth)) err(p, "missing depth");
-    const all = new Set(Object.values(obj(f.depth) ?? {}).flatMap((l) => arr(l).map(String)));
-    for (const e of arr(f.approval)) if (!all.has(String(e))) err(p, `approval entry "${String(e)}" is in no depth list`);
+    if (!obj(f.mscs_depth)) err(p, "missing mscs_depth");
+    const all = new Set(Object.values(obj(f.mscs_depth) ?? {}).flatMap((l) => arr(l).map(String)));
+    for (const e of arr(f.mscs_approval)) if (!all.has(String(e))) err(p, `mscs_approval entry "${String(e)}" is in no mscs_depth list`);
   }
 }
 if (progs.program && docs.filter((d) => d.fm?.type === "Program").length > 1) err(progs.program, "only one Program page is supported");
 
 // ---------- generated tables ----------
 
-for (const page of docs.filter((d) => d.rel.startsWith("terms/"))) {
+for (const page of docs.filter((d) => d.rel.startsWith("terms/") && basename(d.rel) !== "index.md")) {
   if (page.fm?.type !== "Term" || isNaN(termOrd(pageTerm(page)))) { err(page, "term pages need type: Term and a term name as the filename, e.g. Autumn 2026.md"); continue; }
   if ("term" in page.fm) err(page, "term is not used on a term page: the filename is the term");
   const validDate = (value: Y | undefined) => isDate(str(value)) && Number.isFinite(Date.parse(str(value)))
@@ -242,9 +282,8 @@ for (const page of docs.filter((d) => d.rel.startsWith("terms/"))) {
     if (!validDate(page.fm[key])) err(page, `${key} must be a valid date in YYYY-MM-DD format`);
   if (validDate(page.fm.start_date) && validDate(page.fm.end_date) && str(page.fm.start_date) > str(page.fm.end_date))
     err(page, "start_date must be on or before end_date");
-  const want = termOrd(pageTerm(page)) < termOrd(CURRENT) ? "true" : "false";
-  if (!["true", "false"].includes(str(page.fm.concluded))) err(page, "missing concluded: true | false");
-  else if (page.fm.concluded !== want) err(page, `concluded should be ${want} (current_term is ${CURRENT})`);
+  // is_current_term, num_undergraduate and num_graduate are generated, so the out-of-date check below
+  // enforces them, and with them that only the current_term page is current.
 }
 const blockProblems: string[] = [];
 for (const [path, text] of render(ROOT, docs, blockProblems))

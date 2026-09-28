@@ -16,11 +16,11 @@ units: "3"
 grading: Letter or Credit/No Credit
 prerequisites: []
 materials:
-  checked: "2026-09-27"
-  access: unknown
+  checked: "2026-09-29"
+  access: closed
   syllabus:
-    access: unknown
-    note: no course site found; web.stanford.edu/class/cs31n/ is an empty directory index
+    access: closed
+    note: no course site found; web.stanford.edu/class/cs31n/ is an empty directory index; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
   videos: unknown
   assignments: unknown
   exams: unknown
@@ -44,6 +44,10 @@ sources:
     resource: https://web.stanford.edu/class/cs31n/
     file: ../references/course-site-probe-ug-spring-2026-2026-09-27.md
     title: Course site probe, 2026-09-27
+  - id: syllabusrepo
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/Sp26/CS/
+    file: ../references/cs-31n-syllabus-repository-spring-2021-spring-2026.md
+    title: Stanford Syllabus repository, CS 31N, Spring 2021 to Spring 2026
 status: stable
 generated:
   by: claude-code/claude-opus-5[1m]
@@ -57,7 +61,8 @@ A seminar on one technique and its reach: what would have happened otherwise. Th
 
 Nothing is public. `web.stanford.edu/class/cs31n/` exists but is an empty directory index, and no other site was found.
 
-- **Syllabus**, **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: closed. Spring 2021, Spring 2023 and Spring 2026 uploaded a syllabus to Canvas, marked Stanford-only.
+- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
 
 ## Syllabus
 
@@ -71,8 +76,8 @@ None. The catalog is explicit that probability is not assumed.
 
 ## Related
 
-- [CS 224R](CS%20224R.md): reinforcement learning, where the same instructor's off-policy evaluation work lives at research depth.
 - [CS 109](CS%20109.md): the probability the seminar deliberately does not require.
+- [CS 224R](CS%20224R.md): reinforcement learning, where the same instructor's off-policy evaluation work lives at research depth.
 
 ## Source notes
 

@@ -1,11 +1,12 @@
 ---
 type: Term
 title: Spring 2024
-academic_year: "2023-2024"
 description: CS courses offered in Spring 2024.
+academic_year: "2023-2024"
 start_date: "2024-04-01"
 end_date: "2024-06-12"
-concluded: true
+num_undergraduate: 40
+num_graduate: 45
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
@@ -18,15 +19,15 @@ sources:
 ---
 # Spring 2024
 
-85 CS courses: 40 undergraduate and 45 graduate, excluding registrations.
+[← Winter 2024](Winter%202024.md) · [Summer 2024 →](Summer%202024.md)
 
 | Course | Title | Professor | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
 | [CS 12SI](../courses/CS%2012SI.md) | Spatial Computing Workshop | Borenstein | | 🟡 |
 | [CS 21SI](../courses/CS%2021SI.md) | AI for Social Good | Piech | | 🟡 |
 | [CS 25](../courses/CS%2025.md) | Transformers United V6 | Singh | | 🟢 |
-| [CS 52](../courses/CS%2052.md) | CS + Social Good Studio: Implementing Social Good Projects | Cain | | |
-| [CS 53N](../courses/CS%2053N.md) | How Can Generative AI Help Us Learn? | Mitchell | | |
+| [CS 52](../courses/CS%2052.md) | CS + Social Good Studio: Implementing Social Good Projects | Cain | | 🔴 |
+| [CS 53N](../courses/CS%2053N.md) | How Can Generative AI Help Us Learn? | Mitchell | | 🔴 |
 | [CS 100ACE](../courses/CS%20100ACE.md) | Problem-solving Lab for CS106A | | | 🟡 |
 | [CS 100BACE](../courses/CS%20100BACE.md) | Problem-solving Lab for CS106B | | | 🔴 |
 | [CS 103](../courses/CS%20103.md) | Mathematical Foundations of Computing | Szumlanski | | 🟢 |
@@ -38,7 +39,7 @@ sources:
 | [CS 106L](../courses/CS%20106L.md) | Standard C++ Programming Laboratory | Bailey | | 🟢 |
 | [CS 106S](../courses/CS%20106S.md) | Coding for Social Good | Cain | | 🟢 |
 | [CS 107](../courses/CS%20107.md) | Computer Organization and Systems | Cain | | 🟢 |
-| [CS 107ACE](../courses/CS%20107ACE.md) | Problem-solving Lab for CS107 | Berny | | 🟡 |
+| [CS 107ACE](../courses/CS%20107ACE.md) | Problem-solving Lab for CS107 | Berny | | 🟢 |
 | [CS 107E](../courses/CS%20107E.md) | Computer Systems from the Ground Up | Zelenski | | 🟢 |
 | [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | Gregg | | 🟢 |
 | [CS 109ACE](../courses/CS%20109ACE.md) | Problem-solving Lab for CS109 | Hersch | | 🟢 |
@@ -52,7 +53,7 @@ sources:
 | [CS 153](../courses/CS%20153.md) | Frontier Systems | Abbott | | 🟡 |
 | [CS 155](../courses/CS%20155.md) | Computer and Network Security | Dauterman | | 🟢 |
 | [CS 168](../courses/CS%20168.md) | The Modern Algorithmic Toolbox | Valiant | | 🟢 |
-| [CS 170](../courses/CS%20170.md) | Stanford Laptop Orchestra: Composition, Coding, and Performance | Wright | | 🔴 |
+| [CS 170](../courses/CS%20170.md) | Stanford Laptop Orchestra: Composition, Coding, and Performance | Wright | | 🟡 |
 | [CS 181](../courses/CS%20181.md) | Computers, Ethics, and Public Policy | Winstein | | 🟡 |
 | [CS 181W](../courses/CS%20181W.md) | Computers, Ethics, and Public Policy (WIM) | Winstein | | 🟡 |
 | [CS 194](../courses/CS%20194.md) | Software Project | Borenstein | | 🔴 |
@@ -61,7 +62,7 @@ sources:
 | [CS 197C](../courses/CS%20197C.md) | Computer Science Research: CURIS Internship Onramp | Johansen | | 🟢 |
 | [CS 198](../courses/CS%20198.md) | Teaching Computer Science | Roberts-Baca | - | 🔴 |
 | [CS 198B](../courses/CS%20198B.md) | Additional Topics in Teaching Computer Science | Roberts-Baca | | 🟢 |
-| [CS 202](../courses/CS%20202.md) | Law for Computer Science Professionals | Hansen | | |
+| [CS 202](../courses/CS%20202.md) | Law for Computer Science Professionals | Hansen | | 🔴 |
 | [CS 210B](../courses/CS%20210B.md) | Industry Innovation Lab | Borenstein | SI | 🟡 |
 | [CS 221](../courses/CS%20221.md) | Artificial Intelligence: Principles and Techniques | Liang | a | 🟢 |
 | [CS 224C](../courses/CS%20224C.md) | NLP for Computational Social Science | Yang | c | 🟡 |
@@ -79,13 +80,13 @@ sources:
 | [CS 244B](../courses/CS%20244B.md) | Distributed Systems | Mazieres | | 🟢 |
 | [CS 247G](../courses/CS%20247G.md) | Design for Play | Wodtke | | 🟡 |
 | [CS 254B](../courses/CS%20254B.md) | Computational Complexity II | Tan | | 🟢 |
-| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | Rubinstein | | |
+| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | Rubinstein | | 🔴 |
 | [CS 270](../courses/CS%20270.md) | Modeling Biomedical Systems | Griffin | c | 🔴 |
 | [CS 272](../courses/CS%20272.md) | Introduction to Biomedical Informatics Research Methodology | Altman | | 🔴 |
 | [CS 272H](../courses/CS%20272H.md) | Methods for Reproducible Population Health and Clinical Research | Rose | | 🔴 |
 | [CS 273B](../courses/CS%20273B.md) | Deep Learning in Genomics and Biomedicine | Zou | c | 🔴 |
 | [CS 273C](../courses/CS%20273C.md) | Cloud Computing for Biology and Healthcare | Snyder | | 🔴 |
-| [CS 275](../courses/CS%20275.md) | Translational Bioinformatics | Plevritis | c | |
+| [CS 275](../courses/CS%20275.md) | Translational Bioinformatics | Plevritis | c | 🔴 |
 | [CS 275B](../courses/CS%20275B.md) | Computational Music Analysis | Sapp | | 🟢 |
 | [CS 278](../courses/CS%20278.md) | Social Computing | Popowski | | 🟢 |
 | [CS 281](../courses/CS%20281.md) | Ethics of Artificial Intelligence | Guestrin | c | 🟢 |
@@ -98,12 +99,12 @@ sources:
 | [CS 349D](../courses/CS%20349D.md) | AI Inference Infrastructure | Kozyrakis | | 🟡 |
 | [CS 352B](../courses/CS%20352B.md) | Blockchain Governance | Strnad | | 🟡 |
 | [CS 355](../courses/CS%20355.md) | Advanced Topics in Cryptography | Datta | | 🟢 |
-| [CS 360](../courses/CS%20360.md) | Simplicity and Complexity in Economic Theory | Akbarpour | | |
+| [CS 360](../courses/CS%20360.md) | Simplicity and Complexity in Economic Theory | Akbarpour | | 🔴 |
 | [CS 361](../courses/CS%20361.md) | Engineering Design Optimization | Kochenderfer | c | 🟡 |
 | [CS 372](../courses/CS%20372.md) | Artificial General Intelligence for Reasoning, Planning, and Decision Making | Chang | | 🟢 |
-| [CS 377Q](../courses/CS%20377Q.md) | Designing for Accessibility | Tang | c† | |
-| [CS 377U](../courses/CS%20377U.md) | Understanding Users | Bentley | c† | |
-| [CS 407](../courses/CS%20407.md) | Lytics Seminar | Mitchell | | |
+| [CS 377Q](../courses/CS%20377Q.md) | Designing for Accessibility | Tang | c | 🔴 |
+| [CS 377U](../courses/CS%20377U.md) | Understanding Users | Bentley | c | 🔴 |
+| [CS 407](../courses/CS%20407.md) | Lytics Seminar | Mitchell | | 🔴 |
 | [CS 528](../courses/CS%20528.md) | Machine Learning Systems Seminar | | | 🟡 |
 | [CS 529](../courses/CS%20529.md) | Robotics and Autonomous Systems Seminar | Pavone | | 🟢 |
 | [CS 547](../courses/CS%20547.md) | Human-Computer Interaction Seminar | Bernstein | | 🟢 |

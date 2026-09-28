@@ -3,6 +3,8 @@ type: Course
 code: CS 109ACE
 title: "CS 109ACE: Problem-solving Lab for CS109"
 description: The 1-unit ACE section for CS 109 - extra probability problem-solving in a group capped at thirty.
+formerly:
+  - CS 109A
 level: undergraduate
 term: Autumn 2026
 terms_offered:
@@ -105,8 +107,8 @@ The catalog's version is "additional problem solving practice", in sections "des
 
 ## Related
 
-- [CS 109](CS%20109.md): the course this supports.
 - [CS 100ACE](CS%20100ACE.md), [CS 103ACE](CS%20103ACE.md), [CS 107ACE](CS%20107ACE.md), [CS 111ACE](CS%20111ACE.md), [CS 161ACE](CS%20161ACE.md): the other ACE sections, several of which do publish their materials.
+- [CS 109](CS%20109.md): the course this supports.
 
 ## Source notes
 - **The predecessor code is where the material is.** An earlier check here tried `cs109ace.stanford.edu`, `web.stanford.edu/class/cs109ace/` and `cs109ace.github.io` and found nothing — but this course ran as **CS 109A** until Autumn 2023, and `cs109a.stanford.edu` still serves that offering's site. When a renumbered course looks siteless, try the old code.

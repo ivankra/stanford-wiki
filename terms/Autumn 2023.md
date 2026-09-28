@@ -1,11 +1,12 @@
 ---
 type: Term
 title: Autumn 2023
-academic_year: "2023-2024"
 description: CS courses offered in Autumn 2023.
+academic_year: "2023-2024"
 start_date: "2023-09-26"
 end_date: "2023-12-15"
-concluded: true
+num_undergraduate: 44
+num_graduate: 42
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
@@ -18,7 +19,7 @@ sources:
 ---
 # Autumn 2023
 
-86 CS courses: 44 undergraduate and 42 graduate, excluding registrations.
+[← Summer 2023](Summer%202023.md) · [Winter 2024 →](Winter%202024.md)
 
 | Course | Title | Professor | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
@@ -26,7 +27,7 @@ sources:
 | [CS 11SI](../courses/CS%2011SI.md) | How to Make VR: Introduction to Virtual Reality Design and Development | Borenstein | | 🟡 |
 | [CS 24](../courses/CS%2024.md) | Minds and Machines | Frank | | 🟡 |
 | [CS 25](../courses/CS%2025.md) | Transformers United V6 | Singh | | 🟢 |
-| [CS 44N](../courses/CS%2044N.md) | Great Ideas in Graphics | James | | |
+| [CS 44N](../courses/CS%2044N.md) | Great Ideas in Graphics | James | | 🔴 |
 | [CS 80E](../courses/CS%2080E.md) | Dissecting The Modern Computer | Master | | 🟡 |
 | [CS 100ACE](../courses/CS%20100ACE.md) | Problem-solving Lab for CS106A | | | 🟡 |
 | [CS 100BACE](../courses/CS%20100BACE.md) | Problem-solving Lab for CS106B | | | 🔴 |
@@ -40,7 +41,7 @@ sources:
 | [CS 106M](../courses/CS%20106M.md) | Enrichment Adventures in Programming Abstractions | Zelenski | | 🔴 |
 | [CS 106S](../courses/CS%20106S.md) | Coding for Social Good | Cain | | 🟢 |
 | [CS 107](../courses/CS%20107.md) | Computer Organization and Systems | Cain | | 🟢 |
-| [CS 107ACE](../courses/CS%20107ACE.md) | Problem-solving Lab for CS107 | Berny | | 🟡 |
+| [CS 107ACE](../courses/CS%20107ACE.md) | Problem-solving Lab for CS107 | Berny | | 🟢 |
 | [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | Gregg | | 🟢 |
 | [CS 109ACE](../courses/CS%20109ACE.md) | Problem-solving Lab for CS109 | Hersch | | 🟢 |
 | [CS 111](../courses/CS%20111.md) | Operating Systems Principles | Troccoli | | 🟢 |
@@ -54,8 +55,8 @@ sources:
 | [CS 149](../courses/CS%20149.md) | Parallel Computing | Fatahalian | SI | 🟢 |
 | [CS 154](../courses/CS%20154.md) | Introduction to the Theory of Computation | Tan | | 🟢 |
 | [CS 157](../courses/CS%20157.md) | Computational Logic | Genesereth | | 🟢 |
-| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🔴 |
-| [CS 161ACE](../courses/CS%20161ACE.md) | Problem-Solving Lab for CS161 | Nag | | 🔴 |
+| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🟢 |
+| [CS 161ACE](../courses/CS%20161ACE.md) | Problem-Solving Lab for CS161 | Nag | - | 🟡 |
 | [CS 177](../courses/CS%20177.md) | Introduction to Product Management with AI | Wodtke | | 🟡 |
 | [CS 185](../courses/CS%20185.md) | Coding with LLM Assistants | | | |
 | [CS 193Q](../courses/CS%20193Q.md) | Introduction to Python Programming | Parlante | | 🟢 |
@@ -78,8 +79,8 @@ sources:
 | [CS 251](../courses/CS%20251.md) | Cryptocurrencies and blockchain technologies | Boneh | SI | 🟢 |
 | [CS 257](../courses/CS%20257.md) | Introduction to Automated Reasoning | Trippel | c | 🟡 |
 | [CS 259Q](../courses/CS%20259Q.md) | Quantum Computing | Bouland | | 🔴 |
-| [CS 261](../courses/CS%20261.md) | Combinatorial Optimization | Sidford | | 🟢 |
-| [CS 263](../courses/CS%20263.md) | Counting and Sampling | Anari | | |
+| [CS 261](../courses/CS%20261.md) | Combinatorial Optimization | Sidford | | 🟡 |
+| [CS 263](../courses/CS%20263.md) | Counting and Sampling | Anari | | 🟡 |
 | [CS 265](../courses/CS%20265.md) | Randomized Algorithms and Probabilistic Analysis | Valiant | | 🟢 |
 | [CS 274](../courses/CS%20274.md) | Representations and Algorithms for Computational Molecular Biology | Altman | c | |
 | [CS 279](../courses/CS%20279.md) | Computational Biology: Structure and Organization of Biomolecules and Cells | Dror | c | 🟢 |
@@ -96,10 +97,10 @@ sources:
 | [CS 329T](../courses/CS%20329T.md) | Trustworthy Machine Learning: Building and evaluating agentic systems | Mitchell | c | 🟢 |
 | [CS 330](../courses/CS%20330.md) | Deep Multi-task and Meta Learning | Finn | SI c | 🟢 |
 | [CS 337](../courses/CS%20337.md) | AI-Assisted Care | Li | | 🟢 |
-| [CS 349H](../courses/CS%20349H.md) | Software Techniques for Emerging Hardware Platforms | Achour | | 🟢 |
+| [CS 349H](../courses/CS%20349H.md) | Software Techniques for Emerging Hardware Platforms | Achour | | 🟡 |
 | [CS 353](../courses/CS%20353.md) | Seminar on Logic & Formal Philosophy | Icard | c | |
 | [CS 356](../courses/CS%20356.md) | Topics in Computer and Network Security | Durumeric | | 🟢 |
-| [CS 377G](../courses/CS%20377G.md) | Designing Serious Games | Wodtke | c† | |
+| [CS 377G](../courses/CS%20377G.md) | Designing Serious Games | Wodtke | c | 🔴 |
 | [CS 381](../courses/CS%20381.md) | Sensorimotor Learning for Embodied Agents | Song | | 🟡 |
 | [CS 448B](../courses/CS%20448B.md) | Data Visualization | Agrawala | | 🟢 |
 | [CS 476A](../courses/CS%20476A.md) | Music, Computing, Design: The Art of Design | Wang | | 🟢 |

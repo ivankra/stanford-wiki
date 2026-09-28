@@ -18,11 +18,11 @@ grading: Satisfactory/No Credit
 prerequisites:
   - Application required
 materials:
-  checked: "2026-09-27"
-  access: unknown
+  checked: "2026-09-29"
+  access: closed
   syllabus:
-    access: unknown
-    note: no site under the course code; a web search found only catalog and aggregator listings
+    access: closed
+    note: no site under the course code; a web search found only catalog and aggregator listings; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
   videos: unknown
   assignments: unknown
   exams: none
@@ -47,6 +47,10 @@ sources:
     resource: https://web.stanford.edu/class/cs91si/
     file: ../references/course-site-probe-cs-91si-2026-09-27.md
     title: Course site probe, 2026-09-27
+  - id: syllabusrepo
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/W25/CS/
+    file: ../references/cs-91si-syllabus-repository-winter-2020-winter-2025.md
+    title: Stanford Syllabus repository, CS 91SI, Winter 2020 to Winter 2025
 status: stable
 generated:
   by: claude-code/claude-opus-5[1m]
@@ -60,7 +64,8 @@ A student-initiated course aimed at people who have never designed anything, and
 
 Nothing is public. No site exists under the code, and a search turned up only catalog and aggregator listings.
 
-- **Syllabus**, **Assignments**, **Projects**, **Videos**: not found. **Exams**: none.
+- **Syllabus**: closed. Spring 2022 and Spring 2023 uploaded a syllabus to Canvas, marked Stanford-only.
+- **Assignments**, **Projects**, **Videos**: not found. **Exams**: none.
 
 ## Syllabus
 
@@ -72,8 +77,8 @@ None required. Enrollment is limited and decided by a short application. The cat
 
 ## Related
 
-- [CS 147](CS%20147.md): the full HCI design course, where CS 91SI is two units on the visual craft alone.
 - [CS 11SI](CS%2011SI.md): the other student-initiated design-and-build course in the same numbering family.
+- [CS 147](CS%20147.md): the full HCI design course, where CS 91SI is two units on the visual craft alone.
 
 ## Source notes
 

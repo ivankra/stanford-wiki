@@ -76,6 +76,5 @@ None stated.
 ## Source notes
 
 - **The syllabus was rated `open` here in error.** The linked Google Doc is private: `/export?format=txt`, `/preview` and `/edit` all return 401 (rechecked 2026-09-27). A `/preview` URL fetches much the same whether a document is shared or not, which is how it was misread.
-
 - The page title is the directory slug `cs82si-spr20`, which dates it to the single Spring 2020 offering (checked 2026-09-27).
 - The catalog lists Piech as instructor of record, as it does for student-initiated courses.

@@ -1,11 +1,12 @@
 ---
 type: Term
 title: Winter 2020
-academic_year: "2019-2020"
 description: CS courses offered in Winter 2020.
+academic_year: "2019-2020"
 start_date: "2020-01-06"
 end_date: "2020-03-20"
-concluded: true
+num_undergraduate: 45
+num_graduate: 42
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20192020&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
@@ -18,20 +19,22 @@ sources:
 ---
 # Winter 2020
 
-The last quarter taught on campus before COVID-19. 83 CS courses: 41 undergraduate and 42 graduate, excluding registrations.
+The last quarter taught on campus before COVID-19.
+
+[Spring 2020 →](Spring%202020.md)
 
 | Course | Title | Professor | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
 | [CS 1U](../courses/CS%201U.md) | Practical Unix | Zelenski | | 🟢 |
 | [CS 11SI](../courses/CS%2011SI.md) | How to Make VR: Introduction to Virtual Reality Design and Development | Borenstein | | 🟡 |
-| [CS 22A](../courses/CS%2022A.md) | The Social & Economic Impact of Artificial Intelligence | Kaplan | | |
+| [CS 22A](../courses/CS%2022A.md) | The Social & Economic Impact of Artificial Intelligence | Kaplan | | 🟡 |
 | [CS 41](../courses/CS%2041.md) | Hap.py Code: The Python Programming Language | Cain | | 🟢 |
 | [CS 43](../courses/CS%2043.md) | Functional Programming Abstractions | Cain | | 🟢 |
 | [CS 51](../courses/CS%2051.md) | CS + Social Good Studio: Designing Social Impact Projects | Cain | | 🔴 |
 | [CS 58N](../courses/CS%2058N.md) | The Blockchain Revolution Will Not Be Televised | Mitchell | | |
-| [CS 80Q](../courses/CS%2080Q.md) | Race and Gender in Silicon Valley | Bailey | | |
-| [CS 83N](../courses/CS%2083N.md) | Playback Theater | Reingold | | |
-| [CS 91SI](../courses/CS%2091SI.md) | Digital Canvas: An Introduction to UI/UX Design | Landay | | |
+| [CS 80Q](../courses/CS%2080Q.md) | Race and Gender in Silicon Valley | Bailey | | 🔴 |
+| [CS 83N](../courses/CS%2083N.md) | Playback Theater | Reingold | | 🔴 |
+| [CS 91SI](../courses/CS%2091SI.md) | Digital Canvas: An Introduction to UI/UX Design | Landay | | 🔴 |
 | [CS 100ACE](../courses/CS%20100ACE.md) | Problem-solving Lab for CS106A | | | 🟡 |
 | [CS 100BACE](../courses/CS%20100BACE.md) | Problem-solving Lab for CS106B | | | 🔴 |
 | [CS 103](../courses/CS%20103.md) | Mathematical Foundations of Computing | Szumlanski | | 🟢 |
@@ -41,7 +44,7 @@ The last quarter taught on campus before COVID-19. 83 CS courses: 41 undergradua
 | [CS 106L](../courses/CS%20106L.md) | Standard C++ Programming Laboratory | Bailey | | 🟢 |
 | [CS 106S](../courses/CS%20106S.md) | Coding for Social Good | Cain | | 🟢 |
 | [CS 107](../courses/CS%20107.md) | Computer Organization and Systems | Cain | | 🟢 |
-| [CS 107ACE](../courses/CS%20107ACE.md) | Problem-solving Lab for CS107 | Berny | | 🟡 |
+| [CS 107ACE](../courses/CS%20107ACE.md) | Problem-solving Lab for CS107 | Berny | | 🟢 |
 | [CS 107E](../courses/CS%20107E.md) | Computer Systems from the Ground Up | Zelenski | | 🟢 |
 | [CS 108](../courses/CS%20108.md) | Object-Oriented Systems Design | Young | | 🟡 |
 | [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | Gregg | | 🟢 |
@@ -52,8 +55,8 @@ The last quarter taught on campus before COVID-19. 83 CS courses: 41 undergradua
 | [CS 140E](../courses/CS%20140E.md) | Operating systems design and implementation | Engler | SI | 🟢 |
 | [CS 142](../courses/CS%20142.md) | Web Applications | Rosenblum | | 🟢 |
 | [CS 152](../courses/CS%20152.md) | Trust and Safety | Hancock | | 🟢 |
-| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🔴 |
-| [CS 163](../courses/CS%20163.md) | The Practice of Theory Research | Reingold | | |
+| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🟢 |
+| [CS 163](../courses/CS%20163.md) | The Practice of Theory Research | Reingold | | 🟢 |
 | [CS 182](../courses/CS%20182.md) | Ethics, Public Policy, and Technological Change | Sahami | | 🟢 |
 | [CS 182W](../courses/CS%20182W.md) | Ethics, Public Policy, and Technological Change (WIM) | Sahami | | 🟢 |
 | [CS 190](../courses/CS%20190.md) | Software Design Studio | Ousterhout | SI | 🟢 |
@@ -64,7 +67,7 @@ The last quarter taught on campus before COVID-19. 83 CS courses: 41 undergradua
 | [CS 196](../courses/CS%20196.md) | Computer Consulting | | - | |
 | [CS 198](../courses/CS%20198.md) | Teaching Computer Science | Roberts-Baca | - | 🔴 |
 | [CS 198B](../courses/CS%20198B.md) | Additional Topics in Teaching Computer Science | Roberts-Baca | | 🟢 |
-| [CS 202](../courses/CS%20202.md) | Law for Computer Science Professionals | Hansen | | |
+| [CS 202](../courses/CS%20202.md) | Law for Computer Science Professionals | Hansen | | 🔴 |
 | [CS 205L](../courses/CS%20205L.md) | Continuous Mathematical Methods with an Emphasis on Machine Learning | Fedkiw | c | 🟡 |
 | [CS 210A](../courses/CS%20210A.md) | Industry Innovation Lab | Borenstein | | 🟡 |
 | [CS 217](../courses/CS%20217.md) | Hardware Accelerators for Machine Learning | Olukotun | | 🟡 |
@@ -78,33 +81,33 @@ The last quarter taught on campus before COVID-19. 83 CS courses: 41 undergradua
 | [CS 239](../courses/CS%20239.md) | Advanced Topics in Sequential Decision Making | Kochenderfer | SI c | 🟡 |
 | [CS 241](../courses/CS%20241.md) | Embedded Systems Workshop | Levis | | 🟢 |
 | [CS 243](../courses/CS%20243.md) | Program Analysis and Optimizations | Lam | SI | 🟢 |
-| [CS 245](../courses/CS%20245.md) | Principles of Data-Intensive Systems | Zaharia | | 🟡 |
+| [CS 245](../courses/CS%20245.md) | Principles of Data-Intensive Systems | Zaharia | | 🟢 |
 | [CS 246](../courses/CS%20246.md) | Mining Massive Data Sets | Leskovec | c | 🟢 |
 | [CS 246H](../courses/CS%20246H.md) | Mining Massive Data Sets Hadoop Lab | | | |
-| [CS 247S](../courses/CS%20247S.md) | Service Design with AI | Stanford | | |
+| [CS 247S](../courses/CS%20247S.md) | Service Design with AI | Stanford | | 🔴 |
 | [CS 248](../courses/CS%20248.md) | Interactive Computer Graphics | Fatahalian | | 🟢 |
 | [CS 254](../courses/CS%20254.md) | Computational Complexity | Tan | | 🟢 |
 | [CS 255](../courses/CS%20255.md) | Introduction to Cryptography | Boneh | | 🟢 |
 | [CS 259Q](../courses/CS%20259Q.md) | Quantum Computing | Bouland | | 🔴 |
-| [CS 260](../courses/CS%20260.md) | Geometry of Polynomials in Algorithm Design | Anari | | |
-| [CS 261](../courses/CS%20261.md) | Combinatorial Optimization | Sidford | | 🟢 |
+| [CS 260](../courses/CS%20260.md) | Geometry of Polynomials in Algorithm Design | Anari | | 🟡 |
+| [CS 261](../courses/CS%20261.md) | Combinatorial Optimization | Sidford | | 🟡 |
 | [CS 270](../courses/CS%20270.md) | Modeling Biomedical Systems | Griffin | c | 🔴 |
 | [CS 271](../courses/CS%20271.md) | Artificial Intelligence in Healthcare | Yeung | c | 🟢 |
-| [CS 273A](../courses/CS%20273A.md) | The Human Genome Source Code | Bejerano | | 🔴 |
+| [CS 273A](../courses/CS%20273A.md) | The Human Genome Source Code | Bejerano | | 🟡 |
 | [CS 275A](../courses/CS%20275A.md) | Symbolic Musical Information | | | 🟢 |
-| [CS 320](../courses/CS%20320.md) | Value of Data and AI | Eglash | | |
+| [CS 320](../courses/CS%20320.md) | Value of Data and AI | Eglash | | 🟡 |
 | [CS 334A](../courses/CS%20334A.md) | Convex Optimization I | Fu | c | 🟢 |
 | [CS 337](../courses/CS%20337.md) | AI-Assisted Care | Li | | 🟢 |
 | [CS 347](../courses/CS%20347.md) | Human-Computer Interaction: Foundations and Frontiers | Bernstein | | 🟢 |
 | [CS 348A](../courses/CS%20348A.md) | Computer Graphics: Geometric Modeling & Processing | Guibas | | 🟢 |
 | [CS 348C](../courses/CS%20348C.md) | Computer Graphics: Animation and Simulation | James | | 🟡 |
-| [CS 358A](../courses/CS%20358A.md) | Programming Language Foundations | Patrignani | | |
+| [CS 358A](../courses/CS%20358A.md) | Programming Language Foundations | Patrignani | | 🟢 |
 | [CS 366](../courses/CS%20366.md) | Computational Social Choice | Goel | | 🟡 |
-| [CS 373](../courses/CS%20373.md) | Statistical and Machine Learning Methods for Genomics | Tang | | |
-| [CS 377G](../courses/CS%20377G.md) | Designing Serious Games | Wodtke | c† | |
-| [CS 402](../courses/CS%20402.md) | Beyond Bits and Atoms: Designing Technological Tools | Grant | | |
+| [CS 373](../courses/CS%20373.md) | Statistical and Machine Learning Methods for Genomics | Tang | | 🔴 |
+| [CS 377G](../courses/CS%20377G.md) | Designing Serious Games | Wodtke | c | 🔴 |
+| [CS 402](../courses/CS%20402.md) | Beyond Bits and Atoms: Designing Technological Tools | Grant | | 🔴 |
 | [CS 402L](../courses/CS%20402L.md) | Beyond Bits and Atoms - Lab | Grant | | |
-| [CS 421](../courses/CS%20421.md) | Designing AI to Cultivate Human Well-Being | Aaker | | |
+| [CS 421](../courses/CS%20421.md) | Designing AI to Cultivate Human Well-Being | Aaker | | 🔴 |
 | [CS 448B](../courses/CS%20448B.md) | Data Visualization | Agrawala | | 🟢 |
 | [CS 448I](../courses/CS%20448I.md) | Computational Imaging | Wetzstein | | 🟢 |
 | [CS 529](../courses/CS%20529.md) | Robotics and Autonomous Systems Seminar | Pavone | | 🟢 |

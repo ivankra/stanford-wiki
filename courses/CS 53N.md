@@ -18,11 +18,11 @@ units: "3"
 grading: Letter or Credit/No Credit
 prerequisites: []
 materials:
-  checked: "2026-09-27"
-  access: unknown
+  checked: "2026-09-29"
+  access: closed
   syllabus:
-    access: unknown
-    note: no course site found under either code; the IntroSem listing restates the catalog
+    access: closed
+    note: no course site found under either code; the IntroSem listing restates the catalog; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
   videos: unknown
   assignments: unknown
   exams: unknown
@@ -50,6 +50,10 @@ sources:
   - id: introsem
     resource: https://exploreintrosems.stanford.edu/opportunities/how-can-generative-ai-help-us-learn
     title: Explore IntroSems listing, checked 2026-09-27
+  - id: syllabusrepo
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/Sp26/CS/
+    file: ../references/cs-53n-syllabus-repository-spring-2024-spring-2026.md
+    title: Stanford Syllabus repository, CS 53N, Spring 2024 to Spring 2026
 status: stable
 generated:
   by: claude-code/claude-opus-5[1m]
@@ -63,7 +67,8 @@ A seminar that uses its students as its evidence base: each team becomes expert 
 
 Nothing is public. No site exists under either code, and the IntroSem listing adds nothing beyond the catalog text and an application deadline.
 
-- **Syllabus**, **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: closed. Spring 2024 and Spring 2025 uploaded a syllabus to Canvas, marked Stanford-only.
+- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
 
 ## Syllabus
 
@@ -77,8 +82,8 @@ None. It is an introductory seminar for first-year students, entered by applicat
 
 ## Related
 
-- [CS 106EA](CS%20106EA.md): the other non-technical AI survey for students without a CS background.
 - [CS 21SI](CS%2021SI.md): AI applied to social problems, with the machine learning taught rather than assumed.
+- [CS 106EA](CS%20106EA.md): the other non-technical AI survey for students without a CS background.
 
 ## Source notes
 

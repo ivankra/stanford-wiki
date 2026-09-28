@@ -1,11 +1,12 @@
 ---
 type: Term
 title: Summer 2026
-academic_year: "2025-2026"
 description: CS courses offered in Summer 2026.
+academic_year: "2025-2026"
 start_date: "2026-06-22"
 end_date: "2026-08-15"
-concluded: true
+num_undergraduate: 8
+num_graduate: 2
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
@@ -18,7 +19,7 @@ sources:
 ---
 # Summer 2026
 
-10 CS courses: 8 undergraduate and 2 graduate, excluding registrations.
+[← Spring 2026](Spring%202026.md) · [Autumn 2026 →](Autumn%202026.md)
 
 | Course | Title | Professor | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
@@ -29,7 +30,7 @@ sources:
 | [CS 107](../courses/CS%20107.md) | Computer Organization and Systems | Cain | | 🟢 |
 | [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | Gregg | | 🟢 |
 | [CS 148](../courses/CS%20148.md) | Introduction to Computer Graphics and Imaging | Fedkiw | | 🟢 |
-| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🔴 |
+| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🟢 |
 | [CS 229](../courses/CS%20229.md) | Machine Learning | Amjad | b | 🟡 |
 | [CS 247G](../courses/CS%20247G.md) | Design for Play | Wodtke | | 🟡 |
 

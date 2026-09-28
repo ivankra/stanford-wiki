@@ -20,11 +20,11 @@ units: "3"
 grading: Letter or Credit/No Credit
 prerequisites: []
 materials:
-  checked: "2026-09-27"
-  access: unknown
+  checked: "2026-09-29"
+  access: closed
   syllabus:
-    access: unknown
-    note: "no current site: cs44n.stanford.edu doesn't resolve and web.stanford.edu/class/cs44n/ 404s; the Autumn 2020 Google Site is the only one found and is too old to rate"
+    access: closed
+    note: "no current site: cs44n.stanford.edu doesn't resolve and web.stanford.edu/class/cs44n/ 404s; the Autumn 2020 Google Site is the only one found and is too old to rate; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers"
   videos:
     access: unknown
   assignments:
@@ -57,6 +57,10 @@ sources:
     resource: https://sites.google.com/stanford.edu/cs44n-gig-f20/schedule
     file: ../references/cs-44n-course-site-autumn-2020.md
     title: Autumn 2020 course site, checked 2026-09-27
+  - id: syllabusrepo
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F26/CS/
+    file: ../references/cs-44n-syllabus-repository-autumn-2020-autumn-2026.md
+    title: Stanford Syllabus repository, CS 44N, Autumn 2020 to Autumn 2026
 status: stable
 generated:
   by: claude-code/claude-opus-5[1m]
@@ -70,7 +74,8 @@ An introductory seminar for first-years: one graphics idea a fortnight — parti
 
 Nothing current is public. The course has had one public site, a Google Site for the Autumn 2020 offering, which is too old to rate as this course's materials; today's materials are on Canvas.
 
-- **Syllabus**, **Assignments**, **Videos**, **Projects**: nothing found for a recent offering.
+- **Syllabus**: closed. Seven offerings between Autumn 2020 and Autumn 2026 uploaded a syllabus to Canvas, every one of them marked Stanford-only.
+- **Assignments**, **Videos**, **Projects**: nothing found for a recent offering.
 - **Exams**: none — the catalog describes weekly projects only.
 
 ## Syllabus
@@ -86,7 +91,7 @@ The Autumn 2020 site, the only published schedule found, ran: OpenProcessing and
 ## Related
 
 - [CS 148](CS%20148.md): the graphics course proper, which the same department offers to students who want the pipeline and the mathematics.
-- [CS 248B](CS%20248B.md): the same instructor's graduate course on animation and simulation.
+- [CS 248B](CS%20248B.md): animation and physics simulation as a full course, where particles and collisions are two of this seminar's ideas.
 
 ## Source notes
 

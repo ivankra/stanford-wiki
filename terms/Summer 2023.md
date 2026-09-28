@@ -1,11 +1,12 @@
 ---
 type: Term
 title: Summer 2023
-academic_year: "2022-2023"
 description: CS courses offered in Summer 2023.
+academic_year: "2022-2023"
 start_date: "2023-06-26"
 end_date: "2023-08-19"
-concluded: true
+num_undergraduate: 8
+num_graduate: 2
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20222023&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
@@ -18,7 +19,7 @@ sources:
 ---
 # Summer 2023
 
-10 CS courses: 8 undergraduate and 2 graduate, excluding registrations.
+[← Spring 2023](Spring%202023.md) · [Autumn 2023 →](Autumn%202023.md)
 
 | Course | Title | Professor | **[AI](../programs/MSCS%20AI.md)** | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- |
@@ -28,8 +29,8 @@ sources:
 | [CS 107](../courses/CS%20107.md) | Computer Organization and Systems | Cain | | 🟢 |
 | [CS 109](../courses/CS%20109.md) | Introduction to Probability for Computer Scientists | Gregg | | 🟢 |
 | [CS 148](../courses/CS%20148.md) | Introduction to Computer Graphics and Imaging | Fedkiw | | 🟢 |
-| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🔴 |
-| [CS 193C](../courses/CS%20193C.md) | Client-Side Internet Technologies | Young | | 🔴 |
+| [CS 161](../courses/CS%20161.md) | Design and Analysis of Algorithms | Sotoudeh | | 🟢 |
+| [CS 193C](../courses/CS%20193C.md) | Client-Side Internet Technologies | Young | | 🟡 |
 | [CS 221](../courses/CS%20221.md) | Artificial Intelligence: Principles and Techniques | Liang | a | 🟢 |
 | [CS 229](../courses/CS%20229.md) | Machine Learning | Amjad | b | 🟡 |
 

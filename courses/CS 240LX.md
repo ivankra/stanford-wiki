@@ -56,6 +56,8 @@ tags:
   - embedded-systems
   - systems-lab
   - mscs-breadth-C
+  - mscs-sec-b
+  - mscs-systems-a
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
@@ -111,13 +113,13 @@ No dated schedule; the [lab list](https://github.com/dddrrreee/cs240lx-26spr/tre
 
 ## Related
 
-- [CS 340LX](CS%20340LX.md): the follow-on, on fancier devices, new boards and speed, about half its labs student-written; this course teaches the core toolkit.
 - [CS 240](CS%20240.md): the same ground through research papers; this course can substitute for it.
+- [CS 340LX](CS%20340LX.md): the follow-on, on fancier devices, new boards and speed, about half its labs student-written; this course teaches the core toolkit.
 
 ## Source notes
 
 - `cs240lx.stanford.edu` doesn't resolve and `web.stanford.edu/class/cs240lx/` is 404 (checked 2026-09-26), so the GitHub repo is `homepage`.
-- `terms_offered` comes from the per-offering repository names and creation dates; there is no catalog history and no `cs240lx-21spr` repo. Spring 2020 is at the edge of the ~10-year window.
+- `terms_offered` comes from the per-offering repository names and creation dates; there is no catalog history and no `cs240lx-21spr` repo. Spring 2020 is the first term after `cutoff_term`.
 - The Spring 2026 repo is anchored to that term: it says "Spr'26", sets `CS240LX_2026_PATH`, and was last pushed 2026-06-02.
 - The catalog says "ten projects, one per week, where each project covers two labs"; the repo numbers 19 labs, so a project is a lab pair. `labs/README.md` describes labs 0–16 only; 17-dma and 18-i2s-microphone exist but are undescribed.
 - The catalog lists Cura and Sriram as TAs and Engler as PI; only Engler is recorded here. The README names Joseph Shetaye as head TA.

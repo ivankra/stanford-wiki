@@ -27,7 +27,7 @@ materials:
   syllabus:
     access: open
     url: https://cs007.blog/administrative-details/
-    note: an administrative-details page; the session list is the course-material post, most recently Autumn 2025's
+    note: an administrative-details page; the session list is the course-material post, most recently Autumn 2025's. Autumn 2020's Canvas course is left publicly readable and carries the same session list
   slides:
     access: open
     url: https://cs007.blog/2025/10/11/cs-007-course-material-2025/
@@ -76,7 +76,7 @@ One unit, ten Tuesday evenings, and a syllabus aimed squarely at the money decis
 
 The course's whole lecture set is on its public blog, year by year; the most recent posted set is Autumn 2025's.
 
-- **Syllabus**: the [administrative details](https://cs007.blog/administrative-details/) page, with the session list in the year's course-material post.
+- **Syllabus**: the [administrative details](https://cs007.blog/administrative-details/) page, with the session list in the year's course-material post. Autumn 2020's [Canvas course](https://canvas.stanford.edu/courses/124836/assignments/syllabus) is one of the few left publicly readable; it carries the same ten sessions, naming venture capital, derivatives and crypto as the tenth week's extras.
 - **Slides**: [all ten decks for 2025](https://cs007.blog/2025/10/11/cs-007-course-material-2025/), with equivalent posts back through earlier years.
 - **Videos**, **Assignments**: none published.
 - **Exams**, **Projects**: none.
@@ -105,4 +105,5 @@ The catalog adds the framing: "actual industry-based financial information from 
 ## Source notes
 
 - The course calls itself CS 007 in its own materials; the catalog number is CS 7.
+- Stanford's syllabus repository lists Autumn 2020's syllabus as `PUBLIC`, and `canvas.stanford.edu/courses/124836` indeed opens without a login — unusual, since almost every Stanford Canvas course is `INSTITUTION`. Its own Course Summary table is empty, so it adds the framing text and nothing dated (checked 2026-09-29).
 - The blog is the instructor's own site (`cs007.blog`), not a Stanford host, and its newest course-material post is Autumn 2025's — no Autumn 2026 post existed on 2026-09-27, so the decks are rated as that offering.

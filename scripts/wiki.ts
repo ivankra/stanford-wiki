@@ -58,7 +58,7 @@ function scalar(s: string): Y {
   return s.replace(/\s+#.*$/, "");
 }
 
-function parseYaml(text: string): Record<string, Y> {
+export function parseYaml(text: string): Record<string, Y> {
   const lines = text.split("\n").filter((l) => l.trim() && !/^\s*#/.test(l))
     .map((l) => ({ indent: l.length - l.trimStart().length, text: l.trimStart() }));
   let i = 0;
@@ -99,8 +99,8 @@ function parseYaml(text: string): Record<string, Y> {
 
 // Canonical block YAML; retain the schema's scalar types while quoting ambiguous strings.
 function yamlScalar(value: string, path: string[]): string {
-  if (path.length === 1 && path[0] === "concluded" && /^(true|false)$/.test(value)) return value;
-  if (path.length === 1 && path[0] === "bytes" && /^\d+$/.test(value)) return value;
+  if (path.length === 1 && path[0] === "is_current_term" && /^(true|false)$/.test(value)) return value;
+  if (path.length === 1 && ["bytes", "num_undergraduate", "num_graduate"].includes(path[0]) && /^\d+$/.test(value)) return value;
   const quote = path.at(-1) === "units" || !value || value.trim() !== value
     || /^[\-?:,\[\]{}#&*!|>'"%@`]/.test(value) || /:($|\s)|#|[\x00-\x1f\x7f]/.test(value)
     || /^(?:null|true|false|yes|no|on|off|y|n|~|[-+]?\.inf|\.nan)$/i.test(value)
@@ -108,7 +108,7 @@ function yamlScalar(value: string, path: string[]): string {
   return quote ? JSON.stringify(value) : value;
 }
 
-function yamlLines(value: Y, path: string[] = []): string[] {
+export function yamlLines(value: Y, path: string[] = []): string[] {
   if (typeof value === "string") return [yamlScalar(value, path)];
   if (Array.isArray(value)) {
     if (!value.length) return ["[]"];
@@ -167,11 +167,18 @@ export const pageTerm = (d: Doc) => basename(d.path, ".md");
 export const str = (v: Y | undefined) => (typeof v === "string" ? v : "");
 export const arr = (v: Y | undefined): Y[] => (Array.isArray(v) ? v : []);
 export const obj = (v: Y | undefined) => (v && typeof v === "object" && !Array.isArray(v) ? v : null);
+// A course's other codes: its cross-listings and its former numbers. Program lists, prerequisite
+// links and Related lines match them as they match the page's own code.
+export const aliases = (d: Doc) => [...arr(d.fm!.cross_listed), ...arr(d.fm!.formerly)].map(String);
 export const ICON: Record<string, string> = { open: "🟢", partial: "🟡", closed: "🔴", none: "⚪", unknown: "" };
 // Material types in the order AGENTS.md lists them. Build sorts `materials` into this order on
 // every run (see yamlLines), so a page written out of order is fixed rather than reported.
 export const MAT_TYPES = ["syllabus", "slides", "notes", "videos", "assignments", "solutions", "exams", "projects", "code"];
 const MAT_KEYS = ["checked", "access", "term", ...MAT_TYPES, "sites"];
+// Term-page frontmatter in the order AGENTS.md lists it. Build writes is_current_term and the counts,
+// and sorts every term page into this order; keys it doesn't know keep their relative order at the end.
+const TERM_KEYS = ["type", "title", "description", "academic_year", "start_date", "end_date",
+  "is_current_term", "num_undergraduate", "num_graduate", "sources"];
 export const stripCode = (body: string) => body.replace(/```[\s\S]*?```/g, "").replace(/`[^`\n]*`/g, "");
 export const encodePath = (p: string) => p.split("/").map((s) => encodeURIComponent(s).replace(/\(/g, "%28").replace(/\)/g, "%29")).join("/");
 export const resolveLink = (root: string, from: string, href: string) => {
@@ -186,6 +193,47 @@ const codeKey = (code: string) => {
   const m = /^(\S+) (\d+)(.*)$/.exec(code);
   return m ? [m[1], m[2].padStart(5, "0"), m[3]].join(" ") : code;
 };
+// A `## Related` section is one list, a line per bullet, in course-code order by the first code
+// in each bullet (CS 106A < CS 106AX < CS 106B < CS 110), optionally followed by one comparison
+// table. Returns one message per problem, with 1-based line numbers in the whole file so a script
+// can rewrite the list's range; an empty array means the section is fine or absent.
+export function relatedProblems(text: string): string[] {
+  const lines = text.split("\n");
+  const head = lines.indexOf("## Related");
+  if (head < 0) return [];
+  let end = lines.findIndex((l, i) => i > head && /^## /.test(l));
+  if (end < 0) end = lines.length;
+  let a = head + 1, b = end;
+  while (a < b && !lines[a].trim()) a++;
+  while (b > a && !lines[b - 1].trim()) b--;
+  if (a === b) return [`## Related (line ${head + 1}) is empty`];
+  let e = a; // the list: the first run of non-blank lines that isn't a table
+  while (e < b && lines[e].trim() && !lines[e].startsWith("|")) e++;
+  let t = e; // then, optionally, one table after blank lines
+  while (t < b && !lines[t].trim()) t++;
+  let u = t;
+  while (u < b && lines[u].startsWith("|")) u++;
+  const out: string[] = [];
+  const range = `lines ${a + 1}-${e}`;
+  if (u < b) out.push(`## Related (lines ${a + 1}-${b}): only one bullet list and an optional table; unexpected content at line ${u + 1}`);
+  const notBullet = [];
+  for (let i = a; i < e; i++) if (!/^- \S/.test(lines[i])) notBullet.push(i + 1);
+  if (notBullet.length) out.push(`## Related list (${range}): one bullet per line starting "- "; not a bullet: line ${notBullet.join(", ")}`);
+  const codes: string[] = [];
+  for (let i = a; i < e; i++) {
+    if (!lines[i].startsWith("- ")) continue;
+    const m = /(?<![A-Za-z0-9&])([A-Z][A-Z&]*) (\d+[A-Z]*)(?![A-Za-z0-9])/.exec(lines[i].replace(/`[^`\n]*`/g, ""));
+    if (m) codes.push(`${m[1]} ${m[2]}`);
+    else out.push(`## Related list (${range}): line ${i + 1} names no course code`);
+  }
+  const keys = codes.map(codeKey);
+  if (keys.some((k, i) => i > 0 && k < keys[i - 1])) {
+    const want = codes.map((c, i) => [keys[i], c]).sort(([x], [y]) => (x < y ? -1 : x > y ? 1 : 0)).map(([, c]) => c);
+    out.push(`## Related list (${range}) is not in course-code order; expected: ${want.join(", ")}`);
+  }
+  return out;
+}
+
 // Same code: the current course first, then previous holders of the number, newest first.
 const isCurrent = (d: Doc) => basename(d.path) === `${str(d.fm!.code)}.md`;
 export const byCode = (a: Doc, b: Doc) =>
@@ -199,7 +247,7 @@ const entryMatches = (entry: string, code: string) =>
   entry.endsWith("*") ? new RegExp(`^${entry.slice(0, -1).replace(/[.&]/g, "\\$&")}[A-Z]*$`).test(code) : entry === code;
 // The previous holder of a reused number ("CS 323 (Spring 2019).md") never matches a program list.
 const codesOf = (d: Doc) =>
-  basename(d.path) === `${str(d.fm!.code)}.md` ? [str(d.fm!.code), ...arr(d.fm!.cross_listed).map(String)] : [];
+  basename(d.path) === `${str(d.fm!.code)}.md` ? [str(d.fm!.code), ...aliases(d)] : [];
 const listed = (list: Y | undefined, d: Doc) => arr(list).some((e) => codesOf(d).some((c) => entryMatches(String(e), c)));
 
 export type Programs = { program?: Doc; specs: Doc[]; primary?: Doc };
@@ -217,43 +265,43 @@ export function programs(docs: Doc[]): Programs {
 export function breadthCell(p: Programs, d: Doc): string {
   const f = p.program?.fm;
   if (!f) return "";
-  if (listed(f.excluded, d)) return "-";
-  const breadth = obj(f.breadth) ?? {};
-  return Object.keys(breadth).sort().filter((k) => listed(breadth[k], d)).join("") + (listed(f.foundations, d) ? "F" : "");
+  if (listed(f.mscs_excluded, d)) return "-";
+  const breadth = obj(f.mscs_breadth) ?? {};
+  return Object.keys(breadth).sort().filter((k) => listed(breadth[k], d)).join("") + (listed(f.mscs_foundations, d) ? "F" : "");
 }
 
-// A specialization's depth letters, † if the matching entry needs approval.
+// A specialization's depth letters. Approval (†) is a property of the sheet entry, not the column.
 export function depthCodes(spec: Doc | undefined, d: Doc): string {
-  const depth = obj(spec?.fm?.depth);
+  const depth = obj(spec?.fm?.mscs_depth);
   if (!depth) return "";
   const letters = Object.keys(depth).sort().filter((k) => listed(depth[k], d)).join("");
-  return letters && listed(spec!.fm!.approval, d) ? `${letters}†` : letters;
+  return letters;
 }
 
-// Depth column: "SI " if it counts as significant implementation, then the spec's depth letters and †; "-" when excluded.
+// Depth column: "SI " if it counts as significant implementation, then the spec's depth letters; "-" when excluded.
 export function depthCell(p: Programs, spec: Doc | undefined, d: Doc): string {
-  if (listed(p.program?.fm?.excluded, d)) return "-";
-  return [listed(p.program?.fm?.si, d) ? "SI" : "", depthCodes(spec, d)].filter(Boolean).join(" ");
+  if (listed(p.program?.fm?.mscs_excluded, d)) return "-";
+  return [listed(p.program?.fm?.mscs_si, d) ? "SI" : "", depthCodes(spec, d)].filter(Boolean).join(" ");
 }
 
 // Generated tags for every matching program list, in stable order.
 export function mscsTags(p: Programs, d: Doc): string[] {
   const f = p.program?.fm;
-  if (f && listed(f.excluded, d)) return ["mscs-excluded"];
+  if (f && listed(f.mscs_excluded, d)) return ["mscs-excluded"];
   const tags: string[] = [];
   if (f) {
-    const breadth = obj(f.breadth) ?? {};
+    const breadth = obj(f.mscs_breadth) ?? {};
     for (const k of Object.keys(breadth).sort())
       if (listed(breadth[k], d)) tags.push(`mscs-breadth-${k}`);
-    if (listed(f.foundations, d)) tags.push("mscs-foundation");
-    if (listed(f.si, d)) tags.push("mscs-si");
+    if (listed(f.mscs_foundations, d)) tags.push("mscs-foundation");
+    if (listed(f.mscs_si, d)) tags.push("mscs-si");
   }
   for (const spec of [...p.specs].sort((a, b) => str(a.fm!.key).localeCompare(str(b.fm!.key)))) {
-    const depth = obj(spec.fm!.depth) ?? {};
+    const depth = obj(spec.fm!.mscs_depth) ?? {};
     const letters = Object.keys(depth).sort().filter((k) => listed(depth[k], d));
     const prefix = `mscs-${str(spec.fm!.key)}`;
     tags.push(...letters.map((k) => `${prefix}-${k}`));
-    if (letters.length && listed(spec.fm!.approval, d)) tags.push(`${prefix}-approval`);
+    if (letters.length && listed(spec.fm!.mscs_approval, d)) tags.push(`${prefix}-approval`);
   }
   return tags;
 }
@@ -263,6 +311,8 @@ export function mscsTags(p: Programs, d: Doc): string[] {
 // A generated block inside a hand-written page is one contiguous run of lines (a table or a list) followed by a
 // blank line and this marker, which names the block. Build rewrites only that run; everything else is hand-written.
 type BlockId = "course-table" | "missing-pages";
+// The prev/next bar build writes above a term table: "[\u2190 Winter 2026](…) \u00b7 [Summer 2026 \u2192](…)".
+const isNav = (line: string) => /^\[/.test(line.trim()) && /[\u2190\u2192]/.test(line);
 export const marker = (id: BlockId) => `<!-- Generated by build.ts (${id}). Don't edit, run \`make build\` -->`;
 
 // Returns the expected full text of every generated file, keyed by absolute path.
@@ -286,10 +336,14 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
     `[${basename(d.path, ".md").replace(/^(\S+) (?=\d)/, "$1\u00a0")}](${encodePath(relative(dirname(from), d.path))})`;
   const title = (d: Doc) => str(d.fm!.title).replace(`${str(d.fm!.code)}: `, "");
   const row = (cells: string[]) => `| ${cells.join(" | ")} |`.replace(/ {2}/g, " ");
-  const codes = (d: Doc) => depthCodes(progs.primary, d).replace("†", "");
+  const codes = (d: Doc) => depthCodes(progs.primary, d);
   const icon = (d: Doc) => ICON[str(obj(d.fm!.materials)?.access)] ?? "";
-  const termCell = (from: string, t: string) =>
-    t && existsSync(join(root, "terms", `${t}.md`)) ? `[${t.replace(" ", "\u00a0")}](${encodePath(relative(dirname(from), join(root, "terms", `${t}.md`)))})` : t.replace(" ", "\u00a0");
+  // `short` labels a term as two-digit year and season: Autumn 2026 is "26au" (wi, sp, su).
+  const SEASON_ABBR: Record<string, string> = { Autumn: "au", Winter: "wi", Spring: "sp", Summer: "su" };
+  const termCell = (from: string, t: string, short = false) => {
+    const label = short ? t.replace(/^(\w+) (\d{4})$/, (m, s, y) => (SEASON_ABBR[s] ? y.slice(2) + SEASON_ABBR[s] : m)) : t.replace(" ", "\u00a0");
+    return t && existsSync(join(root, "terms", `${t}.md`)) ? `[${label}](${encodePath(relative(dirname(from), join(root, "terms", `${t}.md`)))})` : label;
+  };
   const replaceBlock = (page: Doc, text: string, name: BlockId, body: string) => {
     const lines = text.split("\n");
     const m = lines.indexOf(marker(name));
@@ -302,6 +356,13 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
     // The old block: the table or list run just above the marker. Anything else there is hand-written and kept.
     let start = end;
     if (start > 0 && /^\s*(\||- )/.test(lines[start - 1])) while (start > 0 && lines[start - 1].trim()) start--;
+    // A term page's course-table block also holds the prev/next bar, a paragraph above the table.
+    let above = start;
+    while (above > 0 && !lines[above - 1].trim()) above--;
+    if (above > 0 && above < start && isNav(lines[above - 1])) {
+      start = above;
+      while (start > 0 && lines[start - 1].trim()) start--;
+    }
     // Guard against a silent wipe: frontmatter that stops resolving (a renamed term page, a cleared
     // program list) would otherwise replace a full table with its header row alone.
     const rows = (s: string) => s.split("\n").filter((l) => /^\s*(\|\s*\[|[-*] )/.test(l)).length;
@@ -334,29 +395,70 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
   else out.set(idx, [
     `| Course | Title | Term | ${codeCol(idx)} | ${publicCol} |`,
     "| --- | --- | --- | --- | --- |",
-    ...courses.map((d) => row([link(idx, d), title(d), termCell(idx, str(d.fm!.term)), codes(d), icon(d)])),
+    ...courses.map((d) => row([link(idx, d), title(d), termCell(idx, str(d.fm!.term), true), codes(d), icon(d)])),
     ...(regs.length ? ["", "## Registrations", "", ...regs.map((d) => `* ${link(idx, d)} - ${title(d)}`)] : []),
+    "",
+  ].join("\n"));
+
+  // terms/index.md: fully generated, newest academic year first, each year's terms in academic order.
+  const termPages = docs.filter((d) => d.rel.startsWith("terms/") && d.fm?.type === "Term")
+    .sort((a, b) => str(b.fm!.academic_year).localeCompare(str(a.fm!.academic_year)) || termOrd(pageTerm(a)) - termOrd(pageTerm(b)));
+  const termIdx = join(root, "terms", "index.md");
+  // With no term pages there is nothing to list, and terms/ may not exist at all, so leave it alone.
+  if (!termPages.length) {
+    if (existsSync(termIdx) && /^\|\s*\[/m.test(readFileSync(termIdx, "utf8")))
+      problems.push("terms/index.md: no term pages loaded, so the list would be emptied; fix the pages rather than committing an empty index");
+  } else out.set(termIdx, [
+    "| Term | Total | UG | GR |",
+    "| --- | --- | --- | --- |",
+    ...termPages.flatMap((d, n) => {
+      const term = pageTerm(d);
+      const members = courses.filter((c) => arr(c.fm!.terms_offered).includes(term));
+      const ug = members.filter((c) => c.fm!.level === "undergraduate").length;
+      const grad = members.filter((c) => c.fm!.level === "graduate").length;
+      // The current term's row is bold, the one thing the counts don't say.
+      const cell = termCell(termIdx, term);
+      // A labelled row splits each academic year from the one above; markdown tables have no rowspan.
+      const head = str(d.fm!.academic_year) !== str(termPages[n - 1]?.fm!.academic_year)
+        ? [row([`**${str(d.fm!.academic_year)}**`, "", "", ""])] : [];
+      return [...head, row([term === current ? `**${cell}**` : cell, String(ug + grad), String(ug), String(grad)])];
+    }),
     "",
   ].join("\n"));
 
   // terms/<Term>.md: regenerate the course table; drop "TODO" lines whose page now exists,
   // and the whole section once nothing is left in it.
   const written = (code: string) => pages.some((d) => codesOf(d).some((c) => entryMatches(code, c)));
+  const chron = [...termPages].sort((a, b) => termOrd(pageTerm(a)) - termOrd(pageTerm(b)));
   for (const page of docs.filter((d) => d.rel.startsWith("terms/") && d.fm?.type === "Term")) {
     const term = pageTerm(page);
-    const isCurrent = page.fm!.concluded !== "true"; // days only matter for the current term
+    const isCurrent = term === current; // days only matter for the current term
     const members = courses.filter((d) => arr(d.fm!.terms_offered).includes(term));
-    const instructor = (d: Doc) => {
-      const who = str(arr(d.fm!.instructors)[0]).split(",")[0];
-      const days = /^[MTWRF]+$/.exec(str(d.fm!.schedule).split(" ")[0])?.[0];
-      return isCurrent && days && str(d.fm!.term) === term ? `${who} [${days}]` : who;
-    };
+    const fm = { ...page.fm! };
+    // TODO: remove this migration once no term page carries `concluded`, which is_current_term replaced.
+    delete fm.concluded;
+    // Present, and true, on the current term's page only.
+    delete fm.is_current_term;
+    if (isCurrent) fm.is_current_term = "true";
+    fm.num_undergraduate = String(members.filter((d) => d.fm!.level === "undergraduate").length);
+    fm.num_graduate = String(members.filter((d) => d.fm!.level === "graduate").length);
+    const rank = (k: string) => (TERM_KEYS.includes(k) ? TERM_KEYS.indexOf(k) : TERM_KEYS.length);
+    frontmatter.set(page.path, Object.fromEntries(Object.entries(fm).sort(([a], [b]) => rank(a) - rank(b))));
+    const instructor = (d: Doc) => str(arr(d.fm!.instructors)[0]).split(",")[0];
+    // Days get their own column on the current term's page, where the meeting pattern is still useful.
+    const days = (d: Doc) => (str(d.fm!.term) === term && /^[MTWRF]+$/.exec(str(d.fm!.schedule).split(" ")[0])?.[0]) || "";
     const table = [
-      `| Course | Title | ${isCurrent ? "Prof/Days" : "Professor"} | ${codeCol(page.path)} | ${publicCol} |`,
-      "| --- | --- | --- | --- | --- |",
-      ...members.map((d) => row([link(page.path, d), title(d), instructor(d), depthCell(progs, progs.primary, d), icon(d)])),
+      `| Course | Title | Professor |${isCurrent ? " Days |" : ""} ${codeCol(page.path)} | ${publicCol} |`,
+      `| --- | --- | --- |${isCurrent ? " --- |" : ""} --- | --- |`,
+      ...members.map((d) => row([link(page.path, d), title(d), instructor(d),
+        ...(isCurrent ? [days(d)] : []), depthCell(progs, progs.primary, d), icon(d)])),
     ].join("\n");
-    let text = replaceBlock(page, page.text, "course-table", table);
+    // Prev/next bar: the chronological neighbours among the term pages that exist.
+    const n = chron.indexOf(page);
+    const nav = [n > 0 ? `[\u2190 ${pageTerm(chron[n - 1])}](${encodePath(basename(chron[n - 1].path))})` : "",
+      n >= 0 && n < chron.length - 1 ? `[${pageTerm(chron[n + 1])} \u2192](${encodePath(basename(chron[n + 1].path))})` : ""];
+    const bar = nav.filter(Boolean).join(" \u00b7 ");
+    let text = replaceBlock(page, page.text, "course-table", bar ? `${bar}\n\n${table}` : table);
     text = text.replace(/(## TODO\n)([\s\S]*?)(?=\n## |$)/, (_, h, sec: string) => {
       const kept = sec.split("\n").filter((l) => {
         const code = /^[-*] \[?([A-Z&]+ \d+[A-Z]*)/.exec(l)?.[1];
@@ -370,34 +472,32 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
   // programs/*.md: "## Courses" and "## TODO" are generated from the page's own lists.
   for (const page of [progs.program, ...progs.specs].filter((d): d is Doc => !!d)) {
     const isSpec = page.fm!.type === "Specialization";
-    const lists = isSpec ? Object.values(obj(page.fm!.depth) ?? {}).concat([page.fm!.approval ?? []])
-      : [page.fm!.foundations, page.fm!.si, ...Object.values(obj(page.fm!.breadth) ?? {}), page.fm!.excluded];
+    const lists = isSpec ? Object.values(obj(page.fm!.mscs_depth) ?? {}).concat([page.fm!.mscs_approval ?? []])
+      : [page.fm!.mscs_foundations, page.fm!.mscs_si, ...Object.values(obj(page.fm!.mscs_breadth) ?? {}), page.fm!.mscs_excluded];
     const entries = [...new Set(lists.flatMap((l) => arr(l).map(String)))];
     const inProgram = (d: Doc) => lists.some((l) => listed(l, d));
     const members = pages.filter((d) => (isSpec ? depthCodes(page, d) : inProgram(d)));
     const missing = entries.filter((e) => !written(e)).sort((x, y) => x.localeCompare(y, "en", { numeric: true }));
+    // When this sheet names a course only by a cross-listing or former number, show that code too: "CS 334A<br>EE 364A".
+    const onSheet = (code: string) => entries.some((e) => entryMatches(e, code));
+    const sheetCodes = (d: Doc) => onSheet(str(d.fm!.code)) ? [] : aliases(d).filter(onSheet);
+    const courseCell = (d: Doc) => [link(page.path, d), ...sheetCodes(d).map((c) => c.replace(" ", "\u00a0"))].join("<br>");
     const table = [
       `| Course | Title | Breadth |${isSpec ? " Depth |" : ""} Term | ${publicCol} |`,
       `| --- | --- | --- |${isSpec ? " --- |" : ""} --- | --- |`,
-      ...members.map((d) => row([link(page.path, d), title(d), breadthCell(progs, d),
-        ...(isSpec ? [depthCell(progs, page, d)] : []), termCell(page.path, str(d.fm!.term)), icon(d)])),
+      ...members.map((d) => row([courseCell(d), title(d), breadthCell(progs, d),
+        ...(isSpec ? [depthCell(progs, page, d)] : []), termCell(page.path, str(d.fm!.term), true), icon(d)])),
     ].join("\n");
     let text = replaceBlock(page, page.text, "course-table", table);
     // Each missing entry with the letters of the lists it's on, e.g. "- CS 224N · b".
-    const named = isSpec ? Object.entries(obj(page.fm!.depth) ?? {})
-      : [["F", page.fm!.foundations], ["S", page.fm!.si], ...Object.entries(obj(page.fm!.breadth) ?? {}), ["-", page.fm!.excluded]] as [string, Y][];
+    const named = isSpec ? Object.entries(obj(page.fm!.mscs_depth) ?? {})
+      : [["F", page.fm!.mscs_foundations], ["S", page.fm!.mscs_si], ...Object.entries(obj(page.fm!.mscs_breadth) ?? {}), ["-", page.fm!.mscs_excluded]] as [string, Y][];
     const letters = (e: string) => named.filter(([, l]) => arr(l).map(String).includes(e)).map(([k]) => k).join("") +
-      (isSpec && arr(page.fm!.approval).map(String).includes(e) ? "†" : "");
-    // Split by the default scope (CS graduate). Number ≥ 200 is the proxy, since unwritten courses have no catalog level yet.
-    const inScope = (e: string) => /^CS (\d+)/.test(e) && Number(/\d+/.exec(e)![0]) >= 200;
-    const bullets = (l: string[]) => l.map((e) => `  - ${e.replace(/\*$/, " (any suffix)")} · ${letters(e)}`);
-    const inList = missing.filter(inScope), outList = missing.filter((e) => !inScope(e));
-    const covered = `- **Covered**: ${entries.length - missing.length} of ${entries.length} list entries have a page (${members.length} course pages)`;
-    text = replaceBlock(page, text, "missing-pages", (!missing.length ? [covered] : [
-      covered,
-      `- **In the default scope** (CS 200+): ${inList.length}`, ...bullets(inList),
-      `- **Outside the default scope** (other departments, CS under 200; write only on request): ${outList.length}`, ...bullets(outList),
-    ]).join("\n"));
+      (isSpec && arr(page.fm!.mscs_approval).map(String).includes(e) ? "†" : "");
+    // "- None" rather than an empty block, which replaceBlock would refuse as a wipe.
+    text = replaceBlock(page, text, "missing-pages", (missing.length
+      ? missing.map((e) => `- ${e.replace(/\*$/, " (any suffix)")} · ${letters(e)}`)
+      : ["- None"]).join("\n"));
     out.set(page.path, text.trimEnd() + "\n");
   }
   // Normalize every frontmatter block, including guides, references and the root index.
