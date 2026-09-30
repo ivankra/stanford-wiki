@@ -6,7 +6,8 @@ description: "Save a web page, PDF or catalog query into references/ as a source
 
 1. **Check it isn't already there.** Look for the file in `references/`, and grep the directory for the URL. Re-fetch only if the term changed or the content visibly moved.
 2. **Fetch it** (curl, a browser tool or WebFetch). Record what actually happened: the status code, a redirect, or a login wall.
-   - Login, SSO, paywall or anti-bot page → don't work around it. That response is the finding: note it on the course page as `closed`, and don't ingest anything.
+   - Login, SSO, paywall or anti-bot page → don't work around it. That response is the finding: note it on the course page as `closed`, and don't ingest anything. A sign-in anyone can create (a Google account, an email link) is not a gate, though: record what the site says it opens to everyone, and ask the user for a paste if the content itself is needed.
+   - A playlist title, a search summary or a landing page that loads is a lead, not the material: open what it points to before anything is rated from it.
    - **Embedded documents don't survive text extraction.** Before concluding a page has no schedule, grep the *raw HTML* for `<iframe`, `<embed`, `<object` and for `docs.google.com`, `drive.google.com`, `airtable`, `notion.` and `calendar.google`. A "Schedule" heading with nothing under it is usually an embed your extractor dropped — see [Embedded documents](#embedded-documents).
    - **Neither does anything a script writes.** A React or Next.js site extracts to a nav bar and a footer while its whole syllabus sits in a JS chunk — see [Client-rendered pages](#client-rendered-pages). Run that check before you write down that a course publishes nothing.
 3. **Name it** (see `AGENTS.md` → Files and links):
@@ -16,9 +17,11 @@ description: "Save a web page, PDF or catalog query into references/ as a source
 4. **Write the wrapper** (keys in `AGENTS.md` → References):
    - `resource` is the original URL, and `generated.at` is the fetch time.
    - Then point each page that cites it at the copy: its `sources` entry keeps `resource` (the URL) and gains `file: ../references/<name>.md`.
+   - **Rechecking a source without re-ingesting it** (a URL-only source, or a live page whose copy you only compared): set the entry's `checked` to today once `resource` still backs what the page takes from it. A source that no longer does is re-ingested or replaced, not dated.
    - HTML: extract the text, drop navigation and boilerplate, keep the course's own wording. Summarize long code blocks and say so in `note`.
    - PDF or other binary: save the file next to the wrapper, add `bytes` and `sha256`, embed it, and add a short text summary. Over 10 MB: don't save the file; keep `bytes`, `sha256` and the summary, say so in `note`, and leave out the embed.
-   - Record the source's own term wording ("Fall 2026") in the body. The wiki's voice uses Autumn.
+   - `term` is the offering the source documents, not the fetch date: an older offering's site fetched today keeps its own term. Record the source's own term wording ("Fall 2026") in the body; the wiki's voice uses Autumn.
+   - A catalog extract says in `note` what it kept and what it dropped, so nobody reads a partial extract as the whole listing.
    - **Only what a reader sees.** Never transcribe HTML comments, `display:none` blocks, draft or hidden content, or anything else the rendered page withholds. It isn't published material and can't be rated or cited. If it explains something a maintainer would trip over — a stale schedule left in a comment — say that it exists in `note`, not what it says.
 
 Save what's needed to cite the claim, not whole course archives. Syllabi and schedules are the exception: always ingest them. They're one of the wiki's two focuses, and the first thing to disappear when a term ends.
@@ -58,4 +61,4 @@ Given a file id, fetch the export rather than the viewer:
 - A `/preview` or `/htmlview` page renders through JavaScript, so its HTML holds no content and no links. Don't read the rating off it — **and don't read access off it either**: fetching a `/preview` URL looks much the same whether the document is public or private. Hit `export?format=…` and check the status code. CS 194H was rated `open` on a page of `/preview` links whose documents all return 401.
 - An export that returns HTML with a Google sign-in, or a 401/403, means the document is private: that is `closed`, and nothing gets ingested.
 - **Check every document, not one.** A course that hands out a dozen Docs usually shares them all or none, but "all" is the assumption worth testing: one `curl` per id against the export endpoint settles a whole rating in seconds.
-- Rate and file the document by what it holds, not by where it sits: an embedded schedule is `syllabus`, an embedded deck index is `slides`. Put the document's own URL under `materials.sites` when a rating depends on it.
+- Rate and file the document by what it holds, not by where it sits: an embedded schedule is `syllabus`, an embedded deck index is `slides`. Put the document's own URL under `sites` when a rating depends on it.

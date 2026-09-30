@@ -4,7 +4,7 @@
 // `make` and never fails. Read the suggestions, add the backlinks that earn their line, ignore the rest.
 // Usage: node scripts/related.ts [bundle-dir] [--all]   (Node >= 23, no dependencies)
 import { join, relative, basename, dirname } from "node:path";
-import { load, str, arr, aliases, stripCode, resolveLink as resolveIn, type Doc } from "./wiki.ts";
+import { load, str, arr, otherCodes, stripCode, resolveLink as resolveIn, type Doc } from "./wiki.ts";
 
 const args = process.argv.slice(2);
 const ROOT = args.find((a) => !a.startsWith("-")) ?? join(import.meta.dirname, "..");
@@ -21,7 +21,7 @@ const byCode = new Map<string, Doc>();
 for (const d of pages) {
   const own = str(d.fm!.code);
   const canonical = basename(d.rel) === `${own}.md`;
-  for (const code of [own, ...aliases(d)])
+  for (const code of [own, ...otherCodes(d)])
     if (canonical || !byCode.has(code)) byCode.set(code, d);
 }
 
@@ -138,7 +138,7 @@ const profile = new Map(courses.map((d) => {
   const text = [...arr(d.fm!.topics).map(String), str(d.fm!.title).replace(/^[^:]*: /, "")].join(" ").toLowerCase();
   const words = new Set([...text.matchAll(/[a-z][a-z0-9-]+/g)].map((m) => m[0]).filter((w) => w.length > 2 && !STOP.has(w)));
   const tags = new Set(arr(d.fm!.tags).map(String).filter((t) => !t.startsWith("mscs-")));
-  const codes = [str(d.fm!.code), ...aliases(d)];
+  const codes = [str(d.fm!.code), ...otherCodes(d)];
   const mentioned = new Set([...d.body.matchAll(/(?<![A-Za-z0-9])[A-Z&]+[ \u00a0]\d+[A-Z]*(?![A-Za-z0-9])/g)].map((m) => m[0].replace(/\u00a0/g, " ")));
   return [d, { words, tags, codes, mentioned }];
 }));

@@ -19,19 +19,33 @@ schedule: TR 10:30-11:50, Littlefield 104
 units: "3"
 grading: Letter or Credit/No Credit
 prerequisites: []
-materials:
-  checked: "2026-09-29"
+access: mostly-closed
+syllabus:
   access: closed
-  syllabus:
-    access: closed
-    note: "no current site: cs44n.stanford.edu doesn't resolve and web.stanford.edu/class/cs44n/ 404s; the Autumn 2020 Google Site is the only one found and is too old to rate; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers"
-  videos:
-    access: unknown
-  assignments:
-    access: unknown
-  exams: none
-  projects:
-    access: unknown
+  note: uploaded to Canvas, Stanford-only (syllabus repository), and no offering since Autumn 2020 has a public site
+slides:
+  access: unknown
+  note: none for this offering; Autumn 2020's schedule linked a deck per topic, of which 2 are still public
+notes:
+  access: unknown
+  note: a project seminar with no reader or notes found for any offering
+videos:
+  access: unknown
+  note: nothing says whether the 80-minute sessions are recorded
+assignments:
+  access: closed
+  note: a short programming project every fortnight, set and demoed through Canvas; no brief from any offering since Autumn 2020 is public
+solutions:
+  access: unknown
+exams:
+  access: none
+  note: the catalog describes weekly programming projects and no exam
+projects:
+  access: closed
+  note: students demo each other's sketches in class; nothing is published
+repo:
+  access: unknown
+  note: the projects are browser sketches on OpenProcessing and Shadertoy, and no account of them was found
 topics:
   - particle systems
   - collision detection
@@ -40,10 +54,70 @@ topics:
   - procedural noise
   - ray marching and implicit geometry
   - creative coding in OpenProcessing
+past:
+  Autumn 2020:
+    instructors:
+      - James, D.
+    homepage: https://sites.google.com/stanford.edu/cs44n-gig-f20/
+    syllabus:
+      access: open
+      url: https://sites.google.com/stanford.edu/cs44n-gig-f20/schedule
+      note: the whole dated schedule on a public Google Site, topic by topic, with a resources page; a copy is also uploaded to Canvas, Stanford-only (syllabus repository)
+    slides:
+      access: partial
+      url: https://docs.google.com/presentation/d/1cxz8Wr_kh_CYk4BFJUKBUJms5eio1dTDWv8ysD_ClOc/edit
+      note: the schedule links a deck per topic; the introduction and particle-systems decks export without an account and the other 6 return 401
+    topics:
+      - JavaScript and OpenProcessing
+      - particle systems
+      - collision detection, broad and narrow phase
+      - "2D geometric subdivision"
+      - subdivision for curves and surfaces
+      - shading languages on Shadertoy
+      - procedural noise
+      - ray marching and implicit geometry
+      - networked multiplayer sketches with socket.io
+  Autumn 2021:
+    instructors:
+      - James, D.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
+  Autumn 2022:
+    instructors:
+      - James, D.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
+  Autumn 2023:
+    instructors:
+      - James, D.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
+  Autumn 2024:
+    instructors:
+      - James, D.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
+  Autumn 2025:
+    instructors:
+      - James, D.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
 tags:
   - computer-graphics
   - intro-seminar
   - creative-coding
+aliases:
+  - CS44N
+checked: "2026-09-30"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-10-01T03:45:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on&filter-term-Autumn=on
@@ -61,10 +135,50 @@ sources:
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/F26/CS/
     file: ../references/cs-44n-syllabus-repository-autumn-2020-autumn-2026.md
     title: Stanford Syllabus repository, CS 44N, Autumn 2020 to Autumn 2026
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-27T12:00:00Z"
+  - id: catalog-2020-21
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20202021&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2020-2021.md
+    title: ExploreCourses, 2020-2021
+  - id: catalog-2021-22
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20212022&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2021-2022.md
+    title: ExploreCourses, 2021-2022
+  - id: catalog-2022-23
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20222023&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2022-2023.md
+    title: ExploreCourses, 2022-2023
+  - id: catalog-2023-24
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2023-2024.md
+    title: ExploreCourses, 2023-2024
+  - id: catalog-2024-25
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2024-2025.md
+    title: ExploreCourses, 2024-2025
+  - id: syllabus-repo-2020-21
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F20/CS/
+    file: ../references/syllabus-repository-cs-2020-2021.md
+    title: Stanford Syllabus repository, CS, 2020-2021
+  - id: syllabus-repo-2021-22
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F21/CS/
+    file: ../references/syllabus-repository-cs-2021-2022.md
+    title: Stanford Syllabus repository, CS, 2021-2022
+  - id: syllabus-repo-2022-23
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F22/CS/
+    file: ../references/syllabus-repository-cs-2022-2023.md
+    title: Stanford Syllabus repository, CS, 2022-2023
+  - id: syllabus-repo-2023-24
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F23/CS/
+    file: ../references/syllabus-repository-cs-2023-2024.md
+    title: Stanford Syllabus repository, CS, 2023-2024
+  - id: syllabus-repo-2024-25
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F24/CS/
+    file: ../references/syllabus-repository-cs-2024-2025.md
+    title: Stanford Syllabus repository, CS, 2024-2025
+  - id: syllabus-repo-2025-26
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F25/CS/
+    file: ../references/syllabus-repository-cs-2025-2026.md
+    title: Stanford Syllabus repository, CS, 2025-2026
 ---
 # CS 44N: Great Ideas in Graphics
 
@@ -72,11 +186,15 @@ An introductory seminar for first-years: one graphics idea a fortnight — parti
 
 ## Materials
 
-Nothing current is public. The course has had one public site, a Google Site for the Autumn 2020 offering, which is too old to rate as this course's materials; today's materials are on Canvas.
+One offering has a public site and it is the first, Autumn 2020: its whole dated schedule, 2 of its 8 decks and nothing else. Every offering since, this one included, has put its syllabus on Canvas readable inside Stanford alone, and published nothing.
 
-- **Syllabus**: closed. Seven offerings between Autumn 2020 and Autumn 2026 uploaded a syllabus to Canvas, every one of them marked Stanford-only.
-- **Assignments**, **Videos**, **Projects**: nothing found for a recent offering.
-- **Exams**: none — the catalog describes weekly projects only.
+- **Syllabus**: Canvas only for this offering, as for all 7 since Autumn 2020. [Autumn 2020's schedule](https://sites.google.com/stanford.edu/cs44n-gig-f20/schedule) is the one public account of what the seminar does, topic by topic with dates.
+- **Slides**: [the introduction](https://docs.google.com/presentation/d/1cxz8Wr_kh_CYk4BFJUKBUJms5eio1dTDWv8ysD_ClOc/edit) and [particle systems](https://docs.google.com/presentation/d/1Wa8HJOOExiQNSZSOOySkhf_i1LNkmjoMJCrhBv6din0/edit) decks from that offering export without an account; its other 6 return 401, and no later offering posts any.
+- **Notes**: none found; the Autumn 2020 resources page lists only OpenProcessing, p5.js and a JavaScript reference.
+- **Videos**: nothing says whether the sessions are recorded. Autumn 2020 ran on Zoom, with links behind Canvas.
+- **Assignments**, **Projects**: a short programming project every fortnight, demoed in class; no brief from any offering is public.
+- **Solutions**, **Repo**: neither; the projects are browser sketches on OpenProcessing and Shadertoy and no account of them was found.
+- **Exams**: none; the catalog describes weekly projects only.
 
 ## Syllabus
 
@@ -95,5 +213,5 @@ The Autumn 2020 site, the only published schedule found, ran: OpenProcessing and
 
 ## Source notes
 
-- No current site: `cs44n.stanford.edu` does not resolve, `web.stanford.edu/class/cs44n/` and `graphics.stanford.edu/courses/cs44n/` 404 (checked 2026-09-27).
-- The Autumn 2020 Google Site (`sites.google.com/stanford.edu/cs44n-gig-f20/`) is still up with public slide decks, but at six years old it is recorded as context only, not as this offering's material.
+- No current site: `cs44n.stanford.edu` does not resolve, `web.stanford.edu/class/cs44n/` and `graphics.stanford.edu/courses/cs44n/` 404 (checked 2026-09-30).
+- **The Autumn 2020 Google Site is still up**, at [sites.google.com/stanford.edu/cs44n-gig-f20/](https://sites.google.com/stanford.edu/cs44n-gig-f20/), and nothing links to it from a Stanford path. Its deck links go to Google Slides: exporting each one shows that only the introduction and particle-systems decks are shared publicly, the other 6 returning 401 — the site's own wording gives no hint of that (checked 2026-09-30).

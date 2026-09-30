@@ -119,12 +119,11 @@ export function yamlLines(value: Y, path: string[] = []): string[] {
   }
   let entries = Object.entries(value);
   if (!entries.length) return path.length ? ["{}"] : [];
-  // `materials` is the one map with a meaningful key order; sort it so hand-written pages don't
-  // have to. Keys the schema doesn't know keep their relative order at the end, where lint flags them.
-  if (path.length === 1 && path[0] === "materials") {
-    const rank = (k: string) => (MAT_KEYS.includes(k) ? MAT_KEYS.indexOf(k) : MAT_KEYS.length);
-    entries = entries.map((e, i) => [e, i] as const).sort(([a, i], [b, j]) => rank(a[0]) - rank(b[0]) || i - j).map(([e]) => e);
-  }
+  // TEMPORARY (legacy pages, .agents/2026-09-30.materials.md §9.3): sort a legacy `materials` map so
+  // hand-written pages don't have to. Course pages in the new schema are sorted by render (sortCourse).
+  if (path.length === 1 && path[0] === "materials") entries = Object.entries(sortKeys(value, LEGACY_MAT_KEYS));
+  // Every page's `sources` entries, whatever the page's type.
+  if (path.length === 2 && path[0] === "sources") entries = Object.entries(sortKeys(value, SOURCE_KEYS));
   return entries.flatMap(([key, item]) => {
     const lines = yamlLines(item, [...path, key]);
     const inline = typeof item === "string" || (Array.isArray(item) ? !item.length : !Object.keys(item).length);
@@ -169,12 +168,123 @@ export const arr = (v: Y | undefined): Y[] => (Array.isArray(v) ? v : []);
 export const obj = (v: Y | undefined) => (v && typeof v === "object" && !Array.isArray(v) ? v : null);
 // A course's other codes: its cross-listings and its former numbers. Program lists, prerequisite
 // links and Related lines match them as they match the page's own code.
-export const aliases = (d: Doc) => [...arr(d.fm!.cross_listed), ...arr(d.fm!.formerly)].map(String);
-export const ICON: Record<string, string> = { open: "🟢", partial: "🟡", closed: "🔴", none: "⚪", unknown: "" };
-// Material types in the order AGENTS.md lists them. Build sorts `materials` into this order on
-// every run (see yamlLines), so a page written out of order is fixed rather than reported.
-export const MAT_TYPES = ["syllabus", "slides", "notes", "videos", "assignments", "solutions", "exams", "projects", "code"];
-const MAT_KEYS = ["checked", "access", "term", ...MAT_TYPES, "sites"];
+export const otherCodes = (d: Doc) => [...arr(d.fm!.cross_listed), ...arr(d.fm!.formerly)].map(String);
+// `aliases`, for Obsidian's link suggestions and quick switcher: the page's code without its space, then each
+// cross_listed and formerly code without and with it ("CS229", "STATS229", "STATS 229"). Never the page's own code,
+// which is its filename. Build writes it, and omits it when empty; lint checks it.
+export const codeAliases = (fm: Record<string, Y>) => {
+  const code = str(fm.code), squash = (c: string) => c.replace(/ /g, "");
+  const others = [...arr(fm.cross_listed), ...arr(fm.formerly)].map(String);
+  return [...new Set([squash(code), ...others.flatMap((c) => [squash(c), c])])].filter((c) => c && c !== code);
+};
+// The page with `aliases` set, or dropped when empty, after `tags` as the course order puts it, so a legacy
+// page, which keeps its own key order, gets it in the same place.
+export function withAliases(fm: Record<string, Y>): Record<string, Y> {
+  const rest = Object.entries(fm).filter(([k]) => k !== "aliases");
+  const tags = rest.findIndex(([k]) => k === "tags");
+  if (codeAliases(fm).length) rest.splice(tags < 0 ? rest.length : tags + 1, 0, ["aliases", codeAliases(fm)]);
+  return Object.fromEntries(rest);
+}
+// Keys in `order` first, in that order; keys it doesn't know keep their relative order at the end, where lint flags them.
+export const sortKeys = <T>(m: Record<string, T>, order: string[]): Record<string, T> => {
+  const rank = (k: string) => (order.includes(k) ? order.indexOf(k) : order.length);
+  return Object.fromEntries(Object.entries(m).map((e, i) => [e, i] as const)
+    .sort(([a, i], [b, j]) => rank(a[0]) - rank(b[0]) || i - j).map(([e]) => e));
+};
+
+// A `sources` entry (OKF's shape, plus `checked`: the date the source was last confirmed to back the page), in
+// order. Build sorts every page's entries into it (yamlLines).
+export const SOURCE_KEYS = ["id", "resource", "file", "title", "checked"];
+
+// ---------- course schema (AGENTS.md → Frontmatter, Materials, Past offerings) ----------
+
+// Material types in the order AGENTS.md lists them.
+export const MAT_TYPES = ["syllabus", "slides", "notes", "videos", "assignments", "solutions", "exams", "projects", "repo"];
+// A material type's own rating, and the whole course's `access` level with its table icon.
+export const RATINGS = ["open", "partial", "closed", "none", "unknown"];
+export const ICON: Record<string, string> = { unknown: "", closed: "⛔", "mostly-closed": "🔴", partial: "🟡", "mostly-open": "🟢", open: "✅" };
+export const ACCESS_LEVELS = Object.keys(ICON);
+// Suffixes after the level's icon, in this order: open assignments, at the top level or in `past`, add 🅰;
+// a self_study entry anywhere on the page adds ✚ to an open or mostly-open icon.
+const ASSIGNMENTS = "🅰";
+const SELF_STUDY = "✚";
+const SELF_STUDY_LEVELS = ["open", "mostly-open"];
+// The two `access` levels whose icon is decided by videos rather than by the level itself (publicLevel).
+const VIDEO_LEVELS = ["open", "mostly-open"];
+// Every icon a rating renders as: they belong in the generated tables only, never in a page's prose.
+export const RATING_ICONS = [...Object.values(ICON).filter(Boolean), ASSIGNMENTS, SELF_STUDY];
+// A material entry rated open: a bare URL, a list of URLs, or { access: open }.
+const isOpen = (v: Y | undefined) => (typeof v === "string" ? /^https?:\/\//.test(v) || v === "open" : Array.isArray(v) ? v.length > 0 : str(obj(v)?.access) === "open");
+// Course and registration frontmatter, in order. Build sorts both into it (sortCourse).
+export const COURSE_KEYS = ["type", "code", "title", "description", "cross_listed", "formerly", "level",
+  "term", "terms_offered", "instructors", "schedule", "units", "grading", "prerequisites",
+  "homepage", "access", ...MAT_TYPES, "sites", "self_study", "textbook", "topics", "past",
+  "tags", "aliases", "checked", "status", "generated", "exceptions", "sources"];
+// The keys an older offering's record in `past` may hold, in the same relative order.
+export const PAST_KEYS = ["title", "instructors", "homepage", ...MAT_TYPES, "sites", "self_study", "textbook", "topics"];
+
+// A course page and its registration counterpart in canonical order: top-level keys, `past` terms oldest
+// first (anything that isn't a term name last, for lint to report), and each `past` record's keys.
+export function sortCourse(fm: Record<string, Y>): Record<string, Y> {
+  const out = sortKeys(fm, COURSE_KEYS);
+  const past = obj(out.past);
+  if (past) {
+    const ord = (t: string) => (isNaN(termOrd(t)) ? Infinity : termOrd(t));
+    out.past = Object.fromEntries(Object.entries(past).map((e, i) => [e, i] as const)
+      .sort(([[a], i], [[b], j]) => ord(a) - ord(b) || i - j)
+      .map(([[t, r]]) => [t, obj(r) ? sortKeys(obj(r)!, PAST_KEYS) : r]));
+  }
+  return out;
+}
+
+// TEMPORARY (the legacy `materials` map, .agents/2026-09-30.materials.md §9; remove with the last legacy page).
+// A course page without a top-level `access` is legacy, rated under the old rules. Build keeps sorting its
+// `materials` map (yamlLines), and the tables show its old level with a "?", mapped down one step.
+export const LEGACY_MAT_TYPES = ["syllabus", "slides", "notes", "videos", "assignments", "solutions", "exams", "projects", "code"];
+const LEGACY_MAT_KEYS = ["checked", "access", "term", ...LEGACY_MAT_TYPES, "sites"];
+const LEGACY_ICON: Record<string, string> = { open: "🟢?", partial: "🟡?", closed: "⛔?" };
+export const isLegacy = (fm: Record<string, Y>) => fm.type === "Course" && !("access" in fm);
+
+// The one normalizer for both shapes: the level the tables show, whether it's a legacy page's old level,
+// and its suffixes: open assignments, and self-study (open or mostly-open with a self_study entry), each at the
+// top level or in `past`. A legacy page gets neither.
+// Open and mostly-open share one icon pair, decided by videos rather than by `access`: either level shows ✅
+// with open videos (top level or in `past`) and 🟢 without, so ✅ always means the recordings are there. The
+// hover keeps `access` readable, which the icon alone no longer carries. `access` itself is unchanged.
+// TODO: interim, pending the levels refactor; drive `videos` and `assignments` from subject tags, not ratings.
+export function publicLevel(fm: Record<string, Y>): { level: string; legacy: boolean; assignments: boolean; selfStudy: boolean; access: string; videos: boolean } {
+  if (isLegacy(fm)) return { level: str(obj(fm.materials)?.access), legacy: true, assignments: false, selfStudy: false, access: "", videos: false };
+  const records = [fm, ...Object.values(obj(fm.past) ?? {}).map((r) => obj(r) ?? {})];
+  const access = str(fm.access), videos = records.some((r) => isOpen(r.videos));
+  const level = VIDEO_LEVELS.includes(access) ? (videos ? "open" : "mostly-open") : access;
+  const selfStudy = records.some((r) => arr(r.self_study).length > 0);
+  return { level, legacy: false, assignments: records.some((r) => isOpen(r.assignments)),
+    selfStudy: selfStudy && SELF_STUDY_LEVELS.includes(level), access, videos };
+}
+export const publicIcon = (fm: Record<string, Y>) => {
+  const { level, legacy, assignments, selfStudy } = publicLevel(fm);
+  if (legacy) return LEGACY_ICON[level] ?? "";
+  const icon = ICON[level] ?? "", markers = (assignments ? ASSIGNMENTS : "") + (selfStudy ? SELF_STUDY : "");
+  return icon + markers;
+};
+// Hover text for each table icon, as a <span title>: GitHub keeps the attribute, and Obsidian shows it without
+// <abbr>'s dotted underline. Link titles don't work there: Obsidian turns the icon into an internal link.
+const TIPS: Record<string, string> = {
+  "⛔": "closed", "🔴": "mostly closed",
+  "🟡": "partial", "🟢": "mostly open",
+  "✅": "open, videos available", [ASSIGNMENTS]: "assignments public", [SELF_STUDY]: "self-study support",
+};
+// ✅ and 🟢 each cover two `access` levels, so their hover names the level and whether videos came with it.
+const LEVEL_TIPS: Record<string, string> = { open: "open", "mostly-open": "mostly open" };
+const span = (text: string, title: string) => `<span title="${title}">${text}</span>`;
+const tip = (icon: string) => (TIPS[icon] ? span(icon, TIPS[icon]) : icon);
+// publicIcon for the tables, each icon wrapped in its tip; a legacy icon is one span with its old level.
+export const publicCell = (fm: Record<string, Y>) => {
+  const { level, legacy, access, videos } = publicLevel(fm);
+  if (legacy) return LEGACY_ICON[level] ? span(LEGACY_ICON[level], `not yet rerated; old rating: ${level}`) : "";
+  const first = LEVEL_TIPS[access] && LEVEL_TIPS[access] + (videos ? ", videos available" : "");
+  return [...publicIcon(fm)].map((icon, i) => (i === 0 && first ? span(icon, first) : tip(icon))).join("");
+};
 // Term-page frontmatter in the order AGENTS.md lists it. Build writes is_current_term and the counts,
 // and sorts every term page into this order; keys it doesn't know keep their relative order at the end.
 const TERM_KEYS = ["type", "title", "description", "academic_year", "start_date", "end_date",
@@ -247,7 +357,7 @@ const entryMatches = (entry: string, code: string) =>
   entry.endsWith("*") ? new RegExp(`^${entry.slice(0, -1).replace(/[.&]/g, "\\$&")}[A-Z]*$`).test(code) : entry === code;
 // The previous holder of a reused number ("CS 323 (Spring 2019).md") never matches a program list.
 const codesOf = (d: Doc) =>
-  basename(d.path) === `${str(d.fm!.code)}.md` ? [str(d.fm!.code), ...aliases(d)] : [];
+  basename(d.path) === `${str(d.fm!.code)}.md` ? [str(d.fm!.code), ...otherCodes(d)] : [];
 const listed = (list: Y | undefined, d: Doc) => arr(list).some((e) => codesOf(d).some((c) => entryMatches(String(e), c)));
 
 export type Programs = { program?: Doc; specs: Doc[]; primary?: Doc };
@@ -319,7 +429,9 @@ export const marker = (id: BlockId) => `<!-- Generated by build.ts (${id}). Don'
 // A page missing a block's marker is left as is and reported in `problems`.
 export function render(root: string, docs: Doc[], problems: string[] = []): Map<string, string> {
   const out = new Map<string, string>();
-  const current = str(docs.find((d) => d.rel === "AGENTS.md")?.fm?.current_term);
+  const agents = docs.find((d) => d.rel === "AGENTS.md")?.fm;
+  const current = str(agents?.current_term);
+  const cutoff = str(agents?.cutoff_term);
   const pages = docs.filter((d) => d.fm?.type === "Course" || d.fm?.type === "Registration").sort(byCode);
   const courses = pages.filter((d) => d.fm!.type === "Course");
   const regs = pages.filter((d) => d.fm!.type === "Registration");
@@ -337,7 +449,16 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
   const title = (d: Doc) => str(d.fm!.title).replace(`${str(d.fm!.code)}: `, "");
   const row = (cells: string[]) => `| ${cells.join(" | ")} |`.replace(/ {2}/g, " ");
   const codes = (d: Doc) => depthCodes(progs.primary, d);
-  const icon = (d: Doc) => ICON[str(obj(d.fm!.materials)?.access)] ?? "";
+  const icon = (d: Doc) => publicCell(d.fm!);
+  // "\u00a0🆕" after the first course code when the course's first term on record falls within `within` terms ending at `term`, and
+  // is 2 years or more after cutoff_term: earlier first terms mostly reflect the cutoff. Term tables pass their own
+  // term alone; the roster and program tables the last 4 terms up to the current one.
+  const fresh = (d: Doc, term: string, within = 1) => {
+    const terms = arr(d.fm!.terms_offered).map(String);
+    const name = terms.reduce((a, t) => (termOrd(t) < termOrd(a) ? t : a), terms[0] ?? ""), first = termOrd(name);
+    return name && first >= termOrd(cutoff) + 8 && first > termOrd(term) - within && first <= termOrd(term)
+      ? `\u00a0${span("🆕", `first offered ${name}`)}` : "";
+  };
   // `short` labels a term as two-digit year and season: Autumn 2026 is "26au" (wi, sp, su).
   const SEASON_ABBR: Record<string, string> = { Autumn: "au", Winter: "wi", Spring: "sp", Summer: "su" };
   const termCell = (from: string, t: string, short = false) => {
@@ -385,7 +506,9 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
     delete fm.mscs;
     if (fm.type === "Course" && current && fm.term !== current) delete fm.schedule;
     fm.tags = [...arr(fm.tags).map(String).filter((t) => !t.startsWith("mscs-")), ...mscsTags(progs, d)];
-    frontmatter.set(d.path, fm);
+    // A legacy page keeps its key order (yamlLines sorts its `materials`) until it's migrated.
+    const out = withAliases(fm);
+    frontmatter.set(d.path, isLegacy(out) ? out : sortCourse(out));
   }
 
   // courses/index.md: fully generated, and never emptied while course pages exist on disk.
@@ -395,14 +518,14 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
   else out.set(idx, [
     `| Course | Title | Term | ${codeCol(idx)} | ${publicCol} |`,
     "| --- | --- | --- | --- | --- |",
-    ...courses.map((d) => row([link(idx, d), title(d), termCell(idx, str(d.fm!.term), true), codes(d), icon(d)])),
+    ...courses.map((d) => row([link(idx, d) + fresh(d, current, 4), title(d), termCell(idx, str(d.fm!.term), true), codes(d), icon(d)])),
     ...(regs.length ? ["", "## Registrations", "", ...regs.map((d) => `* ${link(idx, d)} - ${title(d)}`)] : []),
     "",
   ].join("\n"));
 
-  // terms/index.md: fully generated, newest academic year first, each year's terms in academic order.
+  // terms/index.md: fully generated, oldest academic year first, each year's terms in academic order.
   const termPages = docs.filter((d) => d.rel.startsWith("terms/") && d.fm?.type === "Term")
-    .sort((a, b) => str(b.fm!.academic_year).localeCompare(str(a.fm!.academic_year)) || termOrd(pageTerm(a)) - termOrd(pageTerm(b)));
+    .sort((a, b) => str(a.fm!.academic_year).localeCompare(str(b.fm!.academic_year)) || termOrd(pageTerm(a)) - termOrd(pageTerm(b)));
   const termIdx = join(root, "terms", "index.md");
   // With no term pages there is nothing to list, and terms/ may not exist at all, so leave it alone.
   if (!termPages.length) {
@@ -418,7 +541,7 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
       const grad = members.filter((c) => c.fm!.level === "graduate").length;
       // The current term's row is bold, the one thing the counts don't say.
       const cell = termCell(termIdx, term);
-      // A labelled row splits each academic year from the one above; markdown tables have no rowspan.
+      // A labeled row splits each academic year from the one above; markdown tables have no rowspan.
       const head = str(d.fm!.academic_year) !== str(termPages[n - 1]?.fm!.academic_year)
         ? [row([`**${str(d.fm!.academic_year)}**`, "", "", ""])] : [];
       return [...head, row([term === current ? `**${cell}**` : cell, String(ug + grad), String(ug), String(grad)])];
@@ -442,18 +565,21 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
     if (isCurrent) fm.is_current_term = "true";
     fm.num_undergraduate = String(members.filter((d) => d.fm!.level === "undergraduate").length);
     fm.num_graduate = String(members.filter((d) => d.fm!.level === "graduate").length);
-    const rank = (k: string) => (TERM_KEYS.includes(k) ? TERM_KEYS.indexOf(k) : TERM_KEYS.length);
-    frontmatter.set(page.path, Object.fromEntries(Object.entries(fm).sort(([a], [b]) => rank(a) - rank(b))));
-    const instructor = (d: Doc) => str(arr(d.fm!.instructors)[0]).split(",")[0];
+    frontmatter.set(page.path, sortKeys(fm, TERM_KEYS));
+    // A row for an older offering takes its professor and title from `past`: never the current ones.
+    // The professor is blank when the record is missing or names nobody; the title falls back to the current one.
+    const offering = (d: Doc) => (str(d.fm!.term) === term ? d.fm! : obj(obj(d.fm!.past)?.[term]));
+    const instructor = (d: Doc) => str(arr(offering(d)?.instructors)[0]).split(",")[0];
+    const rowTitle = (d: Doc) => (str(d.fm!.term) === term ? "" : str(obj(obj(d.fm!.past)?.[term])?.title)) || title(d);
     // Days get their own column on the current term's page, where the meeting pattern is still useful.
     const days = (d: Doc) => (str(d.fm!.term) === term && /^[MTWRF]+$/.exec(str(d.fm!.schedule).split(" ")[0])?.[0]) || "";
     const table = [
       `| Course | Title | Professor |${isCurrent ? " Days |" : ""} ${codeCol(page.path)} | ${publicCol} |`,
       `| --- | --- | --- |${isCurrent ? " --- |" : ""} --- | --- |`,
-      ...members.map((d) => row([link(page.path, d), title(d), instructor(d),
+      ...members.map((d) => row([link(page.path, d) + fresh(d, term), rowTitle(d), instructor(d),
         ...(isCurrent ? [days(d)] : []), depthCell(progs, progs.primary, d), icon(d)])),
     ].join("\n");
-    // Prev/next bar: the chronological neighbours among the term pages that exist.
+    // Prev/next bar: the chronological neighbors among the term pages that exist.
     const n = chron.indexOf(page);
     const nav = [n > 0 ? `[\u2190 ${pageTerm(chron[n - 1])}](${encodePath(basename(chron[n - 1].path))})` : "",
       n >= 0 && n < chron.length - 1 ? `[${pageTerm(chron[n + 1])} \u2192](${encodePath(basename(chron[n + 1].path))})` : ""];
@@ -469,19 +595,27 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
     out.set(page.path, text.trimEnd() + "\n");
   }
 
-  // programs/*.md: "## Courses" and "## TODO" are generated from the page's own lists.
+  // programs/*.md: "## Courses" and "## TODO" are generated from the page's own lists. MSCS.md's table also
+  // lists every course on a specialization's depth or approval list, with a blank Breadth cell if it has none.
   for (const page of [progs.program, ...progs.specs].filter((d): d is Doc => !!d)) {
     const isSpec = page.fm!.type === "Specialization";
     const lists = isSpec ? Object.values(obj(page.fm!.mscs_depth) ?? {}).concat([page.fm!.mscs_approval ?? []])
       : [page.fm!.mscs_foundations, page.fm!.mscs_si, ...Object.values(obj(page.fm!.mscs_breadth) ?? {}), page.fm!.mscs_excluded];
     const entries = [...new Set(lists.flatMap((l) => arr(l).map(String)))];
-    const inProgram = (d: Doc) => lists.some((l) => listed(l, d));
+    const depthLists = isSpec ? [] : progs.specs.flatMap((sp) =>
+      Object.values(obj(sp.fm!.mscs_depth) ?? {}).concat([sp.fm!.mscs_approval ?? []]));
+    const inProgram = (d: Doc) => [...lists, ...depthLists].some((l) => listed(l, d));
     const members = pages.filter((d) => (isSpec ? depthCodes(page, d) : inProgram(d)));
     const missing = entries.filter((e) => !written(e)).sort((x, y) => x.localeCompare(y, "en", { numeric: true }));
     // When this sheet names a course only by a cross-listing or former number, show that code too: "CS 334A<br>EE 364A".
-    const onSheet = (code: string) => entries.some((e) => entryMatches(e, code));
-    const sheetCodes = (d: Doc) => onSheet(str(d.fm!.code)) ? [] : aliases(d).filter(onSheet);
-    const courseCell = (d: Doc) => [link(page.path, d), ...sheetCodes(d).map((c) => c.replace(" ", "\u00a0"))].join("<br>");
+    // A depth-only course on MSCS.md takes its codes from the depth lists instead.
+    const depthEntries = depthLists.flatMap((l) => arr(l).map(String));
+    const sheetCodes = (d: Doc) => {
+      const names = lists.some((l) => listed(l, d)) ? entries : depthEntries;
+      const onSheet = (code: string) => names.some((e) => entryMatches(e, code));
+      return onSheet(str(d.fm!.code)) ? [] : otherCodes(d).filter(onSheet);
+    };
+    const courseCell = (d: Doc) => [link(page.path, d) + fresh(d, current, 4), ...sheetCodes(d).map((c) => c.replace(" ", "\u00a0"))].join("<br>");
     const table = [
       `| Course | Title | Breadth |${isSpec ? " Depth |" : ""} Term | ${publicCol} |`,
       `| --- | --- | --- |${isSpec ? " --- |" : ""} --- | --- |`,

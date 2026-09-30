@@ -24,12 +24,12 @@ instructors: []
 ${schedule}units: "3"
 grading: Letter
 prerequisites: []
-materials: { access: unknown }
+access: unknown
 topics: []
 tags: []
-sources: []
 status: draft
 generated: { by: codex/test, at: 2026-09-26T00:00:00Z }
+sources: []
 ---
 `;
     for (const term of ["Summer 2026", "Autumn 2026"]) {

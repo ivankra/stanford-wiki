@@ -15,43 +15,75 @@ instructors:
 units: "3"
 grading: Letter or Credit/No Credit
 prerequisites: []
-materials:
-  checked: "2026-09-29"
+access: closed
+syllabus:
   access: closed
-  syllabus:
-    access: closed
-    note: no course site found; web.stanford.edu/class/cs31n/ is an empty directory index; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
-  videos: unknown
-  assignments: unknown
-  exams: unknown
-  projects: unknown
+  note: no course site found; web.stanford.edu/class/cs31n/ is an empty directory index, and a syllabus was uploaded to Canvas for Spring 2021, Spring 2023 and this offering, every record restricted to Stanford readers
+exams:
+  access: none
+  note: a capped 3-unit first-year seminar; neither the catalog nor any section record names an exam
 topics:
   - counterfactual inference
   - causal reasoning from observational data
   - evaluating past decisions
   - policy design from historical records
   - applications in climate, healthcare and economics
+past:
+  Spring 2021:
+    instructors:
+      - Brunskill, E.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
+  Spring 2023:
+    instructors:
+      - Brunskill, E.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
+  Spring 2025:
+    instructors:
+      - Brunskill, E.
 tags:
   - causal-inference
   - introsem
   - machine-learning
+aliases:
+  - CS31N
+checked: "2026-10-01"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-10-02T01:45:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
     file: ../references/explorecourses-cs-2025-2026.md
     title: ExploreCourses, 2025-2026
-  - id: probe
-    resource: https://web.stanford.edu/class/cs31n/
-    file: ../references/course-site-probe-ug-spring-2026-2026-09-27.md
-    title: Course site probe, 2026-09-27
   - id: syllabusrepo
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/Sp26/CS/
     file: ../references/cs-31n-syllabus-repository-spring-2021-spring-2026.md
     title: Stanford Syllabus repository, CS 31N, Spring 2021 to Spring 2026
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-27T17:25:00Z"
+  - id: catalog-2020-21
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20202021&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2020-2021.md
+    title: ExploreCourses, 2020-2021
+  - id: catalog-2022-23
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20222023&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2022-2023.md
+    title: ExploreCourses, 2022-2023
+  - id: catalog-2024-25
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2024-2025.md
+    title: ExploreCourses, 2024-2025
+  - id: syllabus-repo-2020-21
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F20/CS/
+    file: ../references/syllabus-repository-cs-2020-2021.md
+    title: Stanford Syllabus repository, CS, 2020-2021
+  - id: syllabus-repo-2022-23
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F22/CS/
+    file: ../references/syllabus-repository-cs-2022-2023.md
+    title: Stanford Syllabus repository, CS, 2022-2023
 ---
 # CS 31N: Counterfactuals: The Science of What Ifs?
 
@@ -59,10 +91,11 @@ A seminar on one technique and its reach: what would have happened otherwise. Th
 
 ## Materials
 
-Nothing is public. `web.stanford.edu/class/cs31n/` exists but is an empty directory index, and no other site was found.
+Nothing is public, in any of the 4 offerings. The course has no site: `web.stanford.edu/class/cs31n/` exists as an empty directory index and nothing else resolves, and the syllabus it files goes to Canvas with Stanford-only visibility.
 
-- **Syllabus**: closed. Spring 2021, Spring 2023 and Spring 2026 uploaded a syllabus to Canvas, marked Stanford-only.
-- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: on Canvas, Stanford-only, for Spring 2021, Spring 2023 and this offering; Spring 2025 uploaded none.
+- **Slides**, **Notes**, **Videos**, **Assignments**, **Solutions**, **Projects**, **Repo**: nothing found for any offering, under the course number or the instructor's own pages.
+- **Exams**: none; a capped 3-unit first-year seminar, with no exam in the catalog or the section records.
 
 ## Syllabus
 

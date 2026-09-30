@@ -12,22 +12,36 @@ instructors:
 units: "3"
 grading: Letter (ABCD/NP)
 prerequisites: []
-materials:
-  checked: "2026-09-28"
+homepage: https://mzhandry.github.io/courses/2026-Spring-CS25N/
+access: mostly-closed
+syllabus:
   access: open
-  syllabus:
-    access: open
-    url: https://mzhandry.github.io/courses/2026-Spring-CS25N/
-    note: "the instructor's own page: a ten-week topic list, the grading split and the prerequisites"
-  slides: unknown
-  videos: unknown
-  assignments:
-    access: unknown
-    note: homeworks carry 70% of the grade but none is posted
-  exams: none
-  projects:
-    access: unknown
-    note: a final project carries the remaining 30%; none is published
+  url: https://mzhandry.github.io/courses/2026-Spring-CS25N/
+  note: "the instructor's own page, and the whole of it: the course content paragraph, the suggested background, the 70/30 grading split and a 10-week topic list described as \"very tentative\""
+slides:
+  access: unknown
+  note: none found; the page links nothing beyond its own text
+notes:
+  access: unknown
+  note: none found
+videos:
+  access: unknown
+  note: no recording is mentioned, and nothing turned up under the code or the instructor's name
+assignments:
+  access: unknown
+  note: homeworks carry 70% of the grade and none is posted
+solutions:
+  access: unknown
+  note: none found
+exams:
+  access: none
+  note: the grade is homeworks and a final project, with no exam
+projects:
+  access: unknown
+  note: a final project carries the remaining 30%, and neither its brief nor any student work is published
+repo:
+  access: unknown
+  note: none found
 topics:
   - cryptanalysis and breaking Enigma
   - design of secure ciphers
@@ -39,19 +53,18 @@ tags:
   - cryptography
   - introsem
   - theory
+aliases:
+  - CS25N
+checked: "2026-10-02"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-10-02T00:00:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
     file: ../references/explorecourses-cs-2025-2026.md
     title: ExploreCourses, 2025-2026
-  - id: probe
-    resource: https://web.stanford.edu/class/cs25n/
-    file: ../references/course-site-probe-ug-winter-2026-2026-09-27.md
-    title: Course site probe, 2026-09-27
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-27T22:50:00Z"
 ---
 # CS 25N: Big Ideas in Cryptography
 
@@ -59,11 +72,14 @@ A seminar built on the field's counterintuitive results — the catalog's framin
 
 ## Materials
 
-The seminar has a site, but not under its course code — the instructor keeps it on [his own GitHub Pages](https://mzhandry.github.io/courses/2026-Spring-CS25N/), linked only from his teaching page.
+One page, on the instructor's own GitHub Pages rather than under the course code, carries the topic list and the grading split — and that is everything. The homeworks and the final project, which are the whole grade between them, have never been posted, nor has a deck or a recording.
 
-- **Syllabus**: open. The page gives the ten-week topic list below, the prerequisites, and the grading split — **70% homeworks, 30% final project** — with "two 80-minute lectures per week".
-- **Assignments** and **Projects**: not published, though between them they are the whole grade.
-- **Slides**, **Videos**: none found. **Exams**: none.
+- **Syllabus**: the [course page](https://mzhandry.github.io/courses/2026-Spring-CS25N/) gives the content paragraph, the suggested background, the 70/30 split between homeworks and the final project, "two 80-minute lectures per week", and a 10-week topic list it calls "very tentative". It is 2 KB and links nothing.
+- **Slides**, **Notes**, **Solutions**, **Repo**: nothing found.
+- **Videos**: no recording is mentioned, and nothing turned up under the code or the instructor's name.
+- **Assignments**: homeworks carry 70% of the grade and none is posted.
+- **Exams**: none; the grade is homeworks and the project.
+- **Projects**: the final project carries the other 30%, and neither its brief nor any student work is published.
 
 ## Syllabus
 

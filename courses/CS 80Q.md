@@ -17,43 +17,89 @@ instructors:
 units: "3"
 grading: Letter or Credit/No Credit
 prerequisites: []
-materials:
-  checked: "2026-09-29"
+access: closed
+syllabus:
   access: closed
-  syllabus:
-    access: closed
-    note: no site found under the course code; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
-  videos: unknown
-  assignments: unknown
-  exams: unknown
-  projects: unknown
+  note: all 4 offerings uploaded one to Canvas and every one is marked Stanford-only; no site exists under either code
+slides: unknown
+notes: unknown
+videos: unknown
+assignments: unknown
+solutions: unknown
+exams: unknown
+projects: unknown
+repo: none
 topics:
   - demographics of the technology industry
   - early educational experiences and identity
   - bias in hiring and promotion
   - diversity initiatives and their limits
   - technology and social inequality
+past:
+  Winter 2020:
+    instructors:
+      - Bailey, C.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
+  Autumn 2020:
+    instructors:
+      - Bailey, C.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
+  Autumn 2021:
+    instructors:
+      - Bailey, C.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
 tags:
   - technology-and-society
   - diversity
   - seminar
+aliases:
+  - CS80Q
+  - AFRICAAM80Q
+  - AFRICAAM 80Q
+checked: "2026-10-02"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-10-02T17:50:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20222023&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
     file: ../references/explorecourses-cs-2022-2023.md
     title: ExploreCourses, 2022-2023
-  - id: probe
-    resource: https://web.stanford.edu/class/cs80q/
-    file: ../references/course-site-probe-ug-2020-2023-2026-09-27.md
-    title: Course site probe, 2026-09-27
   - id: syllabusrepo
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/F22/CS/
     file: ../references/cs-80q-syllabus-repository-winter-2020-autumn-2022.md
     title: Stanford Syllabus repository, CS 80Q, Winter 2020 to Autumn 2022
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-28T08:40:00Z"
+  - id: catalog-2019-20
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20192020&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2019-2020.md
+    title: ExploreCourses, 2019-2020
+  - id: catalog-2020-21
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20202021&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2020-2021.md
+    title: ExploreCourses, 2020-2021
+  - id: catalog-2021-22
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20212022&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2021-2022.md
+    title: ExploreCourses, 2021-2022
+  - id: syllabus-repo-2019-20
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/W20/CS/
+    file: ../references/syllabus-repository-cs-2019-2020.md
+    title: Stanford Syllabus repository, CS, 2019-2020
+  - id: syllabus-repo-2020-21
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F20/CS/
+    file: ../references/syllabus-repository-cs-2020-2021.md
+    title: Stanford Syllabus repository, CS, 2020-2021
+  - id: syllabus-repo-2021-22
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F21/CS/
+    file: ../references/syllabus-repository-cs-2021-2022.md
+    title: Stanford Syllabus repository, CS, 2021-2022
 ---
 # CS 80Q: Race and Gender in Silicon Valley
 
@@ -61,10 +107,11 @@ Starts from "the big headlines about trouble in Silicon Valley" and works backwa
 
 ## Materials
 
-Nothing is public. No site exists under the course code, and a web search found only catalog listings.
+Nothing is public, and the syllabus repository shows why rather than leaving it a blank: all four offerings uploaded a syllabus to Canvas, and every one is marked readable inside Stanford only.
 
-- **Syllabus**: closed. Four offerings between Winter 2020 and Autumn 2022 uploaded a syllabus to Canvas, every one of them marked Stanford-only.
-- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: closed. Winter 2020, Autumn 2020, Autumn 2021 and Autumn 2022 each have a published Canvas course with an upload, all Stanford-only.
+- **Slides**, **Notes**, **Videos**, **Assignments**, **Solutions**, **Exams**, **Projects**: not found. Nothing under either code is served, and no source says what the course sets or whether its sessions are recorded.
+- **Repo**: none. The course writes rather than builds.
 
 ## Syllabus
 
@@ -76,4 +123,5 @@ None stated.
 
 ## Source notes
 
-- `cs80q.stanford.edu` does not resolve and `web.stanford.edu/class/cs80q/` 404s (checked 2026-09-27).
+- `cs80q.stanford.edu` does not resolve; `web.stanford.edu/class/cs80q/`, `/class/africaam80q/` and the class archive all 404 (checked 2026-10-02).
+- The syllabus repository is the only source that confirms material exists at all: it is the rare case where every offering has `hasSyllabus: true`, and every one is `INSTITUTION`.

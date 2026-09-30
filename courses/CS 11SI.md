@@ -22,38 +22,29 @@ prerequisites:
   - CS 106A or equivalent
   - Application required
 homepage: https://web.stanford.edu/class/cs11si/
-materials:
-  checked: "2026-09-29"
-  access: partial
-  syllabus:
-    access: open
-    url: https://docs.google.com/document/d/1jwZBGwFY26bO7wAwgf38nr0PqsrAuqkyCH2V8YHYHIo/edit
-    note: public Google Doc with goals, target audience and logistics, but no dated week-by-week schedule; Autumn 2023's doc has the full ten-week table
-  slides:
-    access: open
-    term: Autumn 2023
-    url: https://docs.google.com/document/d/1uSHRToMmxhXJmYPIpnXca_F2hz1fggMA_bXXpgwGBpM/edit
-    note: fourteen public Google Slides decks linked from that term's syllabus table; the current offering's doc links none
-  notes: unknown
-  videos: unknown
-  assignments:
-    access: open
-    term: Autumn 2023
-    url: https://docs.google.com/document/d/1uSHRToMmxhXJmYPIpnXca_F2hz1fggMA_bXXpgwGBpM/edit
-    note: three homework handouts and three project briefs as public Google Docs; submission itself ran through an enrolled-students-only Canvas page
-  solutions: unknown
-  exams: none
-  projects:
-    access: unknown
-    note: the archived site's Student Work gallery publishes six team projects, but from Autumn 2018; no recent showcase
-  code: unknown
-  sites:
-    - url: https://web.stanford.edu/class/archive/cs/cs11si/cs11si.1242/
-      term: Autumn 2023
-      note: archived site whose syllabus page links every deck and handout
-    - url: https://web.stanford.edu/class/archive/cs/cs11si/cs11si.1226/media.html
-      term: Spring 2022
-      note: Student Work gallery of six Autumn 2018 team projects, dropped from later sites
+access: open
+syllabus:
+  access: open
+  url: https://docs.google.com/document/d/1tHKcdU2igBXf1Ye8etrL5GZfUXdkCQHJPN1607vVTLI/edit
+  note: the Winter 2026 document, with goals, logistics, the grading rule and a dated 10-week table that links every deck and handout
+slides:
+  access: open
+  url: https://docs.google.com/presentation/d/15BXnXmvOyVpZOCp11fuqpb2_N1ijDEUhRqa_1PsK1tU/edit
+  note: "16 of the schedule's 17 decks export as PDF to anyone; only the guest talk \"Serious Games\" returns 401"
+notes: unknown
+videos:
+  access: unknown
+  note: no source says the sessions are recorded, and no public set turned up
+assignments:
+  access: open
+  url: https://docs.google.com/document/d/1ztPZYHlh0XCkbHQxv27a1MpgpQxgvkL02qgB6PBLr-g/edit
+  note: all 8 handouts, HW1 to HW7 with both project milestones, are public Google Docs; submission runs through a Canvas page "only visible to enrolled students"
+solutions: unknown
+exams: none
+projects:
+  access: unknown
+  note: Demo Day is not published, and the only Student Work gallery the wiki found shows Autumn 2018 teams
+repo: unknown
 topics:
   - the Unity game engine
   - VR design best practices
@@ -63,10 +54,58 @@ topics:
   - Unity animation and hand tracking
   - building for standalone headsets
   - team VR application development
+past:
+  Winter 2020:
+    instructors: []
+  Spring 2020:
+    instructors: []
+  Spring 2022:
+    instructors:
+      - Borenstein, J.
+    syllabus:
+      access: closed
+      note: the syllabus document this offering linked has since been overwritten with Winter 2023's text; the syllabus repository lists a Stanford-only Canvas upload
+  Winter 2023:
+    instructors:
+      - Borenstein, J.
+    homepage: https://web.stanford.edu/class/archive/cs/cs11si/cs11si.1226/
+    syllabus:
+      access: open
+      url: https://docs.google.com/document/d/1YTCA6XZ-gh0tPgnWOFXkWs8bufVD-Ryu2j9ZFgosQ6s/edit
+      note: the document the archived site links, headed Winter 2023, with a dated 10-week table built around a pair of Unity labs that later offerings dropped
+  Autumn 2023:
+    instructors:
+      - Borenstein, J.
+    homepage: https://web.stanford.edu/class/archive/cs/cs11si/cs11si.1242/
+    syllabus:
+      access: open
+      url: https://docs.google.com/document/d/1uSHRToMmxhXJmYPIpnXca_F2hz1fggMA_bXXpgwGBpM/edit
+      note: the full 10-week table, phase by phase, with each deliverable's due date; the syllabus repository lists a Stanford-only Canvas upload as well
+    slides:
+      access: open
+      url: https://docs.google.com/document/d/1uSHRToMmxhXJmYPIpnXca_F2hz1fggMA_bXXpgwGBpM/edit
+      note: "14 public Google Slides decks linked from that term's syllabus table"
+    assignments:
+      access: open
+      url: https://docs.google.com/document/d/1uSHRToMmxhXJmYPIpnXca_F2hz1fggMA_bXXpgwGBpM/edit
+      note: "3 homework handouts and 3 project briefs as public Google Docs; submission ran through an enrolled-students-only Canvas page"
+  Winter 2025:
+    instructors:
+      - Borenstein, J.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository); no public copy found, and the class-archive path for this term serves the live site
 tags:
   - virtual-reality
   - game-engines
   - project-course
+aliases:
+  - CS11SI
+checked: "2026-10-02"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-10-02T09:50:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
@@ -76,14 +115,57 @@ sources:
     resource: https://web.stanford.edu/class/cs11si/
     file: ../references/cs-11si-course-site-winter-2026.md
     title: Course site and syllabus, checked 2026-09-27
+  - id: syllabus2026
+    resource: https://docs.google.com/document/d/1tHKcdU2igBXf1Ye8etrL5GZfUXdkCQHJPN1607vVTLI/edit
+    file: ../references/cs-11si-syllabus-winter-2026.md
+    title: Syllabus document and linked material, Winter 2026
   - id: syllabus2023
     resource: https://docs.google.com/document/d/1uSHRToMmxhXJmYPIpnXca_F2hz1fggMA_bXXpgwGBpM/edit
     file: ../references/cs-11si-syllabus-autumn-2023.md
     title: Syllabus document and linked material, Autumn 2023
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-29T09:30:00Z"
+  - id: syllabus-w2023
+    resource: https://docs.google.com/document/d/1YTCA6XZ-gh0tPgnWOFXkWs8bufVD-Ryu2j9ZFgosQ6s/edit
+    file: ../references/cs-11si-syllabus-winter-2023.md
+    title: Syllabus document, Winter 2023
+  - id: snapshot
+    resource: https://web.archive.org/web/20260311064239/http://web.stanford.edu/class/cs11si/
+    title: Internet Archive capture of the course site, 2026-03-11, showing the Winter 2026 offering
+  - id: catalog-2019-20
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20192020&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2019-2020.md
+    title: ExploreCourses, 2019-2020
+  - id: catalog-2021-22
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20212022&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2021-2022.md
+    title: ExploreCourses, 2021-2022
+  - id: catalog-2022-23
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20222023&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2022-2023.md
+    title: ExploreCourses, 2022-2023
+  - id: catalog-2023-24
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2023-2024.md
+    title: ExploreCourses, 2023-2024
+  - id: catalog-2024-25
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2024-2025.md
+    title: ExploreCourses, 2024-2025
+  - id: syllabus-repo-2021-22
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F21/CS/
+    file: ../references/syllabus-repository-cs-2021-2022.md
+    title: Stanford Syllabus repository, CS, 2021-2022
+  - id: syllabus-repo-2022-23
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F22/CS/
+    file: ../references/syllabus-repository-cs-2022-2023.md
+    title: Stanford Syllabus repository, CS, 2022-2023
+  - id: syllabus-repo-2023-24
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F23/CS/
+    file: ../references/syllabus-repository-cs-2023-2024.md
+    title: Stanford Syllabus repository, CS, 2023-2024
+  - id: syllabus-repo-2024-25
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F24/CS/
+    file: ../references/syllabus-repository-cs-2024-2025.md
+    title: Stanford Syllabus repository, CS, 2024-2025
 ---
 # CS 11SI: How to Make VR: Introduction to Virtual Reality Design and Development
 
@@ -91,13 +173,18 @@ Run by Stanford XR and capped at twenty students. The stated aim is reach rather
 
 ## Materials
 
-The current offering publishes only its syllabus doc, and that without a schedule. Autumn 2023 published everything: that term's schedule table links every deck and handout as a public Google file.
+Winter 2026 published its whole teaching record in the open: the syllabus document's dated 10-week table links a deck for every session and a handout for every deliverable, and all but one of them opens to anyone with no account. Only the submission machinery is enrolled-students-only, and no source says the sessions are recorded.
 
-- **Syllabus**: the current [syllabus doc](https://docs.google.com/document/d/1jwZBGwFY26bO7wAwgf38nr0PqsrAuqkyCH2V8YHYHIo/edit) gives goals, target audience and logistics but no dated schedule; [Autumn 2023's](https://docs.google.com/document/d/1uSHRToMmxhXJmYPIpnXca_F2hz1fggMA_bXXpgwGBpM/edit) has the ten-week table, phase by phase, with each deliverable's due date.
-- **Slides**: fourteen decks off that table — [Unity Basics](https://docs.google.com/presentation/u/1/d/1HM4DrabRuwKieRjDe8fRsi5IR5M4Gj9NiBaV-2Fwv5E/edit), [XRIT Setup](https://docs.google.com/presentation/d/1rLGRHsYz5Ne_gSpNS8jyczvw1-C8IyvYTJqFo9xwugw/edit), [3D Modelling in Blender](https://docs.google.com/presentation/d/1Ss_vOEsxuWFF8vav7NMEkRxNZgs4nkt6nqmcLdblu_E/edit), [Unity Animation](https://docs.google.com/presentation/d/15rI5LC60mgnOu-BjKBf5OTtBRGTery3-jSJNVZ-x77o/edit), [Hand Tracking](https://docs.google.com/presentation/d/1XAfFzfKcFKZiMluJaEBv9TRhs-bWp_Bqin9iPMFDQRs/edit) and the rest, including the three guest-speaker decks.
-- **Assignments**: [HW 1: Roll a ball](https://docs.google.com/document/d/1gMMzwBZKHih6Ei8Eoagwoy2M10-tACcdWdSa_PXywoM/edit), [HW 2: Beatsaber Lite](https://docs.google.com/document/d/1d6HTgjbnxQbW03QLsx8zlInbjSOwpd_cAq4oH6rQYoI/edit), [HW 3: Getting Closer to Beatsaber](https://docs.google.com/document/d/137u31D3PmDmbz7I09likE82G6wHR4VETmc4NOxv0E0o/edit), then the [project proposal](https://docs.google.com/document/d/1z7w08APIs_xfUmS1K5rhACXh8nBpUUTzWfliuiWuYco/edit) and [two](https://docs.google.com/document/d/1odMxxLIRdKoqC6sbYl4TFrQEE4zgnY8F9hrvwNt9GbE/edit) [milestones](https://docs.google.com/document/d/1_KiSF0yYb23gm18apCbKYOa4p31-X6I39d7PJAAgn4M/edit). Submission ran through a Canvas page "only visible to enrolled students".
-- **Projects**: the [Student Work gallery](https://web.stanford.edu/class/archive/cs/cs11si/cs11si.1226/media.html) shows six Autumn 2018 team pieces — Ice Cream Tree Turbine, Penguin with Jetpack, Rings of Truth — as in-browser 3D model viewers. Later sites dropped the page; nothing recent is published.
-- **Notes**, **Videos**, **Solutions**, **Code**: not found. **Exams**: none.
+- **Syllabus**: the [Winter 2026 document](https://docs.google.com/document/d/1tHKcdU2igBXf1Ye8etrL5GZfUXdkCQHJPN1607vVTLI/edit) gives the goals, the room and time, the credit rule (every deliverable submitted, at most 2 classes missed) and the week-by-week table that everything else hangs off. The live site has since replaced the link with Winter 2027's draft.
+- **Slides**: 16 of the table's 17 decks export to anyone — [Welcome](https://docs.google.com/presentation/d/15BXnXmvOyVpZOCp11fuqpb2_N1ijDEUhRqa_1PsK1tU/edit), Unity Basics, XRIT Setup, Basics and Deep Dive, Game Design Theory, VR Prototyping, [3D Modeling in Blender](https://docs.google.com/presentation/d/1xwMW4wZEw7eh4O6ZH2uIzhCU1dFiCNd5/edit), the work-day and playtesting decks, and 2 of the 3 industry guest talks. The third, Butch Nasser's "Serious Games", answers 401.
+- **Notes**: not found; the decks carry the instruction.
+- **Videos**: no source says the sessions are recorded, and no public set turned up.
+- **Assignments**: all 8 handouts are public documents — [HW 1: Roll a Ball](https://docs.google.com/document/d/1ztPZYHlh0XCkbHQxv27a1MpgpQxgvkL02qgB6PBLr-g/edit), HW 2 and HW 3 building a Beatsaber clone, [HW 4: Project Proposal + Rapid Prototype](https://docs.google.com/document/d/1mmCKx-c2g_H7Pyf0AhqlzFREqE1p_3yWCn5e1U_DhZ0/edit), 2 project milestones, the [final project](https://docs.google.com/document/d/1n0wzkzqq-fZW1jHHAeT_2ELMU8xYVWTFiaOQ5MXquSw/edit) and an end-of-quarter reflection. Submission itself runs through a Canvas page "only visible to enrolled students", as does the Ed board.
+- **Solutions**: not found; the deliverables are builds, not exercises with answers.
+- **Exams**: none. Credit is deliverables and attendance.
+- **Projects**: Demo Day is not published. The only gallery the wiki found, [Student Work](https://web.stanford.edu/class/archive/cs/cs11si/cs11si.1226/media.html) on the archived sites, shows 6 Autumn 2018 team pieces as in-browser 3D viewers — Ice Cream Tree Turbine, Penguin with Jetpack, Rings of Truth — and was never refreshed.
+- **Repo**: not found. Week 6 sets up GitHub for the team projects, but no course repository or starter project is linked.
+- **Older offerings**: [Autumn 2023](https://docs.google.com/document/d/1uSHRToMmxhXJmYPIpnXca_F2hz1fggMA_bXXpgwGBpM/edit) is public the same way, with 14 decks and 6 handouts off its own table, and [Winter 2023](https://docs.google.com/document/d/1YTCA6XZ-gh0tPgnWOFXkWs8bufVD-Ryu2j9ZFgosQ6s/edit)'s document survives with the Unity-lab sequence later offerings dropped.
 
 ## Syllabus
 
@@ -116,7 +203,10 @@ The goals, stated on every offering's doc: "Understand the Unity game engine and
 
 ## Source notes
 
-- The site had already rolled over to advertise the **Winter 2027** offering when checked on 2026-09-27 — Winter 2027 meeting times, a TBD location and a 30 December application deadline — so it documents the course rather than this offering.
-- The headset disagrees across sources: the syllabus says Pico, the site says Meta Quest, and the catalog still says Oculus Quest 2. Autumn 2023's doc says Oculus Quest.
-- The archives publish what the live site doesn't: `cs11si.1242` (Autumn 2023) and `cs11si.1226` (Spring 2022) carry "Class Materials" and "Student Work" nav items that Winter 2025 (`cs11si.1254`) and the live site dropped. Spring 2022's syllabus is a third doc again (`1YTCA6XZ-gh0tPgnWOFXkWs8bufVD-Ryu2j9ZFgosQ6s`), headed Winter 2023, not Spring 2022.
-- Both archived galleries serve the same Autumn 2018 work, credited October 2018 — never refreshed, so not evidence about either term's own projects (checked 2026-09-29).
+- **The syllabus document is replaced, not versioned.** The site links one Google Doc at a time and the course swaps in a new id each offering, so a doc read today may be a term the wiki has not reached: `1jwZBG…`, which the site links now, is Winter 2027's draft, with "UNSURE (used to be speaker talk)" in three schedule rows. Winter 2026's id came from the [Internet Archive's capture of 2026-03-11](https://web.archive.org/web/20260311064239/http://web.stanford.edu/class/cs11si/); the document itself is live and public.
+- The site advertises one offering at a time and had already rolled over to **Winter 2027** when checked (Tu/Th 10:30-11:20, location TBD, applications closing 30 December), so it is not evidence about Winter 2026.
+- **The class archive's term ids are wrong here.** `cs11si.1226` would mean Spring 2022 but serves a site headed "Winter 2023: M/W 4:30-5:20 PM PT"; `cs11si.1242` is correctly Autumn 2023 ("Fall 2023"); `cs11si.1254` serves the live site byte for byte, so it says nothing about Winter 2025. Winter 2020, Spring 2020 and Winter 2023's own id all 404.
+- **Spring 2022's syllabus is gone.** The Internet Archive's 2022-04-18 capture of the site, which shows the Spring 2022 offering, links document `1YTCA6…`; that document today reads Winter 2023, so it was overwritten in place.
+- The headset changes and the sources disagree about which: Autumn 2023's doc says Oculus Quest, the Winter 2026 doc says Pico, the March 2026 site said "Pico4 Ultra", today's site says Meta Quest, and the catalog still says Oculus Quest 2.
+- **Winter 2020 and Spring 2020 have no named instructor**, and `instructors` is `[]` for both. The catalog lists one TBA activity section each. That is the normal shape for a student-initiated course, whose teaching team are students rather than catalog PIs, so it is not evidence of a canceled quarter; nothing found confirms either term ran, either. The site's December 2019 capture still advertised the Autumn 2019 offering.
+- Both archived Student Work galleries are the same 20,629-byte page crediting October 2018, so neither is evidence about its own term's projects.

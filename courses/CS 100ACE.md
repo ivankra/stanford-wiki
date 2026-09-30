@@ -37,28 +37,115 @@ prerequisites:
   - Concurrent enrollment in CS 106A
   - Consent of instructor
 homepage: https://cs100ace.stanford.edu/
-materials:
-  checked: "2026-09-28"
-  access: partial
-  syllabus:
-    access: open
-    url: https://docs.google.com/document/d/1RDqpRY1H9zVwzMdWNqqT0t0qZxU2VI7wc0jSR58N-e8/edit
-    note: a Google Doc covering the ACE program, enrollment and grading; it is headed Spring 2026
-  videos:
-    access: unknown
-  assignments:
-    access: unknown
-    note: one week's section page is published and holds only an entry-ticket form; the worksheets themselves are not posted
-  exams: none
-  projects: none
+access: mostly-closed
+syllabus:
+  access: open
+  url: https://docs.google.com/document/d/1RDqpRY1H9zVwzMdWNqqT0t0qZxU2VI7wc0jSR58N-e8/edit
+  note: a Google Doc covering the four ACE components, enrollment, attendance and grading; it is headed Spring 2026
+slides:
+  access: closed
+  note: the one published section page lists "Lecture slides", "Example code" and "Section exercises" as links that go nowhere, and the syllabus says "All ACE materials are posted to the Google Drive folder", whose address the course does not publish
+  checked: "2026-09-30"
+notes:
+  access: closed
+  note: "\"Section notes are designed to accompany material covered in the section worksheets\", says the syllabus; they go to the same unpublished Drive folder"
+  checked: "2026-09-30"
+videos:
+  access: unknown
+assignments:
+  access: closed
+  note: "\"Hard copies of section worksheets will usually be provided in section\", and the soft copies go to the unpublished Drive folder"
+  checked: "2026-09-30"
+exams: none
+projects: none
+sites:
+  - url: https://engineering.stanford.edu/students-academics/student-success-and-engagement/undergraduate-programs/additional-courses
+    note: the School of Engineering's ACE program page, which the syllabus points at for the application
 topics:
   - CS 106A problem-solving practice
   - collaborative programming
   - exam review
   - small-group section practice
+past:
+  Winter 2020:
+    instructors:
+      - Parlante, N.
+  Spring 2020:
+    instructors:
+      - Sahami, M.
+      - Piech, C.
+  Autumn 2020:
+    instructors:
+      - Sahami, M.
+      - Piech, C.
+  Winter 2021:
+    instructors:
+      - Parlante, N.
+  Spring 2021:
+    instructors:
+      - Parlante, N.
+  Autumn 2021:
+    instructors:
+      - Parlante, N.
+  Winter 2022:
+    instructors:
+      - Parlante, N.
+  Spring 2022:
+    instructors:
+      - Sahami, M.
+  Autumn 2022:
+    instructors: []
+  Winter 2023:
+    instructors:
+      - Collins, A.
+  Spring 2023:
+    instructors:
+      - Parlante, N.
+      - Collins, A.
+  Autumn 2023:
+    instructors:
+      - King, E.
+  Winter 2024:
+    instructors:
+      - King, E.
+  Spring 2024:
+    instructors:
+      - King, E.
+  Autumn 2024:
+    instructors:
+      - Ofosu, A.
+  Winter 2025:
+    instructors:
+      - Ofosu, A.
+  Spring 2025:
+    instructors:
+      - Ofosu, A.
+  Autumn 2025:
+    instructors:
+      - Ebssa, E.
+  Winter 2026:
+    instructors:
+      - Ebssa, E.
+  Spring 2026:
+    instructors:
+      - Ebssa, E.
+    syllabus:
+      access: open
+      url: https://docs.google.com/document/d/1RDqpRY1H9zVwzMdWNqqT0t0qZxU2VI7wc0jSR58N-e8/edit
+      note: the syllabus document the current site still links, headed Spring 2026 and naming that quarter's course assistant
+      checked: "2026-09-30"
 tags:
   - ace-lab
   - introductory-programming
+aliases:
+  - CS100ACE
+  - CS100A
+  - CS 100A
+checked: "2026-09-28"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-09-30T18:00:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on&filter-term-Autumn=on
@@ -72,10 +159,30 @@ sources:
     resource: https://cs100ace.stanford.edu/
     file: ../references/cs-100ace-course-site-autumn-2026.md
     title: Course site and syllabus, checked 2026-09-27
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-27T12:00:00Z"
+  - id: catalog-2019-20
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20192020&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2019-2020.md
+    title: ExploreCourses, 2019-2020
+  - id: catalog-2020-21
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20202021&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2020-2021.md
+    title: ExploreCourses, 2020-2021
+  - id: catalog-2021-22
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20212022&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2021-2022.md
+    title: ExploreCourses, 2021-2022
+  - id: catalog-2022-23
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20222023&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2022-2023.md
+    title: ExploreCourses, 2022-2023
+  - id: catalog-2023-24
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2023-2024.md
+    title: ExploreCourses, 2023-2024
+  - id: catalog-2024-25
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2024-2025.md
+    title: ExploreCourses, 2024-2025
 ---
 # CS 100ACE: Problem-solving Lab for CS106A
 
@@ -83,11 +190,14 @@ One extra unit beside [CS 106A](CS%20106A.md), run by a course assistant rather 
 
 ## Materials
 
-The syllabus is public; the section's own worksheets and slides are not published anywhere.
+The syllabus is public and says where everything else goes: "All ACE materials are posted to the Google Drive folder", and the course doesn't publish that folder's address. Worksheets are handed out on paper in section.
 
-- **Syllabus**: a [Google Doc](https://docs.google.com/document/d/1RDqpRY1H9zVwzMdWNqqT0t0qZxU2VI7wc0jSR58N-e8/edit) describing the ACE components, enrollment and grading.
-- **Assignments**: no section handouts published.
-- **Videos**, **Exams**, **Projects**: none.
+- **Syllabus**: a [Google Doc](https://docs.google.com/document/d/1RDqpRY1H9zVwzMdWNqqT0t0qZxU2VI7wc0jSR58N-e8/edit) with the four ACE components, the attendance rule (more than fifteen minutes late counts as an absence) and the enrollment path through the program's application. It is headed Spring 2026, though the page carrying it is this quarter's.
+- **Slides**, **Notes**, **Assignments**: in the unpublished Drive folder. The one section page the site puts up, [Week 2 ACE Section](https://web.stanford.edu/class/cs100ace/sections/week2.html), names its Karel topics — if statements, loops, Karel exercises — and then lists "Lecture slides", "Example code" and "Section exercises" as links that go nowhere; its only working link is a Google Form entry ticket.
+- **Videos**: nothing found, and no source says whether the section is recorded.
+- **Solutions**, **Repo**: nothing found.
+- **Exams**, **Projects**: none of its own; the section runs review sessions for [CS 106A](CS%20106A.md)'s exams.
+- **Program**: the [ACE program page](https://engineering.stanford.edu/students-academics/student-success-and-engagement/undergraduate-programs/additional-courses) is where the application lives, and the only account of the program a reader can open.
 
 ## Syllabus
 
@@ -103,7 +213,9 @@ There is no topic list of its own: the section follows [CS 106A](CS%20106A.md) w
 
 ## Source notes
 
-- A `sections/` directory sits under the class path, unlinked except from one line on the landing page. It holds a single file, `week2.html` (Karel), and that page's only live link is a Google Form entry ticket — its "Lecture slides" link is `href="#"`. So section worksheets exist as pages but not as published material (checked 2026-09-28).
+- A `sections/` directory sits under the class path, unlinked except from one line on the landing page. Its listing holds a single file, `week2.html`; the landing page's "Week 1 ACE Section" link points at `/sections/week1.html`, which drops the `class/cs100ace` prefix and 404s (checked 2026-09-30).
+- No archived offering exists: `web.stanford.edu/class/cs100a/` and `web.stanford.edu/class/archive/cs/cs100a/` both 404, and the Internet Archive holds one capture under either path, a May 2026 snapshot of the current site (checked 2026-09-30).
+- **The catalog names nobody for Autumn 2022**, but that listing gives a room and time — "Section 01 (LAB): R 18:00-19:50, McMurtry Art Building 360" — so the offering ran; the instructor list stays empty rather than being dropped.
 - The linked syllabus document is headed "Spring 2026" though the page carrying it is this quarter's.
 - The site gives the section room as 160-332; the catalog says Lathrop 294.
 - The catalog lists no instructor for Autumn 2026; the section's TA is named on the site.

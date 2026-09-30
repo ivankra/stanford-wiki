@@ -35,35 +35,110 @@ grading: Satisfactory/No Credit
 prerequisites:
   - Concurrent enrollment in CS 109
   - Consent of instructor
-materials:
-  checked: "2026-09-28"
+homepage: https://ehersch.github.io/CS109ACE/
+access: mostly-open
+syllabus:
   access: open
-  syllabus:
-    access: open
-    url: https://ehersch.github.io/CS109ACE/
-    note: the Autumn 2026 section site, with a syllabus PDF and a dated nine-week schedule
-  notes:
-    access: open
-    term: Spring 2022
-    url: https://cs109a.stanford.edu/
-    note: nine weekly practice handouts as PDFs on the predecessor code's site, each with its topics listed
-  videos:
-    access: unknown
-  assignments: none
-  exams: none
-  projects: none
-  sites:
-    - url: https://cs109a.stanford.edu/
-      term: Spring 2022
-      note: the Spring 2022 site under the old CS 109A code, holding the weekly notes
+  url: https://ehersch.github.io/CS109ACE/
+  note: the Autumn 2026 section site, with a syllabus PDF and a dated nine-week schedule
+slides:
+  access: unknown
+  note: nothing posted this quarter; the site links only the syllabus, the ACE application and a Slack invite
+  checked: "2026-09-30"
+notes:
+  access: unknown
+  note: no handout has appeared for this quarter
+  checked: "2026-09-30"
+videos:
+  access: unknown
+assignments: none
+solutions:
+  access: unknown
+  checked: "2026-09-30"
+exams: none
+projects: none
+sites:
+  - url: https://join.slack.com/t/cs109ace/shared_invite/zt-4akrq8hon-TwiDumu0nGG4rURmOFrIpg
+    note: the section's Slack workspace, whose invite link the site publishes
 topics:
   - probability problem-solving practice
   - combinatorics drill
   - exam review
   - small-group section practice
+past:
+  Autumn 2020:
+    instructors:
+      - Cain, J.
+      - Yan, L.
+  Winter 2021:
+    instructors:
+      - Cain, J.
+      - Piech, C.
+  Spring 2021:
+    instructors:
+      - Cain, J.
+  Autumn 2021:
+    instructors:
+      - Piech, C.
+  Winter 2022:
+    instructors:
+      - Piech, C.
+      - Tullis, I.
+  Spring 2022:
+    instructors:
+      - Cain, J.
+    notes:
+      access: open
+      url: https://cs109a.stanford.edu/
+      note: nine weekly practice handouts as PDFs on the predecessor code's site, each with its topics listed
+  Autumn 2022:
+    instructors:
+      - Kadie, J.
+  Winter 2023:
+    instructors:
+      - Kadie, J.
+  Spring 2023:
+    instructors:
+      - Chian, S.
+  Autumn 2023:
+    instructors:
+      - Qin, M.
+  Winter 2024:
+    instructors:
+      - Qin, M.
+  Spring 2024:
+    instructors:
+      - Qin, M.
+  Autumn 2024:
+    instructors:
+      - Nguyen, T.
+  Winter 2025:
+    instructors:
+      - Nguyen, T.
+  Spring 2025:
+    instructors:
+      - Nguyen, T.
+  Autumn 2025:
+    instructors:
+      - Arifov, J.
+  Winter 2026:
+    instructors:
+      - Arifov, J.
+  Spring 2026:
+    instructors:
+      - Arifov, J.
 tags:
   - ace-lab
   - probability
+aliases:
+  - CS109ACE
+  - CS109A
+  - CS 109A
+checked: "2026-09-28"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-09-30T18:00:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on&filter-term-Autumn=on
@@ -77,10 +152,26 @@ sources:
     resource: https://cs109.stanford.edu/
     file: ../references/cs-109-course-site-autumn-2026.md
     title: CS 109 course site, which links the CS 109ACE sign-up, checked 2026-09-27
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-27T12:00:00Z"
+  - id: catalog-2020-21
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20202021&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2020-2021.md
+    title: ExploreCourses, 2020-2021
+  - id: catalog-2021-22
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20212022&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2021-2022.md
+    title: ExploreCourses, 2021-2022
+  - id: catalog-2022-23
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20222023&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2022-2023.md
+    title: ExploreCourses, 2022-2023
+  - id: catalog-2023-24
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2023-2024.md
+    title: ExploreCourses, 2023-2024
+  - id: catalog-2024-25
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2024-2025.md
+    title: ExploreCourses, 2024-2025
 ---
 # CS 109ACE: Problem-solving Lab for CS109
 
@@ -88,12 +179,14 @@ The ACE section for [CS 109](CS%20109.md): one unit, a weekly two-hour lab cappe
 
 ## Materials
 
-Each instructor puts up their own section site, so what is public depends on who is teaching. Autumn 2026's is at [ehersch.github.io/CS109ACE](https://ehersch.github.io/CS109ACE/); the old CS 109A code still serves a Spring 2022 site whose handouts are the richest material the course has.
+Each instructor puts up their own section site, so what is public depends on who is teaching. Autumn 2026's carries the syllabus and a dated schedule and nothing else; the practice handouts a reader would want are [Spring 2022](https://cs109a.stanford.edu/)'s, nine of them, still served under the old CS 109A code.
 
 - **Syllabus**: the [Autumn 2026 syllabus PDF](https://ehersch.github.io/CS109ACE/CS_109A_Syllabus.pdf) and the dated schedule beside it. It is explicit about what the section is not — support for the main course, and "not add another set of assignments or exams to your week" — while the schedule is only "a proposed sequence", paced to whatever the parent course reaches.
-- **Notes**: nine weekly practice handouts from [Spring 2022](https://cs109a.stanford.edu/), PDFs of 0.25–1.2 MB, each listed with its topics — combinatorics and Python's `itertools`, Bayes' rule and indicator random variables, the binomial/geometric/Poisson/normal family, normal approximation and inverse CDFs, Bayesian versus frequentist approaches and bootstrapping, MLE and MAP, ending in convolutions, naive Bayes and logistic regression.
-- **Assignments**, **Exams**, **Projects**: none by design — the section adds practice, not coursework.
-- **Videos**: none found.
+- **Notes**: nine weekly practice handouts from [Spring 2022](https://cs109a.stanford.edu/), PDFs of 0.25-1.2 MB, each listed with its topics — combinatorics and Python's `itertools`, Bayes' rule and indicator random variables, the binomial/geometric/Poisson/normal family, normal approximation and inverse CDFs, Bayesian versus frequentist approaches and bootstrapping, MLE and MAP, ending in convolutions, naive Bayes and logistic regression. Nothing equivalent has been posted this quarter.
+- **Slides**, **Solutions**, **Repo**: nothing found, this quarter or any other.
+- **Assignments**, **Exams**, **Projects**: none by design — the syllabus says the section adds practice, not coursework.
+- **Videos**: nothing found, and no source says whether the section is recorded.
+- **Slack**: the site publishes an open [invite link](https://join.slack.com/t/cs109ace/shared_invite/zt-4akrq8hon-TwiDumu0nGG4rURmOFrIpg) to the section's workspace, which is where announcements go.
 
 ## Syllabus
 

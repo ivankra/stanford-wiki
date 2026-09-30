@@ -14,16 +14,13 @@ units: "3"
 grading: Letter (ABCD/NP)
 prerequisites:
   - Basic programming, at the level of high school computer science or CS 106A
-materials:
-  checked: "2026-09-29"
+access: closed
+syllabus:
   access: closed
-  syllabus:
-    access: closed
-    note: no site for this course; the URL its own code redirects to serves a different CS 47N from 2012; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
-  videos: unknown
-  assignments: unknown
-  exams: unknown
-  projects: unknown
+  note: no site for this course; the URL its own code redirects to serves a different CS 47N from 2012, and a syllabus was uploaded to Canvas for both offerings with every record restricted to Stanford readers
+exams:
+  access: none
+  note: the catalog's assessment is hands-on analytics work and a strategic-decision exercise; no exam is named
 topics:
   - spreadsheets for data analysis
   - Tableau for data preparation and visualization
@@ -32,27 +29,41 @@ topics:
   - pandas and the Python data stack
   - machine learning on sports data
   - strategic decision-making from athletics data
+past:
+  Spring 2025:
+    instructors:
+      - Widom, J.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
 tags:
   - data-analytics
   - introsem
   - databases
+aliases:
+  - CS47N
+checked: "2026-10-01"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-10-02T03:00:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
     file: ../references/explorecourses-cs-2025-2026.md
     title: ExploreCourses, 2025-2026
-  - id: probe
-    resource: https://hci.stanford.edu/courses/cs047n/
-    file: ../references/course-site-probe-ug-spring-2026-2026-09-27.md
-    title: Course site probe, 2026-09-27
   - id: syllabusrepo
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/Sp26/CS/
     file: ../references/cs-47n-syllabus-repository-spring-2025-spring-2026.md
     title: Stanford Syllabus repository, CS 47N, Spring 2025 to Spring 2026
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-27T17:30:00Z"
+  - id: catalog-2024-25
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2024-2025.md
+    title: ExploreCourses, 2024-2025
+  - id: syllabus-repo-2024-25
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F24/CS/
+    file: ../references/syllabus-repository-cs-2024-2025.md
+    title: Stanford Syllabus repository, CS, 2024-2025
 ---
 # CS 47N: Datathletics: Diving into Data Analytics and Stanford Sports
 
@@ -60,10 +71,11 @@ Class meetings alternate between tool instruction and a Stanford coach explainin
 
 ## Materials
 
-Nothing is public for this course. The one site that answers under the number belongs to a different CS 47N.
+Nothing is public for this course, in either offering, and the one site that answers under the number belongs to a different CS 47N from 2012.
 
-- **Syllabus**: closed. Spring 2025 and Spring 2026 uploaded a syllabus to Canvas, marked Stanford-only.
-- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: on Canvas, Stanford-only, for Spring 2025 and this offering.
+- **Slides**, **Notes**, **Videos**, **Assignments**, **Solutions**, **Projects**, **Repo**: nothing found. `web.stanford.edu/class/cs47n/` and `cs47n.stanford.edu` both redirect to a complete 2012 site for "Computers and the Open Society", a different subject under the same number.
+- **Exams**: none; the catalog names hands-on analytics work and guest lectures, and no exam.
 
 ## Syllabus
 

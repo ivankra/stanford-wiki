@@ -12,54 +12,74 @@ instructors:
 units: "1"
 grading: Satisfactory/No Credit
 prerequisites: []
-materials:
-  checked: "2026-09-29"
+access: closed
+syllabus:
   access: closed
-  syllabus:
-    access: closed
-    note: no site found under the course code; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
-  videos: unknown
-  assignments: unknown
-  exams: unknown
-  projects: unknown
+  note: uploaded to Canvas, Stanford-only (syllabus repository); no site exists under the course code and no public copy turned up
+slides:
+  access: unknown
+  note: none found; the catalog promises case studies and guest speakers, and no deck from either is published
+notes:
+  access: unknown
+  note: none found
+videos:
+  access: unknown
+  note: no recording is mentioned anywhere, and nothing turned up under the code or the instructor's name
+assignments:
+  access: unknown
+  note: none published for a 1-unit student-initiated seminar graded satisfactory/no credit
+solutions:
+  access: unknown
+  note: none found
+exams:
+  access: unknown
+  note: none found
+projects:
+  access: unknown
+  note: none found
+repo:
+  access: unknown
+  note: none found
 topics:
   - writing systems and their encodings
   - text entry and input methods
   - keyboard design
-  - internationalisation
-  - language and interface design
+  - internationalization and localization
+  - typography and typeface design
+  - accessibility of text input
 tags:
   - language-and-computing
   - hci
   - student-initiated
+aliases:
+  - CS26SI
+checked: "2026-10-02"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-10-02T00:00:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20222023&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
     file: ../references/explorecourses-cs-2022-2023.md
     title: ExploreCourses, 2022-2023
-  - id: probe
-    resource: https://web.stanford.edu/class/cs26si/
-    file: ../references/course-site-probe-ug-2020-2023-2026-09-27.md
-    title: Course site probe, 2026-09-27
   - id: syllabusrepo
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/Sp23/CS/
     file: ../references/cs-26si-syllabus-repository-autumn-2022-spring-2023.md
     title: Stanford Syllabus repository, CS 26SI, Autumn 2022 to Spring 2023
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-28T08:40:00Z"
 ---
 # CS 26SI: Beyond NLP: CS & Language through Text Input & Design
 
-One unit, one quarter, and a question the catalog poses directly: "Where do Computer Science and Language intersect beyond NLP?" The answer it pursues is text entry — "there is so much more beyond the Latin alphabet".
+1 unit, one quarter, and a question the catalog poses directly: "Where do Computer Science and Language intersect beyond NLP?" The answer it pursues is text entry — "there is so much more beyond the Latin alphabet".
 
 ## Materials
 
-Nothing is public. No site exists under the course code, and a web search found only catalog listings.
+Nothing is public. The one offering uploaded its syllabus to Canvas for Stanford readers only, no site has ever existed under the course code, and a search returns the catalog entry and nothing else.
 
-- **Syllabus**: closed. Autumn 2022 uploaded a syllabus to Canvas, marked Stanford-only.
-- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: the Canvas upload is the only copy. `web.stanford.edu/class/cs26si/` 404s, `cs26si.stanford.edu` does not resolve, and the class archive holds no offering.
+- **Slides**, **Notes**, **Solutions**, **Exams**, **Projects**, **Repo**: nothing found. The catalog promises "many case studies and a few guest speakers", and no deck or handout from either is published.
+- **Videos**: no recording is mentioned anywhere, and nothing turned up under the code or the instructor's name.
+- **Assignments**: none published, in a 1-unit student-initiated seminar graded satisfactory/no credit.
 
 ## Syllabus
 
@@ -71,4 +91,5 @@ None stated.
 
 ## Source notes
 
-- `cs26si.stanford.edu` does not resolve and `web.stanford.edu/class/cs26si/` 404s (checked 2026-09-27).
+- `cs26si.stanford.edu` does not resolve, `web.stanford.edu/class/cs26si/` 404s, and `cs26si.1232` does not exist in the class archive (rechecked 2026-10-02).
+- The syllabus repository records 2 terms for the code and an upload in only one of them, Autumn 2022's, marked Stanford-only; the other has none.

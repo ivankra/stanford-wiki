@@ -27,10 +27,10 @@ Never sweep a term after `current_term`.
 
 ## Term page
 
-1. Create `terms/<Term>.md` (shape in `AGENTS.md` → Term pages), or refresh the existing one.
-2. Courses with a page: add the term to their `terms_offered`. Re-anchor a page (`wiki-course` skill) only if this term is newer than its current `term`. Registrations carry no term keys at all — leave them alone.
+1. Create `terms/<Term>.md` (shape in `AGENTS.md` → Term pages), or refresh the existing one. Its `sources` cite the catalog file that actually covers its rows: the full-year file, not a graduate-only extract.
+2. Courses with a page: add the term to their `terms_offered`. A term older than the page's `term` also gets `past.<term>.instructors` from this catalog file, and `title` if it differs, and its syllabus is looked for (`AGENTS.md` → Past offerings; `wiki-materials`). A course listed with only TBA sections and no instructor may not be running; check before adding the term. Re-anchor a page (`wiki-course` skill) only if this term is newer than its current `term`; re-anchoring moves the outgoing offering into `past` first (`AGENTS.md` → Past offerings). Registrations carry no term keys at all — leave them alone.
 3. Under `## TODO`, list every catalog course without a page: `- CS 000 Title`, one line each. A code some page lists under `formerly` has a page; see below.
-4. Run `node scripts/build.ts` to fill the table. Point the current-term link in `index.md` at the new page, and add a line to `log.md`.
+4. Run `node scripts/build.ts` to fill the table. Add a line to `log.md`.
 
 ## Renumbered and split courses
 
@@ -49,5 +49,5 @@ Known cases (add new ones here):
 1. Update `current_term` in `AGENTS.md`.
 2. Sweep the new term as above.
 3. Run build: it moves `is_current_term` to the new term's page and drops the previous term's days.
-4. Re-anchor pages whose newer offering the old ceiling had blocked.
+4. Re-anchor pages whose newer offering the old ceiling had blocked, moving each outgoing offering into `past` first. A sweep is not a materials recheck: lint flags pages whose `checked` predates the end of their term, and `wiki-materials` handles those.
 5. At an Autumn rollover (a new academic year), check the [program sheets page](https://www.cs.stanford.edu/masters-specializations/ms-program-sheets) for new editions, and update the lists and `edition` on `programs/` pages. Lint warns while an edition is stale.

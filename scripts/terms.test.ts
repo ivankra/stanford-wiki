@@ -36,7 +36,7 @@ test("term dates are required, valid ISO calendar dates and ordered", () => {
 test("build writes is_current_term and the level counts, drops concluded, and orders term keys", () => {
   const root = mkdtempSync(join(tmpdir(), "stanford-cs-term-keys-"));
   const course = (code: string, level: string, terms: string[]) =>
-    `---\ntype: Course\ncode: ${code}\nlevel: ${level}\nterm: ${terms.at(-1)}\nterms_offered: ${JSON.stringify(terms)}\nmaterials: { access: unknown }\n---\n`;
+    `---\ntype: Course\ncode: ${code}\nlevel: ${level}\nterm: ${terms.at(-1)}\nterms_offered: ${JSON.stringify(terms)}\naccess: unknown\n---\n`;
   try {
     mkdirSync(join(root, "courses"));
     mkdirSync(join(root, "terms"));

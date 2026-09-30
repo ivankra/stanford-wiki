@@ -15,43 +15,62 @@ instructors:
 units: "3"
 grading: Letter or Credit/No Credit
 prerequisites: []
-materials:
-  checked: "2026-09-29"
+access: closed
+syllabus:
   access: closed
-  syllabus:
-    access: closed
-    note: no site found under the course code; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
-  videos: unknown
-  assignments: unknown
-  exams: unknown
-  projects: unknown
+  note: uploaded to Canvas, Stanford-only (syllabus repository); no site exists under either code and no public copy turned up
+slides:
+  access: unknown
+  note: none found
+notes:
+  access: unknown
+  note: none found; the catalog says the seminar is self-contained, and nothing it wrote is published
+videos:
+  access: unknown
+  note: no recording is mentioned anywhere, and nothing turned up under either code or either instructor's name
+assignments:
+  access: unknown
+  note: none published for this 3-unit first-year seminar
+solutions:
+  access: unknown
+  note: none found
+exams:
+  access: unknown
+  note: none found
+projects:
+  access: unknown
+  note: none found
+repo:
+  access: unknown
+  note: none found
 topics:
   - what randomness is
-  - randomised decision making
-  - randomised algorithms
+  - randomized decision making
+  - randomized algorithms
   - probability and philosophy
   - random objects and sequences
 tags:
   - introsem
   - theory
   - philosophy
+aliases:
+  - CS57N
+  - PHIL3N
+  - PHIL 3N
+checked: "2026-10-02"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-10-02T00:00:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20212022&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
     file: ../references/explorecourses-cs-2021-2022.md
     title: ExploreCourses, 2021-2022
-  - id: probe
-    resource: https://web.stanford.edu/class/cs57n/
-    file: ../references/course-site-probe-ug-2020-2023-2026-09-27.md
-    title: Course site probe, 2026-09-27
   - id: syllabusrepo
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/W22/CS/
     file: ../references/cs-57n-syllabus-repository-winter-2022.md
     title: Stanford Syllabus repository, CS 57N, Winter 2022
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-28T08:40:00Z"
 ---
 # CS 57N: Randomness: Computational and Philosophical Approaches
 
@@ -59,10 +78,12 @@ Co-taught by a philosopher and a coding theorist, and the questions are genuinel
 
 ## Materials
 
-Nothing is public. No site exists under the course code, and a web search found only catalog listings.
+Nothing is public. The one offering uploaded its syllabus to Canvas for Stanford readers only, no site has ever existed under either code, and a search returns catalog listings alone.
 
-- **Syllabus**: closed. Winter 2022 uploaded a syllabus to Canvas, marked Stanford-only.
-- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: the Canvas upload is the only copy. `web.stanford.edu/class/cs57n/` 404s and `cs57n.stanford.edu` does not resolve.
+- **Slides**, **Notes**, **Solutions**, **Exams**, **Projects**, **Repo**: nothing found. The catalog says the seminar is self-contained, so whatever it wrote to make it so is unpublished.
+- **Videos**: no recording is mentioned anywhere, under CS 57N or PHIL 3N, or under either instructor's name.
+- **Assignments**: none published, for a 3-unit first-year seminar.
 
 ## Syllabus
 
@@ -74,4 +95,5 @@ None. The catalog is explicit: "The course will be self-contained, and no prior 
 
 ## Source notes
 
-- `cs57n.stanford.edu` does not resolve and `web.stanford.edu/class/cs57n/` 404s (checked 2026-09-27).
+- `cs57n.stanford.edu` does not resolve and `web.stanford.edu/class/cs57n/` 404s (rechecked 2026-10-02). Nothing turns up under PHIL 3N either.
+- [CS 56N](CS%2056N.md) is a different first-year seminar that shares no content with this one despite the neighboring number.

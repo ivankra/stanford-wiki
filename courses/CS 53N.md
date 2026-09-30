@@ -17,16 +17,13 @@ instructors:
 units: "3"
 grading: Letter or Credit/No Credit
 prerequisites: []
-materials:
-  checked: "2026-09-29"
+access: closed
+syllabus:
   access: closed
-  syllabus:
-    access: closed
-    note: no course site found under either code; the IntroSem listing restates the catalog; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
-  videos: unknown
-  assignments: unknown
-  exams: unknown
-  projects: unknown
+  note: no course site found under either code; the IntroSem listing restates the catalog, and a syllabus was uploaded to Canvas for all 3 offerings with every record restricted to Stanford readers
+exams:
+  access: none
+  note: the catalog's assessment is team projects on the promise and the risks; a 3-unit first-year seminar with no exam
 topics:
   - how generative AI systems work
   - automated tutoring and teaching assistance
@@ -34,19 +31,37 @@ topics:
   - assessment in the presence of generative AI
   - cultural appropriateness and equity of access
   - risks to deep thinking and learning
+past:
+  Spring 2024:
+    instructors:
+      - Mitchell, J.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
+  Spring 2025:
+    instructors:
+      - Mitchell, J.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
 tags:
   - generative-ai
   - education
   - introsem
+aliases:
+  - CS53N
+  - DESIGN183N
+  - DESIGN 183N
+checked: "2026-10-01"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-10-02T02:45:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
     file: ../references/explorecourses-cs-2025-2026.md
     title: ExploreCourses, 2025-2026
-  - id: probe
-    resource: https://web.stanford.edu/class/cs53n/
-    file: ../references/course-site-probe-ug-spring-2026-2026-09-27.md
-    title: Course site probe, 2026-09-27
   - id: introsem
     resource: https://exploreintrosems.stanford.edu/opportunities/how-can-generative-ai-help-us-learn
     title: Explore IntroSems listing, checked 2026-09-27
@@ -54,10 +69,22 @@ sources:
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/Sp26/CS/
     file: ../references/cs-53n-syllabus-repository-spring-2024-spring-2026.md
     title: Stanford Syllabus repository, CS 53N, Spring 2024 to Spring 2026
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-27T17:40:00Z"
+  - id: catalog-2023-24
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2023-2024.md
+    title: ExploreCourses, 2023-2024
+  - id: catalog-2024-25
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2024-2025.md
+    title: ExploreCourses, 2024-2025
+  - id: syllabus-repo-2023-24
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F23/CS/
+    file: ../references/syllabus-repository-cs-2023-2024.md
+    title: Stanford Syllabus repository, CS, 2023-2024
+  - id: syllabus-repo-2024-25
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F24/CS/
+    file: ../references/syllabus-repository-cs-2024-2025.md
+    title: Stanford Syllabus repository, CS, 2024-2025
 ---
 # CS 53N: How Can Generative AI Help Us Learn?
 
@@ -65,10 +92,11 @@ A seminar that uses its students as its evidence base: each team becomes expert 
 
 ## Materials
 
-Nothing is public. No site exists under either code, and the IntroSem listing adds nothing beyond the catalog text and an application deadline.
+Nothing is public, in any of the 3 offerings. No site exists under either code, the IntroSem listing adds nothing beyond the catalog text and an application deadline, and every syllabus the course has filed goes to Canvas with Stanford-only visibility.
 
-- **Syllabus**: closed. Spring 2024 and Spring 2025 uploaded a syllabus to Canvas, marked Stanford-only.
-- **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**: on Canvas, Stanford-only, for Spring 2024, Spring 2025 and this offering.
+- **Slides**, **Notes**, **Videos**, **Assignments**, **Solutions**, **Projects**, **Repo**: nothing found for any offering, under CS 53N or DESIGN 183N.
+- **Exams**: none; a 3-unit first-year seminar assessed on team projects.
 
 ## Syllabus
 

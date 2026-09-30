@@ -9,8 +9,8 @@ const page = (code: string, related: string | null, extra = "") => [
   "---", "type: Course", `code: ${code}`, `title: "${code}: Test"`, "description: Test.",
   "level: graduate", 'term: Autumn 2026', "terms_offered:", "  - Autumn 2026", "instructors: []",
   'schedule: ""', 'units: "3"', "grading: Letter", "prerequisites: []",
-  "materials: { access: unknown }", "topics: []", "tags: []", "sources: []", "status: draft",
-  "generated:", "  by: test", '  at: "2026-09-29T00:00:00Z"', "---",
+  "access: unknown", "topics: []", "tags: []", "status: draft",
+  "generated:", "  by: test", '  at: "2026-09-29T00:00:00Z"', "sources: []", "---",
   `# ${code}`, "", extra, ...(related === null ? [] : ["## Related", "", related]), "",
 ].join("\n");
 

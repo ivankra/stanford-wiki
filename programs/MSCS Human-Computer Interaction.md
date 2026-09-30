@@ -106,33 +106,33 @@ The lists are below, split between courses with a page (Courses) and those witho
 
 | Course | Title | Breadth | Depth | Term | **[Public](../AGENTS.md#materials)** |
 | --- | --- | --- | --- | --- | --- |
-| [CS 142](../courses/CS%20142.md) | Web Applications | | b | [23sp](../terms/Spring%202023.md) | 🟢 |
-| [CS 146J](../courses/CS%20146J.md) | Full-Stack Web Programming | | b | [26sp](../terms/Spring%202026.md) | |
-| [CS 147](../courses/CS%20147.md) | Introduction to Human-Computer Interaction Design | D | a | [26au](../terms/Autumn%202026.md) | 🟢 |
-| [CS 147L](../courses/CS%20147L.md) | Cross-platform Mobile App Development | | b | [26au](../terms/Autumn%202026.md) | 🟡 |
-| [CS 177](../courses/CS%20177.md) | Introduction to Product Management with AI | | f | [26au](../terms/Autumn%202026.md) | 🟡 |
-| [CS 194H](../courses/CS%20194H.md) | User Interface Design Project | D | f | [24wi](../terms/Winter%202024.md) | 🟡 |
-| [CS 206](../courses/CS%20206.md) | Exploring Computational Journalism | D | f | [26wi](../terms/Winter%202026.md) | 🔴 |
-| [CS 210A](../courses/CS%20210A.md) | Industry Innovation Lab | | f | [26wi](../terms/Winter%202026.md) | 🟡 |
-| [CS 222](../courses/CS%20222.md) | AI Agents and Simulations | | f | [24au](../terms/Autumn%202024.md) | 🟢 |
-| [CS 224C](../courses/CS%20224C.md) | NLP for Computational Social Science | | f | [24sp](../terms/Spring%202024.md) | 🟡 |
-| [CS 247A](../courses/CS%20247A.md) | Design for Artificial Intelligence | D | cf | [26sp](../terms/Spring%202026.md) | 🔴 |
-| [CS 247B](../courses/CS%20247B.md) | Design for Behavior Change | D | cf | [26wi](../terms/Winter%202026.md) | 🟡 |
-| [CS 247G](../courses/CS%20247G.md) | Design for Play | D | cf | [26su](../terms/Summer%202026.md) | 🟡 |
-| [CS 247I](../courses/CS%20247I.md) | Design for Understanding | D | cf | [21au](../terms/Autumn%202021.md) | 🔴 |
-| [CS 247S](../courses/CS%20247S.md) | Service Design with AI | D | cf | [26au](../terms/Autumn%202026.md) | 🔴 |
-| [CS 278](../courses/CS%20278.md) | Social Computing | D | ef | [26sp](../terms/Spring%202026.md) | 🟢 |
-| [CS 329X](../courses/CS%20329X.md) | Human Centered NLP | BD | f | [26au](../terms/Autumn%202026.md) | 🟡 |
-| [CS 347](../courses/CS%20347.md) | Human-Computer Interaction: Foundations and Frontiers | D | d | [26au](../terms/Autumn%202026.md) | 🟢 |
-| [CS 377E](../courses/CS%20377E.md) | Designing Solutions to Global Grand Challenges | D | f | [23sp](../terms/Spring%202023.md) | 🟢 |
-| [CS 377G](../courses/CS%20377G.md) | Designing Serious Games | D | f | [26au](../terms/Autumn%202026.md) | 🔴 |
-| [CS 377N](../courses/CS%20377N.md) | Introduction to the Design of Smart Products | D | f | [20sp](../terms/Spring%202020.md) | 🔴 |
-| [CS 377P](../courses/CS%20377P.md) | Read, Write, Play | D | f | [26sp](../terms/Spring%202026.md) | 🔴 |
-| [CS 377Q](../courses/CS%20377Q.md) | Designing for Accessibility | D | f | [26wi](../terms/Winter%202026.md) | 🔴 |
-| [CS 377U](../courses/CS%20377U.md) | Understanding Users | D | f | [26sp](../terms/Spring%202026.md) | 🔴 |
-| [CS 448B](../courses/CS%20448B.md) | Data Visualization | D | ef | [26au](../terms/Autumn%202026.md) | 🟢 |
-| [CS 476A](../courses/CS%20476A.md)<br>MUSIC 256A | Music, Computing, Design: The Art of Design | | g | [26au](../terms/Autumn%202026.md) | 🟢 |
-| [CS 498C](../courses/CS%20498C.md) | Introduction to CSCL: Computer-Supported Collaborative Learning | D | g | [26wi](../terms/Winter%202026.md) | 🔴 |
+| [CS 142](../courses/CS%20142.md) | Web Applications | | b | [23sp](../terms/Spring%202023.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
+| [CS 146J](../courses/CS%20146J.md) <span title="first offered Spring 2026">🆕</span> | Full-Stack Web Programming | | b | [26sp](../terms/Spring%202026.md) | |
+| [CS 147](../courses/CS%20147.md) | Introduction to Human-Computer Interaction Design | D | a | [26au](../terms/Autumn%202026.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
+| [CS 147L](../courses/CS%20147L.md) | Cross-platform Mobile App Development | | b | [26au](../terms/Autumn%202026.md) | <span title="partial">🟡</span> |
+| [CS 177](../courses/CS%20177.md) | Introduction to Product Management with AI | | f | [26au](../terms/Autumn%202026.md) | <span title="partial">🟡</span> |
+| [CS 194H](../courses/CS%20194H.md) | User Interface Design Project | D | f | [24wi](../terms/Winter%202024.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
+| [CS 206](../courses/CS%20206.md) | Exploring Computational Journalism | D | f | [26wi](../terms/Winter%202026.md) | <span title="closed">⛔</span> |
+| [CS 210A](../courses/CS%20210A.md) | Industry Innovation Lab | | f | [26wi](../terms/Winter%202026.md) | <span title="mostly closed">🔴</span> |
+| [CS 222](../courses/CS%20222.md) | AI Agents and Simulations | | f | [24au](../terms/Autumn%202024.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
+| [CS 224C](../courses/CS%20224C.md) | NLP for Computational Social Science | | f | [24sp](../terms/Spring%202024.md) | <span title="mostly open">🟢</span> |
+| [CS 247A](../courses/CS%20247A.md) | Design for Artificial Intelligence | D | cf | [26sp](../terms/Spring%202026.md) | <span title="closed">⛔</span> |
+| [CS 247B](../courses/CS%20247B.md) | Design for Behavior Change | D | cf | [26wi](../terms/Winter%202026.md) | <span title="partial">🟡</span> |
+| [CS 247G](../courses/CS%20247G.md) | Design for Play | D | cf | [26su](../terms/Summer%202026.md) | <span title="mostly open">🟢</span> |
+| [CS 247I](../courses/CS%20247I.md) | Design for Understanding | D | cf | [21au](../terms/Autumn%202021.md) | <span title="closed">⛔</span> |
+| [CS 247S](../courses/CS%20247S.md) | Service Design with AI | D | cf | [26au](../terms/Autumn%202026.md) | <span title="closed">⛔</span> |
+| [CS 278](../courses/CS%20278.md) | Social Computing | D | ef | [26sp](../terms/Spring%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
+| [CS 329X](../courses/CS%20329X.md) | Human Centered NLP | BD | f | [26au](../terms/Autumn%202026.md) | <span title="mostly open">🟢</span> |
+| [CS 347](../courses/CS%20347.md) | Human-Computer Interaction: Foundations and Frontiers | D | d | [26au](../terms/Autumn%202026.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
+| [CS 377E](../courses/CS%20377E.md) | Designing Solutions to Global Grand Challenges | D | f | [23sp](../terms/Spring%202023.md) | <span title="mostly open">🟢</span> |
+| [CS 377G](../courses/CS%20377G.md) | Designing Serious Games | D | f | [26au](../terms/Autumn%202026.md) | <span title="partial">🟡</span><span title="assignments public">🅰</span> |
+| [CS 377N](../courses/CS%20377N.md) | Introduction to the Design of Smart Products | D | f | [20sp](../terms/Spring%202020.md) | <span title="closed">⛔</span> |
+| [CS 377P](../courses/CS%20377P.md) <span title="first offered Spring 2026">🆕</span> | Read, Write, Play | D | f | [26sp](../terms/Spring%202026.md) | <span title="closed">⛔</span> |
+| [CS 377Q](../courses/CS%20377Q.md) | Designing for Accessibility | D | f | [26wi](../terms/Winter%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
+| [CS 377U](../courses/CS%20377U.md) | Understanding Users | D | f | [26sp](../terms/Spring%202026.md) | <span title="closed">⛔</span> |
+| [CS 448B](../courses/CS%20448B.md) | Data Visualization | D | ef | [26au](../terms/Autumn%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
+| [CS 476A](../courses/CS%20476A.md)<br>MUSIC 256A | Music, Computing, Design: The Art of Design | | g | [26au](../terms/Autumn%202026.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
+| [CS 498C](../courses/CS%20498C.md) | Introduction to CSCL: Computer-Supported Collaborative Learning | D | g | [26wi](../terms/Winter%202026.md) | <span title="closed">⛔</span> |
 
 <!-- Generated by build.ts (course-table). Don't edit, run `make build` -->
 

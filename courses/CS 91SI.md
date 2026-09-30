@@ -17,16 +17,18 @@ units: "2"
 grading: Satisfactory/No Credit
 prerequisites:
   - Application required
-materials:
-  checked: "2026-09-29"
+access: closed
+syllabus:
   access: closed
-  syllabus:
-    access: closed
-    note: no site under the course code; a web search found only catalog and aggregator listings; a syllabus was uploaded to Canvas but every record for this course is restricted to Stanford readers
-  videos: unknown
-  assignments: unknown
-  exams: none
-  projects: unknown
+  note: no site exists under the code, and every syllabus-repository record for the course is Stanford-only - Spring 2022 and Spring 2023 uploaded one, this offering's Canvas course is published with the same restriction and no file
+slides: unknown
+notes: unknown
+videos: unknown
+assignments: unknown
+solutions: unknown
+exams: none
+projects: unknown
+repo: unknown
 topics:
   - UI/UX design fundamentals
   - what makes an interface good or bad
@@ -34,27 +36,64 @@ topics:
   - high-fidelity mockups in Figma
   - interactive prototyping
   - design handoff
+past:
+  Winter 2020:
+    instructors:
+      - Cain, J.
+  Spring 2020:
+    instructors: []
+  Spring 2022:
+    instructors:
+      - Cain, J.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
+  Spring 2023:
+    instructors:
+      - Cain, J.
+    syllabus:
+      access: closed
+      note: uploaded to Canvas, Stanford-only (syllabus repository)
 tags:
   - design
   - hci
   - student-initiated
+aliases:
+  - CS91SI
+checked: "2026-10-02"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-10-02T15:15:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
     file: ../references/explorecourses-cs-2024-2025.md
     title: ExploreCourses, 2024-2025
-  - id: probe
-    resource: https://web.stanford.edu/class/cs91si/
-    file: ../references/course-site-probe-cs-91si-2026-09-27.md
-    title: Course site probe, 2026-09-27
   - id: syllabusrepo
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/W25/CS/
     file: ../references/cs-91si-syllabus-repository-winter-2020-winter-2025.md
     title: Stanford Syllabus repository, CS 91SI, Winter 2020 to Winter 2025
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-28T04:25:00Z"
+  - id: catalog-2019-20
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20192020&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2019-2020.md
+    title: ExploreCourses, 2019-2020
+  - id: catalog-2021-22
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20212022&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2021-2022.md
+    title: ExploreCourses, 2021-2022
+  - id: catalog-2022-23
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20222023&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2022-2023.md
+    title: ExploreCourses, 2022-2023
+  - id: syllabus-repo-2021-22
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F21/CS/
+    file: ../references/syllabus-repository-cs-2021-2022.md
+    title: Stanford Syllabus repository, CS, 2021-2022
+  - id: syllabus-repo-2022-23
+    resource: https://syllabus.stanford.edu/syllabus/searchCourses/F22/CS/
+    file: ../references/syllabus-repository-cs-2022-2023.md
+    title: Stanford Syllabus repository, CS, 2022-2023
 ---
 # CS 91SI: Digital Canvas: An Introduction to UI/UX Design
 
@@ -62,10 +101,11 @@ A student-initiated course aimed at people who have never designed anything, and
 
 ## Materials
 
-Nothing is public. No site exists under the code, and a search turned up only catalog and aggregator listings.
+Nothing is public. There is no site under the course code, the class archive has no copy, and every one of the five records the syllabus repository holds for this course is marked readable inside Stanford only.
 
-- **Syllabus**: closed. Spring 2022 and Spring 2023 uploaded a syllabus to Canvas, marked Stanford-only.
-- **Assignments**, **Projects**, **Videos**: not found. **Exams**: none.
+- **Syllabus**: closed. Spring 2022 and Spring 2023 each uploaded one to Canvas, both Stanford-only; Winter 2025's Canvas course is published with the same restriction and no file.
+- **Slides**, **Notes**, **Videos**, **Assignments**, **Solutions**, **Projects**, **Repo**: not found. A course whose deliverable is "handoff-ready interactive high-fidelity mockups" would leave Figma files behind, but none is published, and nothing says whether the sessions are recorded.
+- **Exams**: none. The course is project-based and graded satisfactory/no credit.
 
 ## Syllabus
 
@@ -82,6 +122,7 @@ None required. Enrollment is limited and decided by a short application. The cat
 
 ## Source notes
 
-- `cs91si.stanford.edu` redirects to `web.stanford.edu/class/cs91si`, which 404s (checked 2026-09-27).
+- `cs91si.stanford.edu` redirects to `web.stanford.edu/class/cs91si`, which 404s, and `web.stanford.edu/class/archive/cs/cs91si/cs91si.1254/` 404s too (checked 2026-10-02).
+- **Spring 2020 names no instructor** in the catalog, and its Canvas course was never published — but neither was Winter 2020's, which does name one, so an unpublished shell is this course's norm rather than evidence the quarter was canceled. Nothing found settles whether it ran, so `instructors` is empty and the term stays.
 - The catalog lists Landay as instructor of record, as it does for several student-initiated courses; the teaching is done by students.
 - `terms_offered` starts at Winter 2020 because the wiki does not record terms before 2020; the course has run five times since.

@@ -36,27 +36,107 @@ grading: Satisfactory/No Credit
 prerequisites:
   - Concurrent enrollment in CS 106B
   - Consent of instructor
-materials:
-  checked: "2026-09-27"
+homepage: https://cs100bace.stanford.edu/
+access: closed
+syllabus:
   access: closed
-  syllabus:
-    access: closed
-    note: cs100bace.stanford.edu redirects to a Google Drive folder that requires a sign-in
-  videos:
-    access: unknown
-  assignments:
-    access: closed
-    note: in the same private Drive folder
-  exams: none
-  projects: none
+  note: the course's own address resolves to a Google Drive folder that demands a sign-in, and no syllabus was found anywhere else
+  checked: "2026-09-30"
+slides:
+  access: closed
+  note: in the same Drive folder
+  checked: "2026-09-30"
+notes:
+  access: closed
+  note: in the same Drive folder
+  checked: "2026-09-30"
+videos:
+  access: unknown
+assignments:
+  access: closed
+  note: the section worksheets are in the same Drive folder
+  checked: "2026-09-30"
+exams: none
+projects: none
 topics:
   - CS 106B problem-solving practice
   - collaborative programming
   - exam review
   - small-group section practice
+past:
+  Winter 2020:
+    instructors:
+      - Schwarz, K.
+  Spring 2020:
+    instructors:
+      - Zelenski, J.
+      - Gregg, C.
+  Autumn 2020:
+    instructors:
+      - Zelenski, J.
+      - Gregg, C.
+  Winter 2021:
+    instructors:
+      - Schwarz, K.
+  Spring 2021:
+    instructors:
+      - Gregg, C.
+  Autumn 2021:
+    instructors:
+      - Zelenski, J.
+      - Bailey, C.
+  Winter 2022:
+    instructors:
+      - Schwarz, K.
+  Spring 2022:
+    instructors:
+      - Gregg, C.
+  Autumn 2022:
+    instructors: []
+  Winter 2023:
+    instructors: []
+  Spring 2023:
+    instructors:
+      - Bear, E.
+  Autumn 2023:
+    instructors:
+      - Yu, J.
+  Winter 2024:
+    instructors:
+      - Tran, R.
+  Spring 2024:
+    instructors:
+      - Sharkov, S.
+  Autumn 2024:
+    instructors:
+      - Jeong, K.
+  Winter 2025:
+    instructors:
+      - Jeong, K.
+  Spring 2025:
+    instructors:
+      - Jeong, K.
+  Autumn 2025:
+    instructors:
+      - Jeong, K.
+  Winter 2026:
+    instructors:
+      - Holm, E.
+  Spring 2026:
+    instructors:
+      - Holm, E.
 tags:
   - ace-lab
   - data-structures
+aliases:
+  - CS100BACE
+  - CS100B
+  - CS 100B
+checked: "2026-09-27"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-09-30T18:00:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on&filter-term-Autumn=on
@@ -66,10 +146,30 @@ sources:
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
     file: ../references/explorecourses-cs-2025-2026.md
     title: ExploreCourses, 2025-2026
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-27T12:00:00Z"
+  - id: catalog-2019-20
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20192020&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2019-2020.md
+    title: ExploreCourses, 2019-2020
+  - id: catalog-2020-21
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20202021&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2020-2021.md
+    title: ExploreCourses, 2020-2021
+  - id: catalog-2021-22
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20212022&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2021-2022.md
+    title: ExploreCourses, 2021-2022
+  - id: catalog-2022-23
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20222023&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2022-2023.md
+    title: ExploreCourses, 2022-2023
+  - id: catalog-2023-24
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2023-2024.md
+    title: ExploreCourses, 2023-2024
+  - id: catalog-2024-25
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses-cs-2024-2025.md
+    title: ExploreCourses, 2024-2025
 ---
 # CS 100BACE: Problem-solving Lab for CS106B
 
@@ -77,10 +177,12 @@ The ACE section for [CS 106B](CS%20106B.md): one unit, a weekly two-hour lab in 
 
 ## Materials
 
-Nothing is public. The course's own address resolves to a Google Drive folder that asks for a sign-in, so everything it holds — syllabus, worksheets, slides — is gated.
+Nothing is public. `cs100bace.stanford.edu` resolves to a Google Drive folder that redirects to a sign-in, so the syllabus, worksheets and section notes it holds are all gated, and the course has no other site: the undated class path 404s and the Internet Archive has never captured it. Its sibling [CS 100ACE](CS%20100ACE.md) at least publishes a syllabus.
 
-- **Syllabus**, **Assignments**: in the private Drive folder behind `cs100bace.stanford.edu`.
-- **Videos**, **Exams**, **Projects**: none.
+- **Syllabus**, **Slides**, **Notes**, **Assignments**: in the private Drive folder behind `cs100bace.stanford.edu`.
+- **Videos**: nothing found, and no source says whether the section is recorded.
+- **Solutions**, **Repo**: nothing found.
+- **Exams**, **Projects**: none of its own; the section supports [CS 106B](CS%20106B.md)'s.
 
 ## Syllabus
 
@@ -96,5 +198,7 @@ No topic list is published. The section follows [CS 106B](CS%20106B.md) week by 
 
 ## Source notes
 
-- `cs100bace.stanford.edu` redirects to `accounts.google.com`, a Drive sign-in for folder `1ljcvHo4y-b0L5X7gRUtQv4Aeid…` (checked 2026-09-27). `web.stanford.edu/class/cs100bace/` 404s. Nothing was ingested.
+- `cs100bace.stanford.edu` redirects to `accounts.google.com`, a Drive sign-in for folder `1ljcvHo4y-b0L5X7gRUtQv4Aeid…` (checked 2026-09-30). `web.stanford.edu/class/cs100bace/` 404s, and the Internet Archive holds no capture of either that path or `class/cs100b/`. Nothing was ingested.
+- `web.stanford.edu/class/cs100b/`, the old code's path, answers 200 with an 89-byte placeholder page reading "Yo / My first paragraph" — not material (checked 2026-09-30).
+- **The catalog names no principal instructor for Autumn 2022 or Winter 2023.** Both listings give a room and a time and name Bear, E. in the TA role, so the offerings ran; the recorded instructor lists stay empty, since the convention here is the catalog's PIs.
 - **Renumbered.** The same course ran as **CS 100B** from Winter 2020 to Spring 2023, under the identical catalog title, and as CS 100BACE from Autumn 2023. It is one course on one page, so `terms_offered` and the term tables carry the current code for every term.

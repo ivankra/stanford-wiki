@@ -12,16 +12,10 @@ instructors:
 units: "4"
 grading: Satisfactory/No Credit
 prerequisites: []
-materials:
-  checked: "2026-09-27"
+access: unknown
+syllabus:
   access: unknown
-  syllabus:
-    access: unknown
-    note: no course site found; the IntroSem program listing restates the catalog and adds an application deadline
-  videos: unknown
-  assignments: unknown
-  exams: unknown
-  projects: unknown
+  note: no course site found, and the syllabus repository shows nothing uploaded; the IntroSem program listing restates the catalog and adds an application deadline
 topics:
   - real-time interactive programs
   - digital audio and acoustic instruments
@@ -32,22 +26,21 @@ tags:
   - introductory
   - introsem
   - computer-music
+aliases:
+  - CS10N
+checked: "2026-10-01"
+status: stable
+generated:
+  by: claude-code/claude-opus-5[1m]
+  at: "2026-10-02T03:40:00Z"
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
     file: ../references/explorecourses-cs-2025-2026.md
     title: ExploreCourses, 2025-2026
-  - id: probe
-    resource: https://web.stanford.edu/class/cs10n/
-    file: ../references/course-site-probe-ug-spring-2026-2026-09-27.md
-    title: Course site probe, 2026-09-27
   - id: introsem
     resource: https://exploreintrosems.stanford.edu/opportunities/computer-play-unconventional-introduction-cs-and-ee
     title: Explore IntroSems listing, checked 2026-09-27
-status: stable
-generated:
-  by: claude-code/claude-opus-5[1m]
-  at: "2026-09-27T17:20:00Z"
 ---
 # CS 10N: Computer Play: An Unconventional Introduction to CS and EE
 
@@ -55,9 +48,9 @@ A first-year seminar the instructor describes as a pilot for a future CS/EE-list
 
 ## Materials
 
-Nothing is public. No course site exists under any CS or IntroSem URL; the program listing gives units, term and an application deadline, which is the catalog's content in another wrapper.
+Nothing public turned up, and nothing is known to be gated either: the course has no site under any CS or IntroSem URL, and the syllabus repository records no upload for it. The IntroSem program listing gives units, term and an application deadline, which is the catalog's content in another wrapper.
 
-- **Syllabus**, **Assignments**, **Exams**, **Projects**, **Videos**: not found.
+- **Syllabus**, **Slides**, **Notes**, **Videos**, **Assignments**, **Solutions**, **Exams**, **Projects**, **Repo**: nothing found. The course ran for the first time in Spring 2026, so there is no older offering to fall back on.
 
 ## Syllabus
 
