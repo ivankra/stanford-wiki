@@ -101,7 +101,7 @@ sources:
 | [CS 348K](../courses/CS%20348K.md) | Visual Computing Systems | Fatahalian | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 348N](../courses/CS%20348N.md) | Neural Models for 3D Geometry | Guibas | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 349D](../courses/CS%20349D.md) | Cloud Computing Technology | Kozyrakis | | <span title="partial">🟡</span> |
-| [CS 349F](../courses/CS%20349F.md) | Technology for Financial Systems | Prabhakar | | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 349F](../courses/CS%20349F.md) | Technology for Financial Systems | Prabhakar | | <span title="closed">⛔</span> |
 | [CS 352B](../courses/CS%20352B.md) <span title="first offered Spring 2023">🆕</span> | Blockchain Governance | Hall | | <span title="mostly closed">🔴</span> |
 | [CS 355](../courses/CS%20355.md) | Advanced Topics in Cryptography | Ozdemir | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 359D](../courses/CS%20359D.md) <span title="first offered Spring 2023">🆕</span> | Quantum Complexity Theory | Bouland | | <span title="closed">⛔</span> |

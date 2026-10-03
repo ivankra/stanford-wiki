@@ -220,7 +220,7 @@
 | [CS 263](CS%20263.md) | Counting and Sampling | [23au](../terms/Autumn%202023.md) | | <span title="partial">🟡</span> |
 | [CS 264](CS%20264.md) | Beyond Worst-Case Analysis | [25sp](../terms/Spring%202025.md) | | <span title="mostly open">🟢</span> |
 | [CS 265](CS%20265.md) | Randomized Algorithms and Probabilistic Analysis | [26au](../terms/Autumn%202026.md) | | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 269I](CS%20269I.md) | Incentives in Computer Science | [26wi](../terms/Winter%202026.md) | | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 269I](CS%20269I.md) | Incentives in Computer Science | [26wi](../terms/Winter%202026.md) | | <span title="closed">⛔</span> |
 | [CS 269O](CS%20269O.md) | Introduction to Optimization Theory | [20au](../terms/Autumn%202020.md) | | <span title="partial">🟡</span> |
 | [CS 270](CS%20270.md) | Modeling Biomedical Systems | [26sp](../terms/Spring%202026.md) | c | <span title="closed">⛔</span> |
 | [CS 271](CS%20271.md) | Artificial Intelligence in Healthcare | [22au](../terms/Autumn%202022.md) | c | <span title="open">🟢</span><span title="assignments public">🅰</span> |
@@ -305,7 +305,7 @@
 | [CS 348N](CS%20348N.md) | Neural Models for 3D Geometry | [23sp](../terms/Spring%202023.md) | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 349D](CS%20349D.md) | AI Inference Infrastructure | [26sp](../terms/Spring%202026.md) | | <span title="partial">🟡</span> |
 | [CS 349E](CS%20349E.md) <span title="first offered Autumn 2026">🆕</span> | Efficient ML Inference at Scale | [26au](../terms/Autumn%202026.md) | | <span title="mostly closed">🔴</span> |
-| [CS 349F](CS%20349F.md) | Fabric Architectures For AI Systems | [26au](../terms/Autumn%202026.md) | | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 349F](CS%20349F.md) | Fabric Architectures For AI Systems | [26au](../terms/Autumn%202026.md) | | <span title="closed">⛔</span> |
 | [CS 349G](CS%20349G.md) | Selected Reading of Ph.D. Dissertations | [21wi](../terms/Winter%202021.md) | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 349H](CS%20349H.md) | Software Techniques for Emerging Hardware Platforms | [26au](../terms/Autumn%202026.md) | | <span title="partial">🟡</span><span title="assignments public">🅰</span> |
 | [CS 349M](CS%20349M.md) | Machine Learning for Software Engineering | [22sp](../terms/Spring%202022.md) | | <span title="closed">⛔</span> |

@@ -417,7 +417,7 @@ The 2026-27 [program sheets](https://www.cs.stanford.edu/masters-specializations
 | [CS 263](../courses/CS%20263.md) | Counting and Sampling | A | [23au](../terms/Autumn%202023.md) | <span title="partial">🟡</span> |
 | [CS 264](../courses/CS%20264.md) | Beyond Worst-Case Analysis | A | [25sp](../terms/Spring%202025.md) | <span title="mostly open">🟢</span> |
 | [CS 265](../courses/CS%20265.md) | Randomized Algorithms and Probabilistic Analysis | A | [26au](../terms/Autumn%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | AD | [26wi](../terms/Winter%202026.md) | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | AD | [26wi](../terms/Winter%202026.md) | <span title="closed">⛔</span> |
 | [CS 270](../courses/CS%20270.md) | Modeling Biomedical Systems | | [26sp](../terms/Spring%202026.md) | <span title="closed">⛔</span> |
 | [CS 271](../courses/CS%20271.md) | Artificial Intelligence in Healthcare | B | [22au](../terms/Autumn%202022.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 272](../courses/CS%20272.md) | Introduction to Biomedical Informatics Research Methodology | B | [26sp](../terms/Spring%202026.md) | <span title="closed">⛔</span> |
@@ -474,7 +474,7 @@ The 2026-27 [program sheets](https://www.cs.stanford.edu/masters-specializations
 | [CS 348N](../courses/CS%20348N.md) | Neural Models for 3D Geometry | B | [23sp](../terms/Spring%202023.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 349D](../courses/CS%20349D.md) | AI Inference Infrastructure | C | [26sp](../terms/Spring%202026.md) | <span title="partial">🟡</span> |
 | [CS 349E](../courses/CS%20349E.md) <span title="first offered Autumn 2026">🆕</span> | Efficient ML Inference at Scale | | [26au](../terms/Autumn%202026.md) | <span title="mostly closed">🔴</span> |
-| [CS 349F](../courses/CS%20349F.md) | Fabric Architectures For AI Systems | C | [26au](../terms/Autumn%202026.md) | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 349F](../courses/CS%20349F.md) | Fabric Architectures For AI Systems | C | [26au](../terms/Autumn%202026.md) | <span title="closed">⛔</span> |
 | [CS 349G](../courses/CS%20349G.md) | Selected Reading of Ph.D. Dissertations | | [21wi](../terms/Winter%202021.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 349H](../courses/CS%20349H.md) | Software Techniques for Emerging Hardware Platforms | C | [26au](../terms/Autumn%202026.md) | <span title="partial">🟡</span><span title="assignments public">🅰</span> |
 | [CS 349M](../courses/CS%20349M.md) | Machine Learning for Software Engineering | | [22sp](../terms/Spring%202022.md) | <span title="closed">⛔</span> |

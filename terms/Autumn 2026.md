@@ -101,7 +101,7 @@ sources:
 | [CS 340LX](../courses/CS%20340LX.md) | Advanced Operating System Lab: Accelerated (II) | Engler | TR | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 347](../courses/CS%20347.md) | Human-Computer Interaction: Foundations and Frontiers | Bernstein | MW | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 349E](../courses/CS%20349E.md) <span title="first offered Autumn 2026">🆕</span> | Efficient ML Inference at Scale | Asgar | TR | | <span title="mostly closed">🔴</span> |
-| [CS 349F](../courses/CS%20349F.md) | Fabric Architectures For AI Systems | Prabhakar | TR | | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 349F](../courses/CS%20349F.md) | Fabric Architectures For AI Systems | Prabhakar | TR | | <span title="closed">⛔</span> |
 | [CS 349H](../courses/CS%20349H.md) | Software Techniques for Emerging Hardware Platforms | Achour | TR | | <span title="partial">🟡</span><span title="assignments public">🅰</span> |
 | [CS 350S](../courses/CS%20350S.md) | Privacy-Preserving Systems | Dauterman | MW | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 356](../courses/CS%20356.md) | Topics in Computer and Network Security | Durumeric | MW | | <span title="open">🟢</span><span title="assignments public">🅰</span> |

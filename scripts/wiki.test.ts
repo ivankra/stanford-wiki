@@ -158,22 +158,35 @@ Body stays exactly as written.
   }
 });
 
-test("Related sections: one-line bullets in course-code order, an optional table, file line numbers", () => {
+test("Related sections: one-line bullets in course-code order, no tables, file line numbers", () => {
   const page = (...related: string[]) => ["---", "type: Course", "---", "# X", "", "## Related", "", ...related, "", "## Source notes", ""].join("\n");
   assert.deepEqual(relatedProblems("---\ntype: Course\n---\n# X\n"), []);
   assert.deepEqual(relatedProblems(page(
     "- [CS 106A](a.md): a.", "- [CS 106AX](b.md): b.", "- [CS 106B](c.md): c.", "- CS 110: bare code.",
-    "- [CS 1100](d.md): d.", "- [EE 180](e.md): e.", "", "| | A | B |", "| --- | --- | --- |",
+    "- [CS 1100](d.md): d.", "- [EE 180](e.md): e.",
   )), []);
+  assert.deepEqual(relatedProblems(page("- [CS 1](a.md): a.", "", "| | A | B |", "| --- | --- | --- |")),
+    ["## Related (lines 8-11): no tables; say how each course differs in its own bullet (table at line 10)"]);
   assert.deepEqual(relatedProblems(page("- [CS 110](a.md): a.", "- [CS 106B](b.md): b.", "- [CS 107](c.md): c.")),
     ["## Related list (lines 8-10) is not in course-code order; expected: CS 106B, CS 107, CS 110"]);
   assert.deepEqual(relatedProblems(page("- [CS 1](a.md): wrapped", "  onto a second line.", "- [CS 2](b.md): b.")),
     ['## Related list (lines 8-10): one bullet per line starting "- "; not a bullet: line 9']);
   assert.deepEqual(relatedProblems(page("- [CS 1](a.md): a.", "", "- [CS 2](b.md): b.")),
-    ["## Related (lines 8-10): only one bullet list and an optional table; unexpected content at line 10"]);
+    ["## Related (lines 8-10): only one bullet list; unexpected content at line 10"]);
   assert.deepEqual(relatedProblems(page("- [CS 1](a.md): a.", "- see the `CS 9` page, nothing else.")),
     ["## Related list (lines 8-9): line 9 names no course code"]);
-  assert.deepEqual(relatedProblems(page()), ["## Related (line 6) is empty"]);
+  assert.deepEqual(relatedProblems(page()), ["## Related (line 6) is empty"]);  // External entries: marked after the link, last, in title order, no code needed.
+  const zth = "- [Zero to Hero](https://example.com/z) *(external)*: A. Author's language models by hand.";
+  const fast = "- [fast.ai](https://example.com/f) *(external)*: practical deep learning.";
+  assert.deepEqual(relatedProblems(page("- [CS 1](a.md): a.", fast, zth)), []);
+  assert.deepEqual(relatedProblems(page("- [CS 1](a.md): a.", zth, fast)),
+    ["## Related list (lines 8-10): external entries are not in title order; expected: fast.ai, Zero to Hero"]);
+  assert.deepEqual(relatedProblems(page(zth, "- [CS 1](a.md): a.")),
+    ["## Related list (lines 8-9): line 9 is a course after an external entry; external entries go last"]);
+  assert.deepEqual(relatedProblems(page("- [CS 1](a.md): a.", "- [Zero to Hero](https://example.com/z): unmarked.")),
+    ['## Related list (lines 8-9): line 9 looks external; write it as "- [Title](https://…) *(external)*: …"']);
+  assert.deepEqual(relatedProblems(page("- [CS 1](a.md): a.", "- [CS 2](b.md) *(external)*: a page is never external.")),
+    ['## Related list (lines 8-9): line 9 looks external; write it as "- [Title](https://…) *(external)*: …"']);
 });
 
 test("program tables show the sheet's code when it names a course only by a cross-listing; MSCS.md lists depth-only courses", () => {
@@ -268,6 +281,14 @@ test("Public column: one normalizer for both shapes; legacy pages show ?; 🅰 f
   assert.equal(icon({ access: "open", videos: v, assignments: "https://example.com/", self_study: ss }), "✅🅰✚");
   assert.equal(icon({ materials: { access: "open", assignments: "https://example.com/" } }), "🟢?");
   assert.equal(publicIcon({ type: "Registration", code: "CS 1" }), "");
+  // A diverged older offering's open videos and assignments don't count.
+  const old = (rec: Record<string, Y>) => icon({ access: "open", past: { "Spring 2020": rec } });
+  assert.equal(old({ videos: "https://example.com/v", assignments: "https://example.com/a" }), icon({ access: "open", videos: "https://example.com/v", assignments: "https://example.com/a" }));
+  assert.equal(old({ diverged: "a different curriculum", videos: "https://example.com/v", assignments: "https://example.com/a" }), icon({ access: "open" }));
+  // The latest diverged offering cuts off everything before it too; later offerings still count.
+  const vids = { videos: "https://example.com/v" };
+  assert.equal(icon({ access: "open", past: { "Spring 2018": vids, "Spring 2019": { diverged: "older syllabus" } } }), icon({ access: "open" }));
+  assert.equal(icon({ access: "open", past: { "Spring 2019": { diverged: "older syllabus" }, "Spring 2020": vids } }), icon({ access: "open", videos: "https://example.com/v" }));
   // The tables wrap each icon in a hover tip; a legacy icon gets one span naming its old level.
   assert.equal(publicCell({ type: "Course", access: "partial", assignments: "https://example.com/" }),
     '<span title="partial">🟡</span><span title="assignments public">🅰</span>');

@@ -105,7 +105,7 @@ The lists are below, split between courses with a page (Courses) and those witho
 | [CS 263](../courses/CS%20263.md) | Counting and Sampling | A | b | [23au](../terms/Autumn%202023.md) | <span title="partial">🟡</span> |
 | [CS 264](../courses/CS%20264.md) | Beyond Worst-Case Analysis | A | b | [25sp](../terms/Spring%202025.md) | <span title="mostly open">🟢</span> |
 | [CS 265](../courses/CS%20265.md) | Randomized Algorithms and Probabilistic Analysis | A | b | [26au](../terms/Autumn%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | AD | b | [26wi](../terms/Winter%202026.md) | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | AD | b | [26wi](../terms/Winter%202026.md) | <span title="closed">⛔</span> |
 | [CS 328](../courses/CS%20328.md) | Foundations of Causal Machine Learning | A | b | [26wi](../terms/Winter%202026.md) | <span title="mostly open">🟢</span> |
 | [CS 331X](../courses/CS%20331X.md)<br>CS 331 | AI for Algorithmic Reasoning and Optimization | | b | [25au](../terms/Autumn%202025.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 334A](../courses/CS%20334A.md)<br>EE 364A | Convex Optimization I | A | b | [20su](../terms/Summer%202020.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |

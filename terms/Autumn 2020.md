@@ -89,7 +89,7 @@ Taught remotely.
 | [CS 340LX](../courses/CS%20340LX.md) | Advanced Operating System Lab: Accelerated (II) | Engler | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 343D](../courses/CS%20343D.md) | Domain-Specific Programming Models and Compilers | Hanrahan | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 348I](../courses/CS%20348I.md) | Computer Graphics in the Era of AI | Wu | c | <span title="partial">🟡</span> |
-| [CS 349F](../courses/CS%20349F.md) | Technology for Financial Systems | Prabhakar | | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 349F](../courses/CS%20349F.md) | Technology for Financial Systems | Prabhakar | | <span title="closed">⛔</span> |
 | [CS 349T](../courses/CS%20349T.md) | Project Lab: Video and Audio Technology for Live Theater in the Age of COVID | Weissman | | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 356](../courses/CS%20356.md) | Topics in Computer and Network Security | Durumeric | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 357S](../courses/CS%20357S.md) | Formal Methods for Computer Systems | Trippel | | <span title="partial">🟡</span> |

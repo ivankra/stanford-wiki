@@ -82,7 +82,7 @@ The last fully remote quarter.
 | [CS 247A](../courses/CS%20247A.md) | Design for Artificial Intelligence | Stanford | | <span title="closed">⛔</span> |
 | [CS 247G](../courses/CS%20247G.md) | Introduction to Game Design | Wodtke | | <span title="mostly open">🟢</span> |
 | [CS 254B](../courses/CS%20254B.md) | Computational Complexity II | Tan | | <span title="partial">🟡</span> |
-| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | Rubinstein | | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | Rubinstein | | <span title="closed">⛔</span> |
 | [CS 272](../courses/CS%20272.md) | Introduction to Biomedical Data Science Research Methodology | Plevritis | | <span title="closed">⛔</span> |
 | [CS 273C](../courses/CS%20273C.md) | Cloud Computing for Biology and Healthcare | Snyder | | <span title="closed">⛔</span> |
 | [CS 275B](../courses/CS%20275B.md) | Computational Music Analysis | Sapp | | <span title="open">🟢</span><span title="assignments public">🅰</span> |

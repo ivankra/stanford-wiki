@@ -88,7 +88,7 @@ sources:
 | [CS 256](../courses/CS%20256.md) <span title="first offered Winter 2023">🆕</span> | Algorithmic Fairness | Reingold | | <span title="partial">🟡</span> |
 | [CS 259Q](../courses/CS%20259Q.md) | Quantum Computing | Bouland | | <span title="closed">⛔</span> |
 | [CS 261](../courses/CS%20261.md) | Optimization and Algorithmic Paradigms | Sidford | | <span title="partial">🟡</span><span title="assignments public">🅰</span> |
-| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | Rubinstein | | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | Rubinstein | | <span title="closed">⛔</span> |
 | [CS 270](../courses/CS%20270.md) | Modeling Biomedical Systems | Musen | c | <span title="closed">⛔</span> |
 | [CS 275A](../courses/CS%20275A.md) | Symbolic Musical Information | Sapp | | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 295](../courses/CS%20295.md) | Software Engineering | Achour | | <span title="closed">⛔</span> |

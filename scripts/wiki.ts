@@ -217,11 +217,11 @@ export const RATING_ICONS = [...Object.values(ICON).filter(Boolean), ASSIGNMENTS
 const isOpen = (v: Y | undefined) => (typeof v === "string" ? /^https?:\/\//.test(v) || v === "open" : Array.isArray(v) ? v.length > 0 : str(obj(v)?.access) === "open");
 // Course and registration frontmatter, in order. Build sorts both into it (sortCourse).
 export const COURSE_KEYS = ["type", "code", "title", "description", "cross_listed", "formerly", "level",
-  "term", "terms_offered", "instructors", "schedule", "units", "grading", "prerequisites",
+  "term", "first_term", "terms_offered", "instructors", "schedule", "units", "grading", "prerequisites",
   "homepage", "access", ...MAT_TYPES, "sites", "self_study", "textbook", "topics", "past",
-  "tags", "aliases", "checked", "status", "generated", "exceptions", "sources"];
+  "tags", "aliases", "checked", "status", "generated", "exceptions", "instructions", "sources"];
 // The keys an older offering's record in `past` may hold, in the same relative order.
-export const PAST_KEYS = ["title", "instructors", "homepage", ...MAT_TYPES, "sites", "self_study", "textbook", "topics"];
+export const PAST_KEYS = ["title", "instructors", "diverged", "homepage", ...MAT_TYPES, "sites", "self_study", "textbook", "topics"];
 
 // A course page and its registration counterpart in canonical order: top-level keys, `past` terms oldest
 // first (anything that isn't a term name last, for lint to report), and each `past` record's keys.
@@ -247,14 +247,18 @@ export const isLegacy = (fm: Record<string, Y>) => fm.type === "Course" && !("ac
 
 // The one normalizer for both shapes: the level the tables show, whether it's a legacy page's old level,
 // and its suffixes: open assignments, and self-study (open or mostly-open with a self_study entry), each at the
-// top level or in `past`. A legacy page gets neither.
+// top level or in `past`, after the latest `diverged` record. A legacy page gets neither.
 // Open and mostly-open share one icon pair, decided by videos rather than by `access`: either level shows ✅
 // with open videos (top level or in `past`) and 🟢 without, so ✅ always means the recordings are there. The
 // hover keeps `access` readable, which the icon alone no longer carries. `access` itself is unchanged.
 // TODO: interim, pending the levels refactor; drive `videos` and `assignments` from subject tags, not ratings.
 export function publicLevel(fm: Record<string, Y>): { level: string; legacy: boolean; assignments: boolean; selfStudy: boolean; access: string; videos: boolean } {
   if (isLegacy(fm)) return { level: str(obj(fm.materials)?.access), legacy: true, assignments: false, selfStudy: false, access: "", videos: false };
-  const records = [fm, ...Object.values(obj(fm.past) ?? {}).map((r) => obj(r) ?? {})];
+  // A `diverged` offering taught substantially different material: it and every earlier offering say nothing
+  // about this course, so their videos, assignments and self-study never count toward the icon or its markers.
+  const past = Object.entries(obj(fm.past) ?? {}).map(([t, r]) => [termOrd(t), obj(r) ?? {}] as const);
+  const cut = Math.max(-Infinity, ...past.filter(([, r]) => "diverged" in r).map(([o]) => o));
+  const records = [fm, ...past.filter(([o]) => o > cut).map(([, r]) => r)];
   const access = str(fm.access), videos = records.some((r) => isOpen(r.videos));
   const level = VIDEO_LEVELS.includes(access) ? (videos ? "open" : "mostly-open") : access;
   const selfStudy = records.some((r) => arr(r.self_study).length > 0);
@@ -303,9 +307,12 @@ const codeKey = (code: string) => {
   const m = /^(\S+) (\d+)(.*)$/.exec(code);
   return m ? [m[1], m[2].padStart(5, "0"), m[3]].join(" ") : code;
 };
+// External entries in `## Related`: a course or resource outside the wiki, linked by URL and marked
+// right after the link: `- [Title](https://…) *(external)*: how it differs.`
+const EXTERNAL = /^- \[([^\]]+)\]\(https?:\/\/[^)\s]+\) \*\(external\)\*: \S/;
 // A `## Related` section is one list, a line per bullet, in course-code order by the first code
-// in each bullet (CS 106A < CS 106AX < CS 106B < CS 110), optionally followed by one comparison
-// table. Returns one message per problem, with 1-based line numbers in the whole file so a script
+// in each bullet (CS 106A < CS 106AX < CS 106B < CS 110), then any external entries in title order
+// (they need no code), and no table: each bullet says how its course differs. Returns one message per problem, with 1-based line numbers in the whole file so a script
 // can rewrite the list's range; an empty array means the section is fine or absent.
 export function relatedProblems(text: string): string[] {
   const lines = text.split("\n");
@@ -317,21 +324,28 @@ export function relatedProblems(text: string): string[] {
   while (a < b && !lines[a].trim()) a++;
   while (b > a && !lines[b - 1].trim()) b--;
   if (a === b) return [`## Related (line ${head + 1}) is empty`];
-  let e = a; // the list: the first run of non-blank lines that isn't a table
-  while (e < b && lines[e].trim() && !lines[e].startsWith("|")) e++;
-  let t = e; // then, optionally, one table after blank lines
-  while (t < b && !lines[t].trim()) t++;
-  let u = t;
-  while (u < b && lines[u].startsWith("|")) u++;
+  let e = a; // the list: the first run of non-blank lines
+  while (e < b && lines[e].trim()) e++;
+  let u = e;
+  while (u < b && !lines[u].trim()) u++;
   const out: string[] = [];
   const range = `lines ${a + 1}-${e}`;
-  if (u < b) out.push(`## Related (lines ${a + 1}-${b}): only one bullet list and an optional table; unexpected content at line ${u + 1}`);
+  const table = lines.slice(a, b).findIndex((l) => l.startsWith("|"));
+  if (table >= 0) out.push(`## Related (lines ${a + 1}-${b}): no tables; say how each course differs in its own bullet (table at line ${a + table + 1})`);
+  else if (u < b) out.push(`## Related (lines ${a + 1}-${b}): only one bullet list; unexpected content at line ${u + 1}`);
   const notBullet = [];
-  for (let i = a; i < e; i++) if (!/^- \S/.test(lines[i])) notBullet.push(i + 1);
+  for (let i = a; i < e; i++) if (!/^- \S/.test(lines[i]) && !lines[i].startsWith("|")) notBullet.push(i + 1);
   if (notBullet.length) out.push(`## Related list (${range}): one bullet per line starting "- "; not a bullet: line ${notBullet.join(", ")}`);
-  const codes: string[] = [];
+  const codes: string[] = [], externals: string[] = [];
   for (let i = a; i < e; i++) {
     if (!lines[i].startsWith("- ")) continue;
+    const ext = EXTERNAL.exec(lines[i]);
+    if (ext) { externals.push(ext[1]); continue; }
+    if (/^- \[[^\]]*\]\(https?:\/\//.test(lines[i]) || /\*\(external\b/.test(lines[i])) {
+      out.push(`## Related list (${range}): line ${i + 1} looks external; write it as "- [Title](https://…) *(external)*: …"`);
+      continue;
+    }
+    if (externals.length) out.push(`## Related list (${range}): line ${i + 1} is a course after an external entry; external entries go last`);
     const m = /(?<![A-Za-z0-9&])([A-Z][A-Z&]*) (\d+[A-Z]*)(?![A-Za-z0-9])/.exec(lines[i].replace(/`[^`\n]*`/g, ""));
     if (m) codes.push(`${m[1]} ${m[2]}`);
     else out.push(`## Related list (${range}): line ${i + 1} names no course code`);
@@ -341,6 +355,9 @@ export function relatedProblems(text: string): string[] {
     const want = codes.map((c, i) => [keys[i], c]).sort(([x], [y]) => (x < y ? -1 : x > y ? 1 : 0)).map(([, c]) => c);
     out.push(`## Related list (${range}) is not in course-code order; expected: ${want.join(", ")}`);
   }
+  const titles = externals.map((x) => x.toLowerCase());
+  if (titles.some((x, i) => i > 0 && x < titles[i - 1]))
+    out.push(`## Related list (${range}): external entries are not in title order; expected: ${[...externals].sort((x, y) => x.toLowerCase().localeCompare(y.toLowerCase())).join(", ")}`);
   return out;
 }
 

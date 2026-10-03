@@ -80,7 +80,7 @@ sources:
 | [CS 244B](../courses/CS%20244B.md) | Distributed Systems | Mazieres | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 247G](../courses/CS%20247G.md) | Design for Play | Wodtke | | <span title="mostly open">🟢</span> |
 | [CS 254B](../courses/CS%20254B.md) | Computational Complexity II | Tan | | <span title="partial">🟡</span> |
-| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | Rubinstein | | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | Rubinstein | | <span title="closed">⛔</span> |
 | [CS 270](../courses/CS%20270.md) | Modeling Biomedical Systems | Musen | c | <span title="closed">⛔</span> |
 | [CS 272](../courses/CS%20272.md) | Introduction to Biomedical Data Science Research Methodology | Altman | | <span title="closed">⛔</span> |
 | [CS 272H](../courses/CS%20272H.md) <span title="first offered Spring 2024">🆕</span> | Methods for Reproducible Population Health and Clinical Research | Malicki | | <span title="closed">⛔</span> |

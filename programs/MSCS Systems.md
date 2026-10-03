@@ -108,7 +108,7 @@ The lists are below, split between courses with a page (Courses) and those witho
 | [CS 344](../courses/CS%20344.md) | Topics in Computer Networks | | c | [21sp](../terms/Spring%202021.md) | <span title="partial">🟡</span> |
 | [CS 349D](../courses/CS%20349D.md) | AI Inference Infrastructure | C | c | [26sp](../terms/Spring%202026.md) | <span title="partial">🟡</span> |
 | [CS 349E](../courses/CS%20349E.md) <span title="first offered Autumn 2026">🆕</span> | Efficient ML Inference at Scale | | c | [26au](../terms/Autumn%202026.md) | <span title="mostly closed">🔴</span> |
-| [CS 349F](../courses/CS%20349F.md) | Fabric Architectures For AI Systems | C | c | [26au](../terms/Autumn%202026.md) | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 349F](../courses/CS%20349F.md) | Fabric Architectures For AI Systems | C | c | [26au](../terms/Autumn%202026.md) | <span title="closed">⛔</span> |
 | [CS 349G](../courses/CS%20349G.md) | Selected Reading of Ph.D. Dissertations | | c | [21wi](../terms/Winter%202021.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 349H](../courses/CS%20349H.md) | Software Techniques for Emerging Hardware Platforms | C | c | [26au](../terms/Autumn%202026.md) | <span title="partial">🟡</span><span title="assignments public">🅰</span> |
 | [CS 349M](../courses/CS%20349M.md) | Machine Learning for Software Engineering | | c | [22sp](../terms/Spring%202022.md) | <span title="closed">⛔</span> |

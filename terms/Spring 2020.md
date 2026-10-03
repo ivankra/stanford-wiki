@@ -105,7 +105,7 @@ Moved online mid-March in response to COVID-19.
 | [CS 348B](../courses/CS%20348B.md) | Computer Graphics: Image Synthesis Techniques | Hanrahan | | <span title="open">🟢</span> |
 | [CS 348E](../courses/CS%20348E.md) | Character Animation: Modeling, Simulation, and Control of Human Motion | Liu | | <span title="mostly closed">🔴</span> |
 | [CS 348K](../courses/CS%20348K.md) | Visual Computing Systems | Fatahalian | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
-| [CS 349F](../courses/CS%20349F.md) | Technology for Financial Systems | | | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 349F](../courses/CS%20349F.md) | Technology for Financial Systems | | | <span title="closed">⛔</span> |
 | [CS 350](../courses/CS%20350.md) | Secure Compilation | Patrignani | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 355](../courses/CS%20355.md) | Advanced Topics in Cryptography | Tramer | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 360](../courses/CS%20360.md) | Simplicity and Complexity in Economic Theory | Milgrom | | <span title="closed">⛔</span> |

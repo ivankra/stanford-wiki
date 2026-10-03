@@ -241,7 +241,65 @@ test("pre-cutoff: warns without exceptions.pre_cutoff, which silences only that 
     ["warn  exceptions.pre_cutoff silences nothing: no past record is before cutoff_term Winter 2020; drop it"]);
   const names = lintOne(page("CS 1", t, { fm: { past: slides, exceptions: { pre_cutoff: "", later: "x" } } }));
   assert.ok(names.includes("ERROR exceptions.pre_cutoff needs a reason"), names.join("\n"));
-  assert.ok(names.includes("ERROR exceptions.later: unknown name (known: pre_cutoff, shared_code)"), names.join("\n"));
+  assert.ok(names.includes("ERROR exceptions.later: unknown name (known: full_history, pre_cutoff, shared_code)"), names.join("\n"));
+});
+
+test("full history: exceptions.full_history admits pre-cutoff offerings, which then need instructors like any other", () => {
+  const t = ["Winter 2015", "Spring 2017", "Autumn 2026"];
+  assert.deepEqual(lintOne(page("CS 1", t)), [
+    "ERROR Winter 2015 is before cutoff_term Winter 2020; drop it (older history goes in Source notes), or keep the whole history with exceptions.full_history",
+    "ERROR Spring 2017 is before cutoff_term Winter 2020; drop it (older history goes in Source notes), or keep the whole history with exceptions.full_history"]);
+  const full = { exceptions: { full_history: "the first offerings are the course's best-known material" }, first_term: "Winter 2015" };
+  const body = "## Source notes\n\n- First offered in Winter 2015: the catalog has no earlier record.";
+  const rec = (k: string) => ({ [k]: { title: "Old Title", instructors: ["Doe, J."], homepage: "https://example.com/", slides: "https://example.com/" } });
+  assert.deepEqual(lintOne(page("CS 1", t, { body, fm: { past: { ...rec("Winter 2015"), ...rec("Spring 2017") }, ...full } })), []);
+  assert.deepEqual(lintOne(page("CS 1", t, { body, fm: { past: rec("Winter 2015"), ...full } })),
+    ["warn  past.Spring 2017.instructors is missing: record that offering's catalog instructors ([] if it names nobody), and its title if it differs"]);
+  // A pre-cutoff record for a term that never ran stays a material-only record under pre_cutoff.
+  const stray = lintOne(page("CS 1", t, { body, fm: { past: { ...rec("Winter 2015"), ...rec("Spring 2017"), "Autumn 2016": { instructors: [] } }, ...full } }));
+  assert.ok(stray.includes("ERROR past.Autumn 2016 is before cutoff_term Winter 2020, so it holds material types, sites and self_study only, not instructors"), stray.join("\n"));
+  assert.deepEqual(lintOne(page("CS 1", ["Autumn 2026"], { body: "## Source notes\n\n- First offered Autumn 2026.", fm: { ...full, first_term: "Autumn 2026" } })),
+    ["warn  exceptions.full_history silences nothing: no term in terms_offered is before cutoff_term Winter 2020; drop it"]);
+  // first_term: required with full_history, equal to the first offering then, and named in Source notes.
+  const withPast = { past: { ...rec("Winter 2015"), ...rec("Spring 2017") } };
+  assert.ok(lintOne(page("CS 1", t, { body, fm: { ...withPast, exceptions: full.exceptions } }))
+    .includes("ERROR exceptions.full_history needs first_term: the verified earliest term the course ran, explained in Source notes"));
+  assert.ok(lintOne(page("CS 1", t, { body, fm: { ...withPast, ...full, first_term: "Spring 2014" } }))
+    .includes("ERROR first_term Spring 2014 must equal the first entry of terms_offered, Winter 2015: exceptions.full_history lists every offering"));
+  assert.ok(lintOne(page("CS 1", t, { fm: { ...withPast, ...full } }))
+    .includes("ERROR first_term Winter 2015 is not named in ## Source notes: say there how it was verified as the earliest offering"));
+  // "before <term>": the earliest known offering when sources go no further; the same checks apply to <term>.
+  assert.deepEqual(lintOne(page("CS 1", t, { body, fm: { ...withPast, ...full, first_term: "before Winter 2015" } })), []);
+  assert.ok(lintOne(page("CS 1", t, { body, fm: { ...withPast, ...full, first_term: "before Spring 2014" } }))
+    .includes("ERROR first_term Spring 2014 must equal the first entry of terms_offered, Winter 2015: exceptions.full_history lists every offering"));
+  assert.ok(lintOne(page("CS 1", t, { body, fm: { ...withPast, ...full, first_term: "around 2014" } }))
+    .includes('ERROR first_term: want a term name or "before <term>", got: around 2014'));
+  // Without full_history it is optional, and may predate the listed terms.
+  const later = ["Spring 2024", "Autumn 2026"];
+  assert.deepEqual(lintOne(page("CS 1", later, { body: "## Source notes\n\n- First offered Spring 2010, per its site.", fm: { first_term: "Spring 2010", past: { "Spring 2024": { instructors: [] } } } })), []);
+  assert.ok(lintOne(page("CS 1", later, { body: "## Source notes\n\n- Spring 2025.", fm: { first_term: "Spring 2025", past: { "Spring 2024": { instructors: [] } } } }))
+    .includes("ERROR first_term Spring 2025 is after the first entry of terms_offered, Spring 2024"));
+});
+
+test("diverged: a non-empty note inside past only, allowed before cutoff_term too", () => {
+  const t = ["Spring 2025", "Autumn 2026"];
+  const rec = (v: unknown) => ({ "Spring 2025": { instructors: [], diverged: v } });
+  assert.deepEqual(lintOne(page("CS 1", t, { fm: { past: rec("statistical methods, before the neural rewrite") } })), []);
+  assert.deepEqual(lintOne(page("CS 1", t, { fm: { past: rec("") } })),
+    ["ERROR past.Spring 2025.diverged must be a short note on how that offering differs from the current one"]);
+  assert.deepEqual(lintOne(page("CS 1", t, { fm: { past: rec(true) } })),
+    ["ERROR past.Spring 2025.diverged must be a short note on how that offering differs from the current one"]);
+  const top = lintOne(page("CS 1", t, { fm: { past: { "Spring 2025": { instructors: [] } }, diverged: "x" } }));
+  assert.ok(top.includes("ERROR diverged belongs only inside a past record: it marks an older offering, never the page's own"), top.join("\n"));
+  // Diverged offerings must sit at the front: an earlier offering that isn't diverged is a gap.
+  const three = ["Spring 2024", "Spring 2025", "Autumn 2026"];
+  const recs = (a: Record<string, Y>, b: Record<string, Y>) => ({ "Spring 2024": { instructors: [], ...a }, "Spring 2025": { instructors: [], ...b } });
+  assert.deepEqual(lintOne(page("CS 1", three, { fm: { past: recs({ diverged: "x" }, { diverged: "y" }) } })), []);
+  assert.deepEqual(lintOne(page("CS 1", three, { fm: { past: recs({ diverged: "x" }, {}) } })), []);
+  assert.deepEqual(lintOne(page("CS 1", three, { fm: { past: recs({}, { diverged: "y" }) } })),
+    ["ERROR past.Spring 2025 is diverged, so every earlier offering must be too; not diverged: Spring 2024"]);
+  const old = { "Autumn 2018": { slides: "https://example.com/", diverged: "a different curriculum" } };
+  assert.deepEqual(lintOne(page("CS 1", ["Autumn 2026"], { fm: { past: old, exceptions: { pre_cutoff: "kept for contrast" } } })), []);
 });
 
 test("aliases: the code without its space, then other codes without and with it; never the page's own code; omitted when empty", () => {
@@ -316,6 +374,8 @@ test("length: warns over the total or a section's ceiling, naming it; link URLs 
     "warn  the summary: 121 words, over its 120-word ceiling (AGENTS.md → Body)",
     "warn  ## Prerequisites: 300 words, over its 100-word ceiling (AGENTS.md → Body)",
   ]);
+  // ## History has no budget and doesn't count toward the total.
+  assert.deepEqual(lintOne(page("CS 1", ["Autumn 2026"], { body: sections(words(340), `## History\n\n${words(500)}\n\n`) })), []);
   assert.deepEqual(lintOne(legacyPage("CS 1", ["Autumn 2026"], { body: sections(words(400)) })), []);
 });
 
@@ -345,4 +405,15 @@ test("legacy pages keep today's materials checks", () => {
   assert.ok(got.includes("ERROR materials.checked is required once anything is rated"), got.join("\n"));
   assert.ok(got.includes("ERROR unknown material type: repo"), got.join("\n"));
   assert.ok(got.includes("ERROR materials.slides: bad rating opne"), got.join("\n"));
+});
+
+test("instructions: dated requests, oldest first; empty or undated entries are errors", () => {
+  const t = ["Autumn 2026"];
+  assert.deepEqual(lintOne(page("CS 1", t, { fm: { instructions: ["2026-10-01: keep the full history", "2026-10-03: track assignments"] } })), []);
+  assert.deepEqual(lintOne(page("CS 1", t, { fm: { instructions: [] } })),
+    ['ERROR instructions must be a non-empty list of "YYYY-MM-DD: request" entries; omit the key when there are none']);
+  assert.deepEqual(lintOne(page("CS 1", t, { fm: { instructions: ["keep the full history"] } })),
+    ['ERROR instructions[0] must read "YYYY-MM-DD: request": "keep the full history"']);
+  assert.deepEqual(lintOne(page("CS 1", t, { fm: { instructions: ["2026-10-03: b", "2026-10-01: a"] } })),
+    ["ERROR instructions must be oldest first"]);
 });

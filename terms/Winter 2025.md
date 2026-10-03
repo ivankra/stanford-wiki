@@ -95,7 +95,7 @@ sources:
 | [CS 343D](../courses/CS%20343D.md) | Domain-Specific Programming Models and Compilers | Kjoelstad | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 347](../courses/CS%20347.md) | Human-Computer Interaction: Foundations and Frontiers | Bernstein | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 348C](../courses/CS%20348C.md) | Computer Graphics: Animation and Simulation | James | | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
-| [CS 349F](../courses/CS%20349F.md) | Fabric Architectures For AI Systems | Prabhakar | | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 349F](../courses/CS%20349F.md) | Fabric Architectures For AI Systems | Prabhakar | | <span title="closed">⛔</span> |
 | [CS 357S](../courses/CS%20357S.md) | Formal Methods for Computer Systems | Trippel | | <span title="partial">🟡</span> |
 | [CS 359D](../courses/CS%20359D.md) | Quantum Complexity Theory | Bouland | | <span title="closed">⛔</span> |
 | [CS 375](../courses/CS%20375.md) | Large-Scale Neural Network Modeling for Neuroscience | Yamins | c | <span title="open">🟢</span><span title="assignments public">🅰</span><span title="self-study support">✚</span> |

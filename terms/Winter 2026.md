@@ -78,7 +78,7 @@ sources:
 | [CS 257](../courses/CS%20257.md) | Introduction to Automated Reasoning | Trippel | c | <span title="partial">🟡</span> |
 | [CS 261](../courses/CS%20261.md) | Combinatorial Optimization | Sidford | | <span title="partial">🟡</span><span title="assignments public">🅰</span> |
 | [CS 265](../courses/CS%20265.md) | Randomized Algorithms and Probabilistic Analysis | Wootters | | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | Rubinstein | | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 269I](../courses/CS%20269I.md) | Incentives in Computer Science | Rubinstein | | <span title="closed">⛔</span> |
 | [CS 275A](../courses/CS%20275A.md) | Symbolic Musical Information | | | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 277](../courses/CS%20277.md) | Foundation Models for Healthcare | Zou | | <span title="mostly open">🟢</span> |
 | [CS 287](../courses/CS%20287.md) <span title="first offered Winter 2026">🆕</span> | Foundations of Healthcare Data for Machine Learning | Daneshjou | | <span title="closed">⛔</span> |

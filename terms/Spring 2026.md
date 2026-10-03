@@ -100,7 +100,7 @@ sources:
 | [CS 347](../courses/CS%20347.md) | Human-Computer Interaction: Foundations and Frontiers | Agrawala | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 348K](../courses/CS%20348K.md) | Visual Computing Systems | Fatahalian | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 349D](../courses/CS%20349D.md) | AI Inference Infrastructure | Kozyrakis | | <span title="partial">🟡</span> |
-| [CS 349F](../courses/CS%20349F.md) | Fabric Architectures For AI Systems | Prabhakar | | <span title="closed">⛔</span><span title="assignments public">🅰</span> |
+| [CS 349F](../courses/CS%20349F.md) | Fabric Architectures For AI Systems | Prabhakar | | <span title="closed">⛔</span> |
 | [CS 355](../courses/CS%20355.md) | Advanced Topics in Cryptography | Datta | | <span title="open">🟢</span><span title="assignments public">🅰</span> |
 | [CS 360](../courses/CS%20360.md) | Simplicity and Complexity in Economic Theory | Akbarpour | | <span title="closed">⛔</span> |
 | [CS 361](../courses/CS%20361.md) | Engineering Design Optimization | Kochenderfer | c | <span title="partial">🟡</span> |

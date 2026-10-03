@@ -131,20 +131,22 @@ if (referencesPresent)
 
 // The schema is AGENTS.md → Frontmatter; COURSE_KEYS (wiki.ts) holds its order, and build sorts pages into it.
 // `checked` is required once anything is rated, which the checks below enforce.
-const OPTIONAL = ["aliases", "cross_listed", "formerly", "schedule", "homepage", ...MAT_TYPES, "sites", "self_study", "textbook",
-  "past", "checked", "exceptions"];
+const OPTIONAL = ["aliases", "cross_listed", "formerly", "first_term", "schedule", "homepage", ...MAT_TYPES, "sites", "self_study", "textbook",
+  "past", "checked", "exceptions", "instructions"];
 // Registrations (CPT, independent study, TGR…) carry no teaching content, so they skip these keys.
 // `term`/`terms_offered` are in the list because they run every term: tracking which would churn
 // every page on every sweep, and build never reads them for a registration.
-const COURSE_ONLY = ["term", "terms_offered", "instructors", "schedule", "homepage", "access", ...MAT_TYPES,
+const COURSE_ONLY = ["term", "first_term", "terms_offered", "instructors", "schedule", "homepage", "access", ...MAT_TYPES,
   "sites", "self_study", "textbook", "topics", "past", "checked", "exceptions"];
 // `exceptions` names, each silencing one warning.
-const EXCEPTIONS = ["pre_cutoff", "shared_code"];
+const EXCEPTIONS = ["full_history", "pre_cutoff", "shared_code"];
 // What a pre-cutoff `past` record may hold: material, never catalog facts that would extend the offering history.
-const PRE_CUTOFF_KEYS = [...MAT_TYPES, "sites", "self_study"];
+const PRE_CUTOFF_KEYS = ["diverged", ...MAT_TYPES, "sites", "self_study"];
 // Word ceilings for the body above ## Source notes, in prose words (AGENTS.md → Body).
 const TOTAL_WORDS = 700;
 const SECTION_WORDS: Record<string, number> = { summary: 120, Materials: 350, Syllabus: 300, Prerequisites: 100, Related: 150 };
+// Sections with no budget, left out of the total like ## Source notes.
+const UNCOUNTED_SECTIONS = ["History"];
 
 // TEMPORARY (legacy pages, .agents/2026-09-30.materials.md §9.1): the schema of a page that still has a `materials`
 // map and no top-level `access`. Remove with the last legacy page, along with lintLegacy and its tests.
@@ -228,7 +230,7 @@ const proseWords = (s: string) => s.replace(/<!--[\s\S]*?-->/g, " ")
   .replace(/!?\[([^\]\n]*)\]\([^)\s]*\)/g, "$1")
   .replace(/<https?:\/\/[^>\s]*>/g, " ").replace(/https?:\/\/\S+/g, " ")
   .split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
-// Warnings for a body over its word ceilings: the part above ## Source notes, and each section in it.
+// Warnings for a body over its word ceilings: the part above ## Source notes, and each section in it, except ## History.
 function lengthProblems(body: string): string[] {
   const sections: [string, string[]][] = [["summary", []]];
   for (const line of body.split("\n")) {
@@ -237,7 +239,8 @@ function lengthProblems(body: string): string[] {
     else if (!/^#{1,6} /.test(line)) sections.at(-1)![1].push(line);
   }
   const cut = sections.findIndex(([name]) => name === "Source notes");
-  const counted = sections.slice(0, cut < 0 ? undefined : cut).map(([name, lines]) => [name, proseWords(lines.join("\n"))] as const);
+  const counted = sections.slice(0, cut < 0 ? undefined : cut).filter(([name]) => !UNCOUNTED_SECTIONS.includes(name))
+    .map(([name, lines]) => [name, proseWords(lines.join("\n"))] as const);
   const total = counted.reduce((sum, [, n]) => sum + n, 0);
   const out = total > TOTAL_WORDS ? [`body: ${total} words above ## Source notes, over the ${TOTAL_WORDS}-word ceiling (AGENTS.md → Body)`] : [];
   for (const [name, n] of counted)
@@ -266,6 +269,16 @@ for (const d of pages) {
   if (JSON.stringify(arr(f.aliases).map(String)) !== JSON.stringify(want) || ("aliases" in f && !want.length))
     err(d, want.length ? `aliases must be ${JSON.stringify(want)}: the code without its space, then each cross_listed and formerly code without and with it; run make build`
       : "aliases is omitted when empty; run make build");
+  // `instructions`: the user's standing requests for this page, each "YYYY-MM-DD: request", oldest first.
+  if ("instructions" in f) {
+    const ins = f.instructions;
+    if (!Array.isArray(ins) || !ins.length) err(d, "instructions must be a non-empty list of \"YYYY-MM-DD: request\" entries; omit the key when there are none");
+    else {
+      const dates = ins.map((x) => (typeof x === "string" ? /^(\d{4}-\d{2}-\d{2}): \S/.exec(x)?.[1] : undefined));
+      ins.forEach((x, i) => { if (!dates[i]) err(d, `instructions[${i}] must read "YYYY-MM-DD: request": ${JSON.stringify(x)}`); });
+      if (dates.every(Boolean) && dates.some((x, i) => i && x! < dates[i - 1]!)) err(d, "instructions must be oldest first");
+    }
+  }
   // Keys of the other schema are errors, reported by lintLegacy and lintCourse.
   for (const k of Object.keys(f))
     if (!order.includes(k) && !(k === "materials" && !legacy) && !(legacy && FLAT_KEYS.includes(k)))
@@ -289,14 +302,30 @@ for (const d of pages) {
   if (CURRENT && f.term === CURRENT && typeof f.schedule !== "string")
     err(d, "schedule is required for the current term (use an empty string if unknown or no fixed meeting)");
   const offered = arr(f.terms_offered).map(String);
+  // exceptions.full_history: a course whose whole history is worth keeping lists its offerings from the first one.
+  const fullHistory = !!str(obj(f.exceptions)?.full_history).trim();
   for (const t of offered) {
     if (isNaN(termOrd(t))) err(d, `bad term name: ${t}`);
     else if (CURRENT && termOrd(t) > termOrd(CURRENT)) err(d, `${t} is after current_term ${CURRENT}`);
-    else if (CUTOFF && termOrd(t) < termOrd(CUTOFF)) err(d, `${t} is before cutoff_term ${CUTOFF}; drop it (older history goes in Source notes)`);
+    else if (CUTOFF && termOrd(t) < termOrd(CUTOFF) && !fullHistory)
+      err(d, `${t} is before cutoff_term ${CUTOFF}; drop it (older history goes in Source notes), or keep the whole history with exceptions.full_history`);
   }
   const ords = offered.map(termOrd);
   if (ords.some((o, i) => i > 0 && o <= ords[i - 1])) err(d, "terms_offered must be chronological and unique");
   if (str(f.term) !== (offered.at(-1) ?? "")) err(d, "term must be the last entry of terms_offered");
+  // first_term: the verified earliest term the course ever ran, or "before <term>" when sources stop there. Required
+  // with full_history, whose terms_offered must then start at that term; Source notes must name it and explain.
+  // A course older than every source may say "before <term>": the earliest known offering, earlier ones unrecorded.
+  if ("first_term" in f) {
+    const first = str(f.first_term).replace(/^before /, "");
+    if (isNaN(termOrd(first))) err(d, `first_term: want a term name or "before <term>", got: ${str(f.first_term)}`);
+    else {
+      if (offered.length && termOrd(first) > termOrd(offered[0])) err(d, `first_term ${first} is after the first entry of terms_offered, ${offered[0]}`);
+      if (fullHistory && offered.length && first !== offered[0]) err(d, `first_term ${first} must equal the first entry of terms_offered, ${offered[0]}: exceptions.full_history lists every offering`);
+      const notes = /^## Source notes$([\s\S]*?)(?=^## |(?![\s\S]))/m.exec(d.body)?.[1] ?? "";
+      if (!notes.includes(first)) err(d, `first_term ${first} is not named in ## Source notes: say there how it was verified as the earliest offering`);
+    }
+  } else if (fullHistory) err(d, "exceptions.full_history needs first_term: the verified earliest term the course ran, explained in Source notes");
 
   if (f.homepage && !/^https?:\/\//.test(str(f.homepage))) err(d, "homepage must be an http(s) URL");
   if (!/^## Syllabus$/m.test(d.body)) warn(d, "no ## Syllabus section");
@@ -310,7 +339,11 @@ for (const d of pages) {
 // A course page in the flat schema: `access`, the material keys, `past`, `checked` and `exceptions`.
 function lintCourse(d: Doc) {
   const f = d.fm!, term = str(f.term), offered = arr(f.terms_offered).map(String);
+  const fullHistory = !!str(obj(f.exceptions)?.full_history).trim();
+  // Before cutoff_term, unless full_history lists the term as an offering: then it is an ordinary older offering.
+  const preCutoffTerm = (t: string) => !!CUTOFF && termOrd(t) < termOrd(CUTOFF) && !(fullHistory && offered.includes(t));
   if ("materials" in f) err(d, "materials is the legacy map, and the page has a top-level access: move what's left of it to the flat keys");
+  if ("diverged" in f) err(d, "diverged belongs only inside a past record: it marks an older offering, never the page's own");
   if (!ACCESS_LEVELS.includes(str(f.access)))
     err(d, `bad access: ${str(f.access)} (want ${ACCESS_LEVELS.join(", ")}; a course with no materials is a Registration)`);
   for (const m of contentProblems(f, "")) err(d, m);
@@ -325,7 +358,7 @@ function lintCourse(d: Doc) {
     if (!rec || !Object.keys(rec).length) { err(d, `past.${t} is empty; drop it`); continue; }
     for (const k of Object.keys(rec))
       if (!PAST_KEYS.includes(k)) err(d, `past.${t}.${k} is not allowed in past (allowed: ${PAST_KEYS.join(", ")})`);
-    if (CUTOFF && termOrd(t) < termOrd(CUTOFF)) {
+    if (preCutoffTerm(t)) {
       preCutoff = true;
       const facts = Object.keys(rec).filter((k) => PAST_KEYS.includes(k) && !PRE_CUTOFF_KEYS.includes(k));
       if (facts.length) err(d, `past.${t} is before cutoff_term ${CUTOFF}, so it holds material types, sites and self_study only, not ${facts.join(", ")}`);
@@ -334,6 +367,9 @@ function lintCourse(d: Doc) {
     } else if (!(termOrd(t) < termOrd(term))) err(d, `past.${t} is not earlier than term ${term || '""'}: the top level describes the page's own offering`);
     else if (!offered.includes(t)) err(d, `past.${t} is not in terms_offered: add the offering there once a source shows it ran, or file the material elsewhere`);
     if ("homepage" in rec && !isUrl(rec.homepage)) err(d, `past.${t}.homepage must be an http(s) URL`);
+    // `diverged` flags an offering substantially different from the current one, and says how in a short note.
+    if ("diverged" in rec && !(typeof rec.diverged === "string" && rec.diverged.trim()))
+      err(d, `past.${t}.diverged must be a short note on how that offering differs from the current one`);
     // Tables show a past title as it is, so it's the bare catalog title: no code prefix, no cross-listed codes after it.
     const title = str(rec.title), code = /^[A-Z&]+ \d+[A-Z]*: /.exec(title)?.[0], cross = /\s*\([A-Z&]+ \d+[A-Z]*(, [A-Z&]+ \d+[A-Z]*)*\)$/.exec(title)?.[0];
     if ("title" in rec && !title.trim()) err(d, `past.${t}.title must be the catalog title, without the code`);
@@ -345,9 +381,18 @@ function lintCourse(d: Doc) {
       err(d, `past.${t}.topics must be a non-empty list of phrases`);
     for (const m of contentProblems(rec, `past.${t}.`)) err(d, m);
   }
+  // `diverged` offerings sit at the front of the history: every offering before the latest diverged one,
+  // in terms_offered or only in past, is diverged too, so the icons can drop them as one block.
+  const history = [...new Set([...offered.filter((t) => termOrd(t) < termOrd(term)), ...Object.keys(past ?? {})])]
+    .filter((t) => !isNaN(termOrd(t))).sort((x, y) => termOrd(x) - termOrd(y));
+  const isDiverged = (t: string) => "diverged" in (obj(past?.[t]) ?? {});
+  const lastDiverged = history.findLastIndex(isDiverged);
+  const gaps = lastDiverged > 0 ? history.slice(0, lastDiverged).filter((t) => !isDiverged(t)) : [];
+  if (gaps.length)
+    err(d, `past.${history[lastDiverged]} is diverged, so every earlier offering must be too; not diverged: ${gaps.join(", ")}`);
   // Every older offering since cutoff_term names its professor, so its term-table row doesn't borrow the current one.
   for (const t of offered)
-    if (termOrd(t) < termOrd(term) && !(CUTOFF && termOrd(t) < termOrd(CUTOFF)) && !("instructors" in (obj(past?.[t]) ?? {})))
+    if (termOrd(t) < termOrd(term) && !preCutoffTerm(t) && !("instructors" in (obj(past?.[t]) ?? {})))
       warn(d, `past.${t}.instructors is missing: record that offering's catalog instructors ([] if it names nobody), and its title if it differs`);
 
   if ("exceptions" in f) {
@@ -358,6 +403,8 @@ function lintCourse(d: Doc) {
       else if (typeof v !== "string" || !v.trim()) err(d, `exceptions.${k} needs a reason`);
     }
     if (ex && "pre_cutoff" in ex && !preCutoff) warn(d, `exceptions.pre_cutoff silences nothing: no past record is before cutoff_term ${CUTOFF}; drop it`);
+    if (ex && "full_history" in ex && !offered.some((t) => CUTOFF && termOrd(t) < termOrd(CUTOFF)))
+      warn(d, `exceptions.full_history silences nothing: no term in terms_offered is before cutoff_term ${CUTOFF}; drop it`);
   }
 
   // `checked`: the last completed access check. Required once anything is rated; lint then prompts rechecks.
