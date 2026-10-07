@@ -10,7 +10,7 @@ num_graduate: 39
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2024-2025.md
+    file: ../references/explorecourses/CS/2024-2025.xml
     title: ExploreCourses, 2024-2025
   - id: calendar
     resource: https://studentservices.stanford.edu/calendar-events/academic-calendars/stanford-academic-calendar-2024-2025

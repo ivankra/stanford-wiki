@@ -50,7 +50,7 @@ generated:
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2025-2026.md
+    file: ../references/explorecourses/CS/2025-2026.xml
     title: ExploreCourses, 2025-2026
   - id: syllabusrepo
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/Sp26/CS/
@@ -58,7 +58,7 @@ sources:
     title: Stanford Syllabus repository, CS 47N, Spring 2025 to Spring 2026
   - id: catalog-2024-25
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2024-2025.md
+    file: ../references/explorecourses/CS/2024-2025.xml
     title: ExploreCourses, 2024-2025
   - id: syllabus-repo-2024-25
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/F24/CS/

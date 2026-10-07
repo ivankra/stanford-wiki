@@ -60,7 +60,7 @@ generated:
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20222023&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2022-2023.md
+    file: ../references/explorecourses/CS/2022-2023.xml
     title: ExploreCourses, 2022-2023
   - id: site
     resource: https://web.stanford.edu/class/cs46n/
@@ -72,7 +72,7 @@ sources:
     title: Stanford Syllabus repository, CS 46N, Spring 2021 to Spring 2023
   - id: catalog-2021-22
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20212022&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2021-2022.md
+    file: ../references/explorecourses/CS/2021-2022.xml
     title: ExploreCourses, 2021-2022
   - id: syllabus-repo-2021-22
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/F21/CS/

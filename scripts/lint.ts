@@ -57,8 +57,13 @@ for (const d of docs) {
     if (dates.join() !== [...dates].sort().reverse().join()) err(d, "log must be newest-first");
   } else if (!d.fm) err(d, "missing frontmatter");
   else if (!str(d.fm.type)) err(d, "missing type");
-  if (d.rel.startsWith("references/") && !/^references\/[a-z0-9-]+\.md$/.test(d.rel))
-    err(d, "reference filenames are lowercase kebab-case, no subfolders");
+  // A series too large to sit flat gets a lowercase series folder and, inside it, a folder per
+  // department named for its catalog code in caps: references/explorecourses/CS/2025-2026.md.
+  // A series folder may also carry a README.md explaining the series to the next maintainer.
+  if (d.rel.startsWith("references/")
+    && !/^references\/(?:[a-z0-9-]+\/)?(?:[A-Z][A-Z0-9]*\/)?[a-z0-9-]+\.md$/.test(d.rel)
+    && !/^references\/[a-z0-9-]+\/README\.md$/.test(d.rel))
+    err(d, "reference filenames are lowercase kebab-case, under at most a series folder and a capitalized department folder");
 }
 
 // ---------- links and sources ----------
@@ -122,10 +127,20 @@ for (const d of docs.filter((d) => /^(courses|programs|terms)\//.test(d.rel))) {
 }
 
 // Binaries over 10 MB stay out of the repo: the wrapper keeps bytes, sha256 and a summary instead.
+// Grouping folders are walked too, so a series moved into one keeps being checked. The catalog dumps
+// are the documented exception: kept whole on purpose, and XML packs to a fraction in git. They are
+// exempt wherever they sit: the series folder, and the per-term CS files kept flat beside it.
+const sizeExempt = (rel: string) => rel.startsWith("explorecourses/") || basename(rel).startsWith("explorecourses-");
+// Dot-directories aren't part of the bundle, as in wiki.ts's walk: references/ carries its own .git.
+const refFiles = (rel: string): string[] => {
+  if (basename(rel).startsWith(".")) return [];
+  const p = join(refDir, rel);
+  return statSync(p).isDirectory() ? readdirSync(p).flatMap((c) => refFiles(`${rel}/${c}`)) : [rel];
+};
 if (referencesPresent)
-  for (const n of readdirSync(refDir))
-    if (!n.endsWith(".md") && statSync(join(refDir, n)).size > 10e6)
-      problems.push({ level: "warn", file: `references/${n}`, msg: "binary over 10 MB: keep bytes, sha256 and a summary in the wrapper, not the file" });
+  for (const rel of readdirSync(refDir).flatMap(refFiles))
+    if (!rel.endsWith(".md") && !sizeExempt(rel) && statSync(join(refDir, rel)).size > 10e6)
+      problems.push({ level: "warn", file: `references/${rel}`, msg: "binary over 10 MB: keep bytes, sha256 and a summary in the wrapper, not the file" });
 
 // ---------- course pages ----------
 

@@ -135,12 +135,12 @@ generated:
   at: "2026-09-30T18:00:00Z"
 sources:
   - id: catalog
-    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on&filter-term-Autumn=on
-    file: ../references/explorecourses-cs-autumn-2026.md
-    title: ExploreCourses, Autumn 2026
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses/CS/2026-2027.xml
+    title: ExploreCourses, CS 2026-2027
   - id: history
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2025-2026.md
+    file: ../references/explorecourses/CS/2025-2026.xml
     title: ExploreCourses, 2025-2026
   - id: site
     resource: https://cs111ace.stanford.edu/
@@ -148,19 +148,19 @@ sources:
     title: Course site and Spring 2026 schedule, checked 2026-09-27
   - id: catalog-2021-22
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20212022&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2021-2022.md
+    file: ../references/explorecourses/CS/2021-2022.xml
     title: ExploreCourses, 2021-2022
   - id: catalog-2022-23
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20222023&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2022-2023.md
+    file: ../references/explorecourses/CS/2022-2023.xml
     title: ExploreCourses, 2022-2023
   - id: catalog-2023-24
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2023-2024.md
+    file: ../references/explorecourses/CS/2023-2024.xml
     title: ExploreCourses, 2023-2024
   - id: catalog-2024-25
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2024-2025.md
+    file: ../references/explorecourses/CS/2024-2025.xml
     title: ExploreCourses, 2024-2025
 ---
 # CS 111ACE: Problem Solving Lab for CS111

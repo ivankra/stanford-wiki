@@ -36,7 +36,7 @@ generated:
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2025-2026.md
+    file: ../references/explorecourses/CS/2025-2026.xml
     title: ExploreCourses, 2025-2026
   - id: introsem
     resource: https://exploreintrosems.stanford.edu/opportunities/computer-play-unconventional-introduction-cs-and-ee

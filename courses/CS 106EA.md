@@ -109,12 +109,12 @@ generated:
   at: "2026-10-01T07:15:00Z"
 sources:
   - id: catalog
-    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on&filter-term-Autumn=on
-    file: ../references/explorecourses-cs-autumn-2026.md
-    title: ExploreCourses, Autumn 2026
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses/CS/2026-2027.xml
+    title: ExploreCourses, CS 2026-2027
   - id: history
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2025-2026.md
+    file: ../references/explorecourses/CS/2025-2026.xml
     title: ExploreCourses, 2025-2026
   - id: syllabus
     resource: https://summer.stanford.edu/files/summer/media/file/cs_106ea_syllabus_summer_2026.pdf
@@ -122,7 +122,7 @@ sources:
     title: CS 106EA syllabus, Winter 2026, checked 2026-09-27
   - id: catalog-2024-25
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2024-2025.md
+    file: ../references/explorecourses/CS/2024-2025.xml
     title: ExploreCourses, 2024-2025
   - id: syllabus-repo-2024-25
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/F24/CS/

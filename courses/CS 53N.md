@@ -60,7 +60,7 @@ generated:
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2025-2026.md
+    file: ../references/explorecourses/CS/2025-2026.xml
     title: ExploreCourses, 2025-2026
   - id: introsem
     resource: https://exploreintrosems.stanford.edu/opportunities/how-can-generative-ai-help-us-learn
@@ -71,11 +71,11 @@ sources:
     title: Stanford Syllabus repository, CS 53N, Spring 2024 to Spring 2026
   - id: catalog-2023-24
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2023-2024.md
+    file: ../references/explorecourses/CS/2023-2024.xml
     title: ExploreCourses, 2023-2024
   - id: catalog-2024-25
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20242025&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2024-2025.md
+    file: ../references/explorecourses/CS/2024-2025.xml
     title: ExploreCourses, 2024-2025
   - id: syllabus-repo-2023-24
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/F23/CS/

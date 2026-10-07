@@ -82,7 +82,7 @@ generated:
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2025-2026.md
+    file: ../references/explorecourses/CS/2025-2026.xml
     title: ExploreCourses, 2025-2026
   - id: site
     resource: https://web.stanford.edu/class/cs80e/
@@ -94,7 +94,7 @@ sources:
     title: CS 80E offerings in Stanford's class archive, 2023 and 2025
   - id: catalog-2023-24
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2023-2024.md
+    file: ../references/explorecourses/CS/2023-2024.xml
     title: ExploreCourses, 2023-2024
   - id: syllabus-repo-2023-24
     resource: https://syllabus.stanford.edu/syllabus/searchCourses/F23/CS/

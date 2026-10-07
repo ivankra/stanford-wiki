@@ -34,11 +34,11 @@ mscs_depth:
     - CS 377*
     - CS 448B
   g:
-    - ARTSTUD 130
-    - ARTSTUD 163
-    - ARTSTUD 165A
-    - ARTSTUD 169A
-    - ARTSTUD 231A
+    - ARTSTUDI 130
+    - ARTSTUDI 163
+    - ARTSTUDI 165A
+    - ARTSTUDI 169A
+    - ARTSTUDI 231A
     - COMM 224
     - COMM 254
     - COMM 272
@@ -99,6 +99,7 @@ Six of the seven categories are fixed courses rather than menus, which makes thi
 - **e**: [CS 278](../courses/CS%20278.md) or [CS 448B](../courses/CS%20448B.md). Waivable when both were taken for an earlier Stanford degree.
 - **f**: two more from the (f) list. The CS 247 used here must carry a different suffix from the one used in (c).
 - **g**: the rest of the 21 units, from (a) to (f) or the (g) list — art practice, communication, design, empirical methods, learning technology, management science, mechanical engineering, music, psychology and symbolic systems. The sheet also accepts any d.school elective numbered 101 or above taken for 3 or more units, which is a live list and so isn't reproduced here.
+  - The sheet writes the art-practice entries as "ArtStud"; the catalog's code is `ARTSTUDI`, which is what the list above uses, as it does for the sheet's other short forms (Comm, Educ, Psych, Stats, Music, Sym Sys). ARTSTUDI 130 and 231A are one cross-listed course, "Interactive Art: Making it with Arduino". **ARTSTUDI 169A has no catalog record** in any year from 1985-1986 on, nor in a direct query; ARTSTUDI 169, "Virtual Reality: the possibility and peril of immersive artwork", does exist, but nothing establishes that the sheet means it, so the number is left as the sheet prints it.
 
 The lists are below, split between courses with a page (Courses) and those without (TODO).
 
@@ -138,11 +139,11 @@ The lists are below, split between courses with a page (Courses) and those witho
 
 ## TODO
 
-- ARTSTUD 130 · g
-- ARTSTUD 163 · g
-- ARTSTUD 165A · g
-- ARTSTUD 169A · g
-- ARTSTUD 231A · g
+- ARTSTUDI 130 · g
+- ARTSTUDI 163 · g
+- ARTSTUDI 165A · g
+- ARTSTUDI 169A · g
+- ARTSTUDI 231A · g
 - COMM 224 · dg
 - COMM 254 · dg
 - COMM 272 · g

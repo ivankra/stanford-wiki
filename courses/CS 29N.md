@@ -63,7 +63,7 @@ generated:
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20232024&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2023-2024.md
+    file: ../references/explorecourses/CS/2023-2024.xml
     title: ExploreCourses, 2023-2024
   - id: site
     resource: https://web.stanford.edu/class/cs29n/

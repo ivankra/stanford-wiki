@@ -10,7 +10,7 @@ num_graduate: 54
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20192020&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2019-2020.md
+    file: ../references/explorecourses/CS/2019-2020.xml
     title: ExploreCourses, 2019-2020
   - id: calendar
     resource: https://registrar.stanford.edu/resources-and-help/stanford-academic-calendar-2019-20

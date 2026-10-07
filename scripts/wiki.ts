@@ -135,8 +135,9 @@ export function yamlLines(value: Y, path: string[] = []): string[] {
 
 function walk(dir: string): string[] {
   return readdirSync(dir).flatMap((n) => {
-    // Dot-directories and old/ (the previous wiki, local and gitignored) aren't part of the bundle.
-    if (n.startsWith(".") || n === "old") return [];
+    // Dot-directories aren't part of the bundle, nor old/ (the previous wiki) or local/ (personal
+    // notes and scratch): both stay on one machine and follow none of the rules here.
+    if (n.startsWith(".") || n === "old" || n === "local") return [];
     const p = join(dir, n);
     return statSync(p).isDirectory() ? walk(p) : n.endsWith(".md") ? [p] : [];
   });

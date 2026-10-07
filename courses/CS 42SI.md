@@ -77,12 +77,12 @@ generated:
   at: "2026-10-01T00:00:00Z"
 sources:
   - id: catalog
-    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on&filter-term-Autumn=on
-    file: ../references/explorecourses-cs-autumn-2026.md
-    title: ExploreCourses, Autumn 2026
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses/CS/2026-2027.xml
+    title: ExploreCourses, CS 2026-2027
   - id: history
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20252026&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2025-2026.md
+    file: ../references/explorecourses/CS/2025-2026.xml
     title: ExploreCourses, 2025-2026
   - id: site
     resource: https://cs42si.stanford.edu/

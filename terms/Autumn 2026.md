@@ -10,9 +10,9 @@ num_undergraduate: 46
 num_graduate: 42
 sources:
   - id: catalog
-    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on&filter-term-Autumn=on
-    file: ../references/explorecourses-cs-autumn-2026.md
-    title: ExploreCourses, Autumn 2026
+    resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20262027&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
+    file: ../references/explorecourses/CS/2026-2027.xml
+    title: ExploreCourses, CS 2026-2027
   - id: calendar
     resource: https://studentservices.stanford.edu/calendar-events/academic-calendars/future-academic-calendars
     file: ../references/stanford-academic-calendar-autumn-2026.md

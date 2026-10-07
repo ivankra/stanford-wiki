@@ -10,7 +10,7 @@ num_graduate: 43
 sources:
   - id: catalog
     resource: https://explorecourses.stanford.edu/search?view=xml-20200810&academicYear=20212022&q=CS&filter-departmentcode-CS=on&filter-coursestatus-Active=on
-    file: ../references/explorecourses-cs-2021-2022.md
+    file: ../references/explorecourses/CS/2021-2022.xml
     title: ExploreCourses, 2021-2022
   - id: calendar
     resource: https://studentservices.stanford.edu/stanford-academic-calendar-2021-22
