@@ -15,6 +15,7 @@ terms_offered:
   - Winter 2024
   - Winter 2025
   - Winter 2026
+enrollment: 171
 instructors:
   - Kaplan, J.
 units: "1"

@@ -9,6 +9,7 @@ terms_offered:
   - Spring 2020
   - Summer 2021
   - Autumn 2021
+enrollment: 14
 instructors:
   - Engler, D.
 units: "3"

@@ -7,6 +7,7 @@ level: undergraduate
 term: Winter 2020
 terms_offered:
   - Winter 2020
+enrollment: 13
 instructors:
   - Mitchell, J.
 units: "3"

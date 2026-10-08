@@ -7,6 +7,7 @@ level: undergraduate
 term: Winter 2026
 terms_offered:
   - Winter 2026
+enrollment: 14
 instructors:
   - Zhandry, M.
 units: "3"

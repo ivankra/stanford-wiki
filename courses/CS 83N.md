@@ -14,6 +14,7 @@ terms_offered:
   - Winter 2024
   - Autumn 2024
   - Autumn 2025
+enrollment: 13
 instructors:
   - Reingold, O.
 units: "3"

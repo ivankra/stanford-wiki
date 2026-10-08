@@ -29,6 +29,8 @@ terms_offered:
   - Winter 2026
   - Spring 2026
   - Autumn 2026
+enrollment: 6
+enrollment_1y: 32
 instructors: []
 schedule: R 09:30-11:20, 160-328
 units: "1"

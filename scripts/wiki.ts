@@ -100,7 +100,7 @@ export function parseYaml(text: string): Record<string, Y> {
 // Canonical block YAML; retain the schema's scalar types while quoting ambiguous strings.
 function yamlScalar(value: string, path: string[]): string {
   if (path.length === 1 && path[0] === "is_current_term" && /^(true|false)$/.test(value)) return value;
-  if (path.length === 1 && ["bytes", "num_undergraduate", "num_graduate"].includes(path[0]) && /^\d+$/.test(value)) return value;
+  if (path.length === 1 && ["bytes", "num_undergraduate", "num_graduate", "enrollment", "enrollment_1y"].includes(path[0]) && /^\d+$/.test(value)) return value;
   const quote = path.at(-1) === "units" || !value || value.trim() !== value
     || /^[\-?:,\[\]{}#&*!|>'"%@`]/.test(value) || /:($|\s)|#|[\x00-\x1f\x7f]/.test(value)
     || /^(?:null|true|false|yes|no|on|off|y|n|~|[-+]?\.inf|\.nan)$/i.test(value)
@@ -162,6 +162,17 @@ export const termOrd = (t: string) => {
   const m = /^(Winter|Spring|Summer|Autumn) (\d{4})$/.exec(t);
   return m ? Number(m[2]) * 4 + SEASON[m[1]] : NaN;
 };
+// termOrd's inverse: 8107 → "Autumn 2026". Counting back from a term is the only use, so it never sees a negative.
+export const ordTerm = (o: number) => `${Object.keys(SEASON)[o % 4]} ${Math.floor(o / 4)}`;
+// The academic year a term falls in: Autumn 2026 → 2026-27, and Winter to Summer 2027 → 2026-27 too.
+export const academicYear = (t: string) => {
+  const m = /^(\w+) (\d{4})$/.exec(t);
+  if (!m) return "";
+  const start = m[1] === "Autumn" ? Number(m[2]) : Number(m[2]) - 1;
+  return `${start}-${String(start + 1).slice(2)}`;
+};
+// The Autumn its academic year opens with, so a span can start on a whole year: Winter 2020 → Autumn 2019.
+export const yearStart = (t: string) => (isNaN(termOrd(t)) ? t : ordTerm(termOrd(t) - (termOrd(t) % 4 === 3 ? 0 : termOrd(t) % 4 + 1)));
 // A term page's term is its filename: terms/Autumn 2026.md → "Autumn 2026". It carries no `term` key.
 export const pageTerm = (d: Doc) => basename(d.path, ".md");
 export const str = (v: Y | undefined) => (typeof v === "string" ? v : "");
@@ -218,7 +229,7 @@ export const RATING_ICONS = [...Object.values(ICON).filter(Boolean), ASSIGNMENTS
 const isOpen = (v: Y | undefined) => (typeof v === "string" ? /^https?:\/\//.test(v) || v === "open" : Array.isArray(v) ? v.length > 0 : str(obj(v)?.access) === "open");
 // Course and registration frontmatter, in order. Build sorts both into it (sortCourse).
 export const COURSE_KEYS = ["type", "code", "title", "description", "cross_listed", "formerly", "level",
-  "term", "first_term", "terms_offered", "instructors", "schedule", "units", "grading", "prerequisites",
+  "term", "first_term", "terms_offered", "enrollment", "enrollment_1y", "instructors", "schedule", "units", "grading", "prerequisites",
   "homepage", "access", ...MAT_TYPES, "sites", "self_study", "textbook", "topics", "past",
   "tags", "aliases", "checked", "status", "generated", "exceptions", "instructions", "sources"];
 // The keys an older offering's record in `past` may hold, in the same relative order.
@@ -290,6 +301,136 @@ export const publicCell = (fm: Record<string, Y>) => {
   const first = LEVEL_TIPS[access] && LEVEL_TIPS[access] + (videos ? ", videos available" : "");
   return [...publicIcon(fm)].map((icon, i) => (i === 0 && first ? span(icon, first) : tip(icon))).join("");
 };
+// ---------- enrollment (AGENTS.md → Enrollment) ----------
+
+// scripts/explorecourses.py distills the raw catalog dumps into one term-major map, where a term's
+// codes point either at the offering listed under that code or at the code a cross-listing was filed
+// under, so one course is counted once however many numbers it carries. Read that script's header
+// before trusting a figure out of it: `enrolled` is an estimate built from section counts, `cap` is
+// administrative and withheld wherever the catalog carried a placeholder, and `waitlist` is the
+// largest single section's live queue, purged once the term is over.
+export const ENROLLMENT_FILE = "references/explorecourses/enrollment.json";
+export type Offering = { enrolled: number; cap?: number; waitlist?: number; courseId?: string; title?: string };
+export type Enrollment = Record<string, Record<string, Offering | string>>;
+// A year's worth of terms: `enrollment_1y` totals the offering a course page describes and the three
+// terms before it, so the window is anchored to that page's own `term`, not to `current_term`.
+export const ENROLLMENT_TERMS = 4;
+// How many courses each Enrollment.md leaderboard lists.
+export const LEADERBOARD_ROWS = 50;
+// How many complete academic years the by-year board covers. Deliberately not tied to cutoff_term,
+// which bounds what the wiki covers rather than what the catalog can count.
+export const LEADERBOARD_YEARS = 10;
+
+// The file sits in the references subrepo, which may not be checked out. null then means "leave the
+// enrollment already on the pages alone", never "there is none".
+export function loadEnrollment(root: string): Enrollment | null {
+  const path = join(root, ENROLLMENT_FILE);
+  return existsSync(path) ? (JSON.parse(readFileSync(path, "utf8")) as Enrollment) : null;
+}
+// `count` terms ending at `term`, oldest first; [] when `term` isn't a term name.
+export const termsBackFrom = (term: string, count = ENROLLMENT_TERMS) =>
+  isNaN(termOrd(term)) ? [] : [...Array(count).keys()].map((i) => ordTerm(termOrd(term) - count + 1 + i));
+
+// What a course ran that term, found under whichever of its codes headed the offering. A term-major
+// lookup is what makes this safe: a reused number resolves to whoever held it that term, not to the
+// page's current course, so callers pass only terms the page records as its own offerings.
+export function offeringIn(data: Enrollment | null, term: string, d: Doc): Offering | null {
+  const byCode = data?.[term];
+  if (!byCode) return null;
+  for (const code of [str(d.fm!.code), ...otherCodes(d)]) {
+    const hit = byCode[code];
+    const rec = typeof hit === "string" ? byCode[hit] : hit;
+    if (rec && typeof rec === "object" && typeof rec.enrolled === "number") return rec;
+  }
+  return null;
+}
+
+// A Size cell: the headcount, and under it "+5w" where the course ran out of seats. A queue
+// the cap could still absorb is somebody's own paperwork (instructor consent, a conditional swap, a
+// failed requisite) rather than demand for the course, so the cell shows a queue only once it would
+// overflow the cap, and with no cap -- the catalog withholds one wherever it carried a placeholder --
+// there is nothing to compare against. The queue is live, purged around the Final Study List
+// Deadline, so only the term in progress shows it in the cell; the hover carries the cap and the
+// queue wherever the data has them, on any term.
+export function enrollmentCell(rec: Offering | null, live: boolean): string {
+  // A recorded 0 is read as no figure rather than as an empty class: the catalog carries one for a
+  // quarter a course was listed and never ran, and the dumps don't say which case it is.
+  if (!rec || !rec.enrolled) return "";
+  const cap = typeof rec.cap === "number" ? rec.cap : null;
+  const queue = typeof rec.waitlist === "number" && rec.waitlist > 0 ? rec.waitlist : null;
+  const overflows = cap !== null && queue !== null && rec.enrolled + queue > cap;
+  const hover = [cap !== null ? `${cap} cap` : "", queue !== null ? `${queue} waitlisted` : ""].filter(Boolean);
+  if (hover.length) hover.unshift(`${rec.enrolled} enrolled`);
+  const text = `${rec.enrolled}${live && overflows ? `<br>+${queue}w` : ""}`;
+  return hover.length ? span(text, hover.join(", ")) : text;
+}
+
+// One course's run over a span of terms, for the enrollment.md leaderboards. Courses are followed by
+// catalog course ID and not by code, since the code belongs to the offering: CS 376 became CS 347 in
+// Winter 2020, and keying on either code would split one course's history or merge two.
+export type Run = { code: string; title: string; terms: Map<string, number>; total: number };
+
+// Every course that ran in `terms`, most enrolled first. Terms must be oldest first: the code and title
+// are taken from the most recent term, which is how the course is known now. A term's map holds the
+// offering under its heading code and every other code of a cross-listing as a string pointing at it,
+// so skipping the strings counts each course exactly once.
+export function enrollmentRuns(data: Enrollment, terms: string[]): Run[] {
+  const by = new Map<string, Run>();
+  for (const term of terms)
+    for (const [key, rec] of Object.entries(data[term] ?? {})) {
+      // A recorded 0 is no figure, as everywhere else; see enrollmentCell.
+      if (typeof rec === "string" || !rec.enrolled) continue;
+      // The courseId-suffixed key two courses sharing a code fall back to ("LAW 290 (215933)").
+      const code = key.replace(/ \(\d+\)$/, "");
+      const run = by.get(rec.courseId ?? key) ?? { code, title: "", terms: new Map(), total: 0 };
+      run.terms.set(term, (run.terms.get(term) ?? 0) + rec.enrolled);
+      run.total += rec.enrolled;
+      run.code = code;
+      run.title = rec.title || run.title;
+      by.set(rec.courseId ?? key, run);
+    }
+  return [...by.values()].sort((a, b) => b.total - a.total || codeKey(a.code).localeCompare(codeKey(b.code)));
+}
+
+// A header cell's visible label, with the hover span or the link the tables wrap it in taken off.
+const untip = (cell: string) => cell.replace(/<span title="[^"]*">(.*?)<\/span>/g, "$1")
+  .replace(/\[([^\]]*)\]\([^)\s]*\)/g, "$1").trim();
+// A generated table's cells, without the leading and trailing empties of its pipes.
+const tableCells = (line: string) => line.split("|").slice(1, -1).map((c) => c.trim());
+// One column of the table already on a page, keyed by each row's first link target. Without
+// enrollment.json the Size column is re-read from the page this way, so a build with the
+// references subrepo absent leaves the figures where they are instead of wiping a column it can't
+// rebuild. An empty map simply renders the column empty.
+export function previousColumn(text: string, header: string): Map<string, string> {
+  const out = new Map<string, string>();
+  const lines = text.split("\n");
+  const head = lines.findIndex((l) => l.startsWith("| Course |"));
+  const col = head < 0 ? -1 : tableCells(lines[head]).map(untip).indexOf(header);
+  if (col < 0) return out;
+  for (let i = head + 2; i < lines.length && lines[i].startsWith("|"); i++) {
+    const cells = tableCells(lines[i]);
+    const href = /\]\(([^)\s]+)\)/.exec(cells[0] ?? "")?.[1];
+    if (href && col < cells.length) out.set(href, cells[col]);
+  }
+  return out;
+}
+
+// ---------- comparing a generated file with what is on disk ----------
+
+// Build writes table rows with one space of padding; editors (Obsidian, Prettier) pad the columns into
+// alignment instead. A plain table reads better aligned, so a row differing from the generated one in
+// nothing but that padding counts as up to date: build leaves it alone and lint doesn't call it stale.
+// Both sides go through the same normalizer, so this never hides a difference in what a cell says.
+//
+// A row carrying a tooltip <span> is the exception. Its source is already far wider than the text a
+// reader sees, so padding it to a column aligns nothing and only makes the row harder to read; build
+// writes those unpadded and rewrites them when something has padded them.
+const isTableRow = (line: string) => /^\s*\|.*\|\s*$/.test(line) && !line.includes("<span");
+const unpad = (line: string) => line.trim().split("|")
+  .map((cell) => cell.trim().replace(/^(:?)-{3,}(:?)$/, "$1---$2")).join("|");
+export const sameText = (a: string, b: string) => a === b || norm(a) === norm(b);
+const norm = (text: string) => text.split("\n").map((l) => (isTableRow(l) ? unpad(l) : l)).join("\n");
+
 // Term-page frontmatter in the order AGENTS.md lists it. Build writes is_current_term and the counts,
 // and sorts every term page into this order; keys it doesn't know keep their relative order at the end.
 const TERM_KEYS = ["type", "title", "description", "academic_year", "start_date", "end_date",
@@ -454,6 +595,9 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
   const courses = pages.filter((d) => d.fm!.type === "Course");
   const regs = pages.filter((d) => d.fm!.type === "Registration");
   const progs = programs(docs);
+  // Enrollment is the one generated figure that comes from outside the bundle, and its source sits in
+  // the references subrepo. Absent, every enrollment already written stays exactly as it is.
+  const enrollment = loadEnrollment(root);
   // Link the primary specialization under its short name.
   const specName = progs.primary ? basename(progs.primary.path, ".md") : "";
   const codeCol = (from: string) => progs.primary
@@ -462,8 +606,9 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
   const publicCol = "**[Public](../AGENTS.md#materials)**";
 
   // Non-breaking space between department and number, so "CS 312" never wraps in a table cell.
+  const href = (from: string, d: Doc) => encodePath(relative(dirname(from), d.path));
   const link = (from: string, d: Doc) =>
-    `[${basename(d.path, ".md").replace(/^(\S+) (?=\d)/, "$1\u00a0")}](${encodePath(relative(dirname(from), d.path))})`;
+    `[${basename(d.path, ".md").replace(/^(\S+) (?=\d)/, "$1\u00a0")}](${href(from, d)})`;
   const title = (d: Doc) => str(d.fm!.title).replace(`${str(d.fm!.code)}: `, "");
   const row = (cells: string[]) => `| ${cells.join(" | ")} |`.replace(/ {2}/g, " ");
   const codes = (d: Doc) => depthCodes(progs.primary, d);
@@ -523,6 +668,24 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
     // TODO: remove this migration once legacy mscs fields are no longer in use.
     delete fm.mscs;
     if (fm.type === "Course" && current && fm.term !== current) delete fm.schedule;
+    // Two figures, and no history: what the offering this page describes drew, and what the course drew
+    // over the year ending with it. The history stays in enrollment.json, which the term tables read
+    // directly. Only a term the page records as an offering is read, so a number a later course reused
+    // never lands here, and a term the course sat out adds nothing.
+    if (fm.type === "Course" && enrollment) {
+      const offered = new Set(arr(fm.terms_offered).map(String));
+      // As in enrollmentCell, a recorded 0 counts as no figure, so it neither fills the key nor joins the total.
+      const count = (t: string) => (offered.has(t) ? offeringIn(enrollment, t, d)?.enrolled : undefined) || undefined;
+      const year = termsBackFrom(str(fm.term)).map(count).filter((n) => n !== undefined);
+      const total = year.reduce((sum, n) => sum + n, 0);
+      const own = count(str(fm.term));
+      delete fm.enrollment;
+      delete fm.enrollment_1y;
+      if (own !== undefined) fm.enrollment = String(own);
+      // A course that ran once in the year has nothing to add up, so the second key would only repeat
+      // the first. The roster falls back to `enrollment` for those rows.
+      if (year.length && total !== own) fm.enrollment_1y = String(total);
+    }
     fm.tags = [...arr(fm.tags).map(String).filter((t) => !t.startsWith("mscs-")), ...mscsTags(progs, d)];
     // A legacy page keeps its key order (yamlLines sorts its `materials`) until it's migrated.
     const out = withAliases(fm);
@@ -531,15 +694,145 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
 
   // courses/index.md: fully generated, and never emptied while course pages exist on disk.
   const idx = join(root, "courses", "index.md");
+  // The roster's Size column is the yearly figure the course pages carry, so it survives a build with
+  // the references subrepo absent, on the roster and on the program pages alike. Each row's window ends
+  // at its own Term, so the hover says that rather than naming four terms the rows don't share. A course
+  // that ran once in its year carries only `enrollment`, that year's whole total, so the column falls back to it.
+  const yearly = (d: Doc) => {
+    const fm = frontmatter.get(d.path) ?? d.fm!;
+    return str(fm.enrollment_1y) || str(fm.enrollment);
+  };
+  // "Size/y" rather than the term pages' bare "Size": the roster's figure covers a year, not one term.
+  const enrollCol = span("Size/y", `Number of enrolled students over the ${ENROLLMENT_TERMS} terms ending `
+    + "with the last course's term (total estimate across all cross-listings)");
   if (!pages.length && existsSync(idx) && /^\|\s*\[/m.test(readFileSync(idx, "utf8")))
     problems.push("courses/index.md: no course pages loaded, so the roster would be emptied; fix the pages rather than committing an empty index");
   else out.set(idx, [
-    `| Course | Title | Term | ${codeCol(idx)} | ${publicCol} |`,
-    "| --- | --- | --- | --- | --- |",
-    ...courses.map((d) => row([link(idx, d) + fresh(d, current, 4), title(d), termCell(idx, str(d.fm!.term), true), codes(d), icon(d)])),
+    `| Course | Title | Term | ${codeCol(idx)} | ${publicCol} | ${enrollCol} |`,
+    "| --- | --- | --- | --- | --- | --- |",
+    ...courses.map((d) => row([link(idx, d) + fresh(d, current, 4), title(d), termCell(idx, str(d.fm!.term), true), codes(d), icon(d), yearly(d)])),
     ...(regs.length ? ["", "## Registrations", "", ...regs.map((d) => `* ${link(idx, d)} - ${title(d)}`)] : []),
     "",
   ].join("\n"));
+
+  // enrollment.md: fully generated, and Stanford-wide, so it is the one page here that isn't about CS.
+  // Built from enrollment.json like every other figure here, because only the JSON records which codes
+  // were cross-listed in which term. Without it there is nothing to build from, and what is on disk stays.
+  const leaderboard = join(root, "enrollment.md");
+  const recent = termsBackFrom(current);
+  if (enrollment && recent.length) {
+    // Whole academic years, so the columns are comparable: the span opens on an Autumn far enough back
+    // to hold LEADERBOARD_YEARS complete years plus however much of the current one has run.
+    const first = yearStart(ordTerm(termOrd(current) - 4 * LEADERBOARD_YEARS));
+    const span = termsBackFrom(current, Math.max(1, termOrd(current) - termOrd(first) + 1));
+    const years: { label: string; terms: string[] }[] = [];
+    for (const t of span) {
+      // Labeled by the year the academic year ends in: 2019-2020 is "2020".
+      const label = `20${academicYear(t).slice(-2)}`;
+      if (years.at(-1)?.label === label) years.at(-1)!.terms.push(t);
+      else years.push({ label, terms: [t] });
+    }
+    // The year in progress is dropped: a part year would sink every course still running in it. A whole
+    // academic year is 4 terms, and the span opens on an Autumn, so only the last bucket can be short.
+    if (years.at(-1) && years.at(-1)!.terms.length < 4) years.pop();
+    years.splice(0, Math.max(0, years.length - LEADERBOARD_YEARS));
+    years.reverse();   // newest year first, so the columns a reader cares about come first
+    // Which of our pages a catalog code belongs to, including its cross-listings and former numbers,
+    // so AA 228 links to the CS 238 page it shares. A reused number's old page matches nothing.
+    const pageByCode = new Map<string, Doc>();
+    for (const d of pages) for (const c of codesOf(d)) if (!pageByCode.has(c)) pageByCode.set(c, d);
+    // Named on one of the MSCS sheets: the program's foundations, SI and breadth lists, and every specialization's depth and
+    // approval lists. Matched on the code rather than through a page, so the MATH, EE and MS&E courses the
+    // sheets list count too, though the wiki has no page for them. `mscs_excluded` is not a list of courses
+    // the program contains, so it has no part here.
+    const sheet = progs.program?.fm;
+    const mscsLists: (Y | undefined)[] = [sheet?.mscs_foundations, sheet?.mscs_si,
+      ...Object.values(obj(sheet?.mscs_breadth) ?? {}),
+      ...progs.specs.flatMap((sp) => [...Object.values(obj(sp.fm!.mscs_depth) ?? {}), sp.fm!.mscs_approval])];
+    const mscsEntries = [...new Set(mscsLists.flatMap((l) => arr(l).map(String)))];
+    const onSheet = (code: string) => mscsEntries.some((e) => entryMatches(e, code));
+    // A course's own code and, where the wiki knows it, its cross-listings and former numbers, since the
+    // sheet may name it under any of them.
+    const inMscs = (run: Run) => {
+      const d = pageByCode.get(run.code);
+      return (d ? codesOf(d) : [run.code]).some(onSheet);
+    };
+
+    // Rank, code and title in one cell, so a column stays narrow in a table this wide.
+    const courseCell = (run: Run, rank: number) => {
+      const page = pageByCode.get(run.code);
+      return `${rank})\u00a0${page ? link(leaderboard, page) : run.code.replace(" ", "\u00a0")}<br>${run.title.replace(/\|/g, "\\|")}`;
+    };
+    // One column per bucket of terms: a term each on the first board, an academic year each on the second.
+    // Both rank on the total over the columns they show. `mean` adds an Avg beside it, averaged over the
+    // years a course actually ran rather than over every column, so a gap doesn't read as a quiet year.
+    const board = (buckets: { label: string; terms: string[] }[], mean = false, only?: (run: Run) => boolean) => {
+      // Chronological whatever order the columns run in: enrollmentRuns takes a course's code and title
+      // from its most recent term, so it must see them oldest first.
+      const terms = buckets.flatMap((b) => b.terms).sort((a, b) => termOrd(a) - termOrd(b));
+      const rows = enrollmentRuns(enrollment, terms).filter((run) => !only || only(run)).map((run) => {
+        const sums = buckets.map((b) => {
+          const found = b.terms.map((t) => run.terms.get(t)).filter((n) => n !== undefined);
+          return found.length ? found.reduce((a, n) => a + n, 0) : undefined;
+        });
+        const ran = sums.filter((n) => n !== undefined);
+        return { run, sums, ran, avg: Math.round(run.total / ran.length) };
+      });
+      return [
+        `| Course | Total | ${buckets.map((b) => b.label).join(" | ")} |${mean ? " Avg |" : ""}`,
+        `|${" --- |".repeat(buckets.length + (mean ? 3 : 2))}`,
+        ...rows.slice(0, LEADERBOARD_ROWS).map(({ run, sums, ran, avg }, i) => {
+          const peak = Math.max(...ran);
+          // A bucket with no figure is blank. Never a dash, which reads as a recorded zero.
+          return row([courseCell(run, i + 1), String(run.total),
+            ...sums.map((n) => (n === undefined ? "" : ran.length > 1 && n === peak ? `**${n}**` : String(n))),
+            ...(mean ? [String(avg)] : [])]);
+        }),
+      ].join("\n");
+    };
+    // The page may not exist yet, and the normalizing pass at the end only rewrites frontmatter it
+    // loaded from disk, so the block is written out here as well as registered for that pass.
+    const fm: Record<string, Y> = { type: "Report", title: "Enrollment",
+      description: `Stanford's most enrolled courses, ranked over the last ${ENROLLMENT_TERMS} terms and by academic year.` };
+    // Built as heading/table pairs so the contents line at the top can't drift from the sections, and the
+    // middle one drops out where no program page was loaded to narrow by. Anchors are the GitHub slug,
+    // the convention AGENTS.md already links by.
+    const sections: [string, string, string][] = [
+      ...(mscsEntries.length ? [["MSCS courses",
+        "Only the courses on [MSCS](programs/MSCS.md) sheets. One column per complete *academic* year, labeled"
+        + ` by the year it ends in. Ranked by total enrollment in the last ${LEADERBOARD_YEARS} years.`,
+        board(years, true, inMscs)] as [string, string, string]] : []),
+      ["Overall",
+        `Top Stanford courses overall, ranked by total enrollment in last ${LEADERBOARD_YEARS} years.`,
+        board(years, true)],
+      [`Last ${ENROLLMENT_TERMS} terms`,
+        `Top Stanford courses by total enrollment in the last ${ENROLLMENT_TERMS} terms.`,
+        board(recent.map((t) => ({ label: termCell(leaderboard, t, true), terms: [t] })))],
+    ];
+    const slug = (head: string) => head.toLowerCase().replace(/[^a-z0-9 -]/g, "").replace(/ /g, "-");
+    out.set(leaderboard, [
+      "---", ...yamlLines(fm), "---",
+      "# Enrollment",
+      "",
+      "Stanford's most enrolled courses per [ExploreCourses](https://explorecourses.stanford.edu/) data"
+      + " (including cross-listings).",
+      "",
+      // The same figures as a file, for a reader who wants to work with them; scripts/explorecourses.py
+      // writes it from the same run, so it is linked only where it is actually there.
+      [...sections.map(([head]) => `[${head}](#${slug(head)})`),
+        ...(existsSync(join(root, "enrollment.csv")) ? ["[csv](enrollment.csv)"] : [])].join(" \u00b7 "),
+      "",
+      ...sections.flatMap(([head, intro, table]) => [`## ${head}`, "", intro, "", table, ""]),
+    ].join("\n"));
+    frontmatter.set(leaderboard, fm);
+
+  }
+
+  // A term table's Size header links to the leaderboard rather than carrying a hover, which Obsidian
+  // would drop on a link anyway. It links only where that page can exist: a bundle with neither
+  // enrollment.json to build it from nor the page already on disk has nothing to point at.
+  const sizeCol = (from: string) => (enrollment || existsSync(leaderboard)
+    ? `[Size](${encodePath(relative(dirname(from), leaderboard))})` : "Size");
 
   // terms/index.md: fully generated, oldest academic year first, each year's terms in academic order.
   const termPages = docs.filter((d) => d.rel.startsWith("terms/") && d.fm?.type === "Term")
@@ -591,11 +884,17 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
     const rowTitle = (d: Doc) => (str(d.fm!.term) === term ? "" : str(obj(obj(d.fm!.past)?.[term])?.title)) || title(d);
     // Days get their own column on the current term's page, where the meeting pattern is still useful.
     const days = (d: Doc) => (str(d.fm!.term) === term && /^[MTWRF]+$/.exec(str(d.fm!.schedule).split(" ")[0])?.[0]) || "";
+    // This term's own headcount, from enrollment.json, which reaches back further than the course
+    // pages cache; the queue shows in the cell on the term in progress, where it is still live.
+    const kept = enrollment ? null : previousColumn(page.text, "Size");
+    const enrolled = (d: Doc) => enrollment
+      ? enrollmentCell(offeringIn(enrollment, term, d), isCurrent)
+      : kept!.get(href(page.path, d)) ?? "";
     const table = [
-      `| Course | Title | Professor |${isCurrent ? " Days |" : ""} ${codeCol(page.path)} | ${publicCol} |`,
-      `| --- | --- | --- |${isCurrent ? " --- |" : ""} --- | --- |`,
+      `| Course | Title | Professor |${isCurrent ? " Days |" : ""} ${codeCol(page.path)} | ${publicCol} | ${sizeCol(page.path)} |`,
+      `| --- | --- | --- |${isCurrent ? " --- |" : ""} --- | --- | --- |`,
       ...members.map((d) => row([link(page.path, d) + fresh(d, term), rowTitle(d), instructor(d),
-        ...(isCurrent ? [days(d)] : []), depthCell(progs, progs.primary, d), icon(d)])),
+        ...(isCurrent ? [days(d)] : []), depthCell(progs, progs.primary, d), icon(d), enrolled(d)])),
     ].join("\n");
     // Prev/next bar: the chronological neighbors among the term pages that exist.
     const n = chron.indexOf(page);
@@ -635,10 +934,10 @@ export function render(root: string, docs: Doc[], problems: string[] = []): Map<
     };
     const courseCell = (d: Doc) => [link(page.path, d) + fresh(d, current, 4), ...sheetCodes(d).map((c) => c.replace(" ", "\u00a0"))].join("<br>");
     const table = [
-      `| Course | Title | Breadth |${isSpec ? " Depth |" : ""} Term | ${publicCol} |`,
-      `| --- | --- | --- |${isSpec ? " --- |" : ""} --- | --- |`,
+      `| Course | Title | Breadth |${isSpec ? " Depth |" : ""} Term | ${publicCol} | ${enrollCol} |`,
+      `| --- | --- | --- |${isSpec ? " --- |" : ""} --- | --- | --- |`,
       ...members.map((d) => row([courseCell(d), title(d), breadthCell(progs, d),
-        ...(isSpec ? [depthCell(progs, page, d)] : []), termCell(page.path, str(d.fm!.term), true), icon(d)])),
+        ...(isSpec ? [depthCell(progs, page, d)] : []), termCell(page.path, str(d.fm!.term), true), icon(d), yearly(d)])),
     ].join("\n");
     let text = replaceBlock(page, page.text, "course-table", table);
     // Each missing entry with the letters of the lists it's on, e.g. "- CS 224N · b".

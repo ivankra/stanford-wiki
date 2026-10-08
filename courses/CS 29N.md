@@ -7,6 +7,7 @@ level: undergraduate
 term: Winter 2024
 terms_offered:
   - Winter 2024
+enrollment: 16
 instructors:
   - Sahami, M.
 units: "3"

@@ -10,6 +10,7 @@ terms_offered:
   - Spring 2023
   - Spring 2025
   - Spring 2026
+enrollment: 8
 instructors:
   - Brunskill, E.
 units: "3"

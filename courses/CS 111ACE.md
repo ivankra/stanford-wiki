@@ -20,6 +20,8 @@ terms_offered:
   - Winter 2026
   - Spring 2026
   - Autumn 2026
+enrollment: 6
+enrollment_1y: 25
 instructors:
   - Mattei, M.
 schedule: TR 09:30-10:20, Lathrop 299

@@ -8,6 +8,7 @@ term: Spring 2026
 terms_offered:
   - Spring 2025
   - Spring 2026
+enrollment: 19
 instructors:
   - Widom, J.
 units: "3"

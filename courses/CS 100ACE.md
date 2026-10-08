@@ -29,6 +29,8 @@ terms_offered:
   - Winter 2026
   - Spring 2026
   - Autumn 2026
+enrollment: 12
+enrollment_1y: 32
 instructors: []
 schedule: T 16:30-18:20, Lathrop 294
 units: "1"

@@ -12,6 +12,7 @@ terms_offered:
   - Autumn 2020
   - Autumn 2021
   - Autumn 2022
+enrollment: 18
 instructors:
   - Bailey, C.
 units: "3"

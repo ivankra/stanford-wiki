@@ -2,12 +2,13 @@ import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 import { test } from "node:test";
-import { load, marker, mscsTags, obj, publicCell, publicIcon, publicLevel, relatedProblems, render, type Doc, type Programs, type Y } from "./wiki.ts";
+import { ENROLLMENT_FILE, academicYear, enrollmentCell, load, marker, mscsTags, obj, publicCell, publicIcon, publicLevel, relatedProblems,
+  render, termsBackFrom, yearStart, type Doc, type Programs, type Y } from "./wiki.ts";
 
 // A table cell without its tooltip spans, so assertions read as the icons a reader sees.
-const untip = (cell: string) => cell.replace(/<span title="[^"]*">([^<]*)<\/span>/g, "$1");
+const untip = (cell: string) => cell.replace(/<span title="[^"]*">(.*?)<\/span>/g, "$1");
 const doc = (path: string, fm: Doc["fm"]): Doc => ({ path, rel: path, fm, body: "", text: "" });
 const course = doc("courses/CS 299.md", { type: "Course", code: "CS 299", cross_listed: ["STATS 299"] });
 const progs: Programs = {
@@ -297,13 +298,21 @@ test("Public column: one normalizer for both shapes; legacy pages show ?; 🅰 f
 });
 
 // A bundle with term pages and course pages; returns the rendered text of every file.
-function bundle(courses: Record<string, string>, terms: string[]) {
+function bundle(courses: Record<string, string>, terms: string[], enrollment?: unknown, extra: Record<string, string> = {}) {
   const root = mkdtempSync(join(tmpdir(), "stanford-cs-rows-"));
   try {
     for (const dir of ["courses", "terms"]) mkdirSync(join(root, dir));
+    if (enrollment !== undefined) {
+      mkdirSync(join(root, "references", "explorecourses"), { recursive: true });
+      writeFileSync(join(root, ENROLLMENT_FILE), JSON.stringify(enrollment));
+    }
     writeFileSync(join(root, "AGENTS.md"), "---\ntype: Scaffolding\ncurrent_term: Autumn 2026\ncutoff_term: Winter 2020\n---\n");
     for (const t of terms) writeFileSync(join(root, "terms", `${t}.md`), `---\ntype: Term\n---\n\n${marker("course-table")}\n`);
     for (const [code, fm] of Object.entries(courses)) writeFileSync(join(root, "courses", `${code}.md`), `---\n${fm}\n---\n# ${code}\n`);
+    for (const [rel, text] of Object.entries(extra)) {
+      mkdirSync(join(root, dirname(rel)), { recursive: true });
+      writeFileSync(join(root, rel), text);
+    }
     const out = render(root, load(root));
     return (path: string) => out.get(join(root, path))!;
   } finally {
@@ -327,15 +336,192 @@ test("historical rows take their professor and title from past; blank professor 
     "CS 2": `type: Course\ncode: CS 2\ntitle: "CS 2: Legacy"\nterm: Autumn 2026\nterms_offered: [Spring 2026, Autumn 2026]\n`
       + `instructors: ["Legacy, D."]\nschedule: ""\nmaterials: { access: partial }`,
   }, terms);
-  assert.deepEqual(cells(file("terms/Autumn 2026.md"), "CS 1"), ["New Title", "New", "TR", "", "✅"]);
-  assert.deepEqual(cells(file("terms/Spring 2025.md"), "CS 1"), ["Old Title", "Old", "", "✅"]);
-  assert.deepEqual(cells(file("terms/Winter 2026.md"), "CS 1"), ["New Title", "", "", "✅"]);
-  assert.deepEqual(cells(file("terms/Spring 2026.md"), "CS 1"), ["New Title", "", "", "✅"]);
-  assert.deepEqual(cells(file("terms/Autumn 2026.md"), "CS 2"), ["Legacy", "Legacy", "", "", "🟡?"]);
-  assert.deepEqual(cells(file("terms/Spring 2026.md"), "CS 2"), ["Legacy", "", "", "🟡?"]);
+  assert.deepEqual(cells(file("terms/Autumn 2026.md"), "CS 1"), ["New Title", "New", "TR", "", "✅", ""]);
+  assert.deepEqual(cells(file("terms/Spring 2025.md"), "CS 1"), ["Old Title", "Old", "", "✅", ""]);
+  assert.deepEqual(cells(file("terms/Winter 2026.md"), "CS 1"), ["New Title", "", "", "✅", ""]);
+  assert.deepEqual(cells(file("terms/Spring 2026.md"), "CS 1"), ["New Title", "", "", "✅", ""]);
+  assert.deepEqual(cells(file("terms/Autumn 2026.md"), "CS 2"), ["Legacy", "Legacy", "", "", "🟡?", ""]);
+  assert.deepEqual(cells(file("terms/Spring 2026.md"), "CS 2"), ["Legacy", "", "", "🟡?", ""]);
   assert.match(row(file("terms/Spring 2025.md"), "CS 1")[0], /\u00a0🆕$/);
   assert.match(row(file("terms/Spring 2026.md"), "CS 2")[0], /\u00a0🆕$/);
   assert.doesNotMatch(row(file("terms/Autumn 2026.md"), "CS 2")[0], /🆕/);
+});
+
+test("Enrollment.md: three boards, a course followed by courseId, blanks for a term it missed, the peak bold", () => {
+  assert.equal(yearStart("Winter 2020"), "Autumn 2019");   // the board opens on a whole academic year
+  assert.equal(yearStart("Autumn 2019"), "Autumn 2019");
+  assert.equal(academicYear("Winter 2020"), "2019-20");
+  const terms = ["Winter 2026", "Spring 2026", "Summer 2026", "Autumn 2026"];
+  const file = bundle({
+    "CS 1": `type: Course\ncode: CS 1\ntitle: "CS 1: One"\nterm: Autumn 2026\nterms_offered: ${JSON.stringify(terms)}\n`
+      + `instructors: []\nschedule: ""\naccess: open`,
+    // Bigger than the rest and on no MSCS list, so it heads one board and is missing from the other.
+    "CS 3": `type: Course\ncode: CS 3\ntitle: "CS 3: Three"\nterm: Spring 2026\nterms_offered: [Spring 2026]\n`
+      + `instructors: []\naccess: open`,
+  }, terms, {
+    // One course under two codes over its life, and two that never got a page here.
+    "Autumn 2026": { "CS 1": { enrolled: 10, courseId: "1", title: "One" },
+      "ECON 9": { enrolled: 300, courseId: "2", title: "Money" } },
+    "Summer 2026": { "CS 1": { enrolled: 4, courseId: "1", title: "One" } },
+    "Spring 2026": { "CS 0": { enrolled: 40, courseId: "1", title: "Nought" },
+      "CS 3": { enrolled: 900, courseId: "3", title: "Three" },
+      "MATH 7": { enrolled: 200, courseId: "4", title: "Sums" } },
+    "Winter 2026": { "CS 1": { enrolled: 0, courseId: "1", title: "One" } },
+  }, {
+    "programs/MSCS.md": `---\ntype: Program\nmscs_breadth: { A: [CS 1] }\nmscs_si: [MATH 7]\nmscs_excluded: [CS 3]\n`
+      + `---\n# MSCS\n\n## Courses\n\n${marker("course-table")}\n\n## TODO\n\n${marker("missing-pages")}\n`,
+  });
+  const page = file("enrollment.md");
+  assert.match(page, /^type: Report$/m);
+  const section = (head: string) => page.split(head)[1].split("\n## ")[0];
+  const rank = (text: string, n: number) => text.split("\n").find((l) => l.startsWith(`| ${n})\u00a0`))!;
+
+  // The last board ranks on the total over those 4 terms; a course with no page here is plain text.
+  const recent = section("## Last 4 terms");
+  assert.match(rank(recent, 2), /^\| 2\)\u00a0ECON\u00a09<br>Money \| 300 \|/);
+  // Followed by courseId, so the Spring 2026 term under the older code is the same row, and the code
+  // shown is the one its most recent term used. A recorded 0 is blank, and the best term is bold.
+  assert.equal(rank(recent, 4), "| 4)\u00a0[CS\u00a01](courses/CS%201.md)<br>One | 54 | | **40** | 4 | 10 |");
+
+  // The year boards are one column per academic year, newest first, and the year still in progress is
+  // dropped: 2026-2027 holds only Autumn 2026, so it goes, and with it the course that ran only then.
+  assert.match(page, /^## Overall$/m);
+  const board = section("## Overall");
+  const years = board.split("\n").find((l) => l.startsWith("| Course | Total | 20"))!.split("|").slice(3, -2).map((c) => c.trim());
+  assert.deepEqual([years[0], years.at(-1)], ["2026", "2017"]);
+  assert.equal(years.length, 10);
+  assert.doesNotMatch(board, /ECON/);   // its only term was in the year that got dropped
+  // Winter to Summer 2026 are one year: 0 recorded, 40 under the older code and 4, so 44 over one year.
+  const cells = rank(board, 3).split("|").slice(1, -1).map((c) => c.trim());
+  assert.equal(cells[0], "3)\u00a0[CS\u00a01](courses/CS%201.md)<br>One");
+  assert.deepEqual([cells[1], cells[2]], ["44", "44"]);        // Total, then the only year it ran
+  assert.deepEqual(cells.slice(3, -1), Array(9).fill(""));     // blank, never a dash
+  assert.equal(cells.at(-1), "44");                            // Avg, over that one year
+
+  // The first board is that same window narrowed to the courses an MSCS sheet lists. CS 3 heads the
+  // open board and is on no sheet, so it goes; MATH 7 has no page here and is listed, so it stays.
+  const mscs = section("## MSCS courses");
+  assert.match(rank(board, 1), /CS%203\.md/);
+  assert.doesNotMatch(mscs, /CS%203\.md/);
+  assert.match(rank(mscs, 1), /^\| 1\)\u00a0MATH\u00a07<br>Sums \| 200 \|/);
+  assert.match(rank(mscs, 2), /CS%201\.md/);
+  // The term tables point at it; the roster keeps its hover, which a link would hide in Obsidian.
+  assert.match(file("terms/Autumn 2026.md"), /\| \[Size\]\(\.\.\/enrollment\.md\) \|$/m);
+  assert.match(file("courses/index.md"), /<span title="Number of enrolled students over the 4 terms[^"]*">Size\/y<\/span>/);
+});
+
+test("padding: a plain table may stay aligned, a table of tooltip spans is rewritten without it", () => {
+  const root = mkdtempSync(join(tmpdir(), "stanford-cs-align-"));
+  try {
+    for (const dir of ["courses", "terms"]) mkdirSync(join(root, dir));
+    writeFileSync(join(root, "AGENTS.md"), "---\ntype: Scaffolding\ncurrent_term: Autumn 2026\ncutoff_term: Winter 2020\n---\n");
+    writeFileSync(join(root, "terms", "Autumn 2026.md"), `---\ntype: Term\n---\n\n${marker("course-table")}\n`);
+    writeFileSync(join(root, "courses", "CS 1.md"), '---\ntype: Course\ncode: CS 1\ntitle: "CS 1: One"\nterm: Autumn 2026\n'
+      + 'terms_offered: [Autumn 2026]\ninstructors: []\nschedule: ""\naccess: open\n---\n# CS 1\n');
+    // build.ts itself, not render(): the point of the test is the skip it does before writing.
+    const run = (script: string) => spawnSync(process.execPath, [join(import.meta.dirname, script), root], { encoding: "utf8" });
+    run("build.ts");
+    // What Prettier and Obsidian do to a table: pad every cell to the column, dashes included.
+    const pad = (text: string) => text.split("\n")
+      .map((l) => (l.startsWith("|") ? l.replace(/\| /g, "|   ").replace(/---/g, "-----") : l)).join("\n");
+    const file = (rel: string) => join(root, rel);
+    const text = (rel: string) => readFileSync(file(rel), "utf8");
+
+    // terms/index.md is plain text in every cell, so its alignment is left alone and isn't stale.
+    const aligned = pad(text("terms/index.md"));
+    writeFileSync(file("terms/index.md"), aligned);
+    run("build.ts");
+    assert.equal(text("terms/index.md"), aligned, "build rewrote a plain table that only differs in padding");
+    assert.doesNotMatch(run("lint.ts").stdout, /out of date/);
+
+    // The course table's cells carry tooltip spans, where aligning buys nothing: build takes it back out.
+    const canonical = text("terms/Autumn 2026.md");
+    writeFileSync(file("terms/Autumn 2026.md"), pad(canonical));
+    run("build.ts");
+    assert.equal(text("terms/Autumn 2026.md"), canonical, "build left padding in a table of spans");
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test("a Size cell: the count, a hover naming the count, the cap and the queue, and +Nw only on a live term the cap can't absorb", () => {
+  // Nothing recorded for that term leaves the cell empty, which is not the same as a recorded zero.
+  assert.equal(enrollmentCell(null, true), "");
+  // A recorded 0 reads as no figure: the catalog carries one for a quarter a course never ran.
+  assert.equal(enrollmentCell({ enrolled: 0 }, true), "");
+  assert.equal(enrollmentCell({ enrolled: 0, cap: 20 }, true), "");
+  assert.equal(enrollmentCell({ enrolled: 42 }, true), "42");
+  assert.equal(enrollmentCell({ enrolled: 42, cap: 60 }, true), '<span title="42 enrolled, 60 cap">42</span>');
+  // A queue the cap could still take is somebody's own paperwork: it stays in the hover.
+  assert.equal(enrollmentCell({ enrolled: 42, cap: 60, waitlist: 3 }, true), '<span title="42 enrolled, 60 cap, 3 waitlisted">42</span>');
+  // Over the cap between them, so the cell says so -- but only while the queue is live.
+  assert.equal(enrollmentCell({ enrolled: 93, cap: 99, waitlist: 37 }, true), '<span title="93 enrolled, 99 cap, 37 waitlisted">93<br>+37w</span>');
+  assert.equal(enrollmentCell({ enrolled: 93, cap: 99, waitlist: 37 }, false), '<span title="93 enrolled, 99 cap, 37 waitlisted">93</span>');
+  // The catalog withholds a placeholder cap, so there is nothing to call the queue full against.
+  assert.equal(enrollmentCell({ enrolled: 93, waitlist: 37 }, true), '<span title="93 enrolled, 37 waitlisted">93</span>');
+});
+
+test("enrollment: a course page carries its own offering and the year ending with it, the term tables carry the history", () => {
+  const terms = ["Autumn 2025", "Winter 2026", "Spring 2026", "Summer 2026", "Autumn 2026"];
+  assert.deepEqual(termsBackFrom("Autumn 2026"), terms.slice(1));
+  const file = bundle({
+    "CS 1": `type: Course\ncode: CS 1\ntitle: "CS 1: One"\ncross_listed: [STATS 1]\nterm: Autumn 2026\n`
+      + `terms_offered: ${JSON.stringify(terms)}\ninstructors: []\nschedule: ""\naccess: open`,
+    // Offered in Autumn 2026 only: the Spring 2026 record under this code belongs to whoever held the number then.
+    "CS 2": `type: Course\ncode: CS 2\ntitle: "CS 2: Two"\nterm: Autumn 2026\nterms_offered: [Autumn 2026]\n`
+      + `instructors: []\nschedule: ""\naccess: open`,
+  }, terms, {
+    "Autumn 2026": { "CS 1": { enrolled: 10, cap: 12, waitlist: 5 }, "CS 2": { enrolled: 4 } },
+    // Filed under the cross-listing that headed the offering that term; CS 1 points at it.
+    "Summer 2026": { "STATS 1": { enrolled: 7 }, "CS 1": "STATS 1" },
+    "Spring 2026": { "CS 1": { enrolled: 3 }, "CS 2": { enrolled: 500 } },
+    "Winter 2026": { "CS 1": { enrolled: 5 } },
+    "Autumn 2025": { "CS 1": { enrolled: 99 } },
+  });
+  // The page carries two figures and no history: its own offering, and the year ending with it.
+  const fm = file("courses/CS 1.md");
+  assert.match(fm, /\nenrollment: 10\nenrollment_1y: 25\n/);
+  // Autumn 2025 falls outside that year, so neither figure counts it; its term table still shows it.
+  assert.doesNotMatch(fm, /99/);
+  assert.equal(cells(file("terms/Autumn 2025.md"), "CS 1").at(-1), "99");
+  assert.equal(cells(file("terms/Summer 2026.md"), "CS 1").at(-1), "7");
+  // The term in progress, where 10 enrolled and 5 queued overflow a cap of 12.
+  assert.equal(cells(file("terms/Autumn 2026.md"), "CS 1").at(-1), "10<br>+5w");
+  // A term the page doesn't claim as an offering is never read, whoever the catalog had under the code.
+  // One term in its year, so the total would only repeat it: enrollment_1y is dropped.
+  assert.match(file("courses/CS 2.md"), /\nenrollment: 4\ninstructors:/);
+  assert.doesNotMatch(file("courses/CS 2.md"), /enrollment_1y|500/);
+  assert.equal(cells(file("terms/Autumn 2026.md"), "CS 2").at(-1), "4");
+  // The roster shows the year's total: the last cell of each row, from the page's own enrollment_1y.
+  const roster = (code: string) => file("courses/index.md").split("\n")
+    .find((l) => l.startsWith(`| [${code.replace(" ", "\u00a0")}]`))!.split("|").slice(1, -1).at(-1)!.trim();
+  assert.equal(roster("CS 1"), "25");
+  assert.equal(roster("CS 2"), "4");   // falls back to `enrollment`, the whole of that course's year
+});
+
+test("without enrollment.json the figures already on the pages stand, in frontmatter and in the Size column", () => {
+  const root = mkdtempSync(join(tmpdir(), "stanford-cs-enroll-"));
+  try {
+    for (const dir of ["courses", "terms"]) mkdirSync(join(root, dir));
+    mkdirSync(join(root, "references", "explorecourses"), { recursive: true });
+    writeFileSync(join(root, "AGENTS.md"), "---\ntype: Scaffolding\ncurrent_term: Autumn 2026\ncutoff_term: Winter 2020\n---\n");
+    writeFileSync(join(root, "terms", "Autumn 2026.md"), `---\ntype: Term\n---\n\n${marker("course-table")}\n`);
+    writeFileSync(join(root, "courses", "CS 1.md"), '---\ntype: Course\ncode: CS 1\ntitle: "CS 1: One"\nterm: Autumn 2026\n'
+      + 'terms_offered: [Autumn 2026]\ninstructors: []\nschedule: ""\naccess: open\n---\n# CS 1\n');
+    writeFileSync(join(root, ENROLLMENT_FILE), JSON.stringify({ "Autumn 2026": { "CS 1": { enrolled: 10, cap: 12, waitlist: 5 } } }));
+    const build = () => { for (const [p, text] of render(root, load(root))) writeFileSync(p, text); };
+    build();
+    const page = () => readFileSync(join(root, "courses", "CS 1.md"), "utf8");
+    const table = () => readFileSync(join(root, "terms", "Autumn 2026.md"), "utf8");
+    assert.match(page(), /\nenrollment: 10\ninstructors:/);
+    const before = [page(), table()];
+    rmSync(join(root, "references"), { recursive: true });
+    build();
+    // A build with the references subrepo gone rewrites everything else and leaves the enrollment alone.
+    assert.deepEqual([page(), table()], before);
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
 });
 
 test("a course's first term gets a 🆕 after its code, from 2 years after cutoff_term (Winter 2020) on", () => {
@@ -411,13 +597,13 @@ test("rollover: after the snapshot, past holds the outgoing offering and its row
       assert.ok(!(k in fm), k);
     }
     const rows = (t: string) => cells(readFileSync(join(root, "terms", `${t}.md`), "utf8"), "CS 1");
-    assert.deepEqual(rows("Spring 2026"), ["Spring Title", "Spring", "", "✅✚"]);
-    assert.deepEqual(rows("Autumn 2026"), ["Autumn Title", "Autumn", "", "", "✅✚"]);
+    assert.deepEqual(rows("Spring 2026"), ["Spring Title", "Spring", "", "✅✚", ""]);
+    assert.deepEqual(rows("Autumn 2026"), ["Autumn Title", "Autumn", "", "", "✅✚", ""]);
     // Skipping the snapshot leaves the old row without its professor, and lint says so.
     write(after.replace(/\npast:[\s\S]*$/, ""));
     assert.match(lint(), /courses\/CS 1\.md: past\.Spring 2026\.instructors is missing/);
     // and, with no open videos left anywhere, the tables cap the open page at 🟢.
-    assert.deepEqual(rows("Spring 2026"), ["Autumn Title", "", "", "🟢"]);
+    assert.deepEqual(rows("Spring 2026"), ["Autumn Title", "", "", "🟢", ""]);
   } finally {
     rmSync(root, { recursive: true, force: true });
   }

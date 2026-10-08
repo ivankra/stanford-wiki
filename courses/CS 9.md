@@ -8,6 +8,8 @@ term: Spring 2022
 terms_offered:
   - Autumn 2021
   - Spring 2022
+enrollment: 64
+enrollment_1y: 179
 instructors:
   - Tullis, I.
   - Benson, A.

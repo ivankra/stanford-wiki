@@ -13,6 +13,7 @@ terms_offered:
   - Autumn 2023
   - Winter 2025
   - Winter 2026
+enrollment: 20
 instructors:
   - Borenstein, J.
   - Wang, L.

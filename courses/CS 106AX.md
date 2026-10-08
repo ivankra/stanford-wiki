@@ -11,6 +11,7 @@ terms_offered:
   - Autumn 2024
   - Autumn 2025
   - Autumn 2026
+enrollment: 23
 instructors:
   - Cain, J.
 schedule: MWF 11:30-12:20, Hewlett Teaching Center 102

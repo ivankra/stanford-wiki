@@ -13,6 +13,7 @@ terms_offered:
   - Autumn 2024
   - Autumn 2025
   - Autumn 2026
+enrollment: 152
 instructors:
   - Nash, A.
 schedule: T 16:30-17:50, STLC 111

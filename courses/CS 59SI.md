@@ -8,6 +8,7 @@ term: Spring 2022
 terms_offered:
   - Spring 2021
   - Spring 2022
+enrollment: 15
 instructors:
   - Bouland, A.
 units: "2"

@@ -11,6 +11,7 @@ terms_offered:
   - Spring 2025
   - Autumn 2025
   - Autumn 2026
+enrollment: 14
 instructors:
   - Engler, D.
 schedule: TR 17:30-19:20, 320-109

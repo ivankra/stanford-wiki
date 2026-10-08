@@ -29,6 +29,8 @@ terms_offered:
   - Winter 2026
   - Spring 2026
   - Autumn 2026
+enrollment: 4
+enrollment_1y: 27
 instructors:
   - Berny, I.
 schedule: TR 13:30-14:50, Littlefield 104

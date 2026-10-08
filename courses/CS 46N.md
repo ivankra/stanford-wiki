@@ -9,6 +9,8 @@ terms_offered:
   - Spring 2022
   - Autumn 2022
   - Spring 2023
+enrollment: 19
+enrollment_1y: 34
 instructors:
   - Widom, J.
 units: "3"

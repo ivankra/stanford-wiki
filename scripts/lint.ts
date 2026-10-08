@@ -3,7 +3,7 @@
 // Usage: node scripts/lint.ts [bundle-dir]   (Node >= 23, no dependencies)
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative, basename, dirname } from "node:path";
-import { load, render, programs, termOrd, pageTerm, str, arr, obj, otherCodes, codeAliases, stripCode, relatedProblems, resolveLink as resolveIn,
+import { load, render, programs, termOrd, pageTerm, str, arr, obj, otherCodes, codeAliases, stripCode, relatedProblems, resolveLink as resolveIn, sameText, academicYear,
   ACCESS_LEVELS, COURSE_KEYS, PAST_KEYS, SOURCE_KEYS, MAT_TYPES, RATINGS, RATING_ICONS, LEGACY_MAT_TYPES, isLegacy, type Y, type Doc } from "./wiki.ts";
 
 const ROOT = process.argv[2] ?? join(import.meta.dirname, "..");
@@ -146,13 +146,13 @@ if (referencesPresent)
 
 // The schema is AGENTS.md → Frontmatter; COURSE_KEYS (wiki.ts) holds its order, and build sorts pages into it.
 // `checked` is required once anything is rated, which the checks below enforce.
-const OPTIONAL = ["aliases", "cross_listed", "formerly", "first_term", "schedule", "homepage", ...MAT_TYPES, "sites", "self_study", "textbook",
-  "past", "checked", "exceptions", "instructions"];
+const OPTIONAL = ["aliases", "cross_listed", "formerly", "first_term", "enrollment", "enrollment_1y", "schedule", "homepage",
+  ...MAT_TYPES, "sites", "self_study", "textbook", "past", "checked", "exceptions", "instructions"];
 // Registrations (CPT, independent study, TGR…) carry no teaching content, so they skip these keys.
 // `term`/`terms_offered` are in the list because they run every term: tracking which would churn
 // every page on every sweep, and build never reads them for a registration.
-const COURSE_ONLY = ["term", "first_term", "terms_offered", "instructors", "schedule", "homepage", "access", ...MAT_TYPES,
-  "sites", "self_study", "textbook", "topics", "past", "checked", "exceptions"];
+const COURSE_ONLY = ["term", "first_term", "terms_offered", "enrollment", "enrollment_1y", "instructors", "schedule",
+  "homepage", "access", ...MAT_TYPES, "sites", "self_study", "textbook", "topics", "past", "checked", "exceptions"];
 // `exceptions` names, each silencing one warning.
 const EXCEPTIONS = ["full_history", "pre_cutoff", "shared_code"];
 // What a pre-cutoff `past` record may hold: material, never catalog facts that would extend the offering history.
@@ -341,6 +341,20 @@ for (const d of pages) {
       if (!notes.includes(first)) err(d, `first_term ${first} is not named in ## Source notes: say there how it was verified as the earliest offering`);
     }
   } else if (fullHistory) err(d, "exceptions.full_history needs first_term: the verified earliest term the course ran, explained in Source notes");
+
+  // `enrollment` (this offering) and `enrollment_1y` (the year ending with it) are generated from
+  // references/explorecourses/enrollment.json, which keeps the history the pages deliberately don't.
+  // Build rewrites both whenever that file is there and the out-of-date check below enforces the figures,
+  // so these checks are what's left when the references subrepo is absent and the pages' own values stand.
+  for (const k of ["enrollment", "enrollment_1y"])
+    if (k in f && !/^[1-9]\d*$/.test(str(f[k]))) err(d, `${k} must be a whole number of students, and a recorded 0 is dropped rather than written; run make build`);
+  // The window ends at `term`, so this offering is always one of the terms the year totals -- and where
+  // it is the only one, build drops enrollment_1y rather than repeat the figure.
+  if ("enrollment" in f && "enrollment_1y" in f) {
+    const own = Number(str(f.enrollment)), year = Number(str(f.enrollment_1y));
+    if (own > year) err(d, `enrollment ${own} is larger than enrollment_1y ${year}, which counts ${term} among its terms; run make build`);
+    else if (own === year) err(d, `enrollment_1y repeats enrollment (${own}): omit it where the course ran once in the year; run make build`);
+  }
 
   if (f.homepage && !/^https?:\/\//.test(str(f.homepage))) err(d, "homepage must be an http(s) URL");
   if (!/^## Syllabus$/m.test(d.body)) warn(d, "no ## Syllabus section");
@@ -537,13 +551,6 @@ for (const d of courses) {
 
 // ---------- program pages ----------
 
-// Academic year of a term: Autumn 2026 → 2026-27, Winter–Summer 2027 → 2026-27.
-const academicYear = (t: string) => {
-  const m = /^(\w+) (\d{4})$/.exec(t);
-  if (!m) return "";
-  const start = m[1] === "Autumn" ? Number(m[2]) : Number(m[2]) - 1;
-  return `${start}-${String(start + 1).slice(2)}`;
-};
 const progs = programs(docs);
 if (agents && str(agents.fm?.primary_specialization) && !progs.primary)
   err(agents, `primary_specialization "${str(agents.fm!.primary_specialization)}" matches no Specialization page`);
@@ -588,7 +595,7 @@ for (const page of docs.filter((d) => d.rel.startsWith("terms/") && basename(d.r
 }
 const blockProblems: string[] = [];
 for (const [path, text] of render(ROOT, docs, blockProblems))
-  if (!existsSync(path) || readFileSync(path, "utf8") !== text)
+  if (!existsSync(path) || !sameText(readFileSync(path, "utf8"), text))
     problems.push({ level: "error", file: relative(ROOT, path), msg: "generated content or frontmatter formatting out of date: run node scripts/build.ts" });
 for (const p of blockProblems) {
   const [file, ...msg] = p.split(": ");

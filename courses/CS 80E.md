@@ -8,6 +8,7 @@ term: Autumn 2025
 terms_offered:
   - Autumn 2023
   - Autumn 2025
+enrollment: 29
 instructors:
   - Master, T.
 units: "2"

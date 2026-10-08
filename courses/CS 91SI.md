@@ -11,6 +11,7 @@ terms_offered:
   - Spring 2022
   - Spring 2023
   - Winter 2025
+enrollment: 15
 instructors:
   - Landay, J.
 units: "2"

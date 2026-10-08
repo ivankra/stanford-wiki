@@ -13,6 +13,7 @@ terms_offered:
   - Spring 2021
   - Autumn 2021
   - Winter 2022
+enrollment_1y: 45
 instructors: []
 units: "1"
 grading: Satisfactory/No Credit

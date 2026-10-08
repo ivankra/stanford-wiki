@@ -11,6 +11,8 @@ terms_offered:
   - Spring 2026
   - Summer 2026
   - Autumn 2026
+enrollment: 87
+enrollment_1y: 326
 instructors:
   - Young, P.
 schedule: MW 15:00-16:20, CoDa B90

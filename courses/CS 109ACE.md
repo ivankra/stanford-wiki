@@ -27,6 +27,8 @@ terms_offered:
   - Winter 2026
   - Spring 2026
   - Autumn 2026
+enrollment: 3
+enrollment_1y: 15
 instructors:
   - Hersch, E.
 schedule: W 16:30-18:20, Thornton 209

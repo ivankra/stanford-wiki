@@ -67,36 +67,36 @@ The lists are below, split between courses with a page (Courses) and those witho
 
 ## Courses
 
-| Course | Title | Breadth | Depth | Term | **[Public](../AGENTS.md#materials)** |
-| --- | --- | --- | --- | --- | --- |
-| [CS 123](../courses/CS%20123.md) | A Hands-On Introduction to Building AI-Enabled Robots | | c | [26au](../terms/Autumn%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 131](../courses/CS%20131.md) | Computer Vision: Foundations and Applications | | c | [26sp](../terms/Spring%202026.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
-| [CS 148](../courses/CS%20148.md) | Introduction to Computer Graphics and Imaging | D | c | [26au](../terms/Autumn%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
-| [CS 149](../courses/CS%20149.md) | Parallel Computing | C | SI c | [25au](../terms/Autumn%202025.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 205L](../courses/CS%20205L.md) | Continuous Mathematical Methods with an Emphasis on Machine Learning | AB | b | [26wi](../terms/Winter%202026.md) | <span title="mostly open">🟢</span> |
-| [CS 221](../courses/CS%20221.md) | Artificial Intelligence: Principles and Techniques | B | c | [26au](../terms/Autumn%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 223A](../courses/CS%20223A.md) | Introduction to Robotics | B | b | [26wi](../terms/Winter%202026.md) | <span title="mostly closed">🔴</span> |
-| [CS 224N](../courses/CS%20224N.md) | Natural Language Processing with Deep Learning | B | SI c | [26wi](../terms/Winter%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 224R](../courses/CS%20224R.md) | Deep Reinforcement Learning | B | SI c | [26sp](../terms/Spring%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 229](../courses/CS%20229.md) | Machine Learning | B | c | [26su](../terms/Summer%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 230](../courses/CS%20230.md) | Deep Learning | B | c | [26au](../terms/Autumn%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 231A](../courses/CS%20231A.md) | Computer Vision: From 3D Perception to 3D Reconstruction and Beyond | B | b | [25sp](../terms/Spring%202025.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
-| [CS 231N](../courses/CS%20231N.md) | Deep Learning for Computer Vision | B | SI a | [26sp](../terms/Spring%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 233](../courses/CS%20233.md) | Geometric and Topological Data Analysis | B | b | [26sp](../terms/Spring%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
-| [CS 234](../courses/CS%20234.md) | Reinforcement Learning | B | c | [26wi](../terms/Winter%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> |
-| [CS 236](../courses/CS%20236.md) | Deep Generative Models | B | c | [23au](../terms/Autumn%202023.md) | <span title="open, videos available">✅</span> |
-| [CS 248A](../courses/CS%20248A.md) | Computer Graphics: Rendering, Geometry, and Image Manipulation | B | SI a | [26wi](../terms/Winter%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
-| [CS 248B](../courses/CS%20248B.md) | Fundamentals of Computer Graphics: Animation and Simulation | B | SI a | [26au](../terms/Autumn%202026.md) | <span title="mostly open">🟢</span> |
-| [CS 348B](../courses/CS%20348B.md) | Computer Graphics: Image Synthesis Techniques | B | b | [22sp](../terms/Spring%202022.md) | <span title="open">🟢</span> |
-| [CS 348C](../courses/CS%20348C.md) | Computer Graphics: Animation and Simulation | B | b | [26wi](../terms/Winter%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
-| [CS 348E](../courses/CS%20348E.md) | Character Animation: Modeling, Simulation, and Control of Human Motion | B | b | [23sp](../terms/Spring%202023.md) | <span title="mostly closed">🔴</span> |
-| [CS 348I](../courses/CS%20348I.md) | Computer Graphics in the Era of AI | B | b | [24wi](../terms/Winter%202024.md) | <span title="partial">🟡</span> |
-| [CS 348K](../courses/CS%20348K.md) | Visual Computing Systems | C | b | [26sp](../terms/Spring%202026.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
-| [CS 348N](../courses/CS%20348N.md) | Neural Models for 3D Geometry | B | b | [23sp](../terms/Spring%202023.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> |
-| [CS 448B](../courses/CS%20448B.md) | Data Visualization | D | c | [26au](../terms/Autumn%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
-| [CS 448I](../courses/CS%20448I.md) | Computational Imaging | | b | [26wi](../terms/Winter%202026.md) | <span title="partial">🟡</span> |
-| [CS 448M](../courses/CS%20448M.md) | Making Making Machines for Makers | | c | [20sp](../terms/Spring%202020.md) | |
-| [CS 448Z](../courses/CS%20448Z.md) | Physically Based Animation and Sound | | c | [26sp](../terms/Spring%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> |
+| Course | Title | Breadth | Depth | Term | **[Public](../AGENTS.md#materials)** | <span title="Number of enrolled students over the 4 terms ending with the last course's term (total estimate across all cross-listings)">Size/y</span> |
+| --- | --- | --- | --- | --- | --- | --- |
+| [CS 123](../courses/CS%20123.md) | A Hands-On Introduction to Building AI-Enabled Robots | | c | [26au](../terms/Autumn%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> | 35 |
+| [CS 131](../courses/CS%20131.md) | Computer Vision: Foundations and Applications | | c | [26sp](../terms/Spring%202026.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> | 124 |
+| [CS 148](../courses/CS%20148.md) | Introduction to Computer Graphics and Imaging | D | c | [26au](../terms/Autumn%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> | 495 |
+| [CS 149](../courses/CS%20149.md) | Parallel Computing | C | SI c | [25au](../terms/Autumn%202025.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> | 232 |
+| [CS 205L](../courses/CS%20205L.md) | Continuous Mathematical Methods with an Emphasis on Machine Learning | AB | b | [26wi](../terms/Winter%202026.md) | <span title="mostly open">🟢</span> | 627 |
+| [CS 221](../courses/CS%20221.md) | Artificial Intelligence: Principles and Techniques | B | c | [26au](../terms/Autumn%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> | 535 |
+| [CS 223A](../courses/CS%20223A.md) | Introduction to Robotics | B | b | [26wi](../terms/Winter%202026.md) | <span title="mostly closed">🔴</span> | 143 |
+| [CS 224N](../courses/CS%20224N.md) | Natural Language Processing with Deep Learning | B | SI c | [26wi](../terms/Winter%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> | 546 |
+| [CS 224R](../courses/CS%20224R.md) | Deep Reinforcement Learning | B | SI c | [26sp](../terms/Spring%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> | 550 |
+| [CS 229](../courses/CS%20229.md) | Machine Learning | B | c | [26su](../terms/Summer%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> | 1113 |
+| [CS 230](../courses/CS%20230.md) | Deep Learning | B | c | [26au](../terms/Autumn%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> | 307 |
+| [CS 231A](../courses/CS%20231A.md) | Computer Vision: From 3D Perception to 3D Reconstruction and Beyond | B | b | [25sp](../terms/Spring%202025.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> | 62 |
+| [CS 231N](../courses/CS%20231N.md) | Deep Learning for Computer Vision | B | SI a | [26sp](../terms/Spring%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> | 507 |
+| [CS 233](../courses/CS%20233.md) | Geometric and Topological Data Analysis | B | b | [26sp](../terms/Spring%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> | 31 |
+| [CS 234](../courses/CS%20234.md) | Reinforcement Learning | B | c | [26wi](../terms/Winter%202026.md) | <span title="open, videos available">✅</span><span title="assignments public">🅰</span> | 301 |
+| [CS 236](../courses/CS%20236.md) | Deep Generative Models | B | c | [23au](../terms/Autumn%202023.md) | <span title="open, videos available">✅</span> | 321 |
+| [CS 248A](../courses/CS%20248A.md) | Computer Graphics: Rendering, Geometry, and Image Manipulation | B | SI a | [26wi](../terms/Winter%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> | 82 |
+| [CS 248B](../courses/CS%20248B.md) | Fundamentals of Computer Graphics: Animation and Simulation | B | SI a | [26au](../terms/Autumn%202026.md) | <span title="mostly open">🟢</span> | 57 |
+| [CS 348B](../courses/CS%20348B.md) | Computer Graphics: Image Synthesis Techniques | B | b | [22sp](../terms/Spring%202022.md) | <span title="open">🟢</span> | 18 |
+| [CS 348C](../courses/CS%20348C.md) | Computer Graphics: Animation and Simulation | B | b | [26wi](../terms/Winter%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> | 35 |
+| [CS 348E](../courses/CS%20348E.md) | Character Animation: Modeling, Simulation, and Control of Human Motion | B | b | [23sp](../terms/Spring%202023.md) | <span title="mostly closed">🔴</span> | 23 |
+| [CS 348I](../courses/CS%20348I.md) | Computer Graphics in the Era of AI | B | b | [24wi](../terms/Winter%202024.md) | <span title="partial">🟡</span> | 22 |
+| [CS 348K](../courses/CS%20348K.md) | Visual Computing Systems | C | b | [26sp](../terms/Spring%202026.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> | 48 |
+| [CS 348N](../courses/CS%20348N.md) | Neural Models for 3D Geometry | B | b | [23sp](../terms/Spring%202023.md) | <span title="open">🟢</span><span title="assignments public">🅰</span> | 24 |
+| [CS 448B](../courses/CS%20448B.md) | Data Visualization | D | c | [26au](../terms/Autumn%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> | 43 |
+| [CS 448I](../courses/CS%20448I.md) | Computational Imaging | | b | [26wi](../terms/Winter%202026.md) | <span title="partial">🟡</span> | 51 |
+| [CS 448M](../courses/CS%20448M.md) | Making Making Machines for Makers | | c | [20sp](../terms/Spring%202020.md) | | |
+| [CS 448Z](../courses/CS%20448Z.md) | Physically Based Animation and Sound | | c | [26sp](../terms/Spring%202026.md) | <span title="mostly open">🟢</span><span title="assignments public">🅰</span> | 21 |
 
 <!-- Generated by build.ts (course-table). Don't edit, run `make build` -->
 

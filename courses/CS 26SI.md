@@ -7,6 +7,7 @@ level: undergraduate
 term: Autumn 2022
 terms_offered:
   - Autumn 2022
+enrollment: 10
 instructors:
   - Cain, J.
 units: "1"

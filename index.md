@@ -10,6 +10,7 @@ This is a collection of agent-maintained interlinked plain markdown pages, in [L
 * [Courses](courses/): course pages
 * [Terms](terms/): course listing by academic term
 * [Programs](programs/): MSCS requirements and course listing by specializations
+* [enrollment.md](enrollment.md): Stanford's most enrolled courses, from the catalog's section counts; `enrollment.csv` beside it holds every figure, for working with directly
 * [References](references/): ingested sources (in a separate repository)
 * [AGENTS.md](AGENTS.md): conventions and rules for maintaining the wiki by agents
 * [TODO.md](TODO.md): backlog

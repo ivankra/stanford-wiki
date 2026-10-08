@@ -8,6 +8,7 @@ term: Autumn 2026
 terms_offered:
   - Autumn 2025
   - Autumn 2026
+enrollment: 18
 instructors:
   - Borenstein, J.
 schedule: TR 12:30-13:20, Thornton 211

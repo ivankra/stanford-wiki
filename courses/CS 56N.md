@@ -8,6 +8,7 @@ term: Winter 2022
 terms_offered:
   - Autumn 2020
   - Winter 2022
+enrollment: 16
 instructors:
   - Hennessy, J.
 units: "3"

@@ -9,6 +9,7 @@ level: undergraduate
 term: Winter 2022
 terms_offered:
   - Winter 2022
+enrollment: 16
 instructors:
   - Icard, T.
   - Wootters, M.

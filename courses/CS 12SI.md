@@ -9,6 +9,7 @@ terms_offered:
   - Autumn 2021
   - Spring 2023
   - Spring 2024
+enrollment: 1
 instructors:
   - Borenstein, J.
 units: "1"

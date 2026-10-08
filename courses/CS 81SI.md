@@ -7,6 +7,7 @@ level: undergraduate
 term: Spring 2020
 terms_offered:
   - Spring 2020
+enrollment: 17
 instructors:
   - Zou, J.
   - Reingold, O.

@@ -22,6 +22,8 @@ terms_offered:
   - Autumn 2025
   - Winter 2026
   - Spring 2026
+enrollment: 9
+enrollment_1y: 33
 instructors:
   - Nag, A.
 units: "1"

@@ -7,6 +7,7 @@ level: undergraduate
 term: Spring 2020
 terms_offered:
   - Spring 2020
+enrollment: 9
 instructors:
   - Piech, C.
 units: "1"

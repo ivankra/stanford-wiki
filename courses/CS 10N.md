@@ -7,6 +7,7 @@ level: undergraduate
 term: Spring 2026
 terms_offered:
   - Spring 2026
+enrollment: 10
 instructors:
   - Winstein, K.
 units: "4"
